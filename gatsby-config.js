@@ -26,14 +26,16 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-webfonts`,
       options: {
-        fonts: [
-          {
-            family: `Open Sans`,
-            variants: [`400`, `700`],
-          },
-        ],
+        fonts: {
+          google: [
+            {
+              family: "Open Sans",
+              variants: ["400", "700"],
+            },
+          ],
+        },
       },
     },
     `gatsby-transformer-sharp`,

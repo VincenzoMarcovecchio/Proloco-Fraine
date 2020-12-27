@@ -114,7 +114,7 @@ const IndexPage = ({
               display: "grid",
               objectFit: "cover",
               width: "100%",
-              height: "70vh",
+              height: "90vh",
               margin: "0 auto",
             }}
           >
