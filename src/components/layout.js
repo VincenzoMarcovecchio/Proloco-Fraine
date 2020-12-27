@@ -24,7 +24,7 @@ const Layout = ({ children }) => {
   const [Articles, setArticles] = useState([])
   useEffect(() => {
     fetch(
-      `http://newsapi.org/v2/top-headlines?country=it&apiKey=0121e101985943d88d6b3a5ac0817273`
+      `https://newsapi.org/v2/top-headlines?country=it&apiKey=0121e101985943d88d6b3a5ac0817273`
     )
       .then(response => response.json()) // parse JSON from request
       .then(resultData => {

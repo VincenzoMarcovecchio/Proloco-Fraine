@@ -93,7 +93,7 @@ const IndexPage = ({
 
   useEffect(() => {
     fetch(
-      `http://newsapi.org/v2/top-headlines?country=it&apiKey=0121e101985943d88d6b3a5ac0817273`
+      `https://newsapi.org/v2/top-headlines?country=it&apiKey=0121e101985943d88d6b3a5ac0817273`
     )
       .then(response => response.json()) // parse JSON from request
       .then(resultData => {
@@ -115,7 +115,7 @@ const IndexPage = ({
             style={{
               display: "grid",
               objectFit: "cover",
-              width: "100vw",
+              width: "100%",
               height: "70vh",
               margin: "0 auto",
             }}
