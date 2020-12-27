@@ -12,6 +12,7 @@ import ListItemIcon from "@material-ui/core/ListItemIcon"
 import ListItemText from "@material-ui/core/ListItemText"
 import AnnouncementIcon from "@material-ui/icons/Announcement"
 import HouseIcon from "@material-ui/icons/House"
+import MenuIcon from "@material-ui/icons/Menu"
 import AccountBalanceIcon from "@material-ui/icons/AccountBalance"
 import MailIcon from "@material-ui/icons/Mail"
 import LocationCityIcon from "@material-ui/icons/LocationCity"
@@ -108,7 +109,7 @@ export default function SwipeableTemporaryDrawer() {
           aria-expanded={state.left}
           onClick={toggleDrawer("left", true)}
         >
-          <AccountBalanceIcon />
+          <MenuIcon />
         </IconButton>
         &nbsp; PROLOCO | Fraine
       </Box>

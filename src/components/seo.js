@@ -69,7 +69,6 @@ function SEO({ description, lang, meta, title }) {
         },
       ].concat(meta)}
     >
-      <div id="fb-root"></div>
       <script
         async={true}
         defer={true}
