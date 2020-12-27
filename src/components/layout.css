@@ -2,6 +2,7 @@ html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  font-family: "Open Sans", sans-serif;
 }
 body {
   margin: 0;
@@ -187,7 +188,7 @@ textarea {
   font: inherit;
 }
 html {
-  font: 112.5%/1.45em georgia, serif;
+  font: 112.5%/1.45em "Open Sans", sans-serif;
   box-sizing: border-box;
   overflow-y: scroll;
 }
@@ -202,7 +203,7 @@ html {
 }
 body {
   color: hsla(0, 0%, 0%, 0.8);
-  font-family: georgia, serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;
@@ -668,11 +669,10 @@ pre tt:after {
   justify-content: center;
   align-items: center;
   padding: 0.5rem;
-  --minFontSize: 13px;
-  --maxFontSize: 16px;
+  --minFontSize: 8px;
+  --maxFontSize: 13px;
   --scaler: 10vw;
   font-size: clamp(var(--minFontSize), var(--scaler), var(--maxFontSize));
-  text-align: center;
 }
 
 .banner a {

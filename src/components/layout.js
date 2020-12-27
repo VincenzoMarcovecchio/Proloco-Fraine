@@ -33,7 +33,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <div className="banner">
-        L' associazione Pro Loco Fraine supporta il movimento&nbsp;
+        <span>supportiamo il movimento&nbsp;</span>
         <a
           href="https://blacklivesmatter.com/"
           rel="noopener noreferrer canonical"
