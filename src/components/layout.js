@@ -23,13 +23,13 @@ const Layout = ({ children }) => {
   `)
   const [Articles, setArticles] = useState([])
   useEffect(() => {
-    fetch(`http://localhost:8888/.netlify/functions/news`)
+    fetch(`https://prolocofraine.netlify.app/.netlify/functions/news`)
       .then(response => response.json()) // parse JSON from request
       .then(resultData => {
         setArticles(resultData.articles)
       })
   }, [])
-  console.log(Articles)
+
   return (
     <>
       <div className="banner">
