@@ -92,9 +92,7 @@ const IndexPage = ({
   }
 
   useEffect(() => {
-    fetch(
-      `https://newsapi.org/v2/top-headlines?country=it&apiKey=0121e101985943d88d6b3a5ac0817273`
-    )
+    fetch(`http://localhost:8080/news`)
       .then(response => response.json()) // parse JSON from request
       .then(resultData => {
         setArticles(resultData.articles)
@@ -107,8 +105,8 @@ const IndexPage = ({
         <SEO title="Home" />
         <div className="hero">
           <video
-            width="90%"
-            aria-title="momenti di vita quotidiana di un borgo abruzzese"
+            width="100%"
+            title="proloco fraine"
             autoPlay
             loop
             muted
@@ -165,14 +163,14 @@ const IndexPage = ({
                         <Typography
                           variant="body2"
                           color="textSecondary"
-                          component="p"
+                          component="div"
                         >
-                          <div
+                          <p
                             contentEditable="true"
                             dangerouslySetInnerHTML={{
                               __html: `${article.description}`,
                             }}
-                          ></div>
+                          ></p>
                         </Typography>
                       </CardContent>
                       <CardActions disableSpacing>

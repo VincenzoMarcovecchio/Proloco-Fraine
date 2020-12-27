@@ -4,6 +4,10 @@ module.exports = {
     description: `L'Associazione PRO LOCO Fraine ha come unico scopo l'organizzazione di eventi socio-culturali per l'intrattenimento di grandi e piccini.`,
     author: `@gatsbyjs`,
   },
+  proxy: {
+    prefix: "/news",
+    url: "http://localhost:8080",
+  },
   plugins: [
     `gatsby-plugin-material-ui`,
     `gatsby-plugin-netlify-cms`,

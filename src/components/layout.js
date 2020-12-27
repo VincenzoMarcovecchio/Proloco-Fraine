@@ -23,15 +23,13 @@ const Layout = ({ children }) => {
   `)
   const [Articles, setArticles] = useState([])
   useEffect(() => {
-    fetch(
-      `https://newsapi.org/v2/top-headlines?country=it&apiKey=0121e101985943d88d6b3a5ac0817273`
-    )
+    fetch(`http://localhost:8080/news`)
       .then(response => response.json()) // parse JSON from request
       .then(resultData => {
         setArticles(resultData.articles)
       })
   }, [])
-
+  console.log(Articles)
   return (
     <>
       <div className="banner">

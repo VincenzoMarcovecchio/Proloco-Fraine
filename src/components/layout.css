@@ -673,6 +673,9 @@ pre tt:after {
   --scaler: 10vw;
   font-size: clamp(var(--minFontSize), var(--scaler), var(--maxFontSize));
 }
+.banner a {
+  color: ghostwhite;
+}
 
 @-webkit-keyframes ticker {
   0% {
