@@ -2,12 +2,10 @@ module.exports = {
   siteMetadata: {
     title: `Associazione PRO LOCO Fraine `,
     description: `L'Associazione PRO LOCO Fraine ha come unico scopo l'organizzazione di eventi socio-culturali per l'intrattenimento di grandi e piccini.`,
-    author: `@gatsbyjs`,
+    author: `@vinny`,
+    siteUrl: `https://www.prolocofraine.com`,
   },
-  proxy: {
-    prefix: "/news",
-    url: "http://localhost:8080",
-  },
+
   plugins: [
     `gatsby-plugin-material-ui`,
     `gatsby-plugin-netlify-cms`,
@@ -32,8 +30,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `PROLOCO FRAINE`,
+        short_name: `Fraine loco`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
@@ -41,8 +39,7 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+
+    `gatsby-plugin-offline`,
   ],
 }

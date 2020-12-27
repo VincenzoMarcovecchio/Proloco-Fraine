@@ -23,7 +23,7 @@ const Layout = ({ children }) => {
   `)
   const [Articles, setArticles] = useState([])
   useEffect(() => {
-    fetch(`http://localhost:8080/news`)
+    fetch(`http://localhost:8888/.netlify/functions/news`)
       .then(response => response.json()) // parse JSON from request
       .then(resultData => {
         setArticles(resultData.articles)

@@ -92,7 +92,7 @@ const IndexPage = ({
   }
 
   useEffect(() => {
-    fetch(`http://localhost:8080/news`)
+    fetch(`https://prolocofraine.netlify.app/.netlify/functions/news`)
       .then(response => response.json()) // parse JSON from request
       .then(resultData => {
         setArticles(resultData.articles)

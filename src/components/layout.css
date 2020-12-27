@@ -668,11 +668,13 @@ pre tt:after {
   justify-content: center;
   align-items: center;
   padding: 0.5rem;
-  --minFontSize: 14px;
+  --minFontSize: 13px;
   --maxFontSize: 16px;
   --scaler: 10vw;
   font-size: clamp(var(--minFontSize), var(--scaler), var(--maxFontSize));
+  text-align: center;
 }
+
 .banner a {
   color: ghostwhite;
 }
