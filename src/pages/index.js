@@ -106,13 +106,13 @@ const IndexPage = ({
         <div className="hero">
           <video
             width="100%"
-            title="proloco fraine"
             autoPlay
             loop
             muted
             style={{
               display: "grid",
               objectFit: "cover",
+              objectPosition: "top",
               width: "100%",
               height: "90vh",
               margin: "0 auto",
@@ -121,11 +121,12 @@ const IndexPage = ({
             <source src={movie} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
-          <h1>Pro Loco Fraine #unisce</h1>
-          <p>
-            L'Associazione PRO LOCO Fraine ha come unico scopo l'organizzazione
-            di eventi socio-culturali per l'intrattenimento di grandi e piccini.
-          </p>
+
+          <h1>
+            Pro Loco Fraine
+            <br />
+            <span>#unisce</span>
+          </h1>
         </div>
         <br />
         <br />
