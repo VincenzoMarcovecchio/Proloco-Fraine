@@ -18,8 +18,8 @@ const useStyles = makeStyles(theme => ({
     },
   },
   paper: {
-    width: "90%",
-    margin: "0 auto 2rem 0",
+    width: "95%",
+    margin: "0 auto 2rem auto",
     ["@media (max-width:780px)"]: {
       // eslint-disable-line no-useless-computed-key
       width: "100%",
@@ -33,7 +33,7 @@ const PostLink = ({ post }) => {
       <Paper className={classes.paper}>
         <Link replace to={"/" + post.frontmatter.slug}>
           <h2> {post.frontmatter.title}</h2>
-          <Typography variant="body2" color="textSecondary" component="p">
+          <Typography variant="body2" color="textPrimary" component="p">
             {post.frontmatter.description}
           </Typography>
         </Link>

@@ -148,7 +148,6 @@ const IndexPage = ({
         <Container maxWidth="lg">
           <h1>Notizie dal web</h1>
         </Container>
-
         <br />
         <Container maxWidth="lg">
           <Grid container>
