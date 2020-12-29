@@ -43,8 +43,12 @@ const useStyles = makeStyles(theme => ({
     margin: theme.spacing(2, 0),
   },
   root: {
-    width: "90%",
+    width: "100%",
     margin: "auto",
+    ["@media (min-width:780px)"]: {
+      // eslint-disable-line no-useless-computed-key
+      width: "90%",
+    },
   },
   media: {
     height: 0,
