@@ -28,13 +28,14 @@ import MoreVertIcon from "@material-ui/icons/MoreVert"
 const useStyles = makeStyles(theme => ({
   container: {
     display: "flex",
-    justifyContent: "center",
+    justifyContent: "space-between",
     alignItems: "flex-start",
     flexDirection: "column",
+
     ["@media (min-width:780px)"]: {
       // eslint-disable-line no-useless-computed-key
       flexDirection: "row",
-      justifyContent: "space-around",
+      justifyContent: "space-between",
     },
   },
 
@@ -42,11 +43,8 @@ const useStyles = makeStyles(theme => ({
     margin: theme.spacing(2, 0),
   },
   root: {
-    width: "100%",
-    ["@media (min-width:780px)"]: {
-      // eslint-disable-line no-useless-computed-key
-      maxWidth: "350px",
-    },
+    width: "90%",
+    margin: "auto",
   },
   media: {
     height: 0,
@@ -132,16 +130,57 @@ const IndexPage = ({
         <br />
         <br />
         <Container maxWidth="lg">
-          <h1>Notizie dal web</h1>
+          <h1>Il Blog</h1>
         </Container>
         <br />
         <br />
         <Container className={classes.container} maxWidth="lg">
+          {edges.map(edge => (
+            <Grid item xs={12}>
+              <PostLink key={edge.node.id} post={edge.node} />
+            </Grid>
+          ))}
+
+          <aside>
+            <div
+              class="fb-page"
+              data-href="https://www.facebook.com/associazioneprolocofraine/"
+              data-tabs="timeline"
+              data-width="750"
+              data-height=""
+              data-small-header="false"
+              data-adapt-container-width="true"
+              data-hide-cover="false"
+              data-show-facepile="true"
+            >
+              <blockquote
+                cite="https://www.facebook.com/associazioneprolocofraine/"
+                className="fb-xfbml-parse-ignore"
+              >
+                <a href="https://www.facebook.com/associazioneprolocofraine/">
+                  Associazione PRO LOCO Fraine
+                </a>
+              </blockquote>
+            </div>
+            <div id="fb-root"></div>
+            <br />
+            <br />
+            <br />
+          </aside>
+        </Container>
+        <br />
+        <br />
+        <Container maxWidth="lg">
+          <h1>Notizie dal web</h1>
+        </Container>
+        <br />
+        <br />
+        <Container maxWidth="lg">
           <Grid container>
             {Articles.map((article, index) => {
               return (
                 <>
-                  <Grid item xs={12} sm={6}>
+                  <Grid item xs={12} md={4}>
                     <Card key={index} className={classes.root}>
                       <CardHeader
                         action={
@@ -218,33 +257,6 @@ const IndexPage = ({
               )
             })}
           </Grid>
-
-          <aside>
-            <div
-              class="fb-page"
-              data-href="https://www.facebook.com/associazioneprolocofraine/"
-              data-tabs="timeline"
-              data-width="340"
-              data-height=""
-              data-small-header="false"
-              data-adapt-container-width="true"
-              data-hide-cover="false"
-              data-show-facepile="true"
-            >
-              <blockquote
-                cite="https://www.facebook.com/associazioneprolocofraine/"
-                className="fb-xfbml-parse-ignore"
-              >
-                <a href="https://www.facebook.com/associazioneprolocofraine/">
-                  Associazione PRO LOCO Fraine
-                </a>
-              </blockquote>
-            </div>
-            <div id="fb-root"></div>
-            <br />
-            <br />
-            <br />
-          </aside>
         </Container>
       </Layout>
     </>
@@ -264,6 +276,7 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             slug
             title
+            description
           }
         }
       }
@@ -271,8 +284,4 @@ export const pageQuery = graphql`
   }
 `
 {
-  /* <h1>Blog</h1>
-              {edges.map(edge => (
-                <PostLink key={edge.node.id} post={edge.node} />
-              ))} */
 }

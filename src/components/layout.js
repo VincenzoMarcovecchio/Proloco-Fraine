@@ -38,7 +38,7 @@ const Layout = ({ children }) => {
           href="https://blacklivesmatter.com/"
           rel="noopener noreferrer canonical"
         >
-          Black Lives Matter
+          #BLACKLIVESMATTER
         </a>
       </div>
       <Header />

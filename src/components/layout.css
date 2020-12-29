@@ -249,13 +249,16 @@ h2 {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1.45rem;
-  color: inherit;
+  margin-bottom: 1rem;
+  color: hsla(0, 0%, 0%, 0.8);
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
-  font-size: 1.62671rem;
+  --minFontSize: 20px;
+  --maxFontSize: 30px;
+  --scaler: 11vw;
+  font-size: clamp(var(--minFontSize), var(--scaler), var(--maxFontSize));
   line-height: 1.1;
 }
 h3 {
@@ -748,4 +751,8 @@ footer {
   background-color: rgb(25, 118, 210);
   padding: 1rem 2rem;
   min-height: 30rem;
+}
+
+a {
+  text-decoration: none;
 }
