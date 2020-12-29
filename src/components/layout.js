@@ -49,7 +49,14 @@ const Layout = ({ children }) => {
         <div className="ticker">
           {Articles.map(article => (
             <div key={article.url} className="item">
-              &nbsp;{article.title}&nbsp;
+              <a
+                style={{ textDecoration: "none", color: "white" }}
+                target="_blank"
+                href={article.url}
+                rel="noopener noreferrer canonical"
+              >
+                {article.title}{" "}
+              </a>
             </div>
           ))}
         </div>
