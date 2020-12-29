@@ -3,7 +3,7 @@ module.exports = {
     title: `Associazione PRO LOCO Fraine `,
     description: `L'Associazione PRO LOCO Fraine ha come unico scopo l'organizzazione di eventi socio-culturali per l'intrattenimento di grandi e piccini.`,
     author: `@vinny`,
-    siteUrl: `https://www.prolocofraine.com`,
+    siteUrl: `https://www.prolocofraine.netlify.app`,
   },
 
   plugins: [
@@ -46,8 +46,8 @@ module.exports = {
         name: `PROLOCO FRAINE`,
         short_name: `Fraine loco`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `rgb(25, 118, 210);`,
+        theme_color: `rgb(25, 118, 210);`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
