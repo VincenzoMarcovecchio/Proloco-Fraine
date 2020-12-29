@@ -133,47 +133,22 @@ const IndexPage = ({
           <h1>Il Blog</h1>
         </Container>
         <br />
-        <br />
         <Container className={classes.container} maxWidth="lg">
-          {edges.map(edge => (
-            <Grid item xs={12}>
-              <PostLink key={edge.node.id} post={edge.node} />
-            </Grid>
-          ))}
-
-          <aside>
-            <div
-              class="fb-page"
-              data-href="https://www.facebook.com/associazioneprolocofraine/"
-              data-tabs="timeline"
-              data-width="750"
-              data-height=""
-              data-small-header="false"
-              data-adapt-container-width="true"
-              data-hide-cover="false"
-              data-show-facepile="true"
-            >
-              <blockquote
-                cite="https://www.facebook.com/associazioneprolocofraine/"
-                className="fb-xfbml-parse-ignore"
-              >
-                <a href="https://www.facebook.com/associazioneprolocofraine/">
-                  Associazione PRO LOCO Fraine
-                </a>
-              </blockquote>
-            </div>
-            <div id="fb-root"></div>
-            <br />
-            <br />
-            <br />
-          </aside>
+          <Grid container>
+            {edges.map(edge => (
+              <Grid item sm={12} md={6}>
+                <PostLink key={edge.node.id} post={edge.node} />
+              </Grid>
+            ))}
+          </Grid>
         </Container>
+        <Divider className={classes.divider} />
         <br />
         <br />
         <Container maxWidth="lg">
           <h1>Notizie dal web</h1>
         </Container>
-        <br />
+
         <br />
         <Container maxWidth="lg">
           <Grid container>
