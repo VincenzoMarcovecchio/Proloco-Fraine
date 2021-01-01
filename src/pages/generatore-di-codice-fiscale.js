@@ -9,7 +9,6 @@ import InputLabel from "@material-ui/core/InputLabel"
 import Select from "@material-ui/core/Select"
 import Button from "@material-ui/core/Button"
 import FormControl from "@material-ui/core/FormControl"
-import Fade from "@material-ui/core/Fade"
 import CircularProgress from "@material-ui/core/CircularProgress"
 
 const useStyles = makeStyles(theme => ({
@@ -40,7 +39,6 @@ export default function Generatoredicodicefiscaleonline() {
     cittadinascita: null || "",
     provincia: null || "",
   })
-  console.log(state)
 
   const handleChange = event => {
     setState({
@@ -48,10 +46,13 @@ export default function Generatoredicodicefiscaleonline() {
       [event.target.id]: event.target.value,
     })
   }
+
   const handleSubmit = () => {
     if (!state.nome) {
       alert("Inserisci il tuo nome")
     }
+
+    setSending(true)
 
     var myHeaders = new Headers()
     myHeaders.append("Content-Type", "application/json")
@@ -66,25 +67,19 @@ export default function Generatoredicodicefiscaleonline() {
       city: state.cittadinascita,
       province: state.provincia.toUpperCase(),
     })
-
     var requestOptions = {
       method: "POST",
       headers: myHeaders,
       body: raw,
       redirect: "follow",
     }
-
-    if (state.nome) {
-      fetch(
-        "https://cors-anywhere.herokuapp.com/https://apis.woptima.com/cf",
-        requestOptions
-      )
-        .then(response => response.json())
-        .then(setSending(true))
-        .then(result => setCode(result))
-        .then(setSending(false))
-        .catch(error => setError(error))
-    }
+    fetch(
+      "https://cors-anywhere.herokuapp.com/https://apis.woptima.com/cf",
+      requestOptions
+    )
+      .then(response => response.json())
+      .then(result => (setCode(result), setSending(false)))
+      .catch(error => setError(error))
   }
 
   return (
@@ -95,9 +90,9 @@ export default function Generatoredicodicefiscaleonline() {
           description="Il generatore di codice fiscale online gratis by Proloco Fraine"
         />
         <Container className={classes.root} maxWidth="sm">
-          <h1 style={{ margin: "2rem auto" }}>Codice Fiscale Online 🤔</h1>
+          <h1 style={{ margin: "3rem auto" }}>Codice Fiscale Online 🤔</h1>
 
-          <h3>Completa tutti i campi di testo con la prima lettera capitale</h3>
+          <h3>Completa i campi sottostanti con i tuoi dati personali</h3>
 
           <TextField
             value={state.nome}
@@ -170,10 +165,10 @@ export default function Generatoredicodicefiscaleonline() {
             <InputLabel id="provincia">Provincia</InputLabel>
             <Select
               id="provincia"
-              native
               labelId="provincia"
               value={state.provincia}
               onChange={handleChange}
+              native
             >
               <option value="ag">Agrigento</option>
               <option value="al">Alessandria</option>
@@ -289,21 +284,17 @@ export default function Generatoredicodicefiscaleonline() {
           </FormControl>
           <br />
           <br />
-          <span>
-            <Button
-              disabled={state.cittadinascita == null}
-              onClick={handleSubmit}
-              variant="contained"
-              color="primary"
-              className={classes.text}
-            >
-              Invia
-            </Button>
-            {sending == true && <CircularProgress />}
-          </span>
-          {error.length > 1 && <code>{error.error}</code>}
-          <br></br>
-          <br></br>
+
+          <Button
+            onClick={handleSubmit}
+            variant="contained"
+            color="primary"
+            className={classes.text}
+          >
+            Invia
+          </Button>
+          {sending && <CircularProgress />}
+          {error.length > 1 && <code>{error}</code>}
           {code.cf && <span className={classes.text}>{`${code.cf}🎉🎉`}</span>}
           <br></br>
           <br></br>
