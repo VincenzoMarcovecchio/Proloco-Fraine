@@ -79,7 +79,7 @@ export default function SwipeableTemporaryDrawer() {
             <ListItemText primary="Ultime Notizie" />
           </Link>
         </ListItem>
-        {["Mater Domini", "ricette"].map((text, index) => (
+        {["Mater Domini", "Ricette"].map((text, index) => (
           <ListItem button key={text}>
             <ListItemIcon>
               {index === 0 ? <HouseIcon /> : <KitchenIcon />}
@@ -95,7 +95,7 @@ export default function SwipeableTemporaryDrawer() {
       <Divider />
 
       <List>
-        {["Comuni Limitrofi", "Alto Vastese", "Sagre e feste", "ANPR"].map(
+        {["Comuni Limitrofi", "Alto Vastese", "Sagre & Feste", "ANPR"].map(
           (text, index) => (
             <ListItem button key={text}>
               <ListItemIcon>
@@ -106,13 +106,13 @@ export default function SwipeableTemporaryDrawer() {
           )
         )}
         <ListItem button>
-          <Link to="/generatoredicodicefiscale">
+          <Link to="/generatore-di-codice-fiscale">
             <ListItemIcon>
               <PermIdentityIcon />
             </ListItemIcon>
           </Link>
-          <Link to="/generatoredicodicefiscale">
-            <ListItemText primary="codice fiscale online" />
+          <Link to="/generatore-di-codice-fiscale">
+            <ListItemText primary="Codice Fiscale Online" />
           </Link>
         </ListItem>
       </List>

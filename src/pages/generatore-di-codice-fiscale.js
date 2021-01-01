@@ -9,17 +9,17 @@ import InputLabel from "@material-ui/core/InputLabel"
 import Select from "@material-ui/core/Select"
 import Button from "@material-ui/core/Button"
 import FormControl from "@material-ui/core/FormControl"
+import Fade from "@material-ui/core/Fade"
+import CircularProgress from "@material-ui/core/CircularProgress"
+
 const useStyles = makeStyles(theme => ({
   root: {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    justifyContent: "center",
-
     "& .MuiTextField-root": {
       margin: theme.spacing(1),
       width: "100%",
-      justifySelf: "center",
     },
   },
 }))
@@ -30,12 +30,12 @@ export default function Generatoredicodicefiscaleonline() {
   const [code, setCode] = useState({})
   const [sending, setSending] = useState(false)
   const [state, setState] = useState({
-    nome: null,
-    cognome: null,
-    sesso: null,
-    datadinascita: null,
-    cittadinascita: null,
-    provincia: null,
+    nome: null || "",
+    cognome: null || "",
+    sesso: null || "",
+    datadinascita: null || "",
+    cittadinascita: null || "",
+    provincia: null || "",
   })
   console.log(state)
 
@@ -49,7 +49,6 @@ export default function Generatoredicodicefiscaleonline() {
     if (!state.nome) {
       alert("Inserisci il tuo nome")
     }
-    setSending(true)
 
     var myHeaders = new Headers()
     myHeaders.append("Content-Type", "application/json")
@@ -72,14 +71,17 @@ export default function Generatoredicodicefiscaleonline() {
       redirect: "follow",
     }
 
-    fetch(
-      "https://cors-anywhere.herokuapp.com/https://apis.woptima.com/cf",
-      requestOptions
-    )
-      .then(response => response.json())
-      .then(result => setCode(result))
-      .then(setSending(false))
-      .catch(error => setError(error))
+    if (state.nome) {
+      fetch(
+        "https://cors-anywhere.herokuapp.com/https://apis.woptima.com/cf",
+        requestOptions
+      )
+        .then(response => response.json())
+        .then(setSending(true))
+        .then(result => setCode(result))
+        .then(setSending(false))
+        .catch(error => setError(error))
+    }
   }
 
   return (
@@ -92,7 +94,14 @@ export default function Generatoredicodicefiscaleonline() {
         <Container className={classes.root} maxWidth="sm">
           <br />
           <br />
-
+          <h1>Codice Fiscale Online 🤔</h1>
+          <br />
+          <br />
+          <h3>
+            Completa tutti i campi sottostanti con la prima lettera capitale
+          </h3>
+          <br />
+          <br />
           <TextField
             value={state.nome}
             onChange={handleChange}
@@ -136,7 +145,6 @@ export default function Generatoredicodicefiscaleonline() {
           </FormControl>
           <br />
           <br />
-
           <TextField
             required
             id="datadinascita"
@@ -149,7 +157,6 @@ export default function Generatoredicodicefiscaleonline() {
               shrink: true,
             }}
           />
-
           <TextField
             required
             type="text"
@@ -285,19 +292,23 @@ export default function Generatoredicodicefiscaleonline() {
           </FormControl>
           <br />
           <br />
-          <Button
-            disabled={sending}
-            onClick={handleSubmit}
-            variant="contained"
-            color="primary"
-          >
-            Invia
-          </Button>
-          <br />
-          <br />
-          {sending && <p>pazientate</p>}
-          {error && <pre>{error.error}</pre>}
-          {code && <pre>{code.cf}</pre>}
+          <span>
+            <Button
+              disabled={state.cittadinascita == null}
+              onClick={handleSubmit}
+              variant="contained"
+              color="primary"
+            >
+              Invia
+            </Button>
+            {sending == true && <CircularProgress />}
+          </span>
+          {error.length > 1 && <code>{error.error}</code>}
+          <br></br>
+          <br></br>
+          {code.cf && <span>{`${code.cf}🎉🎉`}</span>}
+          <br></br>
+          <br></br>
         </Container>
       </Layout>
     </>

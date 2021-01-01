@@ -8,7 +8,7 @@ export default function Footer() {
       display: "flex",
       justifyContent: "space-between",
       alignItems: "center",
-      flexDirection: "column",
+      flexDirection: "column-reverse",
       width: "100%",
       height: "100%",
       ["@media (min-width:780px)"]: {
