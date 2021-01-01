@@ -6,4 +6,6 @@
 
 // You can delete this file if you're not using it
 // trigger an immediate page refresh when an update is found
-exports.onServiceWorkerUpdateReady = () => window.location.reload()
+
+// trigger an immediate page refresh when an update is found
+export const onServiceWorkerUpdateReady = () => window.location.reload()

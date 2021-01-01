@@ -7,20 +7,10 @@
 
 import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import "./layout.css"
-
+import Footer from "../components/footer"
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
   const [Articles, setArticles] = useState([])
   useEffect(() => {
     fetch(`https://prolocofraine.netlify.app/.netlify/functions/news`)
@@ -54,7 +44,7 @@ const Layout = ({ children }) => {
       <Header />
 
       <main>{children}</main>
-
+      <Footer />
       <div className="ticker-wrap">
         <div className="ticker">
           {Articles.map(article => (
@@ -65,18 +55,12 @@ const Layout = ({ children }) => {
                 href={article.url}
                 rel="noopener noreferrer canonical"
               >
-                {article.title}{" "}
+                {article.title}
               </a>
             </div>
           ))}
         </div>
       </div>
-
-      <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.org">Gatsby</a>
-      </footer>
     </>
   )
 }

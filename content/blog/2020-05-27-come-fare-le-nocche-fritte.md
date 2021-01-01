@@ -3,6 +3,7 @@ title: Come fare le "nocche fritte".
 date: 2020-05-27T23:13:10.104Z
 description: Le nocche fritte 😍😍 la ricetta Abruzzese per eccellenza.
 cover: "/images/nocche-fritte.jpg"
+category: ricette
 keywords: next.js active link style
 path: /blog/nextjs-active-link
 slug: come-fare-le-nocche-fritte

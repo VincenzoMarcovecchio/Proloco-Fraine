@@ -13,8 +13,7 @@ import ListItemText from "@material-ui/core/ListItemText"
 import AnnouncementIcon from "@material-ui/icons/Announcement"
 import HouseIcon from "@material-ui/icons/House"
 import MenuIcon from "@material-ui/icons/Menu"
-import AccountBalanceIcon from "@material-ui/icons/AccountBalance"
-import MailIcon from "@material-ui/icons/Mail"
+import KitchenIcon from "@material-ui/icons/Kitchen"
 import LocationCityIcon from "@material-ui/icons/LocationCity"
 import AppBar from "@material-ui/core/AppBar"
 import Box from "@material-ui/core/Box"
@@ -69,24 +68,33 @@ export default function SwipeableTemporaryDrawer() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {["Ultime notizie", "Mater Domini", "Comune"].map((text, index) => (
+        <ListItem button>
+          <ListItemIcon>
+            <Link to="/" replace>
+              <AnnouncementIcon />
+            </Link>
+          </ListItemIcon>
+          <Link to="/">
+            <ListItemText primary="Ultime Notizie" />
+          </Link>
+        </ListItem>
+        {["Mater Domini", "ricette"].map((text, index) => (
           <ListItem button key={text}>
             <ListItemIcon>
-              {index === 0 ? (
-                <AnnouncementIcon />
-              ) : index === 1 ? (
-                <HouseIcon />
-              ) : (
-                <MailIcon />
-              )}
+              {index === 0 ? <HouseIcon /> : <KitchenIcon />}
             </ListItemIcon>
-            <ListItemText primary={text} />
+            <Link to={text}>
+              <ListItemText
+                primary={text.charAt(0).toUpperCase() + text.slice(1)}
+              />
+            </Link>
           </ListItem>
         ))}
       </List>
       <Divider />
+      generatoredicodicefiscale
       <List>
-        {["Comuni Limitrofi", "Alto Vastese", "Sagre e feste"].map(
+        {["Comuni Limitrofi", "Alto Vastese", "Sagre e feste", "ANPR"].map(
           (text, index) => (
             <ListItem button key={text}>
               <ListItemIcon>
@@ -96,6 +104,16 @@ export default function SwipeableTemporaryDrawer() {
             </ListItem>
           )
         )}
+        <ListItem button>
+          <Link to="/generatoredicodicefiscale">
+            <ListItemIcon>
+              <AnnouncementIcon />
+            </ListItemIcon>
+          </Link>
+          <Link to="/generatoredicodicefiscale">
+            <ListItemText primary="codice fiscale online" />
+          </Link>
+        </ListItem>
       </List>
     </div>
   )

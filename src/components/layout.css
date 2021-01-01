@@ -676,8 +676,8 @@ pre tt:after {
   justify-content: center;
   align-items: center;
   padding: 0.5rem;
-  --minFontSize: 8px;
-  --maxFontSize: 13px;
+  --minFontSize: 7px;
+  --maxFontSize: 12px;
   --scaler: 10vw;
   font-size: clamp(var(--minFontSize), var(--scaler), var(--maxFontSize));
 }
@@ -719,7 +719,7 @@ pre tt:after {
   overflow: hidden;
   height: 4rem;
   background: rgb(230, 46, 45);
-  padding-left: 100%;
+
   box-sizing: content-box;
   color: white;
 }
@@ -750,9 +750,10 @@ pre tt:after {
 footer {
   background-color: rgb(25, 118, 210);
   padding: 1rem 2rem;
-  min-height: 30rem;
+  min-height: 10rem;
 }
 
 a {
-  text-decoration: none;
+  text-decoration: none !important;
+  color: inherit;
 }
