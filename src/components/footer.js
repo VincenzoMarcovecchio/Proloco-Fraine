@@ -1,7 +1,7 @@
 import React from "react"
 import Container from "@material-ui/core/Container"
 import { makeStyles } from "@material-ui/core/styles"
-
+import logoabruzzo from "../images/regioneabruzzo.jpg"
 export default function Footer() {
   const useStyles = makeStyles({
     root: {
@@ -29,7 +29,7 @@ export default function Footer() {
           </span>
           <img
             width="150"
-            src="images/regioneabruzzo.jpg"
+            src={logoabruzzo}
             alt="logo Abruzzo risorse turismo"
           />
         </Container>

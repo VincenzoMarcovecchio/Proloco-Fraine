@@ -22,6 +22,9 @@ const useStyles = makeStyles(theme => ({
       width: "100%",
     },
   },
+  text: {
+    margin: "1.5rem auto",
+  },
 }))
 
 export default function Generatoredicodicefiscaleonline() {
@@ -92,16 +95,10 @@ export default function Generatoredicodicefiscaleonline() {
           description="Il generatore di codice fiscale online gratis by Proloco Fraine"
         />
         <Container className={classes.root} maxWidth="sm">
-          <br />
-          <br />
-          <h1>Codice Fiscale Online 🤔</h1>
-          <br />
-          <br />
-          <h3>
-            Completa tutti i campi sottostanti con la prima lettera capitale
-          </h3>
-          <br />
-          <br />
+          <h1 style={{ margin: "2rem auto" }}>Codice Fiscale Online 🤔</h1>
+
+          <h3>Completa tutti i campi di testo con la prima lettera capitale</h3>
+
           <TextField
             value={state.nome}
             onChange={handleChange}
@@ -298,6 +295,7 @@ export default function Generatoredicodicefiscaleonline() {
               onClick={handleSubmit}
               variant="contained"
               color="primary"
+              className={classes.text}
             >
               Invia
             </Button>
@@ -306,7 +304,7 @@ export default function Generatoredicodicefiscaleonline() {
           {error.length > 1 && <code>{error.error}</code>}
           <br></br>
           <br></br>
-          {code.cf && <span>{`${code.cf}🎉🎉`}</span>}
+          {code.cf && <span className={classes.text}>{`${code.cf}🎉🎉`}</span>}
           <br></br>
           <br></br>
         </Container>
