@@ -17,6 +17,7 @@ import KitchenIcon from "@material-ui/icons/Kitchen"
 import LocationCityIcon from "@material-ui/icons/LocationCity"
 import AppBar from "@material-ui/core/AppBar"
 import Box from "@material-ui/core/Box"
+import PermIdentityIcon from "@material-ui/icons/PermIdentity"
 const useStyles = makeStyles({
   list: {
     width: 250,
@@ -92,7 +93,7 @@ export default function SwipeableTemporaryDrawer() {
         ))}
       </List>
       <Divider />
-      generatoredicodicefiscale
+
       <List>
         {["Comuni Limitrofi", "Alto Vastese", "Sagre e feste", "ANPR"].map(
           (text, index) => (
@@ -107,7 +108,7 @@ export default function SwipeableTemporaryDrawer() {
         <ListItem button>
           <Link to="/generatoredicodicefiscale">
             <ListItemIcon>
-              <AnnouncementIcon />
+              <PermIdentityIcon />
             </ListItemIcon>
           </Link>
           <Link to="/generatoredicodicefiscale">

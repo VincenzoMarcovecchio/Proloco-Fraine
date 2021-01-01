@@ -1,13 +1,11 @@
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 import "date-fns"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { Link } from "gatsby"
 import Container from "@material-ui/core/Container"
 import TextField from "@material-ui/core/TextField"
 import { makeStyles } from "@material-ui/core/styles"
 import InputLabel from "@material-ui/core/InputLabel"
-import MenuItem from "@material-ui/core/MenuItem"
 import Select from "@material-ui/core/Select"
 import Button from "@material-ui/core/Button"
 import FormControl from "@material-ui/core/FormControl"
@@ -28,7 +26,9 @@ const useStyles = makeStyles(theme => ({
 
 export default function Generatoredicodicefiscaleonline() {
   const classes = useStyles()
-
+  const [error, setError] = useState({})
+  const [code, setCode] = useState({})
+  const [sending, setSending] = useState(false)
   const [state, setState] = useState({
     nome: null,
     cognome: null,
@@ -37,8 +37,7 @@ export default function Generatoredicodicefiscaleonline() {
     cittadinascita: null,
     provincia: null,
   })
-
-  const [sending, setSending] = useState(false)
+  console.log(state)
 
   const handleChange = event => {
     setState({
@@ -46,24 +45,24 @@ export default function Generatoredicodicefiscaleonline() {
       [event.target.id]: event.target.value,
     })
   }
-
   const handleSubmit = () => {
     if (!state.nome) {
       alert("Inserisci il tuo nome")
     }
+    setSending(true)
 
     var myHeaders = new Headers()
     myHeaders.append("Content-Type", "application/json")
 
     var raw = JSON.stringify({
-      name: "franco",
-      surname: "Baldi",
-      gender: "M",
-      day: 22,
-      month: 12,
-      year: 1980,
-      city: "Roma",
-      province: "RM",
+      name: state.nome,
+      surname: state.cognome,
+      gender: state.sesso,
+      day: Number(state.datadinascita.substring(8, 10)),
+      month: Number(state.datadinascita.substring(5, 7)),
+      year: Number(state.datadinascita.substring(0, 4)),
+      city: state.cittadinascita,
+      province: state.provincia.toUpperCase(),
     })
 
     var requestOptions = {
@@ -73,17 +72,21 @@ export default function Generatoredicodicefiscaleonline() {
       redirect: "follow",
     }
 
-    fetch("https://apis.woptima.com/cf", requestOptions)
-      .then(response => response.text())
-      .then(result => console.log(result))
-      .catch(error => console.log("error", error))
+    fetch(
+      "https://cors-anywhere.herokuapp.com/https://apis.woptima.com/cf",
+      requestOptions
+    )
+      .then(response => response.json())
+      .then(result => setCode(result))
+      .then(setSending(false))
+      .catch(error => setError(error))
   }
 
   return (
     <>
       <Layout>
         <SEO
-          title="eneratore di codice fiscale online gratis"
+          title="Generatore di codice fiscale online gratis"
           description="Il generatore di codice fiscale online gratis by Proloco Fraine"
         />
         <Container className={classes.root} maxWidth="sm">
@@ -116,7 +119,6 @@ export default function Generatoredicodicefiscaleonline() {
             <InputLabel id="sesso">Sesso</InputLabel>
             <Select
               native
-              defaultValue="M"
               required
               labelId="sesso"
               id="sesso"
@@ -141,7 +143,6 @@ export default function Generatoredicodicefiscaleonline() {
             label="Data di nascita"
             onChange={handleChange}
             type="date"
-            defaultValue="2017-05-24"
             value={state.datadinascita}
             className={classes.textField}
             InputLabelProps={{
@@ -166,7 +167,6 @@ export default function Generatoredicodicefiscaleonline() {
             <Select
               id="provincia"
               native
-              defaultValue="ch"
               labelId="provincia"
               value={state.provincia}
               onChange={handleChange}
@@ -295,6 +295,9 @@ export default function Generatoredicodicefiscaleonline() {
           </Button>
           <br />
           <br />
+          {sending && <p>pazientate</p>}
+          {error && <pre>{error.error}</pre>}
+          {code && <pre>{code.cf}</pre>}
         </Container>
       </Layout>
     </>

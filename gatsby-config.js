@@ -46,8 +46,8 @@ module.exports = {
         name: `PROLOCO FRAINE`,
         short_name: `Fraine loco`,
         start_url: `/`,
-        background_color: `rgb(25, 118, 210);`,
-        theme_color: `rgb(25, 118, 210);`,
+        background_color: `#1E83CA`,
+        theme_color: `#1E83CA`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
