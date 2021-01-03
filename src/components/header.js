@@ -86,7 +86,7 @@ export default function SwipeableTemporaryDrawer() {
             <ListItemIcon>
               {index === 0 ? <HouseIcon /> : <KitchenIcon />}
             </ListItemIcon>
-            <Link to={text}>
+            <Link replace to={text}>
               <ListItemText
                 primary={text.charAt(0).toUpperCase() + text.slice(1)}
               />

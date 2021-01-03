@@ -15,7 +15,7 @@ exports.onRenderBody = ({ setPostBodyComponents }) => {
       src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
       data-id="Oa5oh3r"
       data-description="Offrimi un caffe`!"
-      data-message="Grazie per avermi visitato.Puoi offrirmi un caffe`se ti va!"
+      data-message="Grazie per avermi visitato. Puoi offrirmi un caffe`se ti va"
       data-color=""
       data-position="Right"
       data-x_margin="18"
