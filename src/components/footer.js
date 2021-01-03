@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import Container from "@material-ui/core/Container"
 import { makeStyles } from "@material-ui/core/styles"
 import logoabruzzo from "../images/regioneabruzzo.jpg"
@@ -18,6 +18,7 @@ export default function Footer() {
       },
     },
   })
+
   const classes = useStyles()
   return (
     <>
@@ -27,6 +28,7 @@ export default function Footer() {
             © {new Date().getFullYear()}, Built with
             <a href="https://www.gatsbyjs.org">&nbsp;Gatsby</a>
           </span>
+
           <img
             width="150"
             src={logoabruzzo}

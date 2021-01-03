@@ -4,7 +4,6 @@ import {
   fade,
   makeStyles,
   withStyles,
-  useStyles,
 } from "@material-ui/core/styles"
 import PropTypes from "prop-types"
 import SwipeableViews from "react-swipeable-views"
@@ -12,7 +11,6 @@ import AppBar from "@material-ui/core/AppBar"
 import Tabs from "@material-ui/core/Tabs"
 import Tab from "@material-ui/core/Tab"
 import Typography from "@material-ui/core/Typography"
-
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Container from "@material-ui/core/Container"
@@ -20,6 +18,18 @@ import TreeviewsComponents from "../components/treeview/TreeviewsComponents"
 import TreeviewsComponentsEntrate from "../components/treeview/TreeviewsComponentsEntrate"
 import TabPanel from "../components/tabpanel/Tabpanel"
 
+const useStyles = makeStyles({
+  root: {
+    width: "100%",
+    padding: "0",
+
+    ["@media (min-width:780px)"]: {
+      // eslint-disable-line no-useless-computed-key
+      width: "100%",
+      padding: "inherit",
+    },
+  },
+})
 function a11yProps(index) {
   return {
     id: `full-width-tab-${index}`,
@@ -30,7 +40,7 @@ function a11yProps(index) {
 export default function FullWidthTabs() {
   const theme = useTheme()
   const [value, setValue] = React.useState(0)
-
+  const classes = useStyles()
   const handleChange = (event, newValue) => {
     setValue(newValue)
   }
@@ -45,7 +55,7 @@ export default function FullWidthTabs() {
         title="Open bilanci del comune di Fraine"
         description="Entrate ed uscite preventive del comune di Fraine secondo i dati forniti da openbilanci"
       />
-      <Container maxWidth="md">
+      <Container className={classes.root} maxWidth="md">
         <AppBar position="static" color="default">
           <Tabs
             value={value}

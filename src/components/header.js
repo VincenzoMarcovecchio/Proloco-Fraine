@@ -40,6 +40,7 @@ const useStyles = makeStyles({
   title: {
     flexGrow: 1,
   },
+  fullwidth: {},
 })
 
 export default function SwipeableTemporaryDrawer() {
@@ -80,7 +81,7 @@ export default function SwipeableTemporaryDrawer() {
             <ListItemText primary="Ultime Notizie" />
           </Link>
         </ListItem>
-        {["Mater Domini", "ricette"].map((text, index) => (
+        {["mater domini", "ricette"].map((text, index) => (
           <ListItem button key={text}>
             <ListItemIcon>
               {index === 0 ? <HouseIcon /> : <KitchenIcon />}

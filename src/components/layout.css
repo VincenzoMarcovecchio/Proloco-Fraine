@@ -677,7 +677,7 @@ pre tt:after {
   align-items: center;
   padding: 0.5rem;
   --minFontSize: 7.5px;
-  --maxFontSize: 14px;
+  --maxFontSize: 13px;
   --scaler: 10vw;
   font-size: clamp(var(--minFontSize), var(--scaler), var(--maxFontSize));
 }
