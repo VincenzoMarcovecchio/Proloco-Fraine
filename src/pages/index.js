@@ -22,7 +22,7 @@ import FavoriteIcon from "@material-ui/icons/Favorite"
 import ShareIcon from "@material-ui/icons/Share"
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore"
 import MoreVertIcon from "@material-ui/icons/MoreVert"
-
+import Skeleton from "@material-ui/lab/Skeleton"
 const useStyles = makeStyles(theme => ({
   container: {
     display: "flex",
@@ -170,23 +170,31 @@ const IndexPage = ({
                           options
                         )}
                       />
-                      <CardMedia
-                        className={classes.media}
-                        image={article.urlToImage}
-                        title={article.title}
-                      />
+                      {article.urlToImage ? (
+                        <CardMedia
+                          className={classes.media}
+                          image={article.urlToImage}
+                          title={article.title}
+                        />
+                      ) : (
+                        <Skeleton variant="rect" width="100%" height="100%" />
+                      )}
                       <CardContent>
                         <Typography
                           variant="body2"
                           color="textSecondary"
                           component="div"
                         >
-                          <p
-                            contentEditable="true"
-                            dangerouslySetInnerHTML={{
-                              __html: `${article.description}`,
-                            }}
-                          ></p>
+                          {article.description ? (
+                            <p
+                              contentEditable="true"
+                              dangerouslySetInnerHTML={{
+                                __html: `${article.description}`,
+                              }}
+                            ></p>
+                          ) : (
+                            <Skeleton animation="wave" />
+                          )}
                         </Typography>
                       </CardContent>
                       <CardActions disableSpacing>

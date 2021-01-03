@@ -18,6 +18,7 @@ import LocationCityIcon from "@material-ui/icons/LocationCity"
 import AppBar from "@material-ui/core/AppBar"
 import Box from "@material-ui/core/Box"
 import PermIdentityIcon from "@material-ui/icons/PermIdentity"
+import DataUsageIcon from "@material-ui/icons/DataUsage"
 const useStyles = makeStyles({
   list: {
     width: 250,
@@ -79,7 +80,7 @@ export default function SwipeableTemporaryDrawer() {
             <ListItemText primary="Ultime Notizie" />
           </Link>
         </ListItem>
-        {["Mater Domini", "Ricette"].map((text, index) => (
+        {["Mater Domini", "ricette"].map((text, index) => (
           <ListItem button key={text}>
             <ListItemIcon>
               {index === 0 ? <HouseIcon /> : <KitchenIcon />}
@@ -113,6 +114,16 @@ export default function SwipeableTemporaryDrawer() {
           </Link>
           <Link to="/generatore-di-codice-fiscale">
             <ListItemText primary="Codice Fiscale Online" />
+          </Link>
+        </ListItem>
+        <ListItem button>
+          <Link to="/open-bilanci-del-comune-di-fraine">
+            <ListItemIcon>
+              <DataUsageIcon />
+            </ListItemIcon>
+          </Link>
+          <Link to="/open-bilanci-del-comune-di-fraine">
+            <ListItemText primary="Open Bilanci" />
           </Link>
         </ListItem>
       </List>

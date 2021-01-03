@@ -676,8 +676,8 @@ pre tt:after {
   justify-content: center;
   align-items: center;
   padding: 0.5rem;
-  --minFontSize: 7px;
-  --maxFontSize: 12px;
+  --minFontSize: 7.5px;
+  --maxFontSize: 14px;
   --scaler: 10vw;
   font-size: clamp(var(--minFontSize), var(--scaler), var(--maxFontSize));
 }
@@ -719,14 +719,15 @@ pre tt:after {
   overflow: hidden;
   height: 4rem;
   background: rgb(230, 46, 45);
-
   box-sizing: content-box;
   color: white;
+  text-rendering: geometricPrecision;
 }
 
 .ticker {
   display: inline-block;
   height: 4rem;
+  text-rendering: geometricPrecision;
   line-height: 4rem;
   white-space: nowrap;
   padding-right: 100%;

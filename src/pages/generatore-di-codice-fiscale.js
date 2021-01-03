@@ -15,15 +15,14 @@ const useStyles = makeStyles(theme => ({
   root: {
     display: "flex",
     flexDirection: "column",
-    alignItems: "center",
+    justifyContent: "center",
+
     "& .MuiTextField-root": {
       margin: theme.spacing(1),
       width: "100%",
     },
   },
-  text: {
-    margin: "1.5rem auto",
-  },
+  text: {},
 }))
 
 export default function Generatoredicodicefiscaleonline() {
@@ -86,13 +85,13 @@ export default function Generatoredicodicefiscaleonline() {
     <>
       <Layout>
         <SEO
-          title="Generatore di codice fiscale online gratis"
-          description="Il generatore di codice fiscale online gratis by Proloco Fraine"
+          title="Il generatore di codice fiscale online gratuito"
+          description="Il generatore di codice fiscale online gratuito by Proloco Fraine"
         />
         <Container className={classes.root} maxWidth="sm">
           <h1 style={{ margin: "3rem auto" }}>Codice Fiscale Online 🤔</h1>
 
-          <h3>Completa i campi sottostanti con i tuoi dati personali</h3>
+          <p>Completa i campi sottostanti con i tuoi dati personali</p>
 
           <TextField
             value={state.nome}
@@ -114,8 +113,6 @@ export default function Generatoredicodicefiscaleonline() {
             placeholder="Il tuo cognome"
             multiline
           />
-          <br />
-          <br />
           <FormControl>
             <InputLabel id="sesso">Sesso</InputLabel>
             <Select
@@ -135,8 +132,6 @@ export default function Generatoredicodicefiscaleonline() {
               </option>
             </Select>
           </FormControl>
-          <br />
-          <br />
           <TextField
             required
             id="datadinascita"
@@ -159,8 +154,7 @@ export default function Generatoredicodicefiscaleonline() {
             placeholder="La tua citta` di nascita"
             multiline
           />
-          <br />
-          <br />
+
           <FormControl>
             <InputLabel id="provincia">Provincia</InputLabel>
             <Select
@@ -282,10 +276,9 @@ export default function Generatoredicodicefiscaleonline() {
               <option value="vt">Viterbo</option>
             </Select>
           </FormControl>
-          <br />
-          <br />
 
           <Button
+            style={{ margin: "1.5rem auto" }}
             onClick={handleSubmit}
             variant="contained"
             color="primary"

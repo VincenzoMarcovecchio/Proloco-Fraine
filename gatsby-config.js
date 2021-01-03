@@ -43,11 +43,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `PROLOCO FRAINE`,
-        short_name: `Fraine loco`,
+        name: `Proloco Fraine`,
+        short_name: `Fraine Loco`,
         start_url: `/`,
-        background_color: `#1E83CA`,
-        theme_color: `#1E83CA`,
+        background_color: `#3f51b5`,
+        theme_color: `#3f51b5`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
