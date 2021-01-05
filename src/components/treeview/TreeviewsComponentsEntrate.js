@@ -33,7 +33,7 @@ const TreeviewsComponentsEntrate = () => {
   const [age, setAge] = useState(2020)
   const classes = useStyles()
   const [open, setOpen] = useState(false)
-
+  console.log(entrate)
   const handleTooltipClose = () => {
     setOpen(false)
   }
@@ -41,51 +41,39 @@ const TreeviewsComponentsEntrate = () => {
   const handleTooltipOpen = () => {
     setOpen(true)
   }
-  const entrateprimo = useMemo(
-    () =>
-      entrate.filter(
-        label =>
-          label.label ===
-          "Entrate correnti di natura tributaria, contributiva e perequativa"
-      ),
-    [age]
+  const entrateprimo = useMemo(() =>
+    entrate.filter(
+      label =>
+        label.label ===
+        "Entrate correnti di natura tributaria, contributiva e perequativa"
+    )
   )
-  const transferimenticorrrenti = useMemo(
-    () => entrate.filter(label => label.label === "Trasferimenti correnti"),
-    [age]
+  const transferimenticorrrenti = useMemo(() =>
+    entrate.filter(label => label.label === "Trasferimenti correnti")
   )
-  const entrateextratributarie = useMemo(
-    () => entrate.filter(label => label.label === "Entrate extratributarie"),
-    [age]
+  const entrateextratributarie = useMemo(() =>
+    entrate.filter(label => label.label === "Entrate extratributarie")
   )
-  const entratecontocap = useMemo(
-    () => entrate.filter(label => label.label === "Entrate in conto capitale"),
-    [age]
+  const entratecontocap = useMemo(() =>
+    entrate.filter(label => label.label === "Entrate in conto capitale")
   )
-  const entrateridu = useMemo(
-    () =>
-      entrate.filter(
-        label => label.label === "Entrate da riduzione di attività finanziarie"
-      ),
-    [age]
+  const entrateridu = useMemo(() =>
+    entrate.filter(
+      label => label.label === "Entrate da riduzione di attività finanziarie"
+    )
   )
-  const accensioneprest = useMemo(
-    () => entrate.filter(label => label.label === "Accensione prestiti"),
-    [age]
+  const accensioneprest = useMemo(() =>
+    entrate.filter(label => label.label === "Accensione prestiti")
   )
-  const tesoriere = useMemo(
-    () =>
-      entrate.filter(
-        label => label.label === "Anticipazioni da istituto tesoriere/cassiere"
-      ),
-    [age]
+  const tesoriere = useMemo(() =>
+    entrate.filter(
+      label => label.label === "Anticipazioni da istituto tesoriere/cassiere"
+    )
   )
-  const entrgiro = useMemo(
-    () =>
-      entrate.filter(
-        label => label.label === "Entrate per conto terzi e partite di giro"
-      ),
-    [age]
+  const entrgiro = useMemo(() =>
+    entrate.filter(
+      label => label.label === "Entrate per conto terzi e partite di giro"
+    )
   )
 
   useEffect(() => {

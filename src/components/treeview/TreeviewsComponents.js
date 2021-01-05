@@ -148,6 +148,7 @@ const TreeviewsComponents = () => {
     setAge(event.target.value)
   }
 
+  console.log(entrate)
   return (
     <React.Fragment>
       {loading && <LinearProgress />}

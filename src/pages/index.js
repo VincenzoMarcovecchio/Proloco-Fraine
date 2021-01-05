@@ -177,7 +177,7 @@ const IndexPage = ({
                           title={article.title}
                         />
                       ) : (
-                        <Skeleton variant="rect" width="100%" height="100%" />
+                        <Skeleton animation="wave" />
                       )}
                       <CardContent>
                         <Typography

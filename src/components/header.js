@@ -19,6 +19,7 @@ import AppBar from "@material-ui/core/AppBar"
 import Box from "@material-ui/core/Box"
 import PermIdentityIcon from "@material-ui/icons/PermIdentity"
 import DataUsageIcon from "@material-ui/icons/DataUsage"
+import LocalHospitalIcon from "@material-ui/icons/LocalHospital"
 const useStyles = makeStyles({
   list: {
     width: 250,
@@ -86,7 +87,7 @@ export default function SwipeableTemporaryDrawer() {
             <ListItemIcon>
               {index === 0 ? <HouseIcon /> : <KitchenIcon />}
             </ListItemIcon>
-            <Link replace to={text}>
+            <Link replace to={`/${text}/`}>
               <ListItemText
                 primary={text.charAt(0).toUpperCase() + text.slice(1)}
               />
@@ -125,6 +126,17 @@ export default function SwipeableTemporaryDrawer() {
           </Link>
           <Link to="/open-bilanci-del-comune-di-fraine">
             <ListItemText primary="Open Bilanci" />
+          </Link>
+        </ListItem>
+
+        <ListItem button>
+          <Link to="/covid-19">
+            <ListItemIcon>
+              <LocalHospitalIcon />
+            </ListItemIcon>
+          </Link>
+          <Link to="/covid-19">
+            <ListItemText primary="Covid-19" />
           </Link>
         </ListItem>
       </List>
