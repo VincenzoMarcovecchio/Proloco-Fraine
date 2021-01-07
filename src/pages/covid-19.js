@@ -11,6 +11,7 @@ import CardActions from "@material-ui/core/CardActions"
 import CardContent from "@material-ui/core/CardContent"
 import Button from "@material-ui/core/Button"
 import Typography from "@material-ui/core/Typography"
+import CircularProgress from "@material-ui/core/CircularProgress"
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -39,38 +40,21 @@ const useStyles = makeStyles(theme => ({
     height: 0,
     paddingTop: "56.25%", // 16:9
   },
-
-  bullet: {
-    display: "inline-block",
-    margin: "0 2px",
-    transform: "scale(0.8)",
-  },
 }))
 
 const IndexPage = () => {
   const classes = useStyles()
   const [Articles, setArticles] = useState([])
   const [loading, setLoading] = useState(false)
-  const reversed = Articles.reverse()
-  const bull = <span className={classes.bullet}>•</span>
-
-  var options = {
-    year: "numeric",
-    month: "2-digit",
-    day: "2-digit",
-  }
-  let isCancelled
 
   useEffect(() => {
     let isCancelled = false
     setLoading(true)
-    fetch(
-      `https://raw.githubusercontent.com/emergenzeHack/covid19italia_data/master/issuesjson.json`
-    )
+    fetch(`https://prolocofraine.netlify.app/functions/covid`)
       .then(response => response.json())
       .then(data => {
         if (!isCancelled) {
-          setArticles(data.reverse())
+          setArticles(data)
           setLoading(false)
         }
       })
@@ -87,56 +71,42 @@ const IndexPage = () => {
           title="Covid-19 Informazioni dal comune di Fraine"
           description="covid19italia data emergenzeHack Informazioni dal comune di Fraine"
         />
-
         <Container maxWidth="lg">
-          <h1 style={{ marginTop: "2rem" }}>Covid-19</h1>
+          <h1 style={{ margin: "2rem auto 2rem 0" }}>Covid-19</h1>
         </Container>
-        <br />
+        {loading ? (
+          <center>
+            <CircularProgress color="secondary" />
+          </center>
+        ) : (
+          ""
+        )}
         <Container className={classes.container} maxWidth="lg">
           <Grid container>
             {Articles.map((article, index) => {
               return (
                 <>
-                  <Grid item xs={12} md={4}>
+                  <Grid key={index} item xs={12} md={4}>
                     <Card>
-                      {!isCancelled ? (
-                        <Skeleton />
-                      ) : (
-                        <CardContent key={index} className={classes.root}>
-                          <Typography
-                            className={classes.title}
-                            color="textSecondary"
-                            gutterBottom
-                          >
-                            {article.title}&nbsp;
-                          </Typography>
-                          <Typography color="textSecondary" gutterBottom>
-                            {new Date(article.issue.created_at).toLocaleString(
-                              "it-IT",
-                              options
-                            )}
-                          </Typography>
-                          <Typography variant="h5" component="h2">
-                            {article[index]?.issue?.data.Fonte}
-                          </Typography>
-                          <Typography
-                            className={classes.pos}
-                            color="textSecondary"
-                          ></Typography>
-                          <Typography variant="body2" component="p">
-                            {article.issue?.data?.Descrizione}
-                          </Typography>
-                        </CardContent>
-                      )}
-
-                      <CardActions>
+                      <CardContent key={index} className={classes.root}>
+                        <Typography color="textSecondary" gutterBottom>
+                          {article.Comune}
+                        </Typography>
+                        <Typography variant="h5" component="h2" gutterBottom>
+                          {article.Nome}
+                        </Typography>
+                        <Typography color="textSecondary"></Typography>
+                        <Typography variant="body2" component="p">
+                          {article.Descrizione}
+                        </Typography>
+                      </CardContent>
+                      <CardActions className={classes.root}>
                         <Button size="small">
                           <a
                             rel="canonical noopener noreferrer"
                             target="_blank"
-                            href={article.issue?.data?.Link}
+                            href={article.Link}
                           >
-                            {" "}
                             scopri di piu`
                           </a>
                         </Button>

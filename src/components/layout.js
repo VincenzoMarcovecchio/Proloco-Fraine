@@ -10,6 +10,8 @@ import PropTypes from "prop-types"
 import Header from "./header"
 import "./layout.css"
 import Footer from "../components/footer"
+import Cookie from "../components/cookie/Cookie"
+
 const Layout = ({ children }) => {
   const [Articles, setArticles] = useState([])
   useEffect(() => {
@@ -19,25 +21,9 @@ const Layout = ({ children }) => {
         setArticles(resultData.articles)
       })
   }, [])
-  const injectGA = () => {
-    if (typeof window == "undefined") {
-      return
-    }
-    window.dataLayer = window.dataLayer || []
-    function gtag() {
-      window.dataLayer.push(arguments)
-    }
-    gtag("js", new Date())
 
-    gtag("config", "G-B5GQKHBSDJ")
-  }
   return (
     <>
-      <script
-        async
-        src="https://www.googletagmanager.com/gtag/js?id=G-B5GQKHBSDJ"
-      ></script>
-      <script>{injectGA()}</script>
       <div className="banner">
         <span>supportiamo il movimento&nbsp;</span>
         <a
@@ -50,6 +36,7 @@ const Layout = ({ children }) => {
       <Header />
 
       <main>{children}</main>
+      <Cookie />
       <Footer />
       <div className="ticker-wrap">
         <div className="ticker">
@@ -59,7 +46,7 @@ const Layout = ({ children }) => {
                 style={{ textDecoration: "none", color: "white" }}
                 target="_blank"
                 href={article.url}
-                rel="noopener noreferrer canonical"
+                rel="canonical noopener noreferrer "
               >
                 {article.title}
               </a>

@@ -126,7 +126,7 @@ const TreeviewsComponents = () => {
     let isCancelled = false
     setLoading(true)
     fetch(`
-      https://cors-anywhere.herokuapp.com/https://openbilanci.it/armonizzati/bilanci/fraine-comune-ch/spese/dettaglio.json?year=${age}&type=preventivo`)
+ https://prolocofraine.netlify.app/.netlify/functions/spese?age=${age}`)
       .then(response => response.json())
       .then(data => {
         if (!isCancelled) {
@@ -148,7 +148,6 @@ const TreeviewsComponents = () => {
     setAge(event.target.value)
   }
 
-  console.log(entrate)
   return (
     <React.Fragment>
       {loading && <LinearProgress />}

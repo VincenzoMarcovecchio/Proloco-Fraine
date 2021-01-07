@@ -758,3 +758,26 @@ a {
   text-decoration: none !important;
   color: inherit;
 }
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.biscottobanner {
+  position: fixed;
+  bottom: 3.5rem;
+  right: -100%;
+  transition: right 2s ease-in-out;
+}
+
+.biscottobanner img {
+  animation: rotation 2s infinite linear;
+  object-fit: cover;
+  width: 3rem;
+  height: 100%;
+}

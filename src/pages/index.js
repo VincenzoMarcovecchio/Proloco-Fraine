@@ -112,7 +112,7 @@ const IndexPage = ({
             style={{
               display: "grid",
               objectFit: "cover",
-              objectPosition: "top",
+              objectPosition: "bottom",
               width: "100%",
               height: "90vh",
               margin: "0 auto",
@@ -138,7 +138,7 @@ const IndexPage = ({
         <Container className={classes.container} maxWidth="lg">
           <Grid container>
             {edges.map(edge => (
-              <Grid item sm={12} md={6}>
+              <Grid key={edge.node.id} item sm={12} md={6}>
                 <PostLink key={edge.node.id} post={edge.node} />
               </Grid>
             ))}
@@ -156,7 +156,7 @@ const IndexPage = ({
             {Articles.map((article, index) => {
               return (
                 <>
-                  <Grid item xs={12} md={4}>
+                  <Grid key={index} item xs={12} md={4}>
                     <Card key={index} className={classes.root}>
                       <CardHeader
                         action={

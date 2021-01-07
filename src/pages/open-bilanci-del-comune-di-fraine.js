@@ -1,18 +1,9 @@
-import React, { useEffect, useMemo } from "react"
-import {
-  useTheme,
-  fade,
-  makeStyles,
-  withStyles,
-  useStyles,
-} from "@material-ui/core/styles"
-import PropTypes from "prop-types"
+import React, { useState } from "react"
+import { useTheme } from "@material-ui/core/styles"
 import SwipeableViews from "react-swipeable-views"
 import AppBar from "@material-ui/core/AppBar"
 import Tabs from "@material-ui/core/Tabs"
 import Tab from "@material-ui/core/Tab"
-import Typography from "@material-ui/core/Typography"
-
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Container from "@material-ui/core/Container"
@@ -27,9 +18,9 @@ function a11yProps(index) {
   }
 }
 
-export default function FullWidthTabs() {
+function FullWidthTabs() {
   const theme = useTheme()
-  const [value, setValue] = React.useState(0)
+  const [value, setValue] = useState(0)
 
   const handleChange = (event, newValue) => {
     setValue(newValue)
@@ -75,3 +66,4 @@ export default function FullWidthTabs() {
     </Layout>
   )
 }
+export default React.memo(FullWidthTabs)

@@ -76,15 +76,7 @@ function SEO({ description, lang, image, meta, title }) {
           content: metaDescription,
         },
       ].concat(meta)}
-    >
-      <script
-        async={true}
-        defer={true}
-        crossOrigin="anonymous"
-        src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v9.0&appId=167048748417291&autoLogAppEvents=1"
-        nonce="VBbZZ2r4"
-      ></script>
-    </Helmet>
+    ></Helmet>
   )
 }
 

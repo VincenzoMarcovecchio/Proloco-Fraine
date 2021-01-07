@@ -4,8 +4,8 @@ date: 2020-05-27T23:13:10.104Z
 description: Le nocche fritte 😍😍 la ricetta Abruzzese per eccellenza.
 cover: "/images/nocche-fritte.jpg"
 category: ricette
-keywords: next.js active link style
-path: /blog/nextjs-active-link
+keywords: cucina ricette tradizionali abruzzesi italia cuoco chef
+path: /blog/come-fare-le-nocche-fritte
 slug: come-fare-le-nocche-fritte
 tags:
   - dolci

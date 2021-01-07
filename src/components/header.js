@@ -98,7 +98,7 @@ export default function SwipeableTemporaryDrawer() {
       <Divider />
 
       <List>
-        {["Comuni Limitrofi", "Alto Vastese", "Sagre & Feste", "ANPR"].map(
+        {["Comuni Limitrofi", "Alto Vastese", "Sagre & Feste"].map(
           (text, index) => (
             <ListItem button key={text}>
               <ListItemIcon>
@@ -128,7 +128,6 @@ export default function SwipeableTemporaryDrawer() {
             <ListItemText primary="Open Bilanci" />
           </Link>
         </ListItem>
-
         <ListItem button>
           <Link to="/covid-19">
             <ListItemIcon>

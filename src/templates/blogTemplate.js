@@ -24,13 +24,15 @@ export default function Template({
       <section className="blog-post-container">
         <Container maxWidth="sm">
           <article className="blog-post">
-            <img
-              width="100%"
-              height="80%"
-              style={{ maxHeight: "80vh", objectFit: "cover" }}
-              alt={frontmatter.title}
-              src={frontmatter.cover}
-            />
+            {frontmatter.cover && (
+              <img
+                width="100%"
+                height="80%"
+                style={{ maxHeight: "80vh", objectFit: "cover" }}
+                alt={frontmatter.title}
+                src={frontmatter.cover}
+              />
+            )}
             <h1>{frontmatter.title}</h1>
             <time dateTime={frontmatter.date}> </time>
             <div

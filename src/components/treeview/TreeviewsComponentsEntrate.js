@@ -27,13 +27,14 @@ const useStyles = makeStyles(theme => ({
     float: "left",
   },
 }))
+
 const TreeviewsComponentsEntrate = () => {
+  const classes = useStyles()
   const [entrate, setEntrate] = useState([])
   const [loading, setLoading] = useState(false)
   const [age, setAge] = useState(2020)
-  const classes = useStyles()
   const [open, setOpen] = useState(false)
-  console.log(entrate)
+
   const handleTooltipClose = () => {
     setOpen(false)
   }
@@ -41,6 +42,7 @@ const TreeviewsComponentsEntrate = () => {
   const handleTooltipOpen = () => {
     setOpen(true)
   }
+
   const entrateprimo = useMemo(() =>
     entrate.filter(
       label =>
@@ -76,11 +78,19 @@ const TreeviewsComponentsEntrate = () => {
     )
   )
 
+  const formatter = new Intl.NumberFormat("it-IT", {
+    style: "currency",
+    currency: "EUR",
+  })
+  const handleChange = event => {
+    setAge(event.target.value)
+  }
+
   useEffect(() => {
     let isCancelled = false
     setLoading(true)
     fetch(
-      `https://cors-anywhere.herokuapp.com/https://openbilanci.it/armonizzati/bilanci/fraine-comune-ch/entrate/dettaglio.json?year=${age}&type=preventivo`
+      `https://prolocofraine.netlify.app/.netlify/functions/entrate?age=${age}`
     )
       .then(response => response.json())
       .then(data => {
@@ -94,15 +104,6 @@ const TreeviewsComponentsEntrate = () => {
       isCancelled = true
     }
   }, [age])
-
-  const formatter = new Intl.NumberFormat("it-IT", {
-    style: "currency",
-    currency: "EUR",
-  })
-  const handleChange = event => {
-    setAge(event.target.value)
-  }
-
   return (
     <React.Fragment>
       {loading && <LinearProgress />}
@@ -139,7 +140,7 @@ const TreeviewsComponentsEntrate = () => {
           <MenuItem value={2017}>2017</MenuItem>
           <MenuItem value={2018}>2018</MenuItem>
           <MenuItem value={2019}>2019</MenuItem>
-          <MenuItem value={2020}>2020</MenuItem>
+          <MenuItem value={age}>2020</MenuItem>
         </Select>
       </FormControl>
 
@@ -234,4 +235,4 @@ const TreeviewsComponentsEntrate = () => {
   )
 }
 
-export default React.memo(TreeviewsComponentsEntrate)
+export default TreeviewsComponentsEntrate
