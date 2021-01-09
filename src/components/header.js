@@ -129,12 +129,12 @@ export default function SwipeableTemporaryDrawer() {
           </Link>
         </ListItem>
         <ListItem button>
-          <Link to="/covid-19">
+          <Link replace to="/covid-19/">
             <ListItemIcon>
               <LocalHospitalIcon />
             </ListItemIcon>
           </Link>
-          <Link to="/covid-19">
+          <Link replace to="/covid-19/">
             <ListItemText primary="Covid-19" />
           </Link>
         </ListItem>

@@ -34,16 +34,15 @@ export default function Category({ data }) {
   return (
     <Layout>
       <SEO
-        title={frontmatter.title}
+        title="Ricette tipiche Frainesi"
         image={frontmatter.cover}
-        description={frontmatter.description}
+        description="Un insieme delle ricette tipiche Frainesi"
+        keywords="cucina italiana ricette abruzzesi"
       />
       <section className="blog-post-container">
         <Container maxWidth="md">
-          <br />
-          <br />
           <h1>Ricette tradizionali Frainesi</h1>
-          <br />
+
           <article className={classes.root} className="blog-post">
             <Card className={classes.root}>
               <CardActionArea>
@@ -54,7 +53,9 @@ export default function Category({ data }) {
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="h2">
-                    <Link to={frontmatter.slug}>{frontmatter.title}</Link>
+                    <Link replace to={`/${frontmatter.slug}/`}>
+                      {frontmatter.title}
+                    </Link>
                   </Typography>
                   <Typography variant="body2" color="textPrimary" component="p">
                     {frontmatter.description}
@@ -92,6 +93,7 @@ export const pageQuery = graphql`
         title
         description
         cover
+        keywords
       }
     }
   }

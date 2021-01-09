@@ -5,8 +5,8 @@ description: Il nucleo della banca dati dell'Anagrafe Animali d'Affezione è cos
 cover: ""
 category: animali smarriti
 keywords: animali smarriti abruzzo
-path: /blog/anagrafe-canina-abruzzo
-slug: anagrafe-canina-abruzzo
+path: /blog/banca-dati-dell-anagrafe-animali-d-affezione
+slug: banca-dati-dell-anagrafe-animali-d-affezione
 tags:
   - animali smarriti
 ---

@@ -50,7 +50,9 @@ const IndexPage = () => {
   useEffect(() => {
     let isCancelled = false
     setLoading(true)
-    fetch(`https://prolocofraine.netlify.app/functions/covid`)
+    fetch(
+      "https://cors-anywhere.herokuapp.com/https://covid19italiahelp.herokuapp.com/reports/Provincia/Chieti"
+    )
       .then(response => response.json())
       .then(data => {
         if (!isCancelled) {

@@ -102,7 +102,11 @@ const IndexPage = ({
   return (
     <>
       <Layout>
-        <SEO title="Home" />
+        <SEO
+          title="Proloco Fraine"
+          description=""
+          keywords="abruzzo turismo risorse umane montagna mare salute benessere"
+        />
         <div className="hero">
           <video
             width="100%"

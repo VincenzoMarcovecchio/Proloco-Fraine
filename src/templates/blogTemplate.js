@@ -20,6 +20,7 @@ export default function Template({
         title={frontmatter.title}
         image={frontmatter.cover}
         description={frontmatter.description}
+        keywords={frontmatter.keywords}
       />
       <section className="blog-post-container">
         <Container maxWidth="sm">
@@ -33,7 +34,7 @@ export default function Template({
                 src={frontmatter.cover}
               />
             )}
-            <h1>{frontmatter.title}</h1>
+            <h1 style={{ margin: "2rem auto 2rem 0" }}>{frontmatter.title}</h1>
             <time dateTime={frontmatter.date}> </time>
             <div
               className="blog-post-content"
@@ -62,6 +63,7 @@ export const pageQuery = graphql`
         description
         tags
         cover
+        keywords
       }
     }
   }
