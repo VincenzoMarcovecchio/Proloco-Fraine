@@ -48,12 +48,12 @@ export default function Template({
           <script
             async
             defer
-            crossorigin="anonymous"
+            crossOrigin="anonymous"
             src="https://connect.facebook.net/it_IT/sdk.js#xfbml=1&autoLogAppEvents=1&version=v9.0&appId=407785027087673"
             nonce="rlVIHZ6h"
           ></script>
           <div
-            class="fb-comments"
+            className="fb-comments"
             data-href="http://www.prolocofraine.org/*"
             data-width="100%"
             data-numposts="5"
