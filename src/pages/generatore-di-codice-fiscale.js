@@ -96,12 +96,6 @@ export default function Generatoredicodicefiscaleonline() {
         <Container className={classes.root} maxWidth="sm">
           <h1 style={{ margin: "3rem auto" }}>
             Codice Fiscale Online 🤔&nbsp;
-            <img
-              width="1.5rem"
-              height="1.5rem"
-              url="https://cdn.countryflags.com/thumbs/italy/flag-400.png"
-              alt="bandiera italiana"
-            />
           </h1>
 
           <p>Completa i campi sottostanti con i tuoi dati personali</p>

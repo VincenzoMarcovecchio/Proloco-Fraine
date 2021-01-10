@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { Link } from "gatsby"
 import Container from "@material-ui/core/Container"
+import { Helmet } from "react-helmet"
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.
 }) {
@@ -16,6 +17,15 @@ export default function Template({
   }
   return (
     <Layout>
+      <Helmet>
+        <script
+          async
+          defer
+          crossOrigin="anonymous"
+          src="https://connect.facebook.net/it_IT/sdk.js#xfbml=1&autoLogAppEvents=1&version=v9.0&appId=407785027087673"
+          nonce="rlVIHZ6h"
+        ></script>
+      </Helmet>
       <SEO
         title={frontmatter.title}
         image={frontmatter.cover}
@@ -45,13 +55,7 @@ export default function Template({
           <Link to="/">Torna indietro</Link>
 
           <div id="fb-root"></div>
-          <script
-            async
-            defer
-            crossOrigin="anonymous"
-            src="https://connect.facebook.net/it_IT/sdk.js#xfbml=1&autoLogAppEvents=1&version=v9.0&appId=407785027087673"
-            nonce="rlVIHZ6h"
-          ></script>
+
           <div
             className="fb-comments"
             data-href="http://www.prolocofraine.org/*"
