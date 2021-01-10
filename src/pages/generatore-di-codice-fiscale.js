@@ -91,9 +91,18 @@ export default function Generatoredicodicefiscaleonline() {
         <SEO
           title="Il generatore di codice fiscale online gratuito"
           description="Il generatore di codice fiscale online gratuito by Proloco Fraine"
+          keywords="🇮🇹 codice fiscale online"
         />
         <Container className={classes.root} maxWidth="sm">
-          <h1 style={{ margin: "3rem auto" }}>Codice Fiscale Online 🤔</h1>
+          <h1 style={{ margin: "3rem auto" }}>
+            Codice Fiscale Online 🤔&nbsp;
+            <img
+              width="1.5rem"
+              height="1.5rem"
+              url="https://cdn.countryflags.com/thumbs/italy/flag-400.png"
+              alt="bandiera italiana"
+            />
+          </h1>
 
           <p>Completa i campi sottostanti con i tuoi dati personali</p>
           <Paper className={classes.text} elevation={3}>
