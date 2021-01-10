@@ -73,7 +73,7 @@ const IndexPage = () => {
           description="covid19italia data emergenzeHack Informazioni dal comune di Fraine"
           keywords="covid abruzzo notizie locali"
         />
-        <Container maxWidth="md">
+        <Container maxWidth="sm">
           <center>
             <img
               width="100%"

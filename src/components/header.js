@@ -98,33 +98,34 @@ export default function SwipeableTemporaryDrawer() {
       <Divider />
 
       <List>
-        {["Comuni Limitrofi", "Alto Vastese", "Sagre & Feste"].map(
-          (text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {index === 0 ? <LocationCityIcon /> : <AnnouncementIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          )
-        )}
         <ListItem button>
-          <Link to="/generatore-di-codice-fiscale">
+          <Link replace to="/paesi-limitrofi-e-mercati-locali/">
+            <ListItemIcon>
+              <LocationCityIcon />
+            </ListItemIcon>
+          </Link>
+          <Link replace to="/paesi-limitrofi-e-mercati-locali/">
+            <ListItemText primary="Mercati locali" />
+          </Link>
+        </ListItem>
+
+        <ListItem button>
+          <Link replace to="/generatore-di-codice-fiscale/">
             <ListItemIcon>
               <PermIdentityIcon />
             </ListItemIcon>
           </Link>
-          <Link to="/generatore-di-codice-fiscale">
+          <Link replace to="/generatore-di-codice-fiscale/">
             <ListItemText primary="Codice Fiscale Online" />
           </Link>
         </ListItem>
         <ListItem button>
-          <Link to="/open-bilanci-del-comune-di-fraine">
+          <Link replace to="/open-bilanci-del-comune-di-fraine/">
             <ListItemIcon>
               <DataUsageIcon />
             </ListItemIcon>
           </Link>
-          <Link to="/open-bilanci-del-comune-di-fraine">
+          <Link replace to="/open-bilanci-del-comune-di-fraine/">
             <ListItemText primary="Open Bilanci" />
           </Link>
         </ListItem>

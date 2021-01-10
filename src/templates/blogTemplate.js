@@ -17,53 +17,43 @@ export default function Template({
   }
   return (
     <Layout>
-      <Helmet>
-        <script
-          async
-          defer
-          crossOrigin="anonymous"
-          src="https://connect.facebook.net/it_IT/sdk.js#xfbml=1&autoLogAppEvents=1&version=v9.0&appId=407785027087673"
-          nonce="rlVIHZ6h"
-        ></script>
-      </Helmet>
+      <Helmet></Helmet>
       <SEO
         title={frontmatter.title}
         image={frontmatter.cover}
         description={frontmatter.description}
         keywords={frontmatter.keywords}
       />
-      <section className="blog-post-container">
-        <Container maxWidth="sm">
-          <article className="blog-post">
-            {frontmatter.cover && (
-              <img
-                width="100%"
-                height="80%"
-                style={{ maxHeight: "80vh", objectFit: "cover" }}
-                alt={frontmatter.title}
-                src={frontmatter.cover}
-              />
-            )}
-            <h1 style={{ margin: "2rem auto 2rem 0" }}>{frontmatter.title}</h1>
-            <time dateTime={frontmatter.date}> </time>
-            <div
-              className="blog-post-content"
-              dangerouslySetInnerHTML={{ __html: html }}
+
+      <Container maxWidth="sm">
+        <article className="blog-post">
+          {frontmatter.cover && (
+            <img
+              width="100%"
+              height="80%"
+              style={{ maxHeight: "80vh", objectFit: "cover" }}
+              alt={frontmatter.title}
+              src={frontmatter.cover}
             />
-          </article>
-
-          <Link to="/">Torna indietro</Link>
-
-          <div id="fb-root"></div>
-
+          )}
+          <h1 style={{ margin: "2rem auto 2rem 0" }}>{frontmatter.title}</h1>
+          <time dateTime={frontmatter.date}> </time>
           <div
-            className="fb-comments"
-            data-href="http://www.prolocofraine.org/*"
-            data-width="100%"
-            data-numposts="5"
-          ></div>
-        </Container>
-      </section>
+            className="blog-post-content"
+            dangerouslySetInnerHTML={{ __html: html }}
+          />
+        </article>
+
+        <Link to="/">Torna indietro</Link>
+
+        <div
+          style={{ margin: "2rem auto" }}
+          className="fb-comments"
+          data-href="https://www.prolocofraine.org/*"
+          data-width="100%"
+          data-numposts="4"
+        ></div>
+      </Container>
     </Layout>
   )
 }

@@ -1,10 +1,10 @@
 ---
-title: La "Fondov" quando ero piccolo.
+title: La "Fondov" quando ero piccolo
 date: 2021-01-10T23:13:10.104Z
 description: Stamattina pensavo a quando ero piccolo e scorazzavo in giro per la “Fondnov”, a quanta gente che non c’è più….e cercavo di ricordarmeli tutti o perlomeno i più possibili. Ricordo benissimo zi Ncol battlumè con il suo immancabile camioncino sgangherato che cacciava un fumo nero e puntualmente lasciava una chiazza d’olio nero davanti casa dei miei nonni e nonna Anna copriva con qualcosa per non farmici andare con i piedi; puntuale intorno alle 18 passava Luciòn con la sua carr…
 cover: "/images/Paese tipico Abruzzese.jpg"
 category: storia
-keywords: paese tipico abruzzese storie antiche di una volta
+keywords: paese tipico abruzzese storie antiche di una volta abbandono paesaggistico
 path: /blog/memorie-di-un-paese-abbandonato
 slug: memorie-di-un-paese-abbandonato
 tags:

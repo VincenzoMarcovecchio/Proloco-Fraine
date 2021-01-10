@@ -1,5 +1,5 @@
 ---
-title: Il postino di una volta.
+title: Il postino di una volta
 date: 2021-01-09T23:13:10.104Z
 description: A Fraine, prima che "la posta" all'ufficio postale fosse portata dal fattorino del pullmam della ditta Cerella, veniva portata dal Procaccia Postale
 cover: "/images/il postino di una volta.jpg"

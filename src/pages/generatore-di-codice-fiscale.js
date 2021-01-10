@@ -97,7 +97,6 @@ export default function Generatoredicodicefiscaleonline() {
           <h1 style={{ margin: "3rem auto" }}>
             Codice Fiscale Online 🤔&nbsp;
           </h1>
-
           <p>Completa i campi sottostanti con i tuoi dati personali</p>
           <Paper className={classes.text} elevation={3}>
             <TextField
