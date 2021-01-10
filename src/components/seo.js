@@ -75,11 +75,12 @@ function SEO({ description, lang, image, meta, title, keywords }) {
           name: `twitter:description`,
           content: metaDescription,
         },
+        {
+          name: "keywords",
+          content: keywords,
+        },
       ].concat(meta)}
-    >
-      {" "}
-      <meta name="keywords" content={keywords} />
-    </Helmet>
+    ></Helmet>
   )
 }
 

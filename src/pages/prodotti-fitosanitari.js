@@ -57,17 +57,15 @@ function FitoSanitari() {
     <Layout>
       <SEO
         title="I prodotti Fitosanitari"
-        image=""
-        description="Il dataset contiene l'elenco completo dei Prodotti Fitosanitari autorizzati dal Ministero della Salute,"
-        keywords="Dati relativi al prodotto fitosanitario : Numero Registrazione, Denominazione prodotto, Data Registrazione, Scadenza Autorizzazione, Indicazione di pericolo, Attività, Formulazione, Importazioni Parallele, Prodotti per Piante Ornamentali, Sostanze Attive contenute.
-Dati relativi all'impresa titolare: Denominazione e Indirizzo della sede legale e amministrativa."
+        description="Il dataset contiene l'elenco completo dei Prodotti Fitosanitari autorizzati dal Ministero della Salute"
+        keywords="Dati relativi al prodotto fitosanitario : Numero Registrazione, Denominazione prodotto, Data Registrazione, Scadenza Autorizzazione, Indicazione di pericolo, Attività, Formulazione, Importazioni Parallele, Prodotti per Piante Ornamentali, Sostanze Attive contenute"
       />
       <section className="blog-post-container">
         <Container className={classes.container} maxWidth="sm">
           <img
             width="100%"
             src={ima}
-            alt="segnali di pericolo chimico inquin amento"
+            alt="segnali di pericolo chimico inquinamento"
           />
           <h1>Banca dati dei prodotti fitosanitari.</h1>
 

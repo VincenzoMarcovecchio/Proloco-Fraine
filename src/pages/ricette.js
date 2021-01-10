@@ -41,7 +41,9 @@ export default function Category({ data }) {
       />
       <section className="blog-post-container">
         <Container maxWidth="md">
-          <h1>Ricette tradizionali Frainesi</h1>
+          <h1 style={{ margin: "2rem auto 2rem 0" }}>
+            Ricette tradizionali Frainesi
+          </h1>
 
           <article className={classes.root} className="blog-post">
             <Card className={classes.root}>

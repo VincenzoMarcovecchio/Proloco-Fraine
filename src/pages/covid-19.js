@@ -12,7 +12,7 @@ import CardContent from "@material-ui/core/CardContent"
 import Button from "@material-ui/core/Button"
 import Typography from "@material-ui/core/Typography"
 import CircularProgress from "@material-ui/core/CircularProgress"
-
+import covidimage from "../images/covidimageinformationalreport.png"
 const useStyles = makeStyles(theme => ({
   container: {
     display: "flex",
@@ -61,9 +61,8 @@ const IndexPage = () => {
         }
       })
       .catch(error => console.log(error))
-    return () => {
-      isCancelled = true
-    }
+
+    return (isCancelled = true)
   }, [])
 
   return (
@@ -72,9 +71,16 @@ const IndexPage = () => {
         <SEO
           title="Covid-19 Informazioni dal comune di Fraine"
           description="covid19italia data emergenzeHack Informazioni dal comune di Fraine"
+          keywords="covid abruzzo notizie locali"
         />
-        <Container maxWidth="lg">
-          <h1 style={{ margin: "2rem auto 2rem 0" }}>Covid-19</h1>
+        <Container maxWidth="md">
+          <center>
+            <img
+              width="100%"
+              src={covidimage}
+              alt="coronavirus illustrazione animata"
+            />
+          </center>
         </Container>
         {loading ? (
           <center>

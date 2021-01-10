@@ -40,8 +40,8 @@ const Layout = ({ children }) => {
       <Footer />
       <div className="ticker-wrap">
         <div className="ticker">
-          {Articles.map(article => (
-            <div key={article.url} className="item">
+          {Articles.map((article, index) => (
+            <div key={index} className="item">
               <a
                 style={{ textDecoration: "none", color: "white" }}
                 target="_blank"
