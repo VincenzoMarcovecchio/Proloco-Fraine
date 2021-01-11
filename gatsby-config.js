@@ -3,7 +3,7 @@ module.exports = {
     title: `Associazione PRO LOCO Fraine `,
     description: `L'Associazione PRO LOCO Fraine ha come scopo l'organizzazione di eventi socio-culturali per l'intrattenimento di grandi e piccini, e non solo...`,
     author: `@vinny`,
-    siteUrl: `https://www.prolocofraine.netlify.app`,
+    siteUrl: `https://www.prolocofraine.org`,
   },
 
   plugins: [
