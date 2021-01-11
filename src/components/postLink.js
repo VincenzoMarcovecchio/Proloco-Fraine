@@ -32,8 +32,22 @@ const PostLink = ({ post }) => {
     <div className={classes.root}>
       <Paper className={classes.paper}>
         <Link replace to={"/" + post.frontmatter.slug}>
-          <h2> {post.frontmatter.title}</h2>
-          <Typography variant="body2" color="textPrimary" component="p">
+          <h2 style={{ lineHeight: "1.5" }}>{post.frontmatter.title}</h2>
+          <Typography
+            gutterBottom
+            variant="body1"
+            color="textSecondary"
+            component="p"
+          >
+            Autore: {post.frontmatter.author}
+          </Typography>
+
+          <Typography
+            gutterBottom
+            variant="body2"
+            color="textPrimary"
+            component="p"
+          >
             {post.frontmatter.description}
           </Typography>
         </Link>

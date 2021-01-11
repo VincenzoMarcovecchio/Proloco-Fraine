@@ -36,7 +36,9 @@ export default function Template({
               src={frontmatter.cover}
             />
           )}
-          <h1 style={{ margin: "2rem auto 2rem 0" }}>{frontmatter.title}</h1>
+          <h1 style={{ margin: "2rem auto 2rem 0", lineHeight: "1.5" }}>
+            {frontmatter.title}
+          </h1>
           <time dateTime={frontmatter.date}> </time>
           <div
             className="blog-post-content"

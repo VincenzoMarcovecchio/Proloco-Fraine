@@ -127,9 +127,9 @@ const IndexPage = ({
           </video>
 
           <h1>
-            Pro Loco Fraine
+            #ProLocoFraine
             <br />
-            <span>#unisce</span>
+            <span>unisce</span>
           </h1>
         </div>
         <br />
@@ -224,7 +224,7 @@ const IndexPage = ({
                         <CardContent>
                           <Typography paragraph>{article.content}</Typography>
                           <Typography>
-                            Per leggere l'intero articolo clicca{" "}
+                            Per leggere l'intero articolo clicca
                             <a
                               href={article.url}
                               target="_blank"
@@ -264,6 +264,7 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             slug
             title
+            author
             description
           }
         }

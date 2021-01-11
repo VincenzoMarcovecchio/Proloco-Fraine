@@ -1,5 +1,6 @@
 ---
 title: Anagrafe canina Abruzzo
+author:
 date: 2020-05-27T23:13:10.104Z
 description: Il nucleo della banca dati dell'Anagrafe Animali d'Affezione è costituito da un server web centrale, collocato presso il Ministero, che viene alimentato e aggiornato dalle Regioni. Le Regioni che riversano i dati rispondono della correttezza e completezza degli stessi.
 cover: ""
