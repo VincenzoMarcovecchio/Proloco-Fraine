@@ -22,4 +22,4 @@ Le nocche fritte secondo la ricetta di zia Novilia 😍😍
 - due bustine di lievito angeli per dolci
 - farina quando basta..
 
-L' impasto deve essere morbido... Quando avete finito di impastare nella ciotola tutti gli ingredienti trasferite sul tavolo da lavoro, si fanno dei bastoncini come per gli gnocchi, un po' piu grandi.. Fate dei bastoncini e poi li chiudete a cerchio.. Una volta finito di fare i cerchi fate riposare 10 minuti e poi friggete... Io faccio la prova con lo stecchino quando fa le bollicine e`pronto... Fate dorare un po' entrambi i lati.. Mentre sono calde mettete lo zucchero.. Gnam!😋
+L' impasto deve essere morbido... Quando avete finito di impastare nella ciotola tutti gli ingredienti trasferite sul tavolo da lavoro, si fanno dei bastoncini come per gli gnocchi, un po' piu grandi.. Fate dei bastoncini e poi li chiudete a cerchio.. Una volta finito di fare i cerchi fate riposare 10 minuti e poi friggete... Per capire se l' olio e' pronto io faccio la prova con lo stecchino per vedere se fa le bollicine... Fate dorare un po' entrambi i lati.. Mentre sono calde mettete lo zucchero.. Gnam!😋

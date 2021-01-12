@@ -11,6 +11,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { Link } from "gatsby"
+import Grid from "@material-ui/core/Grid"
 import Container from "@material-ui/core/Container"
 const useStyles = makeStyles({
   root: {
@@ -27,15 +28,13 @@ const useStyles = makeStyles({
 
 export default function Category({ data }) {
   const classes = useStyles()
-  const { markdownRemark } = data // data.markdownRemark holds your post data
-  const frontmatter = markdownRemark.frontmatter
-  const html = markdownRemark.html
-
+  const { allMarkdownRemark } = data // data.markdownRemark holds your post data
+  console.log(data)
   return (
     <Layout>
       <SEO
+        // cover={frontmatter.cover}
         title="Ricette tipiche Frainesi"
-        image={frontmatter.cover}
         description="Un insieme delle ricette tipiche Frainesi"
         keywords="cucina italiana ricette abruzzesi"
       />
@@ -44,41 +43,51 @@ export default function Category({ data }) {
           <h1 style={{ margin: "2rem auto 2rem 0" }}>
             Ricette tradizionali Frainesi
           </h1>
-
-          <article className={classes.root} className="blog-post">
-            <Card className={classes.root}>
-              <CardActionArea>
-                <CardMedia
-                  className={classes.media}
-                  image={frontmatter.cover}
-                  title={frontmatter.title}
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="h2">
-                    <Link replace to={`/${frontmatter.slug}/`}>
-                      {frontmatter.title}
-                    </Link>
-                  </Typography>
-                  <Typography variant="body2" color="textPrimary" component="p">
-                    {frontmatter.description}
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-              <CardActions>
-                <Button size="small" color="primary">
-                  Condividi
-                </Button>
-                <Button size="small" color="primary">
-                  Scopri di piu`
-                </Button>
-              </CardActions>
-            </Card>
-          </article>
-
+          <Grid container>
+            {data.allMarkdownRemark.edges.map(element => {
+              return (
+                <Grid key={element.node.frontmatter.title} item sm={12} md={6}>
+                  <article className={classes.root} className="blog-post">
+                    <Card className={classes.root}>
+                      <CardActionArea>
+                        <CardMedia
+                          className={classes.media}
+                          image={element.node.frontmatter.cover}
+                          title={element.node.frontmatter.title}
+                        />
+                        <CardContent>
+                          <Typography gutterBottom variant="h5" component="h2">
+                            <Link
+                              replace
+                              to={`/${element.node.frontmatter.slug}/`}
+                            >
+                              {element.node.frontmatter.title}
+                            </Link>
+                          </Typography>
+                          <Typography
+                            variant="body2"
+                            color="textPrimary"
+                            component="p"
+                          >
+                            {element.node.frontmatter.description}
+                          </Typography>
+                        </CardContent>
+                      </CardActionArea>
+                      <CardActions>
+                        <Button size="small" color="primary">
+                          Condividi
+                        </Button>
+                        <Button size="small" color="primary">
+                          Scopri di piu`
+                        </Button>
+                      </CardActions>
+                    </Card>
+                  </article>
+                </Grid>
+              )
+            })}
+          </Grid>
           <Link to="/">Torna indietro</Link>
-          <br />
-          <br />
-          <br />
         </Container>
       </section>
     </Layout>
@@ -86,16 +95,27 @@ export default function Category({ data }) {
 }
 
 export const pageQuery = graphql`
-  query {
-    markdownRemark(frontmatter: { category: { eq: "ricette" } }) {
-      html
-      frontmatter {
-        date(formatString: "MMMM DD, YYYY")
-        slug
-        title
-        description
-        cover
-        keywords
+  {
+    allMarkdownRemark(
+      filter: { frontmatter: { category: { eq: "ricette" } } }
+    ) {
+      edges {
+        node {
+          id
+          html
+          frontmatter {
+            category
+            cover
+            date
+            description
+            path
+            keywords
+            slug
+            tags
+            title
+            author
+          }
+        }
       }
     }
   }

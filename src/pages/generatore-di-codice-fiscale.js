@@ -122,7 +122,6 @@ export default function Generatoredicodicefiscaleonline() {
             <FormControl>
               <InputLabel id="sesso">Sesso</InputLabel>
               <Select
-                native
                 required
                 labelId="sesso"
                 id="sesso"
