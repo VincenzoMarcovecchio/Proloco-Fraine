@@ -11,7 +11,7 @@ import {
 } from "@material-ui/core"
 
 import Forecast from "./Forecast"
-import WeatherCardSubheader from "./WeatherCardSubheader"
+import WeatherCardSubheader from "./WeatherCardSubHeader"
 
 const useStyles = makeStyles(theme => ({
   atmospheric: {
