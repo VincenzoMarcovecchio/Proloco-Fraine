@@ -23,6 +23,7 @@ import ShareIcon from "@material-ui/icons/Share"
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore"
 import MoreVertIcon from "@material-ui/icons/MoreVert"
 import Skeleton from "@material-ui/lab/Skeleton"
+
 const useStyles = makeStyles(theme => ({
   container: {
     display: "flex",
@@ -66,6 +67,7 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: red[500],
   },
 }))
+
 const IndexPage = ({
   data: {
     allMarkdownRemark: { edges },
@@ -132,13 +134,11 @@ const IndexPage = ({
             <span>unisce</span>
           </h1>
         </div>
-        <br />
-        <br />
-        <br />
+
         <Container maxWidth="lg">
-          <h1>Il Blog</h1>
+          <h1 style={{ margin: "3rem auto 3rem 0" }}>Il Blog</h1>
         </Container>
-        <br />
+
         <Container className={classes.container} maxWidth="lg">
           <Grid container>
             {edges.map(edge => (

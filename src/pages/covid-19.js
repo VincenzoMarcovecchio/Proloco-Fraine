@@ -50,9 +50,8 @@ const IndexPage = () => {
   useEffect(() => {
     let isCancelled = false
     setLoading(true)
-    fetch(
-      "https://cors-anywhere.herokuapp.com/https://covid19italiahelp.herokuapp.com/reports/Provincia/Chieti"
-    )
+    fetch(`
+ https://prolocofraine.netlify.app/.netlify/functions/covid`)
       .then(response => response.json())
       .then(data => {
         if (!isCancelled) {
@@ -73,7 +72,7 @@ const IndexPage = () => {
           description="covid19italia data emergenzeHack Informazioni dal comune di Fraine"
           keywords="covid abruzzo notizie locali"
         />
-        <Container maxWidth="sm">
+        <Container style={{ marginTop: "3rem" }} maxWidth="sm">
           <center>
             <img
               width="100%"

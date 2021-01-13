@@ -23,7 +23,7 @@ const useStyles = makeStyles(theme => ({
       width: "100%",
     },
   },
-  text: { padding: "1rem" },
+  text: { padding: "1.5rem" },
 }))
 
 export default function Generatoredicodicefiscaleonline() {
@@ -91,11 +91,11 @@ export default function Generatoredicodicefiscaleonline() {
         <SEO
           title="Il generatore di codice fiscale online gratuito"
           description="Il generatore di codice fiscale online gratuito by Proloco Fraine"
-          keywords="🇮🇹 codice fiscale online"
+          keywords="codice fiscale online generatore di codice fiscale online 🇮🇹"
         />
         <Container className={classes.root} maxWidth="sm">
-          <h1 style={{ margin: "3rem auto" }}>
-            Codice Fiscale Online 🤔&nbsp;
+          <h1 style={{ margin: "3rem auto", lineHeight: "1.5" }}>
+            Codice Fiscale Online &nbsp;
           </h1>
           <p>Completa i campi sottostanti con i tuoi dati personali</p>
           <Paper className={classes.text} elevation={3}>
@@ -119,7 +119,7 @@ export default function Generatoredicodicefiscaleonline() {
               placeholder="Il tuo cognome"
               multiline
             />
-            <FormControl>
+            <FormControl style={{ display: "flex", marginBottom: "0.7rem" }}>
               <InputLabel id="sesso">Sesso</InputLabel>
               <Select
                 required

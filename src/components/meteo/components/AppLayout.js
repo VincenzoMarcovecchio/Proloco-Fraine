@@ -88,7 +88,7 @@ const WeatherCard = props => {
   const humidity = "wi wi-humidity"
   const strongWind = "wi wi-strong-wind"
   const { currentWeather, forecast, icon, recommendation } = props
-
+  console.log(props)
   return (
     <Card className={classes.card}>
       <CardHeader
@@ -96,11 +96,13 @@ const WeatherCard = props => {
         subheader={<WeatherCardSubheader currentWeather={currentWeather} />}
       />
       <CardContent>
-        <CardMedia
-          className={`${icon} ${classes.wi}`}
-          src={icon}
-          style={{ fontSize: "128px", float: "right" }}
-        />
+        <img
+          width="80px"
+          draggable="false"
+          title={forecast.description}
+          alt={forecast.description}
+          src={`https://openweathermap.org/img/wn/${forecast[0]?.icon}@2x.png`}
+        ></img>
         <Typography
           variant="h2"
           className="big-temp"
@@ -111,7 +113,7 @@ const WeatherCard = props => {
           {currentWeather.temperature}&deg;C
         </Typography>
         <Typography variant="subtitle2" color="textSecondary" gutterBottom>
-          Feels like {currentWeather.feels_like}&deg;C
+          Temperatura percepita {currentWeather.feels_like}&deg;C
         </Typography>
         <Typography
           variant="subtitle2"
@@ -123,11 +125,11 @@ const WeatherCard = props => {
           <span
             className={`${strongWind} ${classes.wi} ${classes.atmospheric}`}
           ></span>
-          {currentWeather.wind_speed} km/h Winds{" "}
+          {currentWeather.wind_speed} km/h Vento{" "}
           <span
             className={`${humidity} ${classes.wi} ${classes.atmospheric}`}
           ></span>
-          {currentWeather.humidity}% Humidity
+          {currentWeather.humidity}% Umidita`
         </Typography>
         <Typography
           className={`${classes.recommendation} recommendation`}

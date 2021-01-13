@@ -139,13 +139,6 @@ const TemporaryDrawer = () => {
 
   return (
     <div>
-      <Button
-        className="about-btn"
-        onClick={toggleDrawer("right", true)}
-        data-testid="toggle"
-      >
-        About
-      </Button>
       <Drawer
         anchor="right"
         open={state.right}
@@ -160,24 +153,5 @@ const TemporaryDrawer = () => {
 export default function NavBar() {
   const classes = useStyles()
 
-  return (
-    <div className={classes.root}>
-      <AppBar className={classes.appBar}>
-        <Toolbar variant="dense">
-          <Logo />
-          <div style={{ flex: "1 1 auto" }}></div>
-          <TemporaryDrawer />
-          <Button className="github-btn">
-            <a
-              href="https://github.com/denniskigen/react-weather"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              GitHub
-            </a>
-          </Button>
-        </Toolbar>
-      </AppBar>
-    </div>
-  )
+  return <div className={classes.root}></div>
 }

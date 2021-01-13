@@ -25,6 +25,7 @@ export default function Forecast(props) {
     const currentHour = dayjs(item.date).format("H")
     const timeOfDay = currentHour > 7 && currentHour < 19 ? "day" : "night"
     const icon = prefix + weatherIcons.default[timeOfDay][item.icon_id].icon
+    console.log(props)
     return (
       <ListItem key={index} className="forecastItem">
         <ListItemText
@@ -33,6 +34,13 @@ export default function Forecast(props) {
           style={{ flex: "1 1 0%", textAlign: "left" }}
         ></ListItemText>
         <IconButton disabled={true} aria-label="forecast icon">
+          <img
+            width="80px"
+            draggable="false"
+            title={item.description}
+            alt={item.description}
+            src={`https://openweathermap.org/img/wn/${item.icon}@2x.png`}
+          ></img>
           <span
             className={`${classes.wi} ${icon}`}
             style={{ fontSize: "24px" }}

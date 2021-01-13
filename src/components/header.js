@@ -20,6 +20,7 @@ import Box from "@material-ui/core/Box"
 import PermIdentityIcon from "@material-ui/icons/PermIdentity"
 import DataUsageIcon from "@material-ui/icons/DataUsage"
 import LocalHospitalIcon from "@material-ui/icons/LocalHospital"
+import WbSunnyIcon from "@material-ui/icons/WbSunny"
 const useStyles = makeStyles({
   list: {
     width: 250,
@@ -137,6 +138,16 @@ export default function SwipeableTemporaryDrawer() {
           </Link>
           <Link replace to="/covid-19/">
             <ListItemText primary="Covid-19" />
+          </Link>
+        </ListItem>
+        <ListItem button>
+          <Link replace to="/meteo/">
+            <ListItemIcon>
+              <WbSunnyIcon />
+            </ListItemIcon>
+          </Link>
+          <Link replace to="/meteo/">
+            <ListItemText primary="Meteo" />
           </Link>
         </ListItem>
       </List>

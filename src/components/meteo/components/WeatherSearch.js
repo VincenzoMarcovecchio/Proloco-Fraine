@@ -49,7 +49,9 @@ export default function WeatherSearch(props) {
       <Grid container alignItems="flex-end">
         <Grid item xs={12} style={{ textAlign: "center" }}>
           <FormControl>
-            <InputLabel htmlFor="search-city">Enter city name</InputLabel>
+            <InputLabel htmlFor="search-city">
+              Inserisci il nome della citta`
+            </InputLabel>
             <Input
               id="search-city"
               role="search"
