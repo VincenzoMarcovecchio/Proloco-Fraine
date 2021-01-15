@@ -46,12 +46,37 @@ const IndexPage = () => {
   const classes = useStyles()
   const [Articles, setArticles] = useState([])
   const [loading, setLoading] = useState(false)
+  const [count, setCount] = useState({
+    prev: 0,
+    next: 10,
+  })
+
+  const [hasMore, setHasMore] = useState(true)
+  const [output, setOutput] = useState([])
+  const [current, setCurrent] = useState(Articles.slice(count.prev, count.next))
+
+  const getMoreData = () => {
+    if (current.length === Articles.length) {
+      setHasMore(false)
+      return
+    }
+
+    setTimeout(() => {
+      setCurrent(
+        current.concat(Articles.slice(count.prev + 10, count.next + 10))
+      )
+    }, 2000)
+    setCount(prevState => ({
+      prev: prevState.prev + 10,
+      next: prevState.next + 10,
+    }))
+  }
 
   useEffect(() => {
     let isCancelled = false
     setLoading(true)
     fetch(`
- https://prolocofraine.netlify.app/.netlify/functions/covid`)
+https://raw.githubusercontent.com/emergenzeHack/covid19italia_data/master/issuesjson.json`)
       .then(response => response.json())
       .then(data => {
         if (!isCancelled) {
@@ -90,7 +115,7 @@ const IndexPage = () => {
         )}
         <Container className={classes.container} maxWidth="lg">
           <Grid container>
-            {Articles.map((article, index) => {
+            {current.map((article, index) => {
               return (
                 <>
                   <Grid key={index} item xs={12} md={4}>

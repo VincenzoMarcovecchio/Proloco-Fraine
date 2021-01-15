@@ -23,7 +23,7 @@ const useStyles = makeStyles(theme => ({
       width: "100%",
     },
   },
-  text: { padding: "1.5rem" },
+  text: { padding: "1.3rem" },
 }))
 
 export default function Generatoredicodicefiscaleonline() {
@@ -76,7 +76,7 @@ export default function Generatoredicodicefiscaleonline() {
       setSending(true)
 
       fetch(
-        "https://cors-anywhere.herokuapp.com/https://apis.woptima.com/cf",
+        "https://mimmofranco.herokuapp.com/https://apis.woptima.com/cf",
         requestOptions
       )
         .then(response => response.json())
@@ -91,12 +91,10 @@ export default function Generatoredicodicefiscaleonline() {
         <SEO
           title="Il generatore di codice fiscale online gratuito"
           description="Il generatore di codice fiscale online gratuito by Proloco Fraine"
-          keywords="codice fiscale online generatore di codice fiscale online 🇮🇹"
+          keywords="🇮🇹 codice fiscale online"
         />
         <Container className={classes.root} maxWidth="sm">
-          <h1 style={{ margin: "3rem auto", lineHeight: "1.5" }}>
-            Codice Fiscale Online &nbsp;
-          </h1>
+          <h1 style={{ margin: "3rem auto" }}>Codice Fiscale Online</h1>
           <p>Completa i campi sottostanti con i tuoi dati personali</p>
           <Paper className={classes.text} elevation={3}>
             <TextField
@@ -119,9 +117,10 @@ export default function Generatoredicodicefiscaleonline() {
               placeholder="Il tuo cognome"
               multiline
             />
-            <FormControl style={{ display: "flex", marginBottom: "0.7rem" }}>
+            <FormControl style={{ width: "100%" }}>
               <InputLabel id="sesso">Sesso</InputLabel>
               <Select
+                native
                 required
                 labelId="sesso"
                 id="sesso"
@@ -283,11 +282,10 @@ export default function Generatoredicodicefiscaleonline() {
             </FormControl>
           </Paper>
           <Button
-            style={{ margin: "1.5rem auto" }}
+            style={{ margin: "1.5rem auto", width: "3rem", height: "3rem" }}
             onClick={handleSubmit}
             variant="contained"
             color="primary"
-            className={classes.text}
           >
             Invia
           </Button>

@@ -16,6 +16,7 @@ import Container from "@material-ui/core/Container"
 const useStyles = makeStyles({
   root: {
     width: "100%",
+    marginBottom: "2rem",
     ["@media (min-width:780px)"]: {
       // eslint-disable-line no-useless-computed-key
       maxWidth: 345,
@@ -29,18 +30,18 @@ const useStyles = makeStyles({
 export default function Category({ data }) {
   const classes = useStyles()
   const { allMarkdownRemark } = data // data.markdownRemark holds your post data
-  console.log(data)
+
   return (
     <Layout>
       <SEO
         // cover={frontmatter.cover}
         title="Ricette tipiche Frainesi"
-        description="Un insieme delle ricette tipiche Frainesi"
-        keywords="cucina italiana ricette abruzzesi"
+        description="Un'insieme delle ricette tipiche Frainesi"
+        keywords="cucina italiana ricette abruzzesi ricette tipiche abruzzesi"
       />
       <section className="blog-post-container">
         <Container maxWidth="md">
-          <h1 style={{ margin: "2rem auto 2rem 0" }}>
+          <h1 style={{ margin: "3rem auto 3rem 0" }}>
             Ricette tradizionali Frainesi
           </h1>
           <Grid container>
