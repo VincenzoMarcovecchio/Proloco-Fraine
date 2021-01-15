@@ -25,7 +25,7 @@ export default function Forecast(props) {
     const currentHour = dayjs(item.date).format("H")
     const timeOfDay = currentHour > 7 && currentHour < 19 ? "day" : "night"
     const icon = prefix + weatherIcons.default[timeOfDay][item.icon_id].icon
-    console.log(props)
+
     return (
       <ListItem key={index} className="forecastItem">
         <ListItemText

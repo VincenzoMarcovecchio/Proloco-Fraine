@@ -88,7 +88,7 @@ const WeatherCard = props => {
   const humidity = "wi wi-humidity"
   const strongWind = "wi wi-strong-wind"
   const { currentWeather, forecast, icon, recommendation } = props
-  console.log(props)
+
   return (
     <Card className={classes.card}>
       <CardHeader
