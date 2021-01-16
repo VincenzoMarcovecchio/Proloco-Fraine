@@ -29,7 +29,12 @@ const useStyles = makeStyles(theme => ({
 
 const PostLink = ({ post }) => {
   const classes = useStyles()
-  const options = { weekday: "long", month: "2-digit", day: "2-digit" }
+  const options = {
+    weekday: "long",
+    month: "2-digit",
+    year: "2-digit",
+    day: "2-digit",
+  }
   const date = new Date(post.frontmatter.date).toLocaleString("it-IT", options)
   return (
     <div className={classes.root}>

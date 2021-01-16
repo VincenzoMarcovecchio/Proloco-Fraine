@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
 import Container from "@material-ui/core/Container"
 import { makeStyles } from "@material-ui/core/styles"
-import logoabruzzo from "../images/regioneabruzzo.jpg"
+import logoabruzzo from "../images/abruzzo-turismo.svg"
 import TwitterIcon from "@material-ui/icons/Twitter"
 export default function Footer() {
   const useStyles = makeStyles({
@@ -35,11 +35,7 @@ export default function Footer() {
               &nbsp;Gatsby
             </a>
           </span>
-          <img
-            width="150"
-            src={logoabruzzo}
-            alt="logo Abruzzo risorse turismo"
-          />
+          <img src={logoabruzzo} alt="logo Abruzzo risorse turismo" />
           <a href="https://www.buymeacoffee.com/Oa5oh3r" target="_blank">
             <img
               src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
