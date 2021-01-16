@@ -23,6 +23,7 @@ import ShareIcon from "@material-ui/icons/Share"
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore"
 import MoreVertIcon from "@material-ui/icons/MoreVert"
 import Skeleton from "@material-ui/lab/Skeleton"
+import Masonry from "react-masonry-css"
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -43,7 +44,7 @@ const useStyles = makeStyles(theme => ({
   },
   root: {
     width: "100%",
-    margin: "auto",
+    margin: "2rem auto",
     ["@media (min-width:780px)"]: {
       // eslint-disable-line no-useless-computed-key
       width: "90%",
@@ -76,7 +77,18 @@ const IndexPage = ({
   const classes = useStyles()
   const [Articles, setArticles] = useState([])
   const [expanded, setExpanded] = useState(false)
-
+  const breakpointColumnsObj = {
+    default: 2,
+    1100: 2,
+    700: 2,
+    500: 1,
+  }
+  const breakpointColumnsObjdue = {
+    default: 3,
+    1100: 2,
+    700: 2,
+    500: 1,
+  }
   Articles.forEach(element => {
     element.expanded = expanded
   })
@@ -140,13 +152,15 @@ const IndexPage = ({
         </Container>
 
         <Container className={classes.container} maxWidth="lg">
-          <Grid container>
+          <Masonry
+            breakpointCols={breakpointColumnsObj}
+            className="my-masonry-grid"
+            columnClassName="my-masonry-grid_column"
+          >
             {edges.map(edge => (
-              <Grid key={edge.node.id} item sm={12} md={6}>
-                <PostLink key={edge.node.id} post={edge.node} />
-              </Grid>
+              <PostLink key={edge.node.id} post={edge.node} />
             ))}
-          </Grid>
+          </Masonry>
         </Container>
         <Divider className={classes.divider} />
         <br />
@@ -156,95 +170,93 @@ const IndexPage = ({
         </Container>
         <br />
         <Container maxWidth="lg">
-          <Grid container>
+          <Masonry
+            breakpointCols={breakpointColumnsObjdue}
+            className="my-masonry-grid"
+            columnClassName="my-masonry-grid_column"
+          >
             {Articles.map((article, index) => {
               return (
                 <>
-                  <Grid key={index} item xs={12} md={4}>
-                    <Card key={index} className={classes.root}>
-                      <CardHeader
-                        action={
-                          <IconButton aria-label="settings">
-                            <MoreVertIcon />
-                          </IconButton>
-                        }
-                        title={article.title}
-                        subheader={new Date(article.publishedAt).toLocaleString(
-                          "it-IT",
-                          options
-                        )}
-                      />
-                      {article.urlToImage ? (
-                        <CardMedia
-                          className={classes.media}
-                          image={article.urlToImage}
-                          title={article.title}
-                        />
-                      ) : (
-                        <Skeleton animation="wave" />
+                  <Card key={index} className={classes.root}>
+                    <CardHeader
+                      action={
+                        <IconButton aria-label="settings">
+                          <MoreVertIcon />
+                        </IconButton>
+                      }
+                      title={article.title}
+                      subheader={new Date(article.publishedAt).toLocaleString(
+                        "it-IT",
+                        options
                       )}
+                    />
+                    {article.urlToImage ? (
+                      <CardMedia
+                        className={classes.media}
+                        image={article.urlToImage}
+                        title={article.title}
+                      />
+                    ) : (
+                      <Skeleton animation="wave" />
+                    )}
+                    <CardContent>
+                      <Typography
+                        variant="body2"
+                        color="textSecondary"
+                        component="div"
+                      >
+                        {article.description ? (
+                          <p
+                            contentEditable="true"
+                            dangerouslySetInnerHTML={{
+                              __html: `${article.description}`,
+                            }}
+                          ></p>
+                        ) : (
+                          <Skeleton animation="wave" />
+                        )}
+                      </Typography>
+                    </CardContent>
+                    <CardActions disableSpacing>
+                      <IconButton aria-label="add to favorites">
+                        <FavoriteIcon />
+                      </IconButton>
+                      <IconButton aria-label="share">
+                        <ShareIcon />
+                      </IconButton>
+
+                      <IconButton
+                        className={clsx(classes.expand, {
+                          [classes.expandOpen]: expanded,
+                        })}
+                        onClick={() => handleExpandClick(index)}
+                        aria-expanded={article.expa}
+                        aria-label="scopri di piu"
+                      >
+                        <ExpandMoreIcon />
+                      </IconButton>
+                    </CardActions>
+                    <Collapse in={article.expa} timeout="1" unmountOnExit>
                       <CardContent>
-                        <Typography
-                          variant="body2"
-                          color="textSecondary"
-                          component="div"
-                        >
-                          {article.description ? (
-                            <p
-                              contentEditable="true"
-                              dangerouslySetInnerHTML={{
-                                __html: `${article.description}`,
-                              }}
-                            ></p>
-                          ) : (
-                            <Skeleton animation="wave" />
-                          )}
+                        <Typography paragraph>{article.content}</Typography>
+                        <Typography>
+                          Per leggere l'intero articolo clicca
+                          <a
+                            href={article.url}
+                            target="_blank"
+                            rel="noreferrer noopener canonical"
+                          >
+                            qui
+                          </a>
                         </Typography>
                       </CardContent>
-                      <CardActions disableSpacing>
-                        <IconButton aria-label="add to favorites">
-                          <FavoriteIcon />
-                        </IconButton>
-                        <IconButton aria-label="share">
-                          <ShareIcon />
-                        </IconButton>
-
-                        <IconButton
-                          className={clsx(classes.expand, {
-                            [classes.expandOpen]: expanded,
-                          })}
-                          onClick={() => handleExpandClick(index)}
-                          aria-expanded={article.expa}
-                          aria-label="scopri di piu"
-                        >
-                          <ExpandMoreIcon />
-                        </IconButton>
-                      </CardActions>
-                      <Collapse in={article.expa} timeout="1" unmountOnExit>
-                        <CardContent>
-                          <Typography paragraph>{article.content}</Typography>
-                          <Typography>
-                            Per leggere l'intero articolo clicca
-                            <a
-                              href={article.url}
-                              target="_blank"
-                              rel="noreferrer noopener canonical"
-                            >
-                              qui
-                            </a>
-                          </Typography>
-                        </CardContent>
-                      </Collapse>
-                    </Card>
-                    <br />
-                    <br />
-                    <br />
-                  </Grid>
-                  <Divider className={classes.divider} />
+                    </Collapse>
+                  </Card>
                 </>
               )
             })}
-          </Grid>
+          </Masonry>
         </Container>
       </Layout>
     </>
