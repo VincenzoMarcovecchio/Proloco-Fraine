@@ -4,7 +4,9 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { Link } from "gatsby"
 import Container from "@material-ui/core/Container"
-import { Helmet } from "react-helmet"
+
+import Image from "../components/image"
+
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.
 }) {
@@ -17,12 +19,12 @@ export default function Template({
   }
   return (
     <Layout>
-      <Helmet></Helmet>
       <SEO
         title={frontmatter.title}
         image={frontmatter.cover}
         description={frontmatter.description}
         keywords={frontmatter.keywords}
+        date={frontmatter.date}
       />
 
       <Container maxWidth="sm">

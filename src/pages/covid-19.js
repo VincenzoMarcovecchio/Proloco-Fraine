@@ -13,6 +13,8 @@ import Button from "@material-ui/core/Button"
 import Typography from "@material-ui/core/Typography"
 import CircularProgress from "@material-ui/core/CircularProgress"
 import covidimage from "../images/covidimageinformationalreport.png"
+import { graphql } from "gatsby"
+import Img from "gatsby-image"
 const useStyles = makeStyles(theme => ({
   container: {
     display: "flex",
@@ -42,7 +44,7 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const IndexPage = () => {
+const IndexPage = ({ data }) => {
   const classes = useStyles()
   const [Articles, setArticles] = useState([])
   const [loading, setLoading] = useState(false)
@@ -99,10 +101,10 @@ https://raw.githubusercontent.com/emergenzeHack/covid19italia_data/master/issues
         />
         <Container style={{ marginTop: "3rem" }} maxWidth="sm">
           <center>
-            <img
-              width="100%"
-              src={covidimage}
+            <Img
               alt="coronavirus illustrazione animata"
+              fluid={data.file.childImageSharp.fluid}
+              loa
             />
           </center>
         </Container>
@@ -158,5 +160,17 @@ https://raw.githubusercontent.com/emergenzeHack/covid19italia_data/master/issues
     </>
   )
 }
+export const query = graphql`
+  query MyQuery {
+    file(relativePath: { eq: "covidimageinformationalreport.png" }) {
+      childImageSharp {
+        # Specify the image processing specifications right in the query.
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`
 
 export default IndexPage

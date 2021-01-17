@@ -1,32 +1,39 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import PropTypes from "prop-types"
 
-/*
- * This component is built using `gatsby-image` to automatically serve optimized
- * images with lazy loading and reduced file sizes. The image is loaded using a
- * `useStaticQuery`, which allows us to load the image from directly within this
- * component, rather than having to pass the image data down from pages.
- *
- * For more information, see the docs:
- * - `gatsby-image`: https://gatsby.dev/gatsby-image
- * - `useStaticQuery`: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
-const Image = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      placeholderImage: file(relativePath: { eq: "gatsby-astronaut.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 300) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
-
-  return <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+function Image({ image, desktopImage, styles, alt }) {
+  return (
+    <picture>
+      {desktopImage && (
+        <>
+          <source media="(min-width: 480px)" srcSet={desktopImage.srcSet} />
+          <source
+            media="(min-width: 480px)"
+            srcSet={desktopImage.srcSetWebp}
+            type="image/webp"
+          />
+        </>
+      )}
+      <source srcSet={image.srcWebp} type="image/webp" />
+      <img
+        src={image.src}
+        srcSet={image.srcSet}
+        alt="Homepage"
+        loading="lazy"
+        alt={alt}
+      />
+    </picture>
+  )
 }
 
-export default Image
+const imageShape = PropTypes.shape({
+  src: PropTypes.string.isRequired,
+  srcSet: PropTypes.string,
+  srcWebp: PropTypes.string,
+  srcSetWebp: PropTypes.string,
+})
+
+Image.propTypes = {
+  image: imageShape.isRequired,
+  desktopImage: imageShape,
+}

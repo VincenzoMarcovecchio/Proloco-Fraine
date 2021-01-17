@@ -35,13 +35,22 @@ export default function Footer() {
               &nbsp;Gatsby
             </a>
           </span>
-          <img src={logoabruzzo} alt="logo Abruzzo risorse turismo" />
-          <a href="https://www.buymeacoffee.com/Oa5oh3r" target="_blank">
+          <img
+            width="125"
+            height="250"
+            src={logoabruzzo}
+            alt="logo Abruzzo risorse turismo"
+          />
+          <a
+            rel="noopener noreferrer canonical"
+            href="https://www.buymeacoffee.com/Oa5oh3r"
+            target="_blank"
+          >
             <img
               src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
               alt="Buy Me A Coffee"
               height="60px"
-              width="217px"
+              width="200"
             />
           </a>
         </Container>

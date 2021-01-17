@@ -22,6 +22,9 @@ const useStyles = makeStyles(theme => ({
   text: {
     textTransform: "none",
   },
+  typography: {
+    padding: "0.5rem",
+  },
 }))
 
 export default function Cookie() {
@@ -55,7 +58,12 @@ export default function Cookie() {
     <>
       <div ref={bisco} className="biscottobanner">
         <Button aria-describedby={id} variant="contained" onClick={handleClick}>
-          <img src={biscotto} alt="biscotto tipico della cibernetica" />
+          <img
+            src={biscotto}
+            width="100%"
+            height="100%"
+            alt="biscotto tipico della cibernetica"
+          />
           Lu vu nu biscott
         </Button>
         <Popover

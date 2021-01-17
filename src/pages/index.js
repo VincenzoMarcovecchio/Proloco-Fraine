@@ -3,7 +3,6 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import PostLink from "../components/postLink"
 import clsx from "clsx"
-import { graphql } from "gatsby"
 import Container from "@material-ui/core/Container"
 import movie from "../Fraine.mp4"
 import { makeStyles } from "@material-ui/core/styles"
@@ -24,7 +23,7 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore"
 import MoreVertIcon from "@material-ui/icons/MoreVert"
 import Skeleton from "@material-ui/lab/Skeleton"
 import Masonry from "react-masonry-css"
-
+import { useStaticQuery, graphql } from "gatsby"
 const useStyles = makeStyles(theme => ({
   container: {
     display: "flex",
@@ -72,6 +71,7 @@ const useStyles = makeStyles(theme => ({
 const IndexPage = ({
   data: {
     allMarkdownRemark: { edges },
+    articles,
   },
 }) => {
   const classes = useStyles()
@@ -104,14 +104,6 @@ const IndexPage = ({
     month: "2-digit",
     day: "2-digit",
   }
-
-  useEffect(() => {
-    fetch(`https://prolocofraine.netlify.app/.netlify/functions/news`)
-      .then(response => response.json()) // parse JSON from request
-      .then(resultData => {
-        setArticles(resultData.articles)
-      })
-  }, [])
 
   return (
     <>
@@ -175,7 +167,7 @@ const IndexPage = ({
             className="my-masonry-grid"
             columnClassName="my-masonry-grid_column"
           >
-            {Articles.map((article, index) => {
+            {articles.articles.map((article, index) => {
               return (
                 <>
                   <Card key={index} className={classes.root}>
@@ -280,6 +272,17 @@ export const pageQuery = graphql`
             description
           }
         }
+      }
+    }
+    articles {
+      articles {
+        author
+        title
+        description
+        url
+        urlToImage
+        publishedAt
+        content
       }
     }
   }
