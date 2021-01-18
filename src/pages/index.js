@@ -202,7 +202,7 @@ const IndexPage = ({
                           <p
                             contentEditable="true"
                             dangerouslySetInnerHTML={{
-                              __html: `${article.description}`,
+                              __html: `${article.content}`,
                             }}
                           ></p>
                         ) : (
@@ -212,7 +212,13 @@ const IndexPage = ({
                     </CardContent>
                     <CardActions disableSpacing>
                       <IconButton aria-label="add to favorites">
-                        <FavoriteIcon />
+                        <a
+                          href={article.url}
+                          target="_blank"
+                          rel="noreferrer noopener canonical"
+                        >
+                          <FavoriteIcon />{" "}
+                        </a>
                       </IconButton>
                       <IconButton aria-label="share">
                         <ShareIcon />
@@ -229,21 +235,6 @@ const IndexPage = ({
                         <ExpandMoreIcon />
                       </IconButton>
                     </CardActions>
-                    <Collapse in={article.expa} timeout="1" unmountOnExit>
-                      <CardContent>
-                        <Typography paragraph>{article.content}</Typography>
-                        <Typography>
-                          Per leggere l'intero articolo clicca
-                          <a
-                            href={article.url}
-                            target="_blank"
-                            rel="noreferrer noopener canonical"
-                          >
-                            qui
-                          </a>
-                        </Typography>
-                      </CardContent>
-                    </Collapse>
                   </Card>
                 </>
               )
