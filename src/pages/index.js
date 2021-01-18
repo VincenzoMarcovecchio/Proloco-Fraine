@@ -78,14 +78,12 @@ const IndexPage = ({
   const [Articles, setArticles] = useState([])
   const [expanded, setExpanded] = useState(false)
   const breakpointColumnsObj = {
-    default: 2,
     1100: 2,
     700: 2,
     500: 1,
   }
   const breakpointColumnsObjdue = {
-    default: 3,
-    1100: 2,
+    1100: 3,
     700: 2,
     500: 1,
   }
