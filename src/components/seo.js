@@ -144,6 +144,10 @@ function SEO({ description, lang, image, meta, title, keywords, date }) {
           articleBody: metaDescription,
         }}
       </JsonLd>
+      <meta
+        http-equiv="Content-Security-Policy"
+        content="upgrade-insecure-requests"
+      ></meta>
     </Helmet>
   )
 }
