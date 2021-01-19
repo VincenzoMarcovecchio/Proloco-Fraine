@@ -30,7 +30,6 @@ module.exports = {
       },
     },
     `gatsby-transformer-remark`,
-    `gatsby-plugin-preact`,
 
     {
       resolve: `gatsby-source-filesystem`,
