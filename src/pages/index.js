@@ -210,7 +210,8 @@ const IndexPage = ({
                     </CardContent>
                     <CardActions disableSpacing>
                       <IconButton aria-label="add to favorites">
-                        <a
+                        <a title="leggi di piu"
+                        name="articolo redirect"
                           href={article.url}
                           target="_blank"
                           rel="noreferrer noopener canonical"
