@@ -25,22 +25,24 @@ export default function Footer() {
     <>
       <footer>
         <Container className={classes.root}>
-          <span>
-            © {new Date().getFullYear()}, Built in Fraine with
-            <a
-              target="_blank"
-              rel="canonical noopener noreferrer"
-              href="https://twitter.com/_vinny_92"
-            >
-              &nbsp;Gatsby
-            </a>
-          </span>
-          <img
-            width="125"
-            height="250"
-            src={logoabruzzo}
-            alt="logo Abruzzo risorse turismo"
-          />
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <span>
+              © {new Date().getFullYear()}, Built in Fraine with
+              <a
+                target="_blank"
+                rel="canonical noopener noreferrer"
+                href="https://twitter.com/_vinny_92"
+              >
+                &nbsp;Gatsby
+              </a>
+            </span>
+            <img
+              width="125"
+              height="250"
+              src={logoabruzzo}
+              alt="logo Abruzzo risorse turismo"
+            />
+          </div>
           <a
             rel="noopener noreferrer canonical"
             href="https://www.buymeacoffee.com/Oa5oh3r"
@@ -49,7 +51,7 @@ export default function Footer() {
             <img
               src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
               alt="Buy Me A Coffee"
-              height="60px"
+              height="60"
               width="200"
             />
           </a>

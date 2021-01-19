@@ -40,7 +40,7 @@ const PostLink = ({ post }) => {
     <div className={classes.root}>
       <Paper className={classes.paper}>
         <Link replace to={"/" + post.frontmatter.slug}>
-          <h2 style={{ lineHeight: "1.5" }}>{post.frontmatter.title}</h2>
+          <h2>{post.frontmatter.title}</h2>
           <div style={{ display: "flex", justifyContent: "space-between" }}>
             {" "}
             <Typography
@@ -48,6 +48,7 @@ const PostLink = ({ post }) => {
               variant="body1"
               color="textSecondary"
               component="p"
+              style={{ fontSize: "0.9rem" }}
             >
               Autore: {post.frontmatter.author}
             </Typography>
@@ -56,6 +57,7 @@ const PostLink = ({ post }) => {
               variant="body1"
               color="textSecondary"
               component="p"
+              style={{ fontSize: "0.9rem" }}
             >
               {date}
             </Typography>

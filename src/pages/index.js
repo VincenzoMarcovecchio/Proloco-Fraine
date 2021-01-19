@@ -82,11 +82,7 @@ const IndexPage = ({
     700: 2,
     500: 1,
   }
-  const breakpointColumnsObjdue = {
-    1100: 3,
-    700: 2,
-    500: 1,
-  }
+
   Articles.forEach(element => {
     element.expanded = expanded
   })
@@ -161,7 +157,6 @@ const IndexPage = ({
         <br />
         <Container maxWidth="lg">
           <Masonry
-            breakpointCols={breakpointColumnsObjdue}
             className="my-masonry-grid"
             columnClassName="my-masonry-grid_column"
           >
@@ -210,8 +205,9 @@ const IndexPage = ({
                     </CardContent>
                     <CardActions disableSpacing>
                       <IconButton aria-label="add to favorites">
-                        <a title="leggi di piu"
-                        name="articolo redirect"
+                        <a
+                          title="leggi di piu"
+                          name="articolo redirect"
                           href={article.url}
                           target="_blank"
                           rel="noreferrer noopener canonical"
