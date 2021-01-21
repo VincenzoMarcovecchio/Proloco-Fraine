@@ -37,47 +37,47 @@ function SEO({ description, lang, image, meta, title, keywords, date }) {
       meta={[
         {
           name: `description`,
-          content: metaDescription,
+          content: `${metaDescription}`,
         },
         {
           property: `og:title`,
-          content: title,
+          content: `${title}`,
         },
         {
           property: `og:image`,
-          content: image,
+          content: `${image}`,
         },
         {
           property: `og:description`,
-          content: metaDescription,
+          content: `${metaDescription}`,
         },
         {
           property: `og:type`,
-          content: `website`,
+          content: `${website}`,
         },
         {
           name: `twitter:card`,
-          content: `summary`,
+          content: `${summary}`,
         },
         {
           name: `twitter:image`,
-          content: image,
+          content: `${image}`,
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata.author,
+          content: `${site.siteMetadata.author}`,
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: `${title}`,
         },
         {
           name: `twitter:description`,
-          content: metaDescription,
+          content: `${metaDescription}`,
         },
         {
-          name: "keywords",
-          content: keywords,
+          name: `keywords`,
+          content: `${keywords}`,
         },
       ].concat(meta)}
     >
