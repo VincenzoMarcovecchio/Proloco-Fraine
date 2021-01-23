@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Container from "@material-ui/core/Container"
 import { makeStyles } from "@material-ui/core/styles"
 import Divider from "@material-ui/core/Divider"
 import Grid from "@material-ui/core/Grid"
-import Skeleton from "@material-ui/lab/Skeleton"
+
 import Card from "@material-ui/core/Card"
 import CardActions from "@material-ui/core/CardActions"
 import CardContent from "@material-ui/core/CardContent"
@@ -14,7 +14,6 @@ import Typography from "@material-ui/core/Typography"
 import CircularProgress from "@material-ui/core/CircularProgress"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
-import InfiniteScroll from "react-infinite-scroll-component"
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -51,14 +50,12 @@ const useStyles = makeStyles(theme => ({
 const IndexPage = ({ data }) => {
   const classes = useStyles()
 
-  console.log(data)
-
   return (
     <>
       <Layout>
         <SEO
-          title="Covid-19 Informazioni dal comune di Fraine"
           description="EmergenzeHack informazioni dal comune di Fraine"
+          title="Covid-19 "
           keywords="covid abruzzo notizie locali Fraine Vasto"
           image={data.file.childImageSharp.fluid.src}
         />
