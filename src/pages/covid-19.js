@@ -12,9 +12,10 @@ import CardContent from "@material-ui/core/CardContent"
 import Button from "@material-ui/core/Button"
 import Typography from "@material-ui/core/Typography"
 import CircularProgress from "@material-ui/core/CircularProgress"
-import covidimage from "../images/covidimageinformationalreport.png"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
+import InfiniteScroll from "react-infinite-scroll-component"
+
 const useStyles = makeStyles(theme => ({
   container: {
     display: "flex",
@@ -42,73 +43,37 @@ const useStyles = makeStyles(theme => ({
     height: 0,
     paddingTop: "56.25%", // 16:9
   },
+  gridItem: {
+    marginBottom: "3rem",
+  },
 }))
 
 const IndexPage = ({ data }) => {
   const classes = useStyles()
-  const [Articles, setArticles] = useState([])
-  const [loading, setLoading] = useState(false)
-  const [count, setCount] = useState({
-    prev: 0,
-    next: 10,
-  })
 
-  const [hasMore, setHasMore] = useState(true)
-  const [output, setOutput] = useState([])
-  const [current, setCurrent] = useState(Articles.slice(count.prev, count.next))
-
-  const getMoreData = () => {
-    if (current.length === Articles.length) {
-      setHasMore(false)
-      return
-    }
-
-    setTimeout(() => {
-      setCurrent(
-        current.concat(Articles.slice(count.prev + 10, count.next + 10))
-      )
-    }, 2000)
-    setCount(prevState => ({
-      prev: prevState.prev + 10,
-      next: prevState.next + 10,
-    }))
-  }
-
-  useEffect(() => {
-    let isCancelled = false
-    setLoading(true)
-    fetch(`
-https://raw.githubusercontent.com/emergenzeHack/covid19italia_data/master/issuesjson.json`)
-      .then(response => response.json())
-      .then(data => {
-        if (!isCancelled) {
-          setArticles(data)
-          setLoading(false)
-        }
-      })
-      .catch(error => console.log(error))
-
-    return (isCancelled = true)
-  }, [])
+  console.log(data)
 
   return (
     <>
       <Layout>
         <SEO
           title="Covid-19 Informazioni dal comune di Fraine"
-          description="covid19italia data emergenzeHack Informazioni dal comune di Fraine"
-          keywords="covid abruzzo notizie locali"
+          description="EmergenzeHack informazioni dal comune di Fraine"
+          keywords="covid abruzzo notizie locali Fraine Vasto"
+          image={data.file.childImageSharp.fluid.src}
         />
         <Container style={{ marginTop: "3rem" }} maxWidth="sm">
           <center>
             <Img
+              className={classes.gridItem}
               alt="coronavirus illustrazione animata"
               fluid={data.file.childImageSharp.fluid}
               loa
             />
           </center>
         </Container>
-        {loading ? (
+
+        {!data ? (
           <center>
             <CircularProgress color="secondary" />
           </center>
@@ -117,43 +82,50 @@ https://raw.githubusercontent.com/emergenzeHack/covid19italia_data/master/issues
         )}
         <Container className={classes.container} maxWidth="lg">
           <Grid container>
-            {current.map((article, index) => {
-              return (
-                <>
-                  <Grid key={index} item xs={12} md={4}>
-                    <Card>
-                      <CardContent key={index} className={classes.root}>
-                        <Typography color="textSecondary" gutterBottom>
-                          {article.Comune}
-                        </Typography>
-                        <Typography variant="h5" component="h2" gutterBottom>
-                          {article.Nome}
-                        </Typography>
-                        <Typography color="textSecondary"></Typography>
-                        <Typography variant="body2" component="p">
-                          {article.Descrizione}
-                        </Typography>
-                      </CardContent>
-                      <CardActions className={classes.root}>
-                        <Button size="small">
-                          <a
-                            rel="canonical noopener noreferrer"
-                            target="_blank"
-                            href={article.Link}
-                          >
-                            scopri di piu`
-                          </a>
-                        </Button>
-                      </CardActions>
-                    </Card>
-                    <br />
-                    <br />
-                    <br />
-                  </Grid>
-                  <Divider className={classes.divider} />
-                </>
-              )
-            })}
+            <>
+              <Grid item xs={12} className={classes.gridItem} md={6}>
+                <Card>
+                  <CardContent className={classes.root}>
+                    <Typography color="textSecondary" gutterBottom>
+                      Regione Abruzzo
+                    </Typography>
+                    <Typography variant="h5" component="h2" gutterBottom>
+                      Provincia di Chieti
+                    </Typography>
+                    <Typography color="textSecondary"></Typography>
+                    <Typography variant="body2" component="p">
+                      {data.covid.internal.content.substring(34)}
+                    </Typography>
+                  </CardContent>
+                  <CardActions className={classes.root}>
+                    <Button size="small">
+                      <a
+                        rel="canonical noopener noreferrer"
+                        target="_blank"
+                        href={"https://www.covid19italia.help/"}
+                      >
+                        scopri di piu`
+                      </a>
+                    </Button>
+                  </CardActions>
+                </Card>
+              </Grid>
+              <Divider className={classes.divider} />
+            </>
+            )
+            <Grid className={classes.gridItem} item xs={12} md={6}>
+              <iframe
+                width="800"
+                height="500"
+                aria-title="covid help"
+                src="https://covid19italia.help/segnala-base/"
+                frameborder="0"
+              >
+                <a href="https://covid19italia.help/segnala-base/">
+                  Segnalazioni Covid19Italia.help
+                </a>
+              </iframe>
+            </Grid>
           </Grid>
         </Container>
       </Layout>
@@ -168,6 +140,18 @@ export const query = graphql`
         fluid {
           ...GatsbyImageSharpFluid
         }
+      }
+    }
+
+    covid(Provincia: { eq: "Chieti" }) {
+      id
+      internal {
+        content
+        contentDigest
+        description
+        fieldOwners
+        ignoreType
+        mediaType
       }
     }
   }

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Container from "@material-ui/core/Container"
@@ -27,4 +27,4 @@ const IndexPage = () => {
   )
 }
 
-export default IndexPage
+export default React.memo(IndexPage)

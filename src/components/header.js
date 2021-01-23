@@ -1,5 +1,4 @@
 import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
 import clsx from "clsx"
 import { makeStyles } from "@material-ui/core/styles"
@@ -21,6 +20,7 @@ import PermIdentityIcon from "@material-ui/icons/PermIdentity"
 import DataUsageIcon from "@material-ui/icons/DataUsage"
 import LocalHospitalIcon from "@material-ui/icons/LocalHospital"
 import WbSunnyIcon from "@material-ui/icons/WbSunny"
+
 const useStyles = makeStyles({
   list: {
     width: 250,

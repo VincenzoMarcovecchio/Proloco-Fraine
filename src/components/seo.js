@@ -53,11 +53,11 @@ function SEO({ description, lang, image, meta, title, keywords, date }) {
         },
         {
           property: `og:type`,
-          content: `${website}`,
+          content: `prolocofraine.org`,
         },
         {
           name: `twitter:card`,
-          content: `${summary}`,
+          content: `large`,
         },
         {
           name: `twitter:image`,
@@ -85,8 +85,8 @@ function SEO({ description, lang, image, meta, title, keywords, date }) {
         {{
           "@context": "http://schema.org",
           "@type": "BlogPosting",
-          image: "http://example.com/images/image.jpg",
-          url: "http://example.com/blog/post",
+          image: "http://prolocofraine.org/images/image.jpg",
+          url: "http://prolocofraine.org",
           headline: metaDescription,
           alternativeHeadline: metaDescription,
           dateCreated: date,

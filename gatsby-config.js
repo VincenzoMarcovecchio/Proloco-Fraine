@@ -23,6 +23,18 @@ module.exports = {
       },
     },
     {
+      resolve: "gatsby-source-custom-api",
+      options: {
+        url: {
+          development:
+            "https://covid19italiahelp.herokuapp.com/reports/", // on "gatsby develop"
+          production:
+            "https://covid19italiahelp.herokuapp.com/reports/", // on "gatsby build"
+        },
+        rootKey: "covid",
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `markdown-pages`,

@@ -1,8 +1,8 @@
-import React, { useEffect } from "react"
+import React from "react"
 import Container from "@material-ui/core/Container"
 import { makeStyles } from "@material-ui/core/styles"
 import logoabruzzo from "../images/abruzzo-turismo.svg"
-import TwitterIcon from "@material-ui/icons/Twitter"
+import { Link } from "gatsby"
 export default function Footer() {
   const useStyles = makeStyles({
     root: {
@@ -18,6 +18,9 @@ export default function Footer() {
         alignItems: "flex-start",
       },
     },
+    marginTop: {
+      marginTop: "1rem",
+    },
   })
 
   const classes = useStyles()
@@ -27,7 +30,7 @@ export default function Footer() {
         <Container className={classes.root}>
           <div style={{ display: "flex", flexDirection: "column" }}>
             <span>
-              © {new Date().getFullYear()}, Built in Fraine with
+              © {new Date().getFullYear()}, Fatto a Fraine con
               <a
                 target="_blank"
                 rel="canonical noopener noreferrer"
@@ -36,8 +39,15 @@ export default function Footer() {
                 &nbsp;Gatsby
               </a>
             </span>
+            <Link
+              className={classes.marginTop}
+              replace
+              to="/prodotti-fitosanitari/"
+            >
+              Prodotti fitosanitari
+            </Link>
             <img
-              width="125"
+              width="255"
               height="250"
               src={logoabruzzo}
               alt="logo Abruzzo risorse turismo"
@@ -51,8 +61,8 @@ export default function Footer() {
             <img
               src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
               alt="Buy Me A Coffee"
-              height="60"
-              width="200"
+              width="255"
+              height="90"
             />
           </a>
         </Container>

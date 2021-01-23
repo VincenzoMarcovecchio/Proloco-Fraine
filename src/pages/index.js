@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import PostLink from "../components/postLink"
@@ -40,10 +40,11 @@ const useStyles = makeStyles(theme => ({
 
   divider: {
     margin: theme.spacing(2, 0),
+    marginBottom: "3rem",
   },
   root: {
     width: "100%",
-    margin: "2rem auto",
+    margin: "3rem auto",
     ["@media (min-width:780px)"]: {
       // eslint-disable-line no-useless-computed-key
       width: "90%",
@@ -104,10 +105,10 @@ const IndexPage = ({
       <Layout>
         <SEO
           title="Proloco Fraine"
-          description=""
+          description="L'Associazione PRO LOCO Fraine ha come scopo l'organizzazione di eventi socio-culturali per l'intrattenimento di grandi e piccini, e non solo..."
           keywords="abruzzo turismo risorse umane montagna mare salute benessere"
         />
-        <div className="hero">
+        <section className="hero">
           <video
             width="100%"
             autoPlay
@@ -131,7 +132,7 @@ const IndexPage = ({
             <br />
             <span>unisce</span>
           </h1>
-        </div>
+        </section>
 
         <Container maxWidth="lg">
           <h1 style={{ margin: "3rem auto 3rem 0" }}>Il Blog</h1>
@@ -149,12 +150,10 @@ const IndexPage = ({
           </Masonry>
         </Container>
         <Divider className={classes.divider} />
-        <br />
-        <br />
+
         <Container maxWidth="lg">
           <h1>Notizie dal web</h1>
         </Container>
-        <br />
         <Container maxWidth="lg">
           <Masonry
             className="my-masonry-grid"
@@ -223,8 +222,8 @@ const IndexPage = ({
                         className={clsx(classes.expand, {
                           [classes.expandOpen]: expanded,
                         })}
-                        onClick={() => handleExpandClick(index)}
-                        aria-expanded={article.expa}
+                        // onClick={() => handleExpandClick(index)}
+                        aria-expanded="false"
                         aria-label="scopri di piu"
                       >
                         <ExpandMoreIcon />

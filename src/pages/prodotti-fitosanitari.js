@@ -58,6 +58,7 @@ function FitoSanitari() {
       <SEO
         title="I prodotti Fitosanitari"
         description="Il dataset contiene l'elenco completo dei Prodotti Fitosanitari autorizzati dal Ministero della Salute"
+        image={ima}
         keywords="Dati relativi al prodotto fitosanitario : Numero Registrazione, Denominazione prodotto, Data Registrazione, Scadenza Autorizzazione, Indicazione di pericolo, Attività, Formulazione, Importazioni Parallele, Prodotti per Piante Ornamentali, Sostanze Attive contenute"
       />
       <section className="blog-post-container">
@@ -76,7 +77,7 @@ function FitoSanitari() {
             loader={<h4>Loading...</h4>}
           >
             {current &&
-              current.map((pro, index) => (
+              current.map(pro => (
                 <Fito
                   job={pro}
                   key={pro.id}
