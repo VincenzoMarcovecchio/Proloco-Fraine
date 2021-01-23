@@ -1,9 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: `Associazione PRO LOCO Fraine `,
-    description: `L'Associazione PRO LOCO Fraine ha come scopo l'organizzazione di eventi socio-culturali per l'intrattenimento di grandi e piccini, e non solo...`,
-    author: `@vinny`,
+    title: `Associazione proloco Fraine`,
+    description: `L'Associazione proloco Fraine ha come scopo l'organizzazione di eventi socio-culturali per l'intrattenimento di grandi e piccini, e non solo...`,
+    author: `https://codingbackyard.com`,
     siteUrl: `https://www.prolocofraine.org`,
+    keywords: " Abruzzo, Fraine, Italy, Cucina, Italiana, Web, app, IO",
   },
 
   plugins: [
@@ -26,10 +27,8 @@ module.exports = {
       resolve: "gatsby-source-custom-api",
       options: {
         url: {
-          development:
-            "https://covid19italiahelp.herokuapp.com/reports/", // on "gatsby develop"
-          production:
-            "https://covid19italiahelp.herokuapp.com/reports/", // on "gatsby build"
+          development: "https://covid19italiahelp.herokuapp.com/reports/", // on "gatsby develop"
+          production: "https://covid19italiahelp.herokuapp.com/reports/", // on "gatsby build"
         },
         rootKey: "covid",
       },
