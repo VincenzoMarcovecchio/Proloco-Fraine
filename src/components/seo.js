@@ -10,7 +10,8 @@ import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 import { JsonLd } from "../components/JsonLd/JsonLd"
-function SEO({ title, description, image, keywords }) {
+
+function SEO({ title, description, image, keywords, meta }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -33,7 +34,6 @@ function SEO({ title, description, image, keywords }) {
         lang: "it",
       }}
       title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
         {
           name: `description`,
@@ -79,7 +79,7 @@ function SEO({ title, description, image, keywords }) {
           name: `keywords`,
           content: `${keywords}`,
         },
-      ].concat()}
+      ].concat(meta)}
     >
       <JsonLd>
         {{
@@ -154,12 +154,14 @@ function SEO({ title, description, image, keywords }) {
 
 SEO.defaultProps = {
   lang: `it`,
+  meta: [],
   description: `L'Associazione PRO LOCO Fraine ha come scopo l'organizzazione di eventi socio-culturali per l'intrattenimento di grandi e piccini, e non solo...`,
 }
 
 SEO.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
+  meta: PropTypes.arrayOf(PropTypes.object),
   image: PropTypes.string,
   keywords: PropTypes.string,
 }
