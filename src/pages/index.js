@@ -13,7 +13,6 @@ import CardHeader from "@material-ui/core/CardHeader"
 import CardMedia from "@material-ui/core/CardMedia"
 import CardContent from "@material-ui/core/CardContent"
 import CardActions from "@material-ui/core/CardActions"
-import Collapse from "@material-ui/core/Collapse"
 import IconButton from "@material-ui/core/IconButton"
 import Typography from "@material-ui/core/Typography"
 import { red } from "@material-ui/core/colors"
@@ -24,6 +23,7 @@ import MoreVertIcon from "@material-ui/icons/MoreVert"
 import Skeleton from "@material-ui/lab/Skeleton"
 import Masonry from "react-masonry-css"
 import { useStaticQuery, graphql } from "gatsby"
+import proloco from "../images/proloco.jpg"
 const useStyles = makeStyles(theme => ({
   container: {
     display: "flex",
@@ -106,6 +106,7 @@ const IndexPage = ({
         <SEO
           title="Proloco Fraine"
           description="L'Associazione PRO LOCO Fraine ha come scopo l'organizzazione di eventi socio-culturali per l'intrattenimento di grandi e piccini, e non solo..."
+          image={proloco}
           keywords="abruzzo turismo risorse umane montagna mare salute benessere"
         />
         <section className="hero">

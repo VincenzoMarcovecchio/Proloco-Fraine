@@ -10,7 +10,7 @@ import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 import { JsonLd } from "../components/JsonLd/JsonLd"
-function SEO({ description, lang, image, meta, title, keywords, date }) {
+function SEO({ title, description, image, keywords }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -30,7 +30,7 @@ function SEO({ description, lang, image, meta, title, keywords, date }) {
   return (
     <Helmet
       htmlAttributes={{
-        lang,
+        lang: "it",
       }}
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
@@ -79,7 +79,7 @@ function SEO({ description, lang, image, meta, title, keywords, date }) {
           name: `keywords`,
           content: `${keywords}`,
         },
-      ].concat(meta)}
+      ].concat()}
     >
       <JsonLd>
         {{
@@ -89,9 +89,9 @@ function SEO({ description, lang, image, meta, title, keywords, date }) {
           url: "http://prolocofraine.org",
           headline: metaDescription,
           alternativeHeadline: metaDescription,
-          dateCreated: date,
-          datePublished: date,
-          dateModified: date,
+          dateCreated: Date.now(),
+          datePublished: Date.now(),
+          dateModified: Date.now(),
           inLanguage: "it-IT",
           isFamilyFriendly: "true",
           copyrightYear: "2019",
@@ -154,15 +154,14 @@ function SEO({ description, lang, image, meta, title, keywords, date }) {
 
 SEO.defaultProps = {
   lang: `it`,
-  meta: [],
   description: `L'Associazione PRO LOCO Fraine ha come scopo l'organizzazione di eventi socio-culturali per l'intrattenimento di grandi e piccini, e non solo...`,
 }
 
 SEO.propTypes = {
+  title: PropTypes.string,
   description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired,
+  image: PropTypes.string,
+  keywords: PropTypes.string,
 }
 
 export default SEO

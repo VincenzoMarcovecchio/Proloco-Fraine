@@ -54,10 +54,10 @@ const IndexPage = ({ data }) => {
     <>
       <Layout>
         <SEO
+          title="Covid-19"
           description="EmergenzeHack informazioni dal comune di Fraine"
-          title="Covid-19 "
-          keywords="covid abruzzo notizie locali Fraine Vasto"
           image={data.file.childImageSharp.fluid.src}
+          keywords="covid abruzzo notizie locali Fraine Vasto"
         />
         <Container style={{ marginTop: "3rem" }} maxWidth="sm">
           <center>
@@ -112,9 +112,9 @@ const IndexPage = ({ data }) => {
             )
             <Grid className={classes.gridItem} item xs={12} md={6}>
               <iframe
-                width="800"
-                height="500"
-                aria-title="covid help"
+                width="1440"
+                height="800"
+                title="iframe del sito "
                 src="https://covid19italia.help/segnala-base/"
                 frameborder="0"
               >

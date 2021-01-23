@@ -5,8 +5,6 @@ import SEO from "../components/seo"
 import { Link } from "gatsby"
 import Container from "@material-ui/core/Container"
 
-import Image from "../components/image"
-
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.
 }) {
@@ -21,10 +19,9 @@ export default function Template({
     <Layout>
       <SEO
         title={frontmatter.title}
-        image={frontmatter.cover}
         description={frontmatter.description}
+        image={frontmatter.cover}
         keywords={frontmatter.keywords}
-        date={frontmatter.date}
       />
 
       <Container maxWidth="sm">
