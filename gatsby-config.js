@@ -4,7 +4,7 @@ module.exports = {
     description: `L'Associazione proloco Fraine ha come scopo l'organizzazione di eventi socio-culturali per l'intrattenimento di grandi e piccini, e non solo...`,
     author: `https://codingbackyard.com`,
     siteUrl: `https://www.prolocofraine.org`,
-    keywords: " Abruzzo, Fraine, Italy, Cucina, Italiana, Web, app, IO",
+    keywords:[ 'Abruzzo','Fraine', 'Italy', 'Cucina', 'Italiana', 'Web', 'app', 'IO'],
   },
 
   plugins: [

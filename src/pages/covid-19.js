@@ -5,7 +5,6 @@ import Container from "@material-ui/core/Container"
 import { makeStyles } from "@material-ui/core/styles"
 import Divider from "@material-ui/core/Divider"
 import Grid from "@material-ui/core/Grid"
-
 import Card from "@material-ui/core/Card"
 import CardActions from "@material-ui/core/CardActions"
 import CardContent from "@material-ui/core/CardContent"
@@ -129,6 +128,7 @@ const IndexPage = ({ data }) => {
     </>
   )
 }
+
 export const query = graphql`
   query MyQuery {
     file(relativePath: { eq: "covidimageinformationalreport.png" }) {
