@@ -9,7 +9,8 @@ import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 import { JsonLd } from "../components/JsonLd/JsonLd"
-function SEO({ description, meta, image: metaImage, title, pathname }) {
+
+function SEO({ title, description, meta, image, pathname, keywords }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -26,10 +27,7 @@ function SEO({ description, meta, image: metaImage, title, pathname }) {
     `
   )
   const metaDescription = description || site.siteMetadata.description
-  const image =
-    metaImage && metaImage.src
-      ? `${site.siteMetadata.siteUrl}${metaImage.src}`
-      : null
+  const metaImage = image ? image : null
   const canonical = pathname ? `${site.siteMetadata.siteUrl}${pathname}` : null
   return (
     <>
@@ -39,79 +37,26 @@ function SEO({ description, meta, image: metaImage, title, pathname }) {
         }}
         title={title}
         titleTemplate={`%s | ${site.siteMetadata.title}`}
-        link={
-          canonical
-            ? [
-                {
-                  rel: "canonical",
-                  href: canonical,
-                },
-              ]
-            : []
-        }
-        meta={[
-          {
-            name: `description`,
-            content: metaDescription,
-          },
-          {
-            name: "keywords",
-            content: site.siteMetadata.keywords.join(","),
-          },
-          {
-            property: `og:title`,
-            content: title,
-          },
-          {
-            property: `og:description`,
-            content: metaDescription,
-          },
-          {
-            property: `og:type`,
-            content: `website`,
-          },
-          {
-            name: `twitter:creator`,
-            content: site.siteMetadata.author,
-          },
-          {
-            name: `twitter:title`,
-            content: title,
-          },
-          {
-            name: `twitter:description`,
-            content: metaDescription,
-          },
-        ]
-          .concat(
-            metaImage
-              ? [
-                  {
-                    property: "og:image",
-                    content: image,
-                  },
-                  {
-                    property: "og:image:width",
-                    content: metaImage.width,
-                  },
-                  {
-                    property: "og:image:height",
-                    content: metaImage.height,
-                  },
-                  {
-                    name: "twitter:card",
-                    content: "summary_large_image",
-                  },
-                ]
-              : [
-                  {
-                    name: "twitter:card",
-                    content: "summary",
-                  },
-                ]
-          )
-          .concat(meta)}
       >
+        <meta name="description" content={metaDescription} />
+        <link rel="canonical" href={`https://prolocofraine.org/${canonical}`} />
+        {/* <!-- Google / Search Engine Tags --> */}
+        <meta itemprop="name" content="Proloco Fraine" />
+        <meta itemprop="description" content={metaDescription} />
+        <meta itemprop="image" content={image} />
+
+        {/* <!-- Facebook Meta Tags --> */}
+        <meta property="og:url" content="https://reedbarger.com" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Proloco Fraine" />
+        <meta property="og:description" content={metaDescription} />
+        <meta property="og:image" content={image} />
+
+        {/* <!-- Twitter Meta Tags --> */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Reed" />
+        <meta name="twitter:description" content={metaDescription} />
+        <meta name="twitter:image" content={image} />
         <meta
           httpEquiv="Content-Security-Policy"
           content="upgrade-insecure-requests"
@@ -182,21 +127,6 @@ function SEO({ description, meta, image: metaImage, title, pathname }) {
       </JsonLd>
     </>
   )
-}
-SEO.defaultProps = {
-  meta: [],
-  description: ``,
-}
-SEO.propTypes = {
-  description: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired,
-  image: PropTypes.shape({
-    src: PropTypes.string.isRequired,
-    height: PropTypes.string.isRequired,
-    width: PropTypes.string.isRequired,
-  }),
-  pathname: PropTypes.string,
 }
 
 export default SEO
