@@ -130,8 +130,7 @@ const IndexPage = ({
 
           <h1>
             #ProLocoFraine
-            <br />
-            <span>unisce</span>
+            <span style={{ display: "block" }}>unisce</span>
           </h1>
         </section>
 

@@ -9,7 +9,6 @@ const React = require("react")
 
 exports.onRenderBody = ({ setPostBodyComponents }) => {
   setPostBodyComponents([
-    <div id="fb-root"></div>,
     <script
       async
       defer

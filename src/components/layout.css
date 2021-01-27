@@ -722,13 +722,11 @@ pre tt:after {
   background: rgb(230, 46, 45);
   box-sizing: content-box;
   color: white;
-  text-rendering: geometricPrecision;
 }
 
 .ticker {
   display: inline-block;
   height: 4rem;
-  text-rendering: geometricPrecision;
   line-height: 4rem;
   white-space: nowrap;
   padding-right: 100%;
@@ -739,8 +737,8 @@ pre tt:after {
   animation-timing-function: linear;
   -webkit-animation-name: ticker;
   animation-name: ticker;
-  -webkit-animation-duration: 200s;
-  animation-duration: 200s;
+  -webkit-animation-duration: 300s;
+  animation-duration: 300s;
 }
 
 .item {

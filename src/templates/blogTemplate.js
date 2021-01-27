@@ -46,7 +46,7 @@ export default function Template({
         </article>
 
         <Link to="/">Torna indietro</Link>
-
+        <div id="fb-root"></div>
         <div
           style={{ margin: "2rem auto" }}
           className="fb-comments"

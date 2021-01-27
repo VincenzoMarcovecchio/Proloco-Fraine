@@ -111,7 +111,12 @@ function SEO({ description, meta, image: metaImage, title, pathname }) {
                 ]
           )
           .concat(meta)}
-      />
+      >
+        <meta
+          httpEquiv="Content-Security-Policy"
+          content="upgrade-insecure-requests"
+        ></meta>
+      </Helmet>
       <JsonLd>
         {{
           "@context": "http://schema.org",
@@ -175,10 +180,6 @@ function SEO({ description, meta, image: metaImage, title, pathname }) {
           articleBody: metaDescription,
         }}
       </JsonLd>
-      <meta
-        http-equiv="Content-Security-Policy"
-        content="upgrade-insecure-requests"
-      ></meta>
     </>
   )
 }
@@ -192,8 +193,8 @@ SEO.propTypes = {
   title: PropTypes.string.isRequired,
   image: PropTypes.shape({
     src: PropTypes.string.isRequired,
-    height: PropTypes.number.isRequired,
-    width: PropTypes.number.isRequired,
+    height: PropTypes.string.isRequired,
+    width: PropTypes.string.isRequired,
   }),
   pathname: PropTypes.string,
 }

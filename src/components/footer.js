@@ -9,7 +9,7 @@ export default function Footer() {
       display: "flex",
       justifyContent: "space-between",
       alignItems: "center",
-      flexDirection: "column-reverse",
+      flexDirection: "column",
       width: "100%",
       height: "100%",
       ["@media (min-width:780px)"]: {
@@ -46,12 +46,14 @@ export default function Footer() {
             >
               Prodotti fitosanitari
             </Link>
-            <img
-              width="255"
-              height="250"
-              src={logoabruzzo}
-              alt="logo Abruzzo risorse turismo"
-            />
+            <center>
+              <img
+                width=""
+                height=""
+                src={logoabruzzo}
+                alt="logo Abruzzo risorse turismo"
+              />
+            </center>
           </div>
           <a
             rel="noopener noreferrer canonical"
@@ -62,7 +64,7 @@ export default function Footer() {
               src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
               alt="Buy Me A Coffee"
               width="255"
-              height="90"
+              height="70"
             />
           </a>
         </Container>
