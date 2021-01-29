@@ -24,15 +24,6 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <div className="banner">
-        <span>supportiamo il movimento&nbsp;</span>
-        <a
-          href="https://blacklivesmatter.com/"
-          rel="noopener noreferrer canonical"
-        >
-          #BLACKLIVESMATTER
-        </a>
-      </div>
       <Header />
 
       <main>{children}</main>

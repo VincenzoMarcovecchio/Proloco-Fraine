@@ -40,6 +40,7 @@ export default function Category({ data }) {
         keywords="cucina italiana ricette abruzzesi ricette tipiche abruzzesi"
       />
       <section className="blog-post-container">
+        <Link to="/">Torna indietro</Link>
         <Container maxWidth="md">
           <h1 style={{ margin: "3rem auto 3rem 0" }}>
             Ricette tradizionali Frainesi
@@ -88,7 +89,6 @@ export default function Category({ data }) {
               )
             })}
           </Grid>
-          <Link to="/">Torna indietro</Link>
         </Container>
       </section>
     </Layout>

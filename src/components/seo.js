@@ -46,7 +46,7 @@ function SEO({ title, description, meta, image, pathname, keywords }) {
         <meta itemprop="image" content={image} />
 
         {/* <!-- Facebook Meta Tags --> */}
-        <meta property="og:url" content="https://reedbarger.com" />
+        <meta property="og:url" content="https://prolocofraine.org" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Proloco Fraine" />
         <meta property="og:description" content={metaDescription} />
@@ -54,7 +54,7 @@ function SEO({ title, description, meta, image, pathname, keywords }) {
 
         {/* <!-- Twitter Meta Tags --> */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Reed" />
+        <meta name="twitter:title" content="Proloco Fraine" />
         <meta name="twitter:description" content={metaDescription} />
         <meta name="twitter:image" content={image} />
         <meta
