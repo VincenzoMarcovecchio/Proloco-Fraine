@@ -10,7 +10,7 @@ import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 import { JsonLd } from "../components/JsonLd/JsonLd"
 
-function SEO({ title, description, meta, image, pathname, keywords }) {
+function SEO({ title, description, keywords, meta, image, pathname }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -39,7 +39,7 @@ function SEO({ title, description, meta, image, pathname, keywords }) {
         titleTemplate={`%s | ${site.siteMetadata.title}`}
       >
         <meta name="description" content={metaDescription} />
-        <link rel="canonical" href={`https://prolocofraine.org/${canonical}`} />
+        <link rel="canonical" href={`https://prolocofraine.org/${pathname}`} />
         {/* <!-- Google / Search Engine Tags --> */}
         <meta itemprop="name" content="Proloco Fraine" />
         <meta itemprop="description" content={metaDescription} />

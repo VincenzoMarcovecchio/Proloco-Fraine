@@ -55,6 +55,7 @@ const IndexPage = ({ data }) => {
         <SEO
           title="Covid-19"
           description="EmergenzeHack informazioni dal comune di Fraine"
+          pathname="covid-19"
           image={data.file.childImageSharp.fluid.src}
           keywords="covid abruzzo notizie locali Fraine Vasto"
         />

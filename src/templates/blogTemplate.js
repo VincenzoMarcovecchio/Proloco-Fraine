@@ -20,8 +20,8 @@ export default function Template({
       <SEO
         title={frontmatter.title}
         description={frontmatter.description}
-        image={frontmatter.cover}
         keywords={frontmatter.keywords}
+        image={frontmatter.cover}
       />
 
       <Container maxWidth="sm">
@@ -35,9 +35,7 @@ export default function Template({
               src={frontmatter.cover}
             />
           )}
-          <h1 style={{ margin: "2rem auto 2rem 0", lineHeight: "1.5" }}>
-            {frontmatter.title}
-          </h1>
+          <h1 style={{ margin: "2rem auto 2rem 0" }}>{frontmatter.title}</h1>
           <time dateTime={frontmatter.date}> </time>
           <div
             className="blog-post-content"
@@ -48,10 +46,10 @@ export default function Template({
         <Link to="/">Torna indietro</Link>
         <div id="fb-root"></div>
         <div
-          style={{ margin: "2rem auto" }}
+          style={{ margin: "2rem auto", width: "100%" }}
           className="fb-comments"
           data-href="https://www.prolocofraine.org/*"
-          data-width="100%"
+          data-width="500"
           data-numposts="4"
         ></div>
       </Container>

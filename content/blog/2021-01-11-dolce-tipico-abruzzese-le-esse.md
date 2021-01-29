@@ -1,11 +1,11 @@
 ---
-title: 📍➡️ Ma quanto sono buone le “Esse”‼️ 😋
+title: Ma quanto sono buone le “Esse”‼️
 author: Giacomo
 date: 2021-01-11T23:13:10.104Z
 description: Un dolce semplicissimo, ma dal profumo inebriante dei semi di anice.Non c’è un battesimo, una comunione o un matrimonio senza le “esse”.
+keywords: ricette tradizionali esse abruzzesi italia cuoco chef cousine cinque stelle
 cover: "/images/dolce-tipico-abruzzese-le-esse.jpg"
 category: ricette
-keywords: cucina ricette tradizionali esse abruzzesi italia cuoco chef cousine cinque stelle
 path: /blog/dolce-tipico-abruzzese-le-esse
 slug: dolce-tipico-abruzzese-le-esse
 tags:

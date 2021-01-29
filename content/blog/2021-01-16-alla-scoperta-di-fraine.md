@@ -3,9 +3,9 @@ title: Alla scoperta di Fraine
 author: Abruzzo Web TV
 date: 2021-01-16T23:13:10.104Z
 description: Alla scoperta di Fraine
+keywords: cucina ricette tradizionali esse abruzzesi italia cuoco chef cousine cinque-stelle paesi abruzzesi
 cover: ""
 category: youtube
-keywords: cucina ricette tradizionali esse abruzzesi italia cuoco chef cousine cinque-stelle paesi abruzzesi
 path: /blog/alla-scoperta-di-fraine
 slug: alla-scoperta-di-fraine
 tags:

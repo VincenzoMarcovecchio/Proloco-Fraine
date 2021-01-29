@@ -30,7 +30,7 @@ export default function Footer() {
       <footer>
         <Container className={classes.root}>
           <div className="link-utili">
-            <span>Link utili</span>
+            <p>Link utili</p>
             <ul>
               <li>
                 <Link
@@ -39,6 +39,15 @@ export default function Footer() {
                   to="/prodotti-fitosanitari/"
                 >
                   Prodotti fitosanitari
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className={classes.marginTop}
+                  replace
+                  to="/beni-e-servizi-acquistati-tramite-rdotd-sul-mepa/"
+                >
+                  Acquisti Mepa
                 </Link>
               </li>
             </ul>
