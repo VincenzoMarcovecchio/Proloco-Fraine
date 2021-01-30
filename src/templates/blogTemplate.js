@@ -22,6 +22,7 @@ export default function Template({
         description={frontmatter.description}
         keywords={frontmatter.keywords}
         image={frontmatter.cover}
+        pathname={frontmatter.slug}
       />
 
       <Container maxWidth="sm">
