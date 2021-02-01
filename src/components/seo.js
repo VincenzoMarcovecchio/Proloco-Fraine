@@ -10,7 +10,7 @@ import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 import { JsonLd } from "../components/JsonLd/JsonLd"
 
-function SEO({ title, description, keywords, meta, image, pathname }) {
+function SEO({ title, description, keywords, image, pathname }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -27,8 +27,7 @@ function SEO({ title, description, keywords, meta, image, pathname }) {
     `
   )
   const metaDescription = description || site.siteMetadata.description
-  const metaImage = image ? image : null
-  const canonical = pathname ? `${site.siteMetadata.siteUrl}${pathname}` : null
+
   return (
     <>
       <Helmet
@@ -40,11 +39,7 @@ function SEO({ title, description, keywords, meta, image, pathname }) {
       >
         <meta name="description" content={metaDescription} />
         <link rel="canonical" href={`https://prolocofraine.org/${pathname}`} />
-        {/* <!-- Google / Search Engine Tags --> */}
-        <meta itemprop="name" content="Proloco Fraine" />
-        <meta itemprop="description" content={metaDescription} />
-        <meta itemprop="image" content={image} />
-
+        <meta name="keywords" content={keywords}></meta>
         {/* <!-- Facebook Meta Tags --> */}
         <meta property="og:image:width" content="500" />
         <meta property="og:image:height" content="500" />
@@ -53,12 +48,15 @@ function SEO({ title, description, keywords, meta, image, pathname }) {
         <meta property="og:title" content="Proloco Fraine" />
         <meta property="og:description" content={metaDescription} />
         <meta property="og:image" content={image} />
-
         {/* <!-- Twitter Meta Tags --> */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Proloco Fraine" />
         <meta name="twitter:description" content={metaDescription} />
         <meta name="twitter:image" content={image} />
+        {/* <!-- Google / Search Engine Tags --> */}
+        <meta itemprop="name" content="Proloco Fraine" />
+        <meta itemprop="description" content={metaDescription} />
+        <meta itemprop="image" content={image} />{" "}
         <meta
           httpEquiv="Content-Security-Policy"
           content="upgrade-insecure-requests"
@@ -130,5 +128,11 @@ function SEO({ title, description, keywords, meta, image, pathname }) {
     </>
   )
 }
-
+SEO.propTypes = {
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string,
+  keywords: PropTypes.string,
+  image: PropTypes.string,
+  pathname: PropTypes.string,
+}
 export default SEO

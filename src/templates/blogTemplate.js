@@ -10,11 +10,7 @@ export default function Template({
 }) {
   const { markdownRemark } = data // data.markdownRemark holds your post data
   const { frontmatter, html } = markdownRemark
-  var options = {
-    year: "numeric",
-    month: "2-digit",
-    day: "2-digit",
-  }
+
   return (
     <Layout>
       <SEO
