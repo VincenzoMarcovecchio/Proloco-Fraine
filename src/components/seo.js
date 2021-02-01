@@ -49,7 +49,7 @@ function SEO({ title, description, keywords, image, pathname }) {
         <meta property="og:description" content={description} />
         <meta
           property="og:image"
-          content={`https://www.prolocofraine.org/${image}`}
+          content={`https://www.prolocofraine.org${image}`}
         />
         {/* <!-- Twitter Meta Tags --> */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -57,19 +57,20 @@ function SEO({ title, description, keywords, image, pathname }) {
         <meta name="twitter:description" content={description} />
         <meta
           name="twitter:image"
-          content={`https://www.prolocofraine.org/${image}`}
+          content={`https://www.prolocofraine.org${image}`}
         />
         {/* <!-- Google / Search Engine Tags --> */}
         <meta itemprop="name" content="Proloco Fraine" />
         <meta itemprop="description" content={description} />
         <meta
           itemprop="image"
-          content={`https://www.prolocofraine.org/${image}`}
+          content={`https://www.prolocofraine.org${image}`}
         />{" "}
         <meta
           httpEquiv="Content-Security-Policy"
           content="upgrade-insecure-requests"
         ></meta>
+        <meta property="fb:app_id" content="407785027087673" />
       </Helmet>
       <JsonLd>
         {{
