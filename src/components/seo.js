@@ -26,6 +26,7 @@ function SEO({ title, description, keywords, image, pathname }) {
       }
     `
   )
+  const metaDescription = description || site.siteMetadata.description
 
   return (
     <>
@@ -48,7 +49,7 @@ function SEO({ title, description, keywords, image, pathname }) {
         <meta property="og:description" content={description} />
         <meta
           property="og:image"
-          content={`https://www.prolocofraine.org${image}`}
+          content={`https://www.prolocofraine.org/${image}`}
         />
         {/* <!-- Twitter Meta Tags --> */}
         <meta name="twitter:card" content="summary_large_image" />
