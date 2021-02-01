@@ -46,6 +46,8 @@ function SEO({ title, description, keywords, meta, image, pathname }) {
         <meta itemprop="image" content={image} />
 
         {/* <!-- Facebook Meta Tags --> */}
+        <meta property="og:image:width" content="500" />
+<meta property="og:image:height" content="500" />
         <meta property="og:url" content="https://prolocofraine.org" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Proloco Fraine" />

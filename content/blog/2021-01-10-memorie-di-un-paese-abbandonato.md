@@ -6,7 +6,6 @@ description: Stamattina pensavo a quando ero piccolo e scorazzavo in giro per la
 keywords: paese tipico abruzzese storie antiche di una volta abbandono paesaggistico
 cover: "/images/Paese tipico Abruzzese.jpg"
 category: storia
-
 path: /blog/memorie-di-un-paese-abbandonato
 slug: memorie-di-un-paese-abbandonato
 tags:

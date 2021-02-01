@@ -30,8 +30,8 @@ export default function Footer() {
       <footer>
         <Container className={classes.root}>
           <div className="link-utili">
-            <p>Link utili</p>
             <ul>
+              <li>Link utili</li>
               <li>
                 <Link
                   className={classes.marginTop}
@@ -51,6 +51,18 @@ export default function Footer() {
                 </Link>
               </li>
             </ul>
+            <a
+              rel="noopener noreferrer canonical"
+              href="https://www.buymeacoffee.com/Oa5oh3r"
+              target="_blank"
+            >
+              <img
+                src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
+                alt="Buy Me A Coffee"
+                width="255"
+                height="70"
+              />
+            </a>
           </div>
           <div className="icons-logos">
             <a
@@ -98,30 +110,17 @@ export default function Footer() {
               />
             </a>
           </div>
-          <a
-            rel="noopener noreferrer canonical"
-            href="https://www.buymeacoffee.com/Oa5oh3r"
-            target="_blank"
-          >
-            <img
-              src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
-              alt="Buy Me A Coffee"
-              width="255"
-              height="70"
-            />
-          </a>
-          <center>
-            <span>
-              © {new Date().getFullYear()}, Fatto a Fraine con
-              <a
-                target="_blank"
-                rel="canonical noopener noreferrer"
-                href="https://twitter.com/_vinny_92"
-              >
-                &nbsp;Gatsby
-              </a>
-            </span>
-          </center>
+
+          <span style={{ marginLeft: "auto" }}>
+            © {new Date().getFullYear()}, Fatto a Fraine con
+            <a
+              target="_blank"
+              rel="canonical noopener noreferrer"
+              href="https://twitter.com/_vinny_92"
+            >
+              &nbsp;Gatsby
+            </a>
+          </span>
         </Container>
       </footer>
     </>

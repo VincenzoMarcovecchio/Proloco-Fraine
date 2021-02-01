@@ -4,8 +4,8 @@ author: UNPL
 date: 2021-01-31T23:13:10.104Z
 description: Si rinnovano le iscrizioni alla proloco
 keywords: proloco significato unione nazionale proloco cucina ricette tradizionali esse abruzzesi italia cuoco chef cousine cinque-stelle paesi abruzzesi
-cover: "/images/iscrizioniproloco.jpg"
-category: youtube
+cover: "/images/iscrizioni-proloco.jpg"
+category: proloco
 path: /blog/proloco-significato
 slug: proloco-significato
 tags:

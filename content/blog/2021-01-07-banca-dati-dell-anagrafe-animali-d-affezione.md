@@ -1,11 +1,11 @@
 ---
-title: Anagrafe canina Abruzzo
+title: Anagrafe canina regionale
 author: Vincenzo
 date: 2020-05-27T23:13:10.104Z
 description: Il nucleo della banca dati dell'Anagrafe Animali d'Affezione è costituito da un server web centrale, collocato presso il Ministero, che viene alimentato e aggiornato dalle Regioni. Le Regioni che riversano i dati rispondono della correttezza e completezza degli stessi.
-cover: ""
+cover: "/images/anagrafe-canina.jpg"
 category: animali smarriti
-keywords: animali smarriti abruzzo
+keywords: anagrafe canina animali smarriti abruzzo
 path: /blog/banca-dati-dell-anagrafe-animali-d-affezione
 slug: banca-dati-dell-anagrafe-animali-d-affezione
 tags:
@@ -17,7 +17,7 @@ Tutte le regioni e le Province Autonome hanno avviato il caricamento della Banca
 
 Tutte le regioni inviano oltre al codice dell'identificativo (microchip o tatuaggio) informazioni relative all'animale quali la specie (cane, gatto, furetto), la razza e il sesso.
 
-<table class="tabella01_partial">
+<table class="tabella01_partial tavolo-anagrafe">
   <tbody>
     <tr>
       <th class="tabella01_th" scope="col" abbr="regioni">
