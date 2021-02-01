@@ -26,7 +26,6 @@ function SEO({ title, description, keywords, image, pathname }) {
       }
     `
   )
-  const metaDescription = description || site.siteMetadata.description
 
   return (
     <>
@@ -37,7 +36,7 @@ function SEO({ title, description, keywords, image, pathname }) {
         title={title}
         titleTemplate={`%s | ${site.siteMetadata.title}`}
       >
-        <meta name="description" content={metaDescription} />
+        <meta name="description" content={description} />
         <link rel="canonical" href={`https://prolocofraine.org/${pathname}`} />
         <meta name="keywords" content={keywords}></meta>
         {/* <!-- Facebook Meta Tags --> */}
@@ -46,17 +45,26 @@ function SEO({ title, description, keywords, image, pathname }) {
         <meta property="og:url" content="https://prolocofraine.org" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Proloco Fraine" />
-        <meta property="og:description" content={metaDescription} />
-        <meta property="og:image" content={image} />
+        <meta property="og:description" content={description} />
+        <meta
+          property="og:image"
+          content={`https://www.prolocofraine.org${image}`}
+        />
         {/* <!-- Twitter Meta Tags --> */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Proloco Fraine" />
-        <meta name="twitter:description" content={metaDescription} />
-        <meta name="twitter:image" content={image} />
+        <meta name="twitter:description" content={description} />
+        <meta
+          name="twitter:image"
+          content={`https://www.prolocofraine.org/${image}`}
+        />
         {/* <!-- Google / Search Engine Tags --> */}
         <meta itemprop="name" content="Proloco Fraine" />
-        <meta itemprop="description" content={metaDescription} />
-        <meta itemprop="image" content={image} />{" "}
+        <meta itemprop="description" content={description} />
+        <meta
+          itemprop="image"
+          content={`https://www.prolocofraine.org/${image}`}
+        />{" "}
         <meta
           httpEquiv="Content-Security-Policy"
           content="upgrade-insecure-requests"
