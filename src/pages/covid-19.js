@@ -46,12 +46,13 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const IndexPage = ({ data }) => {
+const IndexPage = props => {
   const classes = useStyles()
-
+  console.log(props)
   return (
     <>
-      <Layout>
+      <p>ciao</p>
+      {/* <Layout>
         <SEO
           title="Covid-19"
           description="EmergenzeHack informazioni dal comune di Fraine"
@@ -125,34 +126,9 @@ const IndexPage = ({ data }) => {
             </Grid>
           </Grid>
         </Container>
-      </Layout>
+      </Layout> */}
     </>
   )
 }
-
-export const query = graphql`
-  query MyQuery {
-    file(relativePath: { eq: "covidimageinformationalreport.png" }) {
-      childImageSharp {
-        # Specify the image processing specifications right in the query.
-        fluid {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-
-    covid(Provincia: { eq: "Chieti" }) {
-      id
-      internal {
-        content
-        contentDigest
-        description
-        fieldOwners
-        ignoreType
-        mediaType
-      }
-    }
-  }
-`
 
 export default IndexPage

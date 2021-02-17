@@ -48,16 +48,7 @@ module.exports = {
         rootKey: "articles",
       },
     },
-    {
-      resolve: "gatsby-source-custom-api",
-      options: {
-        url: {
-          development: "https://covid19italiahelp.herokuapp.com/reports/", // on "gatsby develop"
-          production: "https://covid19italiahelp.herokuapp.com/reports/", // on "gatsby build"
-        },
-        rootKey: "covid",
-      },
-    },
+
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -66,6 +57,7 @@ module.exports = {
       },
     },
     `gatsby-transformer-remark`,
+    `gatsby-plugin-preact`,
 
     {
       resolve: `gatsby-source-filesystem`,

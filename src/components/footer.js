@@ -72,7 +72,7 @@ export default function Footer() {
             >
               <img
                 width="115"
-                height=""
+                height="70"
                 src={logoabruzzo}
                 alt="logo Abruzzo risorse turismo"
               />
@@ -84,7 +84,7 @@ export default function Footer() {
             >
               <img
                 width="115"
-                height=""
+                height="70"
                 src={acqualife}
                 alt="logo Abruzzo risorse turismo"
               />
@@ -92,7 +92,7 @@ export default function Footer() {
             <a href="http://www.regione.abruzzo.it/content/conti-pubblici-territoriali">
               <img
                 width="115"
-                height=""
+                height="70"
                 src={contipubbliciterritoriali}
                 alt="logo Abruzzo risorse turismo"
               />
@@ -104,14 +104,14 @@ export default function Footer() {
             >
               <img
                 width="115"
-                height=""
+                height="70"
                 src={opendata}
                 alt="logo Abruzzo risorse turismo"
               />
             </a>
           </div>
 
-          <span style={{ marginLeft: "auto" }}>
+          <span style={{ marginRight: "auto" }}>
             © {new Date().getFullYear()}, Fatto a Fraine con
             <a
               target="_blank"

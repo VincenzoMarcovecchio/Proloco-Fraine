@@ -822,6 +822,9 @@ a {
 .link-utili ul li:first-child {
   color: gray;
 }
+.link-utili ul {
+  margin-left: 0rem;
+}
 
 @media only screen and (max-width: 650px) {
   .my-masonry-grid {

@@ -11,19 +11,33 @@ import Button from "@material-ui/core/Button"
 import FormControl from "@material-ui/core/FormControl"
 import CircularProgress from "@material-ui/core/CircularProgress"
 import Paper from "@material-ui/core/Paper"
+import flag from "../images/flag.jpg"
 const useStyles = makeStyles(theme => ({
   root: {
+    zIndex: "10",
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-
+    backgroundSize: "contain",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center",
+    backgroundImage: flag,
     "& .MuiTextField-root": {
       margin: theme.spacing(1),
       width: "100%",
     },
   },
-  text: { padding: "1.3rem" },
+  text: { zIndex: "10", padding: "1.4rem 1.6rem 1.4rem 0.8rem" },
+  image: {
+    zIndex: "5",
+    position: "absolute",
+    left: "0",
+    top: "4rem",
+    width: "100%",
+    minHeight: "inherit",
+    transform: "rotate(180deg)",
+  },
 }))
 
 export default function Generatoredicodicefiscaleonline() {
@@ -91,11 +105,16 @@ export default function Generatoredicodicefiscaleonline() {
         <SEO
           title="Il generatore di codice fiscale online gratuito"
           description="Il generatore di codice fiscale online gratuito by Proloco Fraine"
-          keywords="🇮🇹 codice fiscale online"
+          keywords="codice fiscale online"
         />
         <Container className={classes.root} maxWidth="sm">
-          <h1 style={{ margin: "3rem auto" }}>Codice Fiscale Online</h1>
-          <p>Completa i campi sottostanti con i tuoi dati personali</p>
+          <img className={classes.image} src={flag} alt="italiana bandiera" />
+          <h1 style={{ margin: "3rem auto", zIndex: "10" }}>
+            Codice Fiscale Online
+          </h1>
+          <p style={{ zIndex: "10" }}>
+            Completa i campi sottostanti con i tuoi dati personali
+          </p>
           <Paper className={classes.text} elevation={3}>
             <TextField
               value={state.nome}
@@ -114,10 +133,9 @@ export default function Generatoredicodicefiscaleonline() {
               onChange={handleChange}
               id="cognome"
               label="Cognome"
-              placeholder="Il tuo cognome"
               multiline
             />
-            <FormControl style={{ width: "100%" }}>
+            <FormControl style={{ width: "100%", margin: "8px" }}>
               <InputLabel id="sesso">Sesso</InputLabel>
               <Select
                 native
@@ -125,6 +143,7 @@ export default function Generatoredicodicefiscaleonline() {
                 labelId="sesso"
                 id="sesso"
                 value={state.sesso}
+                style={{ width: "100%" }}
                 onChange={handleChange}
               >
                 <option aria-label="None" value="" />
@@ -155,11 +174,11 @@ export default function Generatoredicodicefiscaleonline() {
               onChange={handleChange}
               id="cittadinascita"
               label="Citta` di nascita"
-              placeholder="La tua citta` di nascita"
+              placeholder=""
               multiline
             />
 
-            <FormControl>
+            <FormControl style={{ width: "100%", margin: "8px" }}>
               <InputLabel id="provincia">Provincia</InputLabel>
               <Select
                 id="provincia"
