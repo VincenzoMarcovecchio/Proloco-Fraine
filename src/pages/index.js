@@ -200,7 +200,7 @@ const IndexPage = ({
                           <p
                             contentEditable="true"
                             dangerouslySetInnerHTML={{
-                              __html: `${article.content.substring(0, 200)}`,
+                              __html: `${article?.content?.substring(0, 200)}`,
                             }}
                           ></p>
                         ) : (
