@@ -33,10 +33,9 @@ const useStyles = makeStyles(theme => ({
     zIndex: "5",
     position: "absolute",
     left: "0",
-    top: "4rem",
+    top: "3.2rem",
     width: "100%",
-    minHeight: "inherit",
-    transform: "rotate(180deg)",
+    height: "35rem",
   },
 }))
 

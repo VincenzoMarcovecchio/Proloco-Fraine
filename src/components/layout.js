@@ -34,7 +34,11 @@ const Layout = ({ children }) => {
           {Articles.map((article, index) => (
             <div key={index} className="item">
               <a
-                style={{ textDecoration: "none", color: "white",textRendering:" optimizeSpeed", }}
+                style={{
+                  textDecoration: "none",
+                  color: "white",
+                  textRendering: " optimizeSpeed",
+                }}
                 target="_blank"
                 href={article.url}
                 rel="canonical noopener noreferrer "
