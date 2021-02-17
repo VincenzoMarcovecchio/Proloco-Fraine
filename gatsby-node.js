@@ -59,28 +59,4 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       },
     })
   })
-
-  if (page.path === "/covid-19" || page.path === "/covid-19/") {
-    const { createPage, deletePage } = actions
-    deletePage(page)
-    async function fetchCovid() {
-      try {
-        const response = await fetch(
-          `https://mimmofranco.herokuapp.com/https://covid19italiahelp.herokuapp.com/reports/`
-        )
-        const data = await response.json()
-        return data
-      } catch (error) {
-        console.error(error)
-      }
-    }
-    const coffeeShops = await fetchCovid()
-    createPage({
-      ...page,
-      context: {
-        ...page.context,
-        coffeeShops,
-      },
-    })
-  }
 }
