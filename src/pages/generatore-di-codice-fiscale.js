@@ -12,6 +12,7 @@ import FormControl from "@material-ui/core/FormControl"
 import CircularProgress from "@material-ui/core/CircularProgress"
 import Paper from "@material-ui/core/Paper"
 import flag from "../images/flag.jpg"
+import { GatsbySeo } from "gatsby-plugin-next-seo"
 const useStyles = makeStyles(theme => ({
   root: {
     zIndex: "10",
