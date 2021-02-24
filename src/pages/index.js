@@ -150,13 +150,7 @@ const IndexPage = ({
           </Masonry>
         </Container>
         <Divider className={classes.divider} />
-        <div
-          className="fb-page"
-          data-href="https://www.facebook.com/imdb"
-          data-width="340"
-          data-hide-cover="false"
-          data-show-facepile="true"
-        ></div>
+
         <Container maxWidth="lg">
           <h1>Notizie dal web</h1>
         </Container>

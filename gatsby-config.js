@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Associazione proloco Fraine`,
     description: `L'Associazione proloco Fraine ha come scopo l'organizzazione di eventi socio-culturali per l'intrattenimento di grandi e piccini, e non solo...`,
-    author: `https://codingbackyard.com`,
+    author: `https://vincenzo.codes`,
     siteUrl: `https://www.prolocofraine.org`,
     keywords: [
       "Abruzzo",
@@ -20,6 +20,7 @@ module.exports = {
     `gatsby-plugin-material-ui`,
     `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-transformer-json`,
     {
       resolve: "gatsby-plugin-next-seo",
       options: {
@@ -63,6 +64,14 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/static/images`,
+      },
+    },
+
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `regioni`,
+        path: `${__dirname}/src/data/emergenza-regioni.json`,
       },
     },
     {

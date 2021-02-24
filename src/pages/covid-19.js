@@ -13,7 +13,7 @@ import Typography from "@material-ui/core/Typography"
 import CircularProgress from "@material-ui/core/CircularProgress"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
-
+import corona from "../../src/images/covidimageinformationalreport.png"
 const useStyles = makeStyles(theme => ({
   container: {
     display: "flex",
@@ -46,18 +46,17 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const IndexPage = props => {
+const IndexPage = () => {
   const classes = useStyles()
-  console.log(props)
+
   return (
     <>
-      <p>ciao</p>
-      {/* <Layout>
+      <Layout>
         <SEO
           title="Covid-19"
           description="EmergenzeHack informazioni dal comune di Fraine"
           pathname="covid-19"
-          image={data.file.childImageSharp.fluid.src}
+          image={corona}
           keywords="covid abruzzo notizie locali Fraine Vasto"
         />
         <Container style={{ marginTop: "3rem" }} maxWidth="sm">
@@ -65,68 +64,40 @@ const IndexPage = props => {
             <Img
               className={classes.gridItem}
               alt="coronavirus illustrazione animata"
-              fluid={data.file.childImageSharp.fluid}
+              fluid={corona}
               loa
             />
           </center>
         </Container>
 
-        {!data ? (
+        <Grid className={classes.gridItem} item xs={12} md={6}>
           <center>
-            <CircularProgress color="secondary" />
+            <iframe
+              width="100%"
+              height="300px"
+              frameBorder="0"
+              allowFullScreen
+              src="//umap.openstreetmap.fr/it/map/covid19italiahelp_434021?scaleControl=false&miniMap=false&scrollWheelZoom=false&zoomControl=true&allowEdit=false&moreControl=true&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=true&onLoadPanel=undefined&captionBar=false"
+            ></iframe>
+            <p>
+              <a href="//umap.openstreetmap.fr/it/map/covid19italiahelp_434021">
+                Visualizza a schermo intero
+              </a>
+            </p>
           </center>
-        ) : (
-          ""
-        )}
-        <Container className={classes.container} maxWidth="lg">
-          <Grid container>
-            <>
-              <Grid item xs={12} className={classes.gridItem} md={6}>
-                <Card>
-                  <CardContent className={classes.root}>
-                    <Typography color="textSecondary" gutterBottom>
-                      Regione Abruzzo
-                    </Typography>
-                    <Typography variant="h5" component="h2" gutterBottom>
-                      Provincia di Chieti
-                    </Typography>
-                    <Typography color="textSecondary"></Typography>
-                    <Typography variant="body2" component="p">
-                      {data.covid.internal.content.substring(34)}
-                    </Typography>
-                  </CardContent>
-                  <CardActions className={classes.root}>
-                    <Button size="small">
-                      <a
-                        rel="canonical noopener noreferrer"
-                        target="_blank"
-                        href={"https://www.covid19italia.help/"}
-                      >
-                        scopri di piu`
-                      </a>
-                    </Button>
-                  </CardActions>
-                </Card>
-              </Grid>
-              <Divider className={classes.divider} />
-            </>
-            )
-            <Grid className={classes.gridItem} item xs={12} md={6}>
-              <iframe
-                width="1440"
-                height="800"
-                title="iframe del sito "
-                src="https://covid19italia.help/segnala-base/"
-                frameborder="0"
-              >
-                <a href="https://covid19italia.help/segnala-base/">
-                  Segnalazioni Covid19Italia.help
-                </a>
-              </iframe>
-            </Grid>
-          </Grid>
-        </Container>
-      </Layout> */}
+          <iframe
+            width="1440"
+            height="500"
+            title="iframe del sito "
+            src="https://covid19italia.help/segnala-base/"
+            frameborder="0"
+          >
+            <a href="https://covid19italia.help/segnala-base/">
+              Segnalazioni Covid19Italia.help
+            </a>
+          </iframe>
+        </Grid>
+      </Layout>
     </>
   )
 }

@@ -1,0 +1,301 @@
+[
+  {
+    "datastore": {
+      "vocabularies": {
+        "skos": "http://www.w3.org/2004/02/skos/core",
+        "dcterms": "http://purl.org/dc/terms",
+        "dc": "http://purl.org/dc/elements/1.1",
+        "dcat": "http://www.w3.org/ns/dcat"
+      },
+      "metadata": {
+        "dcterms:identifier": 5683,
+        "dcterms:publisher": "INPS",
+        "dcterms:title": "Tavola 2.2  -  Nuclei percettori di reddito di Emergenza per regione con almeno un pagamento",
+        "dcterms:description": "Tavola 2.2  -  Nuclei percettori di reddito di Emergenza per regione con almeno un pagamento",
+        "dcterms:license": "IODL v.2.0",
+        "dcterms:licenseDocument": "http://www.dati.gov.it/iodl/2.0/",
+        "dcterms:source": "Osservatori Statistici",
+        "dcterms:issued": "2021-02-18 17:01:36.417102",
+        "lingue": [{ "dc:language": "italiano" }],
+        "keyword": [
+          { "dcat:keyword": "REI" },
+          { "dcat:keyword": "reddito emergenza" }
+        ],
+        "argomenti": [{ "dc:subject": "Reddito" }],
+        "periodo": [{ "dcterms:temporal": "2020" }],
+        "formati": [
+          { "dc:format": "XML" },
+          { "dc:format": "OWL" },
+          { "dc:format": "JSON" },
+          { "dc:format": "CSV" }
+        ]
+      },
+      "data": [
+        {
+          "Regione": "Abruzzo",
+          "Numero_nuclei_dl_34/2020_art.82": "5.844",
+          "Numero_persone_coinvolte_dl_34/2020_art.82": "12.698",
+          "Numero_nuclei_dl_104/2020_art.23": "4.930",
+          "Numero_persone_coinvolte_dl_104/2020_art.23": "10.507",
+          "Importo_medio_mensile_dl_34/2020_art.82": 534.89,
+          "Importo_medio_mensile_dl_104/2020_art.23": 532.98,
+          "latitude": 42.162361,
+          "longitude": 13.582626
+        },
+        {
+          "Regione": "Basilicata",
+          "Numero_nuclei_dl_34/2020_art.82": "4.664",
+          "Numero_persone_coinvolte_dl_34/2020_art.82": "10.290",
+          "Numero_nuclei_dl_104/2020_art.23": "4.544",
+          "Numero_persone_coinvolte_dl_104/2020_art.23": "9.767",
+          "Importo_medio_mensile_dl_34/2020_art.82": 542.55,
+          "Importo_medio_mensile_dl_104/2020_art.23": 536.68,
+          "latitude": 40.747257,
+          "longitude": 16.429472
+        },
+        {
+          "Regione": "Calabria",
+          "Numero_nuclei_dl_34/2020_art.82": "20.261",
+          "Numero_persone_coinvolte_dl_34/2020_art.82": "47.685",
+          "Numero_nuclei_dl_104/2020_art.23": "19.429",
+          "Numero_persone_coinvolte_dl_104/2020_art.23": "45.545",
+          "Importo_medio_mensile_dl_34/2020_art.82": 560.06,
+          "Importo_medio_mensile_dl_104/2020_art.23": 560.04,
+          "latitude": 39.3088,
+          "longitude": 16.397276
+        },
+        {
+          "Regione": "Campania",
+          "Numero_nuclei_dl_34/2020_art.82": "49.877",
+          "Numero_persone_coinvolte_dl_34/2020_art.82": "137.386",
+          "Numero_nuclei_dl_104/2020_art.23": "41.629",
+          "Numero_persone_coinvolte_dl_104/2020_art.23": "112.220",
+          "Importo_medio_mensile_dl_34/2020_art.82": 603.15,
+          "Importo_medio_mensile_dl_104/2020_art.23": 599.3,
+          "latitude": 40.896906,
+          "longitude": 14.310613
+        },
+        {
+          "Regione": "Centro",
+          "Numero_nuclei_dl_34/2020_art.82": "57.067",
+          "Numero_persone_coinvolte_dl_34/2020_art.82": "123.745",
+          "Numero_nuclei_dl_104/2020_art.23": "44.670",
+          "Numero_persone_coinvolte_dl_104/2020_art.23": "90.683",
+          "Importo_medio_mensile_dl_34/2020_art.82": 530.85,
+          "Importo_medio_mensile_dl_104/2020_art.23": 518.93,
+          "latitude": 42.147114,
+          "longitude": 13.343415
+        },
+        {
+          "Regione": "Emilia-Romagna",
+          "Numero_nuclei_dl_34/2020_art.82": "12.590",
+          "Numero_persone_coinvolte_dl_34/2020_art.82": "28.200",
+          "Numero_nuclei_dl_104/2020_art.23": "9.326",
+          "Numero_persone_coinvolte_dl_104/2020_art.23": "19.041",
+          "Importo_medio_mensile_dl_34/2020_art.82": 527.54,
+          "Importo_medio_mensile_dl_104/2020_art.23": 513.37,
+          "latitude": 44.441624,
+          "longitude": 11.014802
+        },
+        {
+          "Regione": "Friuli-Venezia Giulia",
+          "Numero_nuclei_dl_34/2020_art.82": "2.840",
+          "Numero_persone_coinvolte_dl_34/2020_art.82": "6.029",
+          "Numero_nuclei_dl_104/2020_art.23": "1.928",
+          "Numero_persone_coinvolte_dl_104/2020_art.23": "3.842",
+          "Importo_medio_mensile_dl_34/2020_art.82": 520.01,
+          "Importo_medio_mensile_dl_104/2020_art.23": 508.65,
+          "latitude": 46.088472,
+          "longitude": 12.990798
+        },
+        {
+          "Regione": "Italia",
+          "Numero_nuclei_dl_34/2020_art.82": "291.206",
+          "Numero_persone_coinvolte_dl_34/2020_art.82": "700.364",
+          "Numero_nuclei_dl_104/2020_art.23": "235.993",
+          "Numero_persone_coinvolte_dl_104/2020_art.23": "547.827",
+          "Importo_medio_mensile_dl_34/2020_art.82": 558.68,
+          "Importo_medio_mensile_dl_104/2020_art.23": 553.78,
+          "latitude": 222,
+          "longitude": 222
+        },
+        {
+          "Regione": "Lazio",
+          "Numero_nuclei_dl_34/2020_art.82": "35.303",
+          "Numero_persone_coinvolte_dl_34/2020_art.82": "76.406",
+          "Numero_nuclei_dl_104/2020_art.23": "27.894",
+          "Numero_persone_coinvolte_dl_104/2020_art.23": "56.466",
+          "Importo_medio_mensile_dl_34/2020_art.82": 531.11,
+          "Importo_medio_mensile_dl_104/2020_art.23": 519.17,
+          "latitude": 41.853196,
+          "longitude": 12.475106
+        },
+        {
+          "Regione": "Liguria",
+          "Numero_nuclei_dl_34/2020_art.82": "5.680",
+          "Numero_persone_coinvolte_dl_34/2020_art.82": "11.946",
+          "Numero_nuclei_dl_104/2020_art.23": "3.829",
+          "Numero_persone_coinvolte_dl_104/2020_art.23": "7.483",
+          "Importo_medio_mensile_dl_34/2020_art.82": 520.93,
+          "Importo_medio_mensile_dl_104/2020_art.23": 507.35,
+          "latitude": 44.465151,
+          "longitude": 8.763104
+        },
+        {
+          "Regione": "Lombardia",
+          "Numero_nuclei_dl_34/2020_art.82": "28.966",
+          "Numero_persone_coinvolte_dl_34/2020_art.82": "71.124",
+          "Numero_nuclei_dl_104/2020_art.23": "19.348",
+          "Numero_persone_coinvolte_dl_104/2020_art.23": "43.257",
+          "Importo_medio_mensile_dl_34/2020_art.82": 545.81,
+          "Importo_medio_mensile_dl_104/2020_art.23": 531.45,
+          "latitude": 45.467836,
+          "longitude": 9.190084
+        },
+        {
+          "Regione": "Marche",
+          "Numero_nuclei_dl_34/2020_art.82": "5.219",
+          "Numero_persone_coinvolte_dl_34/2020_art.82": "11.794",
+          "Numero_nuclei_dl_104/2020_art.23": "4.018",
+          "Numero_persone_coinvolte_dl_104/2020_art.23": "8.718",
+          "Importo_medio_mensile_dl_34/2020_art.82": 539.48,
+          "Importo_medio_mensile_dl_104/2020_art.23": 533.01,
+          "latitude": 43.564472,
+          "longitude": 13.397096
+        },
+        {
+          "Regione": "Molise",
+          "Numero_nuclei_dl_34/2020_art.82": "2.126",
+          "Numero_persone_coinvolte_dl_34/2020_art.82": "4.574",
+          "Numero_nuclei_dl_104/2020_art.23": "2.058",
+          "Numero_persone_coinvolte_dl_104/2020_art.23": "4.365",
+          "Importo_medio_mensile_dl_34/2020_art.82": 534.48,
+          "Importo_medio_mensile_dl_104/2020_art.23": 532.21,
+          "latitude": 41.689322,
+          "longitude": 14.562131
+        },
+        {
+          "Regione": "Nord",
+          "Numero_nuclei_dl_34/2020_art.82": "76.287",
+          "Numero_persone_coinvolte_dl_34/2020_art.82": "177.066",
+          "Numero_nuclei_dl_104/2020_art.23": "52.482",
+          "Numero_persone_coinvolte_dl_104/2020_art.23": "111.471",
+          "Importo_medio_mensile_dl_34/2020_art.82": 536.15,
+          "Importo_medio_mensile_dl_104/2020_art.23": 522.04,
+          "latitude": 44.863656,
+          "longitude": 10.663798
+        },
+        {
+          "Regione": "Piemonte",
+          "Numero_nuclei_dl_34/2020_art.82": "14.754",
+          "Numero_persone_coinvolte_dl_34/2020_art.82": "33.486",
+          "Numero_nuclei_dl_104/2020_art.23": "10.099",
+          "Numero_persone_coinvolte_dl_104/2020_art.23": "20.990",
+          "Importo_medio_mensile_dl_34/2020_art.82": 534.33,
+          "Importo_medio_mensile_dl_104/2020_art.23": 520.07,
+          "latitude": 45.104546,
+          "longitude": 7.741088
+        },
+        {
+          "Regione": "Puglia",
+          "Numero_nuclei_dl_34/2020_art.82": "23.328",
+          "Numero_persone_coinvolte_dl_34/2020_art.82": "58.007",
+          "Numero_nuclei_dl_104/2020_art.23": "20.335",
+          "Numero_persone_coinvolte_dl_104/2020_art.23": "49.521",
+          "Importo_medio_mensile_dl_34/2020_art.82": 576.24,
+          "Importo_medio_mensile_dl_104/2020_art.23": 572.7,
+          "latitude": 41.029643,
+          "longitude": 16.900625
+        },
+        {
+          "Regione": "Sardegna",
+          "Numero_nuclei_dl_34/2020_art.82": "7.074",
+          "Numero_persone_coinvolte_dl_34/2020_art.82": "14.860",
+          "Numero_nuclei_dl_104/2020_art.23": "5.699",
+          "Numero_persone_coinvolte_dl_104/2020_art.23": "11.727",
+          "Importo_medio_mensile_dl_34/2020_art.82": 527.81,
+          "Importo_medio_mensile_dl_104/2020_art.23": 526.54,
+          "latitude": 40.069665,
+          "longitude": 8.995312
+        },
+        {
+          "Regione": "Sicilia",
+          "Numero_nuclei_dl_34/2020_art.82": "44.678",
+          "Numero_persone_coinvolte_dl_34/2020_art.82": "114.053",
+          "Numero_nuclei_dl_104/2020_art.23": "40.217",
+          "Numero_persone_coinvolte_dl_104/2020_art.23": "102.021",
+          "Importo_medio_mensile_dl_34/2020_art.82": 583.99,
+          "Importo_medio_mensile_dl_104/2020_art.23": 583.66,
+          "latitude": 37.596824,
+          "longitude": 14.078748
+        },
+        {
+          "Regione": "Sud e Isole",
+          "Numero_nuclei_dl_34/2020_art.82": "157.852",
+          "Numero_persone_coinvolte_dl_34/2020_art.82": "399.553",
+          "Numero_nuclei_dl_104/2020_art.23": "138.841",
+          "Numero_persone_coinvolte_dl_104/2020_art.23": "345.673",
+          "Importo_medio_mensile_dl_34/2020_art.82": 579.59,
+          "Importo_medio_mensile_dl_104/2020_art.23": 577.0,
+          "latitude": 39.546412,
+          "longitude": 11.860706
+        },
+        {
+          "Regione": "Toscana",
+          "Numero_nuclei_dl_34/2020_art.82": "13.069",
+          "Numero_persone_coinvolte_dl_34/2020_art.82": "28.046",
+          "Numero_nuclei_dl_104/2020_art.23": "10.055",
+          "Numero_persone_coinvolte_dl_104/2020_art.23": "19.953",
+          "Importo_medio_mensile_dl_34/2020_art.82": 526.9,
+          "Importo_medio_mensile_dl_104/2020_art.23": 512.34,
+          "latitude": 43.636075,
+          "longitude": 10.519795
+        },
+        {
+          "Regione": "Trentino-Alto Adige/Sudtirol",
+          "Numero_nuclei_dl_34/2020_art.82": "1.166",
+          "Numero_persone_coinvolte_dl_34/2020_art.82": "2.859",
+          "Numero_nuclei_dl_104/2020_art.23": "731",
+          "Numero_persone_coinvolte_dl_104/2020_art.23": "1.671",
+          "Importo_medio_mensile_dl_34/2020_art.82": 540.44,
+          "Importo_medio_mensile_dl_104/2020_art.23": 530.07,
+          "latitude": 46.399988,
+          "longitude": 11.266386
+        },
+        {
+          "Regione": "Umbria",
+          "Numero_nuclei_dl_34/2020_art.82": "3.476",
+          "Numero_persone_coinvolte_dl_34/2020_art.82": "7.499",
+          "Numero_nuclei_dl_104/2020_art.23": "2.703",
+          "Numero_persone_coinvolte_dl_104/2020_art.23": "5.546",
+          "Importo_medio_mensile_dl_34/2020_art.82": 530.1,
+          "Importo_medio_mensile_dl_104/2020_art.23": 520.06,
+          "latitude": 43.157109,
+          "longitude": 12.562572
+        },
+        {
+          "Regione": "Valle d'Aosta/Valle d'Aoste",
+          "Numero_nuclei_dl_34/2020_art.82": "358",
+          "Numero_persone_coinvolte_dl_34/2020_art.82": "804",
+          "Numero_nuclei_dl_104/2020_art.23": "225",
+          "Numero_persone_coinvolte_dl_104/2020_art.23": "489",
+          "Importo_medio_mensile_dl_34/2020_art.82": 530.08,
+          "Importo_medio_mensile_dl_104/2020_art.23": 530.13,
+          "latitude": 45.721522,
+          "longitude": 7.434254
+        },
+        {
+          "Regione": "Veneto",
+          "Numero_nuclei_dl_34/2020_art.82": "9.933",
+          "Numero_persone_coinvolte_dl_34/2020_art.82": "22.618",
+          "Numero_nuclei_dl_104/2020_art.23": "6.996",
+          "Numero_persone_coinvolte_dl_104/2020_art.23": "14.698",
+          "Importo_medio_mensile_dl_34/2020_art.82": 534.72,
+          "Importo_medio_mensile_dl_104/2020_art.23": 521.03,
+          "latitude": 45.752193,
+          "longitude": 11.946417
+        }
+      ]
+    }
+  }
+]
