@@ -86,7 +86,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   if (errors) throw errors
 
-  const { emergenze } = data.datastore.data || {}
+  const { emergenze } = data || {}
   if (!Array.isArray(emergenze)) {
     throw new Error(`${createeEmergenzeError}: Invalid restaurants`)
   }
