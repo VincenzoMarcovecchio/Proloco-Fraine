@@ -11,17 +11,17 @@ export default function Template({
 }) {
   const { markdownRemark } = data // data.markdownRemark holds your post data
   const { frontmatter, html } = markdownRemark
-
+  console.log(frontmatter.slug)
   return (
     <Layout>
       <GatsbySeo
         title={`${frontmatter.title}`}
-        description={`${html.substring(2, 250) + "..."}`}
-        canonical="https://www.prolocofraine.org"
+        description={`${frontmatter.description}`}
+        canonical={`https://www.prolocofraine.org/${frontmatter.slug}`}
         openGraph={{
           url: "https://www.prolocofraine.org/",
           title: `${frontmatter.title}`,
-          description: `${html.substring(2, 250) + "..."}`,
+          description: `${frontmatter.description}`,
           images: [
             {
               url: `https://prolocofraine.org${frontmatter.cover}`,
@@ -46,7 +46,7 @@ export default function Template({
         }}
       />
       <ArticleJsonLd
-        url={`https://www.prolocofraine.org`}
+        url={`https://www.prolocofraine.org/${frontmatter.slug}`}
         headline={`${frontmatter.title}`}
         images={`https://prolocofraine.org${frontmatter.cover}`}
         datePublished="2021-02-05T08:00:00+08:00"
@@ -63,7 +63,7 @@ export default function Template({
         <article className="blog-post">
           {frontmatter.cover && (
             <img
-              style={{ width: "100%", maxHeight: "80vh", objectFit: "cover" }}
+              style={{ width: "100%", height: "80vh", objectFit: "cover" }}
               alt={frontmatter.title}
               src={frontmatter.cover}
             />
@@ -81,7 +81,7 @@ export default function Template({
         <div
           style={{ margin: "2rem auto", width: "100%" }}
           className="fb-comments"
-          data-href="https://www.prolocofraine.org/*"
+          data-href={`https://www.prolocofraine.org/${frontmatter.slug}`}
           data-width="500"
           data-numposts="4"
         ></div>

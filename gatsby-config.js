@@ -33,14 +33,7 @@ module.exports = {
           url: "https://www.prolocofraine.org/",
           site_name: "Proloco Fraine",
         },
-        images: [
-          {
-            url: "https://www.prolocofraine.org/images/iscrizioni-proloco.jpg",
-            width: 1200,
-            height: 630,
-            alt: "Iscrizione alla proloco Fraine",
-          },
-        ],
+
         twitter: {
           handle: "Proloco Fraine",
           site: "https://www.prolocofraine.org/",

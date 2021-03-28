@@ -13,6 +13,7 @@ const IndexPage = () => {
           description="Scopri le condizioni meteo nella tua citta` con l'app meteorologica  Proloco Fraine"
           keywords="meteo condizioni meteorologiche comuni Abruzzo Fraine weather app"
         />
+        <p>suggerimenti per le giornate, ben accetti...</p>
         <Container
           style={{
             margin: "3rem auto",

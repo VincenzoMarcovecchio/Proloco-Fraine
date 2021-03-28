@@ -97,7 +97,7 @@ const WeatherCard = props => {
       />
       <CardContent>
         <img
-          width="80px"
+          width="80"
           draggable="false"
           title={forecast.description}
           alt={forecast.description}

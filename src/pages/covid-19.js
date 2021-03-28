@@ -61,10 +61,10 @@ const IndexPage = () => {
         />
         <Container style={{ marginTop: "3rem" }} maxWidth="sm">
           <center>
-            <Img
+            <img
               className={classes.gridItem}
               alt="coronavirus illustrazione animata"
-              fluid={corona}
+              src={corona}
               loa
             />
           </center>

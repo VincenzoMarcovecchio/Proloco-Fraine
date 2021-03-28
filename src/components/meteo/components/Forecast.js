@@ -35,7 +35,7 @@ export default function Forecast(props) {
         ></ListItemText>
         <IconButton disabled={true} aria-label="forecast icon">
           <img
-            width="80px"
+            width="80"
             draggable="false"
             title={item.description}
             alt={item.description}
