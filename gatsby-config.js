@@ -174,6 +174,13 @@ module.exports = {
         ],
       },
     },
-    `gatsby-plugin-preact`,
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: "https://www.example.com",
+        sitemap: "https://www.prolocofraine.org/sitemap.xml",
+        policy: [{ userAgent: "*", allow: "/" }],
+      },
+    }`gatsby-plugin-preact`,
   ],
 }
