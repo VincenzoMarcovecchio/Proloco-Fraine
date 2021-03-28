@@ -64,6 +64,7 @@ https://dati.consip.it/api/action/datastore_search?resource_id=516f01ae-ec07-4b2
           Beni e Servizi Acquistati Tramite RdO/TD sul MEPA 2020
         </h1>
         <h2>Ricerche per: Abruzzo 2020</h2>
+        {loading && <h1>{"aspett..."}</h1>}
         <Grid container justify="center" spacing={spacing}>
           {Entrate?.result?.records.map(map => {
             return (

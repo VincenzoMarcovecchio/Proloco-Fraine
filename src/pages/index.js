@@ -106,7 +106,7 @@ const IndexPage = ({
         <SEO
           title="Proloco Fraine"
           description="L'Associazione PRO LOCO Fraine ha come scopo l'organizzazione di eventi socio-culturali per l'intrattenimento di grandi e piccini, e non solo..."
-          image={{ src: `${proloco}`, height: "350", width: "400" }}
+          image={proloco}
           keywords="abruzzo turismo risorse umane montagna mare salute benessere"
         />
         <section className="hero">
