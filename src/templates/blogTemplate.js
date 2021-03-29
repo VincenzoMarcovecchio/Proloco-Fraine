@@ -63,7 +63,7 @@ export default function Template({
         <article className="blog-post">
           {frontmatter.cover && (
             <img
-              style={{ width: "100%", height: "80vh", objectFit: "cover" }}
+              style={{ width: "100%", height: "65vh", objectFit: "cover" }}
               alt={frontmatter.title}
               src={frontmatter.cover}
             />

@@ -181,6 +181,7 @@ export default function Generatoredicodicefiscaleonline() {
             <FormControl style={{ width: "100%", margin: "8px" }}>
               <InputLabel id="provincia">Provincia</InputLabel>
               <Select
+                required
                 id="provincia"
                 labelId="provincia"
                 value={state.provincia}
