@@ -181,7 +181,7 @@ module.exports = {
         sitemap: "https://www.prolocofraine.org/sitemap.xml",
         policy: [{ userAgent: "*", allow: "/" }],
       },
-    },
-    `gatsby-plugin-preact`,
+    }
+ 
   ],
 }
