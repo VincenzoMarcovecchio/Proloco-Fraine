@@ -73,8 +73,9 @@ const IndexPage = () => {
         <Grid className={classes.gridItem} item xs={12} md={6}>
           <center>
             <iframe
-              width="100%"
-              height="300px"
+              style={{ margin: "auto" }}
+              height="300"
+              width="500"
               frameBorder="0"
               allowFullScreen
               src="//umap.openstreetmap.fr/it/map/covid19italiahelp_434021?scaleControl=false&miniMap=false&scrollWheelZoom=false&zoomControl=true&allowEdit=false&moreControl=true&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=true&onLoadPanel=undefined&captionBar=false"
@@ -85,17 +86,20 @@ const IndexPage = () => {
               </a>
             </p>
           </center>
-          <iframe
-            width="1440"
-            height="500"
-            title="iframe del sito "
-            src="https://covid19italia.help/segnala-base/"
-            frameborder="0"
-          >
-            <a href="https://covid19italia.help/segnala-base/">
-              Segnalazioni Covid19Italia.help
-            </a>
-          </iframe>
+          <center>
+            <iframe
+              style={{ margin: "auto" }}
+              width="1440"
+              height="500"
+              title="iframe del sito "
+              src="https://covid19italia.help/segnala-base/"
+              frameborder="0"
+            >
+              <a href="https://covid19italia.help/segnala-base/">
+                Segnalazioni Covid19Italia.help
+              </a>
+            </iframe>
+          </center>
         </Grid>
       </Layout>
     </>

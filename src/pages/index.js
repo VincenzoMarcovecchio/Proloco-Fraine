@@ -24,6 +24,8 @@ import Skeleton from "@material-ui/lab/Skeleton"
 import Masonry from "react-masonry-css"
 import { useStaticQuery, graphql } from "gatsby"
 import proloco from "../images/proloco.jpg"
+import { BlogJsonLd } from "gatsby-plugin-next-seo"
+
 const useStyles = makeStyles(theme => ({
   container: {
     display: "flex",
@@ -108,6 +110,25 @@ const IndexPage = ({
           description="L'Associazione PRO LOCO Fraine ha come scopo l'organizzazione di eventi socio-culturali per l'intrattenimento di grandi e piccini, e non solo..."
           image={proloco}
           keywords="abruzzo turismo risorse umane montagna mare salute benessere"
+        />
+        <BlogJsonLd
+          url="https://prolocofraine.org"
+          headline="Proloco Fraine"
+          images="https://prolocofraine.org/images/anagrafe-canina.jpg"
+          posts={[
+            {
+              headline: "Anagrafe canina regionale",
+            },
+            {
+              headline: "Alla scoperta di fraine",
+              image:
+                "https://www.prolocofraine.org/images/iscrizioni-proloco.jpg",
+            },
+          ]}
+          datePublished="2021-02-05T08:00:00+08:00"
+          dateModified="2021-02-05T09:00:00+08:00"
+          authorName="Proloco Fraine Blogs"
+          description="Il blog della proloco fraine puo essere molto interessante ed istruttivo"
         />
         <section className="hero">
           <video

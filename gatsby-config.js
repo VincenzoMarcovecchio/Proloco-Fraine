@@ -6,6 +6,8 @@ module.exports = {
     siteUrl: `https://www.prolocofraine.org`,
     keywords: [
       "Abruzzo",
+      "risorse territorio",
+      "made in italy",
       "Fraine",
       "Italy",
       "Cucina",
@@ -24,9 +26,6 @@ module.exports = {
     {
       resolve: "gatsby-plugin-next-seo",
       options: {
-        title: "Proloco Fraine",
-        description:
-          "L'Associazione proloco Fraine ha come scopo l'organizzazione di eventi socio-culturali per l'intrattenimento di grandi e piccini, e non solo...",
         openGraph: {
           type: "website",
           locale: "it_IT",
@@ -177,11 +176,9 @@ module.exports = {
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
-        host: "https://www.example.com",
         sitemap: "https://www.prolocofraine.org/sitemap.xml",
         policy: [{ userAgent: "*", allow: "/" }],
       },
-    }
- 
+    },
   ],
 }

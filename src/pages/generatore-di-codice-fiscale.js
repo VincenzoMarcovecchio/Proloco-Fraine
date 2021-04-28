@@ -112,9 +112,9 @@ export default function Generatoredicodicefiscaleonline() {
           <h1 style={{ margin: "3rem auto", zIndex: "10" }}>
             Codice Fiscale Online
           </h1>
-          <p style={{ zIndex: "10" }}>
+          <strong style={{ zIndex: "10" }}>
             Completa i campi sottostanti con i tuoi dati personali
-          </p>
+          </strong>
           <Paper className={classes.text} elevation={3}>
             <TextField
               value={state.nome}
