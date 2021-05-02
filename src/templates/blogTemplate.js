@@ -6,12 +6,14 @@ import Container from "@material-ui/core/Container"
 import { GatsbySeo } from "gatsby-plugin-next-seo"
 import { ArticleJsonLd } from "gatsby-plugin-next-seo"
 import proloco from "../images/proloco.jpg"
+import { FacebookProvider, Comments } from "react-facebook"
+
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.
 }) {
   const { markdownRemark } = data // data.markdownRemark holds your post data
   const { frontmatter, html } = markdownRemark
-  console.log(frontmatter.slug)
+
   return (
     <Layout>
       <GatsbySeo
@@ -77,14 +79,9 @@ export default function Template({
         </article>
 
         <Link to="/">Torna indietro</Link>
-        <div id="fb-root"></div>
-        <div
-          style={{ margin: "2rem auto", width: "100%" }}
-          className="fb-comments"
-          data-href={`https://www.prolocofraine.org/${frontmatter.slug}`}
-          data-width="500"
-          data-numposts="4"
-        ></div>
+        <FacebookProvider appId="407785027087673">
+          <Comments href={`https://prolocofraine.org/${frontmatter.slug} `} />
+        </FacebookProvider>
       </Container>
     </Layout>
   )

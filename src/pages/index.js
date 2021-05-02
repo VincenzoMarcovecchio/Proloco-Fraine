@@ -25,6 +25,7 @@ import Masonry from "react-masonry-css"
 import { useStaticQuery, graphql } from "gatsby"
 import proloco from "../images/proloco.jpg"
 import { BlogJsonLd } from "gatsby-plugin-next-seo"
+import { GatsbySeo } from "gatsby-plugin-next-seo"
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -105,11 +106,37 @@ const IndexPage = ({
   return (
     <>
       <Layout>
-        <SEO
+        <GatsbySeo
           title="Proloco Fraine"
           description="L'Associazione PRO LOCO Fraine ha come scopo l'organizzazione di eventi socio-culturali per l'intrattenimento di grandi e piccini, e non solo..."
-          image={proloco}
-          keywords="abruzzo turismo risorse umane montagna mare salute benessere"
+          canonical="https://www.prolocofraine.org"
+          openGraph={{
+            url: "https://www.casafraine.com/life",
+            title: "Home",
+            description:
+              "L'idea e' quella di vivere nella maniera piu' green possibile nella speranza di una qualche evoluzione e/o creazione di un prodotto unico",
+
+            images: [
+              {
+                url: proloco,
+                width: 800,
+                height: 600,
+                alt: "life",
+              },
+              {
+                url: proloco,
+                width: 900,
+                height: 800,
+                alt: "life",
+              },
+            ],
+            site_name: "Casa Fraine",
+          }}
+          twitter={{
+            handle: "Vincenzo Marcovecchio",
+            site: "Proloco Fraine",
+            cardType: "summary_large_image",
+          }}
         />
         <BlogJsonLd
           url="https://prolocofraine.org"

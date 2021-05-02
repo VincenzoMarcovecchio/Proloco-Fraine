@@ -5,7 +5,7 @@ import { Marker } from "react-leaflet"
 
 import { useEmergenza } from "../hooks"
 
-import { :ayout } from "../components/layout"
+import { Layout } from "../components/layout"
 
 import Map from "components/Map"
 

@@ -77,6 +77,7 @@ module.exports = {
         path: `${__dirname}/src/data/emergenza-regioni.json`,
       },
     },
+
     {
       resolve: `gatsby-plugin-webfonts`,
       options: {
@@ -96,6 +97,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Proloco Fraine`,
+        description: `Prodotti che supportano la comunita' `,
         short_name: `Fraine Loco`,
         start_url: `/`,
         background_color: `#3f51b5`,
@@ -108,7 +110,6 @@ module.exports = {
       },
     },
 
-    `gatsby-plugin-offline`,
     `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -180,5 +181,7 @@ module.exports = {
         policy: [{ userAgent: "*", allow: "/" }],
       },
     },
+
+    `gatsby-plugin-offline`,
   ],
 }

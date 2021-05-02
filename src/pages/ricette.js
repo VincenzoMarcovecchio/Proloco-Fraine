@@ -13,6 +13,8 @@ import SEO from "../components/seo"
 import { Link } from "gatsby"
 import Grid from "@material-ui/core/Grid"
 import Container from "@material-ui/core/Container"
+import { BreadcrumbJsonLd } from "gatsby-plugin-next-seo"
+import { BlogJsonLd } from "gatsby-plugin-next-seo"
 const useStyles = makeStyles({
   root: {
     width: "100%",
@@ -33,12 +35,50 @@ export default function Category({ data }) {
 
   return (
     <Layout>
-      <SEO
-        // cover={frontmatter.cover}
-        title="Ricette tipiche Frainesi"
-        description="Un'insieme delle ricette tipiche Frainesi"
-        keywords="cucina italiana ricette abruzzesi ricette tipiche abruzzesi"
+      <BlogJsonLd
+        url="https://prolocofraine.org"
+        headline="Proloco Fraine"
+        images="https://prolocofraine.org/images/nocche-fritte.jpg"
+        posts={[
+          {
+            headline: "Anagrafe canina regionale",
+          },
+          {
+            headline: "Alla scoperta di fraine",
+            image:
+              "https://www.prolocofraine.org/images/iscrizioni-proloco.jpg",
+          },
+        ]}
+        datePublished="2021-02-05T08:00:00+08:00"
+        dateModified="2021-02-05T09:00:00+08:00"
+        authorName="Proloco Fraine Blogs"
+        description="Il blog della proloco fraine puo essere molto interessante ed istruttivo"
       />
+      <BreadcrumbJsonLd
+        itemListElements={[
+          {
+            position: 1,
+            name: "Ricetta",
+            item: "https://example.com/books",
+          },
+          {
+            position: 2,
+            name: "Autori",
+            item: "https://example.com/books/authors",
+          },
+          {
+            position: 3,
+            name: "Giacomo",
+            item: "https://example.com/books/authors/annleckie",
+          },
+          {
+            position: 4,
+            name: "Naria",
+            item: "https://example.com/books/authors/ancillaryjustice",
+          },
+        ]}
+      />
+
       <section className="blog-post-container">
         <Link to="/">Torna indietro</Link>
         <Container maxWidth="md">
