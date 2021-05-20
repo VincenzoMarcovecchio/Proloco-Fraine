@@ -647,7 +647,7 @@ pre tt:after {
   left: 4vw;
   right: 4vw;
   max-width: fit-content;
-  background-color: rgb(25, 118, 210);
+  text-shadow: 2px 0 0 rgb(25, 118, 210), -2px 0 0 rgb(25, 118, 210), 0 2px 0 rgb(25, 118, 210), 0 -2px 0 rgb(25, 118, 210), 1px 1px rgb(25, 118, 210), -1px -1px 0 rgb(25, 118, 210), 1px -1px 0 rgb(25, 118, 210), -1px 1px 0 rgb(25, 118, 210);
   color: white;
   padding: 0.8rem;
 }
@@ -664,6 +664,7 @@ pre tt:after {
   font-weight: 400;
   line-height: 1.43;
   letter-spacing: 0.01071em;
+  text-shadow: none !important;
 }
 
 @media only screen and (max-width: 480px) {
@@ -793,11 +794,13 @@ a {
   display: -webkit-box; /* Not needed if autoprefixing */
   display: -ms-flexbox; /* Not needed if autoprefixing */
   display: flex;
-  margin-left: -30px; /* gutter size offset */
-  width: auto;
+  justify-content: space-between;
+  margin-left: -20px; /* gutter size offset */
+
 }
+
 .my-masonry-grid_column {
-  padding-left: 30px; /* gutter size */
+  padding-left: 20px; /* gutter size */
   background-clip: padding-box;
 }
 

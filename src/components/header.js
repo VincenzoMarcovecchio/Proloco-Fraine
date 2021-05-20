@@ -167,6 +167,7 @@ export default function SwipeableTemporaryDrawer() {
         </IconButton>
         &nbsp; Proloco Fraine
       </Box>
+
       <SwipeableDrawer
         anchor="left"
         open={state["left"]}

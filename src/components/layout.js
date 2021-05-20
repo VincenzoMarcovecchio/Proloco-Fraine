@@ -11,7 +11,7 @@ import Header from "./header"
 import "./layout.css"
 import Footer from "../components/footer"
 import Cookie from "../components/cookie/Cookie"
-
+import { Helmet } from "react-helmet"
 const Layout = ({ children }) => {
   const [Articles, setArticles] = useState([])
   useEffect(() => {
@@ -24,6 +24,25 @@ const Layout = ({ children }) => {
 
   return (
     <>
+      <Helmet>
+        <script
+          defer
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-4HDPB415HY"
+        />
+
+        <script
+          defer
+          dangerouslySetInnerHTML={{
+            __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-4HDPB415HY');
+        `,
+          }}
+        />
+      </Helmet>
       <Header />
 
       <main>{children}</main>
@@ -31,8 +50,8 @@ const Layout = ({ children }) => {
       <Footer />
       <div className="ticker-wrap">
         <div className="ticker">
-          {Articles.map((article, index) => (
-            <div key={index} className="item">
+          {Articles.map(article => (
+            <div key={article.title} className="item">
               <a
                 style={{
                   textDecoration: "none",

@@ -112,7 +112,7 @@ export default function Footer() {
           </div>
 
           <span style={{ marginRight: "auto" }}>
-            © {new Date().getFullYear()}, Fatto a Fraine con
+            © {new Date().getFullYear()}, Fatto A Fraine Con
             <a
               target="_blank"
               rel="canonical noopener noreferrer"

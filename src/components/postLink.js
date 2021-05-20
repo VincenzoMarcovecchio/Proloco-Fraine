@@ -18,7 +18,7 @@ const useStyles = makeStyles(theme => ({
     },
   },
   paper: {
-    width: "95%",
+    width: "100%",
     margin: "0 auto 2rem auto",
     ["@media (max-width:780px)"]: {
       // eslint-disable-line no-useless-computed-key

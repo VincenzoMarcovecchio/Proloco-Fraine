@@ -47,10 +47,10 @@ const useStyles = makeStyles(theme => ({
   },
   root: {
     width: "100%",
-    margin: "3rem auto",
+    margin: "1rem auto",
     ["@media (min-width:780px)"]: {
       // eslint-disable-line no-useless-computed-key
-      width: "90%",
+      width: "100%",
     },
   },
   media: {
@@ -82,6 +82,7 @@ const IndexPage = ({
   const [Articles, setArticles] = useState([])
   const [expanded, setExpanded] = useState(false)
   const breakpointColumnsObj = {
+    default: 3,
     1100: 2,
     700: 2,
     500: 1,
@@ -114,7 +115,7 @@ const IndexPage = ({
             url: "https://www.casafraine.com/life",
             title: "Home",
             description:
-              "L'idea e' quella di vivere nella maniera piu' green possibile nella speranza di una qualche evoluzione e/o creazione di un prodotto unico",
+              "L'Associazione PRO LOCO Fraine ha come scopo l'organizzazione di eventi socio-culturali per l'intrattenimento di grandi e piccini, e non solo...",
 
             images: [
               {
@@ -130,7 +131,7 @@ const IndexPage = ({
                 alt: "life",
               },
             ],
-            site_name: "Casa Fraine",
+            site_name: "Proloco Fraine",
           }}
           twitter={{
             handle: "Vincenzo Marcovecchio",
@@ -141,10 +142,11 @@ const IndexPage = ({
         <BlogJsonLd
           url="https://prolocofraine.org"
           headline="Proloco Fraine"
-          images="https://prolocofraine.org/images/anagrafe-canina.jpg"
+          images={`${proloco}`}
           posts={[
             {
               headline: "Anagrafe canina regionale",
+              image: "https://www.prolocofraine.org/images/anagrafe-canina.jpg",
             },
             {
               headline: "Alla scoperta di fraine",
@@ -204,6 +206,7 @@ const IndexPage = ({
         </Container>
         <Container maxWidth="lg">
           <Masonry
+            breakpointCols={breakpointColumnsObj}
             className="my-masonry-grid"
             columnClassName="my-masonry-grid_column"
           >

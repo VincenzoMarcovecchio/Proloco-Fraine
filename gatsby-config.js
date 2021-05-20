@@ -97,7 +97,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Proloco Fraine`,
-        description: `Prodotti che supportano la comunita' `,
+        description: `Proloco Fraine informa `,
         short_name: `Fraine Loco`,
         start_url: `/`,
         background_color: `#3f51b5`,

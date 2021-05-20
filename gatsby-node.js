@@ -8,7 +8,6 @@
 const path = require("path")
 const parameterize = require("parameterize")
 
-const createEmergenzeError = "Could not create post pages"
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
@@ -63,43 +62,4 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       },
     })
   })
-
-  const regioneTemplate = path.resolve(`./src/templates/regioneTemplate.js`)
-
-  //   const { data, errors } = await graphql(`
-  //     query {
-  //       emergenzaRegioniJson {
-  //         datastore {
-  //           data {
-  //             Regione
-  //             Numero_nuclei_dl_34_2020_art_82
-  //             Numero_persone_coinvolte_dl_34_2020_art_82
-  //             Numero_nuclei_dl_104_2020_art_23
-  //             Numero_persone_coinvolte_dl_104_2020_art_23
-  //             Importo_medio_mensile_dl_34_2020_art_82
-  //             Importo_medio_mensile_dl_104_2020_art_23
-  //           }
-  //         }
-  //       }
-  //     }
-  //   `)
-
-  //   if (errors) throw errors
-
-  //   const { emergenze } = data || {}
-  //   if (!Array.isArray(emergenze)) {
-  //     throw new Error(`${createeEmergenzeError}: Invalid restaurants`)
-  //   }
-
-  //   emergenze.forEach(({ id, Regione }) => {
-  //     const slug = parameterize(Regione)
-  //     createPage({
-  //       path: `/${slug}/`,
-  //       component: regioneTemplate,
-  //       context: {
-  //         id,
-  //         slug,
-  //       },
-  //     })
-  //   })
 }
