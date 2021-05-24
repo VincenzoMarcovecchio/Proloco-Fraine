@@ -1,13 +1,11 @@
 import React, { useState } from "react"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
 import PostLink from "../components/postLink"
 import clsx from "clsx"
 import Container from "@material-ui/core/Container"
 import movie from "../Fraine.mp4"
 import { makeStyles } from "@material-ui/core/styles"
 import Divider from "@material-ui/core/Divider"
-import Grid from "@material-ui/core/Grid"
 import Card from "@material-ui/core/Card"
 import CardHeader from "@material-ui/core/CardHeader"
 import CardMedia from "@material-ui/core/CardMedia"
@@ -103,7 +101,7 @@ const IndexPage = ({
     month: "2-digit",
     day: "2-digit",
   }
-
+  console.log(articles)
   return (
     <>
       <Layout>
@@ -112,7 +110,7 @@ const IndexPage = ({
           description="L'Associazione PRO LOCO Fraine ha come scopo l'organizzazione di eventi socio-culturali per l'intrattenimento di grandi e piccini, e non solo..."
           canonical="https://www.prolocofraine.org"
           openGraph={{
-            url: "https://www.casafraine.com/life",
+            url: "https://www.prolocofraine.org/",
             title: "Home",
             description:
               "L'Associazione PRO LOCO Fraine ha come scopo l'organizzazione di eventi socio-culturali per l'intrattenimento di grandi e piccini, e non solo...",
@@ -122,13 +120,13 @@ const IndexPage = ({
                 url: proloco,
                 width: 800,
                 height: 600,
-                alt: "life",
+                alt: "proloco fraine",
               },
               {
                 url: proloco,
                 width: 900,
                 height: 800,
-                alt: "life",
+                alt: "proloco fraine",
               },
             ],
             site_name: "Proloco Fraine",
@@ -145,8 +143,23 @@ const IndexPage = ({
           images={`${proloco}`}
           posts={[
             {
-              headline: "Anagrafe canina regionale",
+              headline: "Anagrafe Canina Regionale",
               image: "https://www.prolocofraine.org/images/anagrafe-canina.jpg",
+            },
+            {
+              headline: "Alla scoperta di fraine",
+              image:
+                "https://www.prolocofraine.org/images/iscrizioni-proloco.jpg",
+            },
+            {
+              headline: "Come richiedere il reddito di cittadinanza",
+              image:
+                "https://www.prolocofraine.org/images/iscrizioni-proloco.jpg",
+            },
+            {
+              headline: "Il significato della proloco",
+              image:
+                "https://www.prolocofraine.org/images/iscrizioni-proloco.jpg",
             },
             {
               headline: "Alla scoperta di fraine",

@@ -649,10 +649,10 @@ pre tt:after {
   max-width: fit-content;
   text-shadow: 2px 0 0 rgb(25, 118, 210), -2px 0 0 rgb(25, 118, 210), 0 2px 0 rgb(25, 118, 210), 0 -2px 0 rgb(25, 118, 210), 1px 1px rgb(25, 118, 210), -1px -1px 0 rgb(25, 118, 210), 1px -1px 0 rgb(25, 118, 210), -1px 1px 0 rgb(25, 118, 210);
   color: white;
-  padding: 0.8rem;
+
 }
 .hero h1::after {
-  content: "L'Associazione PRO LOCO Fraine ha come unico scopo l'organizzazione di eventi socio-culturali per l'intrattenimento di grandi e piccini.";
+  content: "L'Associazione PRO LOCO Fraine ha come unico scopo l'organizzazione di eventi socio-culturali per l'intrattenimento di grandi e piccini e non solo...";
   position: absolute;
   bottom: -5.6rem;
   left: 0;
@@ -840,7 +840,7 @@ a {
   }
 
   footer {
-    height: 40rem;
+    height: 50rem;
   }
   .icons-logos {
     flex-direction: column;

@@ -1,11 +1,12 @@
 import React, { useState, useEffect, memo } from "react"
 import { makeStyles } from "@material-ui/core/styles"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
 import Container from "@material-ui/core/Container"
 import Fito from "../components/fitocomponent/Fito"
 import InfiniteScroll from "react-infinite-scroll-component"
 import ima from "../images/proteggere-lambiente.jpg"
+import { GatsbySeo } from "gatsby-plugin-next-seo"
+
 var jsonData = require("../data/fito.json")
 
 const useStyles = makeStyles({
@@ -55,11 +56,36 @@ function FitoSanitari() {
 
   return (
     <Layout>
-      <SEO
-        title="I prodotti Fitosanitari"
-        description="Il dataset contiene l'elenco completo dei Prodotti Fitosanitari autorizzati dal Ministero della Salute"
-        image={ima}
-        keywords="Dati relativi al prodotto fitosanitario : Numero Registrazione, Denominazione prodotto, Data Registrazione, Scadenza Autorizzazione, Indicazione di pericolo, Attività, Formulazione, Importazioni Parallele, Prodotti per Piante Ornamentali, Sostanze Attive contenute"
+      <GatsbySeo
+        title="Proloco Fraine | Prodotti Fitosanitari"
+        description="Banca dati dei prodotti fitosanitari"
+        canonical="https://www.prolocofraine.org/prodotti-fitosanitari"
+        openGraph={{
+          url: "https://www.prolocofraine.org/prodotti-fitosanitari",
+          title: "Prodotti Fitosanitari",
+          description: "Banca dati dei prodotti fitosanitari",
+
+          images: [
+            {
+              url: ima,
+              width: 800,
+              height: 600,
+              alt: "Prodotti Fitosanitari",
+            },
+            {
+              url: ima,
+              width: 900,
+              height: 800,
+              alt: "Prodotti Fitosanitari",
+            },
+          ],
+          site_name: "Proloco Fraine",
+        }}
+        twitter={{
+          handle: "Vincenzo Marcovecchio",
+          site: "Proloco Fraine",
+          cardType: "summary_large_image",
+        }}
       />
       <section className="blog-post-container">
         <Container className={classes.container} maxWidth="sm">

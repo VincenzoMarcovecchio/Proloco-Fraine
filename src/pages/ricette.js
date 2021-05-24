@@ -36,17 +36,18 @@ export default function Category({ data }) {
   return (
     <Layout>
       <BlogJsonLd
-        url="https://prolocofraine.org"
-        headline="Proloco Fraine"
+        url="https://prolocofraine.org/ricette"
+        headline="Proloco Fraine | Ricette tradizionali Abruzzesi"
         images="https://prolocofraine.org/images/nocche-fritte.jpg"
         posts={[
           {
-            headline: "Anagrafe canina regionale",
+            headline: "Le nocche fritte",
+            image: "https://www.prolocofraine.org/images/nocche-fritte.jpg",
           },
           {
-            headline: "Alla scoperta di fraine",
+            headline: "Le dolci esse",
             image:
-              "https://www.prolocofraine.org/images/iscrizioni-proloco.jpg",
+              "https://www.prolocofraine.org/images/dolce-tipico-abruzzese-le-esse.jpg",
           },
         ]}
         datePublished="2021-02-05T08:00:00+08:00"
@@ -58,23 +59,14 @@ export default function Category({ data }) {
         itemListElements={[
           {
             position: 1,
-            name: "Ricetta",
-            item: "https://example.com/books",
+            name: "Le nocche fritte",
+            item: "https://www.prolocofraine.org/come-fare-le-nocche-fritte/",
           },
           {
             position: 2,
-            name: "Autori",
-            item: "https://example.com/books/authors",
-          },
-          {
-            position: 3,
-            name: "Giacomo",
-            item: "https://example.com/books/authors/annleckie",
-          },
-          {
-            position: 4,
-            name: "Naria",
-            item: "https://example.com/books/authors/ancillaryjustice",
+            name: "Le dolci esse",
+            item:
+              "https://www.prolocofraine.org/dolce-tipico-abruzzese-le-esse/",
           },
         ]}
       />

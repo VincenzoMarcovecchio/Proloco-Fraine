@@ -111,7 +111,7 @@ export default function SwipeableTemporaryDrawer() {
         </ListItem>
 
         <ListItem button>
-          <Link replace to="/generatore-di-codice-fiscale/">
+          <Link replace to="/generatore-di-codice-fiscale-online/">
             <ListItemIcon>
               <PermIdentityIcon />
             </ListItemIcon>

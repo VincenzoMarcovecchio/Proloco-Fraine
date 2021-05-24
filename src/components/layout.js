@@ -24,25 +24,6 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Helmet>
-        <script
-          defer
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-4HDPB415HY"
-        />
-
-        <script
-          defer
-          dangerouslySetInnerHTML={{
-            __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-4HDPB415HY');
-        `,
-          }}
-        />
-      </Helmet>
       <Header />
 
       <main>{children}</main>

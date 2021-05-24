@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import { GatsbySeo } from "gatsby-plugin-next-seo"
 import Container from "@material-ui/core/Container"
 import proloco from "../images/proloco.jpg"
 import { makeStyles } from "@material-ui/core/styles"
 import Paper from "@material-ui/core/Paper"
 import Grid from "@material-ui/core/Grid"
 import CircularProgress from "@material-ui/core/CircularProgress"
+
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
@@ -52,13 +53,40 @@ https://dati.consip.it/api/action/datastore_search?resource_id=516f01ae-ec07-4b2
 
   return (
     <Layout>
-      <SEO
-        title={`Beni e Servizi Acquistati Tramite RdO/TD sul MEPA 2020`}
+      <GatsbySeo
+        title="Proloco Fraine | Beni e Servizi Acquistati Tramite RdO/TD sul MEPA 2020"
         description="Il dataset contiene informazioni di sintesi dei beni/servizi acquistati tramite RdO e Trattative dirette nell’ambito del Mepa. Consente di analizzare la spesa della PA in termini di: numero PA che hanno stipulato contratti, numero punti ordinanti, numero contratti stipulati, numero fornitori che hanno stipulato contratti. I dati sono aggregati rispetto alla tipologia e alla provincia dell’amministrazione che ha stipulato contratti, alla regione del fornitore che ha stipulato contratti, al bene/servizio acquistato, alla classificazione CPV del bene/servizio acquistato, al bando Mepa e alla relativa categoria di abilitazione su cui sono disponibili i beni/servizi acquistati, al tipo negoziazione (RdO/TD). Trattandosi di dati aggregati, non tutti gli indicatori sono additivi."
-        image={proloco}
-        keywords="abruzzo turismo risorse umane montagna, dataset mare salute benessere"
-      />
+        canonical="https://www.prolocofraine.org/beni-e-servizi-acquistati-tramite-rdotd-sul-mepa/"
+        openGraph={{
+          url:
+            "https://www.prolocofraine.org/beni-e-servizi-acquistati-tramite-rdotd-sul-mepa/",
+          title:
+            "Proloco Fraine | Beni e Servizi Acquistati Tramite RdO/TD sul MEPA 2020",
+          description:
+            "Il dataset contiene informazioni di sintesi dei beni/servizi acquistati tramite RdO e Trattative dirette nell’ambito del Mepa. Consente di analizzare la spesa della PA in termini di: numero PA che hanno stipulato contratti, numero punti ordinanti, numero contratti stipulati, numero fornitori che hanno stipulato contratti. I dati sono aggregati rispetto alla tipologia e alla provincia dell’amministrazione che ha stipulato contratti, alla regione del fornitore che ha stipulato contratti, al bene/servizio acquistato, alla classificazione CPV del bene/servizio acquistato, al bando Mepa e alla relativa categoria di abilitazione su cui sono disponibili i beni/servizi acquistati, al tipo negoziazione (RdO/TD). Trattandosi di dati aggregati, non tutti gli indicatori sono additivi.",
 
+          images: [
+            {
+              url: proloco,
+              width: 800,
+              height: 600,
+              alt: "bandiera italiana",
+            },
+            {
+              url: proloco,
+              width: 900,
+              height: 800,
+              alt: "bandiera italiana",
+            },
+          ],
+          site_name: "Proloco Fraine",
+        }}
+        twitter={{
+          handle: "Vincenzo Marcovecchio",
+          site: "Proloco Fraine",
+          cardType: "summary_large_image",
+        }}
+      />
       <Container className={classes.root}>
         <h1 style={{ marginTop: "2rem" }}>
           Beni e Servizi Acquistati Tramite RdO/TD sul MEPA 2020
