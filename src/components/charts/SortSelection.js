@@ -1,68 +1,57 @@
-import React from "react"
-import { withStyles } from "material-ui/styles"
-import { InputLabel } from "material-ui/Input"
-import { MenuItem } from "material-ui/Menu"
-import { FormControl } from "material-ui/Form"
-import Select from "material-ui/Select"
+import React, { Component } from "react"
+import { Bar, Pie } from "react-chartjs-2"
 
-const styles = theme => ({
-  root: {
-    background: "#F7F7F9",
-  },
-  formControl: {
-    margin: theme.spacing.unit,
-    minWidth: 120,
-  },
-  selectEmpty: {
-    marginTop: theme.spacing.unit * 2,
-  },
-  colorPrimary: {
-    color: "#0efda6",
-  },
-  selectors: {
-    display: "flex",
-    justifyContent: "space-between",
-    marginTop: "25px",
-  },
-})
+class Chart extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      chartData: props.chartData,
+    }
+  }
 
-class SortSelection extends React.Component {
+  static defaultProps = {
+    displayTitle: true,
+    displayLegend: true,
+    legendPosition: "right",
+    location: "City",
+  }
+
   render() {
-    const {
-      classes,
-      handleChange,
-      handleYearChange,
-      sortTypeVal,
-      yearIndex,
-    } = this.props
     return (
-      <div className={classes.selectors}>
-        <form className={classes.container} autoComplete="off">
-          <FormControl className={classes.formControl}>
-            <InputLabel htmlFor="">Filter</InputLabel>
-            <Select value={sortTypeVal} onChange={handleChange("sortType")}>
-              <MenuItem className={classes.root} value={1}>
-                Lowest
-              </MenuItem>
-              <MenuItem value={2}>Highest</MenuItem>
-              <MenuItem value={3}>Alphabetize</MenuItem>
-            </Select>
-          </FormControl>
-        </form>
-        <form className={classes.container} autoComplete="off">
-          <FormControl className={classes.formControl}>
-            <InputLabel htmlFor="">Year</InputLabel>
-            <Select value={yearIndex} onChange={handleYearChange}>
-              <MenuItem value={1}>2013</MenuItem>
-              <MenuItem value={2}>2014</MenuItem>
-              <MenuItem value={3}>2015</MenuItem>
-              <MenuItem value={4}>2016</MenuItem>
-            </Select>
-          </FormControl>
-        </form>
+      <div className="chart">
+        <Bar
+          data={this.state.chartData}
+          options={{
+            title: {
+              display: this.props.displayTitle,
+              text: "Totale patrimonio in Euro di" + this.props.location,
+              fontSize: 25,
+            },
+            legend: {
+              display: this.props.displayLegend,
+              position: this.props.legendPosition,
+            },
+          }}
+        />
+        {this.props.pie && (
+          <Pie
+            data={this.state.chartData}
+            options={{
+              title: {
+                display: this.props.displayTitle,
+                text: "Totale patrimonio in Euro di" + this.props.location,
+                fontSize: 25,
+              },
+              legend: {
+                display: this.props.displayLegend,
+                position: this.props.legendPosition,
+              },
+            }}
+          />
+        )}
       </div>
     )
   }
 }
 
-export default withStyles(styles)(SortSelection)
+export default Chart
