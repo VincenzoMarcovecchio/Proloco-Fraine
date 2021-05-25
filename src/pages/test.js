@@ -2,8 +2,6 @@ import React, { useRef, useEffect, useState } from "react"
 import { select } from "d3"
 import newData from "../data/nuovo.json"
 
-console.log(newData)
-
 function App() {
   const [data, setData] = useState(newData)
   const svgRef = useRef()
