@@ -18,7 +18,7 @@ class Chart extends Component {
 
   render() {
     return (
-      <div className="chart">
+      <div className="chart" style={{ minHeight: "50vh" }}>
         <Bar
           data={this.state.chartData}
           options={{
@@ -31,24 +31,10 @@ class Chart extends Component {
               display: this.props.displayLegend,
               position: this.props.legendPosition,
             },
+            responsive: true,
+            maintainAspectRatio: false,
           }}
         />
-        {this.props.pie && (
-          <Pie
-            data={this.state.chartData}
-            options={{
-              title: {
-                display: this.props.displayTitle,
-                text: "Totale patrimonio in Euro di" + this.props.location,
-                fontSize: 25,
-              },
-              legend: {
-                display: this.props.displayLegend,
-                position: this.props.legendPosition,
-              },
-            }}
-          />
-        )}
       </div>
     )
   }
