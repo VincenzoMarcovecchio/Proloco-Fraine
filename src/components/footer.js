@@ -26,10 +26,11 @@ export default function Footer() {
   })
 
   const classes = useStyles()
+
   return (
-    <>
+    <React.Fragment>
       <div
-        style={{ width: "100%", height: "100%" }}
+        style={{ width: "100%", height: "100%", marginTop: "2rem" }}
         className="prefix__separator"
       >
         <svg viewBox="0 0 1399 48" preserveAspectRatio="xMidYMax slice">
@@ -71,6 +72,7 @@ export default function Footer() {
               <li>Link utili</li>
               <li>
                 <Link
+                  rel="canonical noopener noreferrer"
                   className={classes.marginTop}
                   replace
                   to="/prodotti-fitosanitari/"
@@ -80,6 +82,8 @@ export default function Footer() {
               </li>
               <li>
                 <Link
+                  replace
+                  rel="canonical noopener noreferrer"
                   className={classes.marginTop}
                   replace
                   to="/beni-e-servizi-acquistati-tramite-rdotd-sul-mepa/"
@@ -97,6 +101,15 @@ export default function Footer() {
                 >
                   Meteomont Carabinieri
                 </a>
+              </li>
+              <li>
+                <Link
+                  replace
+                  rel="canonical noopener noreferrer"
+                  to="/elenco-delle-aree-del-patrimonio-immobiliare-dello-stato-in-gestione-all-agenzia-del-demanio-sull-intero-territorio-nazionale/"
+                >
+                  Agenzia Del Demanio Abruzzo
+                </Link>
               </li>
             </ul>
             <a
@@ -159,7 +172,7 @@ export default function Footer() {
             </a>
           </div>
 
-          <span style={{ marginRight: "auto" }}>
+          <span style={{ margin: "0 auto 3rem 0" }}>
             © {new Date().getFullYear()}, Fatto A Fraine Con
             <a
               target="_blank"
@@ -171,6 +184,6 @@ export default function Footer() {
           </span>
         </Container>
       </footer>
-    </>
+    </React.Fragment>
   )
 }

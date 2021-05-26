@@ -1,10 +1,43 @@
 import React, { useRef, useEffect, useState } from "react"
 import Layout from "../components/layout"
 import Chart from "../components/charts/SortSelection"
+import Container from "@material-ui/core/Container"
+import PropTypes from "prop-types"
+import { makeStyles } from "@material-ui/core/styles"
+import AppBar from "@material-ui/core/AppBar"
+import Tabs from "@material-ui/core/Tabs"
+import Tab from "@material-ui/core/Tab"
+import Typography from "@material-ui/core/Typography"
+import Box from "@material-ui/core/Box"
+import { GatsbySeo } from "gatsby-plugin-next-seo"
+
+function TabPanel(props) {
+  const { children, value, index, ...other } = props
+
+  return (
+    <div
+      role="tabpanel"
+      hidden={value !== index}
+      id={`simple-tabpanel-${index}`}
+      aria-labelledby={`simple-tab-${index}`}
+      {...other}
+    >
+      {value === index && (
+        <Box p={3}>
+          <Typography>{children}</Typography>
+        </Box>
+      )}
+    </div>
+  )
+}
+
+TabPanel.propTypes = {
+  children: PropTypes.node,
+  index: PropTypes.any.isRequired,
+  value: PropTypes.any.isRequired,
+}
 
 function Test() {
-  const svgRef = useRef()
-
   const [aree, setAree] = useState([
     {
       "Categoria Patrimoniale": "PATRIMONIO INDISPONIBILE",
@@ -7952,80 +7985,219 @@ function Test() {
     // },
   ])
 
+  const aquila = aree.filter(area => area.Provincia === "L'AQUILA")
+  const chieti = aree.filter(area => area.Provincia === "CHIETI")
+  const pescara = aree.filter(area => area.Provincia === "PESCARA")
+  const teramo = aree.filter(area => area.Provincia === "TERAMO")
+
+  const classes = useStyles()
+
+  const [value, setValue] = React.useState(0)
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue)
+  }
+
   return (
     <React.Fragment>
+      <GatsbySeo
+        title="Proloco Fraine | Agenzia Del Demanio Abruzzo"
+        description="Composizione e valori dei beni patrimoniali dello Stato in base all'art. 828 C.C. aggregato per Regione, Provincia. Elenco delle Aree dello Stato in base all'art. 828 C.C. fino al dettaglio della singola area."
+        canonical="https://www.prolocofraine.org/elenco-delle-aree-del-patrimonio-immobiliare-dello-stato-in-gestione-all-agenzia-del-demanio-sull-intero-territorio-nazionale/"
+        openGraph={{
+          url:
+            "https://www.prolocofraine.org/elenco-delle-aree-del-patrimonio-immobiliare-dello-stato-in-gestione-all-agenzia-del-demanio-sull-intero-territorio-nazionale/",
+          title: "Agenzia Del Demanio Abruzzo",
+          description:
+            "Composizione e valori dei beni patrimoniali dello Stato in base all'art. 828 C.C. aggregato per Regione, Provincia. Elenco delle Aree dello Stato in base all'art. 828 C.C. fino al dettaglio della singola area.",
+
+          images: [
+            {
+              url:
+                "https://images.unsplash.com/photo-1529078155058-5d716f45d604?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=749&q=80",
+              width: 800,
+              height: 600,
+              alt: "Agenzia Del Demanio Abruzzo",
+            },
+            {
+              url:
+                "https://images.unsplash.com/photo-1529078155058-5d716f45d604?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=749&q=80",
+              width: 900,
+              height: 800,
+              alt: "Agenzia Del Demanio Abruzzo",
+            },
+          ],
+          site_name: "Proloco Fraine",
+        }}
+        twitter={{
+          handle: "Vincenzo Marcovecchio",
+          site: "Proloco Fraine",
+          cardType: "summary_large_image",
+        }}
+      />
       <Layout>
-        <Chart
-          chartData={{
-            labels: ["Chieti", "Pescara", "L'Aquila", "Teramo"],
-            datasets: [
-              {
-                label: "DEMANIO STORICO ARTISTICO",
-                data: [20409877.59, 11828562.8, 168940620.01, 42881368.25],
-                backgroundColor: [
-                  "rgba(255, 99, 132, 0.6)",
-                  "rgba(54, 162, 235, 0.6)",
-                  "rgba(255, 206, 86, 0.6)",
-                  "rgba(75, 192, 192, 0.6)",
-                  "rgba(153, 102, 255, 0.6)",
-                  "rgba(255, 159, 64, 0.6)",
-                  "rgba(255, 99, 132, 0.6)",
-                ],
-              },
-            ],
+        <Container
+          style={{
+            margin: "5rem auto",
+            padding: "1rem",
           }}
-          location="Abruzzo"
-          legendPosition="bottom"
-        />
+          maxWidth="md"
+        >
+          <Chart
+            chartData={{
+              labels: ["Chieti", "L'Aquila", "Pescara", "Teramo"],
 
-        <Chart
-          chartData={{
-            labels: ["Chieti", "L'Aquila", "Pescara", "Teramo"],
-            datasets: [
-              {
-                label: "PATRIMONIO DISPONIBILE",
-                data: [171376421.44, 8092131.27, 4459057.78, 719247.0],
-                backgroundColor: [
-                  "rgba(255, 99, 132, 0.6)",
-                  "rgba(54, 162, 235, 0.6)",
-                  "rgba(255, 206, 86, 0.6)",
-                  "rgba(75, 192, 192, 0.6)",
-                  "rgba(153, 102, 255, 0.6)",
-                  "rgba(255, 159, 64, 0.6)",
-                  "rgba(255, 99, 132, 0.6)",
-                ],
-              },
-            ],
-          }}
-          location="Abruzzo"
-          legendPosition="bottom"
-        />
+              datasets: [
+                {
+                  label: "DEMANIO STORICO ARTISTICO",
+                  data: [20409877.59, 168940620.01, 11828562.8, 42881368.25],
+                  backgroundColor: ["rgba(255, 99, 132, 0.6)"],
+                },
+                {
+                  label: "PATRIMONIO DISPONIBILE",
+                  data: [171376421.44, 8092131.27, 4459057.78, 719247.0],
+                  backgroundColor: ["rgba(54, 162, 235, 0.6)"],
+                },
+                {
+                  label: "PATRIMONIO INDISPONIBILE",
+                  data: [4073315.13, 309592444.65, 137103765.06, 61631790.73],
+                  backgroundColor: ["rgba(255, 206, 86, 0.6)"],
+                },
+              ],
+            }}
+            location="Abruzzo"
+            legendPosition="bottom"
+          />
 
-        <Chart
-          chartData={{
-            labels: ["Chieti", "L'Aquila", "Pescara", "Teramo"],
-            datasets: [
-              {
-                label: "PATRIMONIO INDISPONIBILE",
-                data: [4073315.13, 309592444.65, 137103765.06, 61631790.73],
-                backgroundColor: [
-                  "rgba(255, 99, 132, 0.6)",
-                  "rgba(54, 162, 235, 0.6)",
-                  "rgba(255, 206, 86, 0.6)",
-                  "rgba(75, 192, 192, 0.6)",
-                  "rgba(153, 102, 255, 0.6)",
-                  "rgba(255, 159, 64, 0.6)",
-                  "rgba(255, 99, 132, 0.6)",
-                ],
-              },
-            ],
-          }}
-          location="Abruzzo"
-          legendPosition="bottom"
-        />
+          <div className={classes.root}>
+            <AppBar position="static">
+              <Tabs
+                value={value}
+                onChange={handleChange}
+                aria-label="simple tabs example"
+              >
+                <Tab label="AQUILA" {...a11yProps(0)} />
+                <Tab label="CHIETI" {...a11yProps(1)} />
+                <Tab label="PESCARA" {...a11yProps(2)} />
+                <Tab label="TERAMO" {...a11yProps(3)} />
+              </Tabs>
+            </AppBar>
+            <TabPanel value={value} index={0}>
+              {aquila.map(res => {
+                return (
+                  <div>
+                    <div>
+                      <span>
+                        <strong>Indirizzo</strong>&nbsp; {res.Indirizzo}
+                      </span>
+                    </div>
+                    <div>
+                      <span>
+                        <strong>Descrizione</strong>&nbsp; {res.Descrizione}
+                      </span>
+                    </div>
+                    <div>
+                      <span>
+                        <strong>Comune</strong>&nbsp; {res.Comune}
+                      </span>
+                    </div>
+                    <hr></hr>
+                  </div>
+                )
+              })}
+            </TabPanel>
+            <TabPanel value={value} index={1}>
+              {chieti.map(res => {
+                return (
+                  <div>
+                    <div>
+                      <span>
+                        <strong>Indirizzo</strong>&nbsp; {res.Indirizzo}
+                      </span>
+                    </div>
+                    <div>
+                      <span>
+                        <strong>Descrizione</strong>&nbsp; {res.Descrizione}
+                      </span>
+                    </div>
+                    <div>
+                      <span>
+                        <strong>Comune</strong>&nbsp; {res.Comune}
+                      </span>
+                    </div>
+                    <hr></hr>
+                  </div>
+                )
+              })}
+            </TabPanel>
+            <TabPanel value={value} index={2}>
+              {pescara.map(res => {
+                return (
+                  <div>
+                    <div>
+                      <span>
+                        <strong>Indirizzo</strong>&nbsp; {res.Indirizzo}
+                      </span>
+                    </div>
+                    <div>
+                      <span>
+                        <strong>Descrizione</strong>&nbsp; {res.Descrizione}
+                      </span>
+                    </div>
+                    <div>
+                      <span>
+                        <strong>Comune</strong>&nbsp; {res.Comune}
+                      </span>
+                    </div>
+                    <hr></hr>
+                  </div>
+                )
+              })}
+            </TabPanel>
+            <TabPanel value={value} index={3}>
+              {teramo.map(res => {
+                return (
+                  <div>
+                    <div>
+                      <span>
+                        <strong>Indirizzo</strong>&nbsp; {res.Indirizzo}
+                      </span>
+                    </div>
+                    <div>
+                      <span>
+                        <strong>Descrizione</strong>&nbsp; {res.Descrizione}
+                      </span>
+                    </div>
+                    <div>
+                      <span>
+                        <strong>Comune</strong>&nbsp; {res.Comune}
+                      </span>
+                    </div>
+                    <hr></hr>
+                  </div>
+                )
+              })}
+            </TabPanel>
+          </div>
+        </Container>
       </Layout>
     </React.Fragment>
   )
 }
 
-export default Test
+export default React.memo(Test)
+
+function a11yProps(index) {
+  return {
+    id: `simple-tab-${index}`,
+    "aria-controls": `simple-tabpanel-${index}`,
+  }
+}
+
+const useStyles = makeStyles(theme => ({
+  root: {
+    flexGrow: 1,
+    marginTop: "2rem",
+    backgroundColor: theme.palette.background.paper,
+  },
+}))

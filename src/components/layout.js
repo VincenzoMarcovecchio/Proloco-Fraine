@@ -12,8 +12,10 @@ import "./layout.css"
 import Footer from "../components/footer"
 import Cookie from "../components/cookie/Cookie"
 import { Helmet } from "react-helmet"
+
 const Layout = ({ children }) => {
   const [Articles, setArticles] = useState([])
+
   useEffect(() => {
     fetch(`https://prolocofraine.netlify.app/.netlify/functions/news`)
       .then(response => response.json()) // parse JSON from request

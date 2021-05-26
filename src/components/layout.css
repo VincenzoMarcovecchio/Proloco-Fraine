@@ -728,7 +728,7 @@ pre tt:after {
   background: rgb(230, 46, 45);
   box-sizing: content-box;
   color: white;
-  text-rendering: ;
+  text-rendering: optimizeSpeed;
 }
 
 .ticker {
@@ -836,7 +836,9 @@ a {
   .my-masonry-grid_column {
     width: 100% !important;
   }
+
   .my-masonry-grid_column div {
+
   }
 
   footer {
