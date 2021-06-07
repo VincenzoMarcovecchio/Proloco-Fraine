@@ -103,7 +103,7 @@ module.exports = {
         background_color: `#3f51b5`,
         theme_color: `#3f51b5`,
         display: `minimal-ui`,
-        icon: `src/images/proloco.jpg`, // This path is relative to the root of the site.
+        icon: `./src/images/proloco.jpg`, // This path is relative to the root of the site.
         icon_options: {
           purpose: `any maskable`,
         },

@@ -26,6 +26,13 @@ const Layout = ({ children }) => {
 
   return (
     <>
+      <Helmet>
+        <script
+          data-ad-client="ca-pub-7565213898571907"
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+        ></script>
+      </Helmet>
       <Header />
 
       <main>{children}</main>
