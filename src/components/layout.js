@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React, { useState, useEffect } from "react"
+import React, { useState, useCallback, useMemo, useEffect } from "react"
 import PropTypes from "prop-types"
 import Header from "./header"
 import "./layout.css"
@@ -16,13 +16,13 @@ import { Helmet } from "react-helmet"
 const Layout = ({ children }) => {
   const [Articles, setArticles] = useState([])
 
-  useEffect(() => {
+  useMemo(() => {
     fetch(`https://prolocofraine.netlify.app/.netlify/functions/news`)
       .then(response => response.json()) // parse JSON from request
       .then(resultData => {
         setArticles(resultData.articles)
       })
-  }, [])
+  })
 
   return (
     <>
