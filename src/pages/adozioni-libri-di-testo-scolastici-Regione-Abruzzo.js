@@ -10,8 +10,6 @@ import Box from "@material-ui/core/Box"
 import { GatsbySeo } from "gatsby-plugin-next-seo"
 import jsonData from "../data/ALTA.json"
 
-console.log(jsonData)
-
 function TabPanel(props) {
   const { children, value, index, ...other } = props
 
@@ -104,7 +102,7 @@ const Paggina = () => {
         }}
       />
       <Layout>
-        <Container
+        {/* <Container
           style={{
             margin: "5rem auto",
             padding: "1rem",
@@ -150,7 +148,8 @@ const Paggina = () => {
               Item Seven
             </TabPanel>
           </div>
-        </Container>
+        </Container> */}
+        <h1>test</h1>
       </Layout>
     </React.Fragment>
   )
