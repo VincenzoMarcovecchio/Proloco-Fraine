@@ -12,9 +12,24 @@ import "./layout.css"
 import Footer from "../components/footer"
 import Cookie from "../components/cookie/Cookie"
 import { Helmet } from "react-helmet"
+import Chatbot from 'react-chatbot-kit'
+import ActionProvider from './bot/ActionProvider';
+import MessageParser from './bot/MessageParser';
+import config from './bot/config';
+import useOnclickOutside from "react-cool-onclickoutside";
+
 
 const Layout = ({ children }) => {
+
   const [Articles, setArticles] = useState([])
+  const [openMenu, setOpenMenu] = useState(false);
+  const ref = useOnclickOutside(() => {
+    setOpenMenu(false);
+  });
+
+  const handleClickBtn = () => {
+    setOpenMenu(!openMenu);
+  };
 
   useMemo(() => {
     fetch(`https://prolocofraine.netlify.app/.netlify/functions/news`)
@@ -22,7 +37,7 @@ const Layout = ({ children }) => {
       .then(resultData => {
         setArticles(resultData.articles)
       })
-  })
+  },[])
 
   return (
     <>
@@ -32,10 +47,12 @@ const Layout = ({ children }) => {
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
         ></script>
+        <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="Oa5oh3r" data-color="#FFDD00" data-emoji="☕"  data-font="Cookie" data-text="Offrimi un caffe" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff" ></script>
       </Helmet>
       <Header />
 
       <main>{children}</main>
+
       <Cookie />
       <Footer />
       <div className="ticker-wrap">
@@ -57,7 +74,12 @@ const Layout = ({ children }) => {
             </div>
           ))}
         </div>
+
       </div>
+      <div className="butta">
+      <button onClick={handleClickBtn}>Button</button>
+      {openMenu && <div ref={ref}><Chatbot  config={config} actionProvider={ActionProvider} messageParser={MessageParser} />
+      </div>}</div>
     </>
   )
 }

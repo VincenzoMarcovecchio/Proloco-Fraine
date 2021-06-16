@@ -722,7 +722,9 @@ pre tt:after {
 .ticker-wrap {
   position: fixed;
   bottom: 0;
-  width: 100%;
+  left:0;
+  right:0;
+  width:inherit;
   overflow: hidden;
   height: 4rem;
   background: rgb(230, 46, 45);
@@ -851,4 +853,14 @@ a {
   .link-utili {
     flex-direction: column-reverse;
   }
+}
+
+
+.butta {
+  position: fixed;
+  right: 0.5rem;
+  bottom: 0rem;
+  height: fit-content;
+  width: auto;
+  z-index: 200000000000;
 }
