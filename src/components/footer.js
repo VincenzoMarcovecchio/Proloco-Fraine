@@ -112,9 +112,9 @@ export default function Footer() {
                 </Link>
               </li>
             </ul>
-<a href="https://www.buymeacoffee.com/Oa5oh3r" target="_blank">
-<img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style={{height:"60px",width:"217px"}} ></img>
-</a>
+            <a href="https://www.buymeacoffee.com/Oa5oh3r" target="_blank">
+              <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style={{ height: "60px", width: "217px" }} ></img>
+            </a>
           </div>
           <div className="icons-logos">
             <a
