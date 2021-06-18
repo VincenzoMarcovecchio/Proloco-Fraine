@@ -26,7 +26,12 @@ const Layout = ({ children }) => {
   const ref = useOnclickOutside(() => {
     setOpenMenu(false)
   })
-
+  useEffect(() => {
+    if (typeof window === "undefined" || !window.document) {
+      console.log(`bailing out of the useeffect. Going to continue to render??`)
+      return
+    }
+  }, [])
   useEffect(() => setCanRender(true), [])
 
   useEffect(() => setHasNavTag(document.querySelector("body") != null), [])
@@ -42,7 +47,7 @@ const Layout = ({ children }) => {
         setArticles(resultData.articles)
       })
   })
-  return canRender && hasNavTag ? (
+  return typeof window !== "undefined" ? (
     <>
       <Helmet>
         <script
@@ -105,7 +110,6 @@ const Layout = ({ children }) => {
     </>
   ) : (
     <>
-      {" "}
       <Helmet>
         <script
           data-ad-client="ca-pub-7565213898571907"
