@@ -21,10 +21,15 @@ import useOnclickOutside from "react-cool-onclickoutside"
 const Layout = ({ children }) => {
   const [Articles, setArticles] = useState([])
   const [openMenu, setOpenMenu] = useState(false)
-
+  const [canRender, setCanRender] = useState(false)
+  const [hasNavTag, setHasNavTag] = useState(false)
   const ref = useOnclickOutside(() => {
     setOpenMenu(false)
   })
+
+  useEffect(() => setCanRender(true), [])
+
+  useEffect(() => setHasNavTag(document.querySelector("body") != null), [])
 
   const handleClickBtn = () => {
     setOpenMenu(!openMenu)
@@ -37,8 +42,7 @@ const Layout = ({ children }) => {
         setArticles(resultData.articles)
       })
   })
-
-  return (
+  return canRender && hasNavTag ? (
     <>
       <Helmet>
         <script
@@ -97,6 +101,54 @@ const Layout = ({ children }) => {
             />
           </div>
         )}
+      </div>
+    </>
+  ) : (
+    <>
+      {" "}
+      <Helmet>
+        <script
+          data-ad-client="ca-pub-7565213898571907"
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+        ></script>
+        <script
+          type="text/javascript"
+          src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js"
+          data-name="bmc-button"
+          data-slug="Oa5oh3r"
+          data-color="#FFDD00"
+          data-emoji="☕"
+          data-font="Cookie"
+          data-text="Offrimi un caffe"
+          data-outline-color="#000000"
+          data-font-color="#000000"
+          data-coffee-color="#ffffff"
+        ></script>
+      </Helmet>
+      <Header />
+      <main>{children}</main>
+      <Cookie />
+      <Footer />
+      <div className="ticker-wrap">
+        <div className="ticker">
+          {Articles.map(article => (
+            <div key={article.title} className="item">
+              <a
+                style={{
+                  textDecoration: "none",
+                  color: "white",
+                  textRendering: " optimizeSpeed",
+                }}
+                target="_blank"
+                href={article.url}
+                rel="canonical noopener noreferrer "
+              >
+                {article.title}
+              </a>
+            </div>
+          ))}
+        </div>
       </div>
     </>
   )
