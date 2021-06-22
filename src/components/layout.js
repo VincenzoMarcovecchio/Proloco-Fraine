@@ -23,22 +23,23 @@ const Layout = ({ children }) => {
   const [openMenu, setOpenMenu] = useState(false)
   const [canRender, setCanRender] = useState(false)
   const [hasNavTag, setHasNavTag] = useState(false)
-  const ref = useOnclickOutside(() => {
-    setOpenMenu(false)
-  })
-  useEffect(() => {
-    if (typeof window === "undefined" || !window.document) {
-      console.log(`bailing out of the useeffect. Going to continue to render??`)
-      return
-    }
-  }, [])
-  useEffect(() => setCanRender(true), [])
 
-  useEffect(() => setHasNavTag(document.querySelector("body") != null), [])
+  // const ref = useOnclickOutside(() => {
+  //   setOpenMenu(false)
+  // })
+  // useEffect(() => {
+  //   if (typeof window === "undefined" || !window.document) {
+  //     console.log(`bailing out of the useeffect. Going to continue to render??`)
+  //     return
+  //   }
+  // }, [])
+  // useEffect(() => setCanRender(true), [])
 
-  const handleClickBtn = () => {
-    setOpenMenu(!openMenu)
-  }
+  // useEffect(() => setHasNavTag(document.querySelector("body") != null), [])
+
+  // const handleClickBtn = () => {
+  //   setOpenMenu(!openMenu)
+  // }
 
   useMemo(() => {
     fetch(`https://prolocofraine.netlify.app/.netlify/functions/news`)
@@ -47,68 +48,8 @@ const Layout = ({ children }) => {
         setArticles(resultData.articles)
       })
   })
-  return typeof window !== "undefined" ? (
-    <>
-      <Helmet>
-        <script
-          data-ad-client="ca-pub-7565213898571907"
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-        ></script>
-        <script
-          type="text/javascript"
-          src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js"
-          data-name="bmc-button"
-          data-slug="Oa5oh3r"
-          data-color="#FFDD00"
-          data-emoji="☕"
-          data-font="Cookie"
-          data-text="Offrimi un caffe"
-          data-outline-color="#000000"
-          data-font-color="#000000"
-          data-coffee-color="#ffffff"
-        ></script>
-      </Helmet>
-      <Header />
 
-      <main>{children}</main>
-
-      <Cookie />
-      <Footer />
-      <div className="ticker-wrap">
-        <div className="ticker">
-          {Articles.map(article => (
-            <div key={article.title} className="item">
-              <a
-                style={{
-                  textDecoration: "none",
-                  color: "white",
-                  textRendering: " optimizeSpeed",
-                }}
-                target="_blank"
-                href={article.url}
-                rel="canonical noopener noreferrer "
-              >
-                {article.title}
-              </a>
-            </div>
-          ))}
-        </div>
-      </div>
-      <div className="butta">
-        <button onClick={handleClickBtn}>Button</button>
-        {openMenu && (
-          <div ref={ref}>
-            <Chatbot
-              config={config}
-              actionProvider={ActionProvider}
-              messageParser={MessageParser}
-            />
-          </div>
-        )}
-      </div>
-    </>
-  ) : (
+  return (
     <>
       <Helmet>
         <script

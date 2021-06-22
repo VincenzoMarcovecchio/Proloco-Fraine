@@ -78,7 +78,7 @@ export default function Template({
           />
         </article>
 
-        <Link to="/">Torna indietro</Link>
+
         <FacebookProvider appId="407785027087673">
           <Comments href={`https://prolocofraine.org/${frontmatter.slug} `} />
         </FacebookProvider>
