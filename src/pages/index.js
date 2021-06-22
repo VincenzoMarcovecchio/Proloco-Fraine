@@ -101,7 +101,7 @@ const IndexPage = ({
     month: "2-digit",
     day: "2-digit",
   }
-  console.log(articles)
+
   return (
     <>
       <Layout>
@@ -223,8 +223,8 @@ const IndexPage = ({
             className="my-masonry-grid"
             columnClassName="my-masonry-grid_column"
           >
-            {articles.length > 100
-              ? articles?.articles.map((article, index) => {
+            {articles.articles[2].content.length > 50
+              ? articles.articles.map((article, index) => {
                   return (
                     <>
                       <Card key={index} className={classes.root}>
