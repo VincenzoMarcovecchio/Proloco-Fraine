@@ -223,80 +223,84 @@ const IndexPage = ({
             className="my-masonry-grid"
             columnClassName="my-masonry-grid_column"
           >
-            {articles.articles.map((article, index) => {
-              return (
-                <>
-                  <Card key={index} className={classes.root}>
-                    <CardHeader
-                      action={
-                        <IconButton aria-label="settings">
-                          <MoreVertIcon />
-                        </IconButton>
-                      }
-                      title={article.title}
-                      subheader={new Date(article.publishedAt).toLocaleString(
-                        "it-IT",
-                        options
-                      )}
-                    />
-                    {article.urlToImage ? (
-                      <CardMedia
-                        className={classes.media}
-                        image={article.urlToImage}
-                        title={article.title}
-                      />
-                    ) : (
-                      <Skeleton animation="wave" />
-                    )}
-                    <CardContent>
-                      <Typography
-                        variant="body2"
-                        color="textSecondary"
-                        component="div"
-                      >
-                        {article.description ? (
-                          <p
-                            contentEditable="true"
-                            dangerouslySetInnerHTML={{
-                              __html: `${article?.content?.substring(0, 200)}`,
-                            }}
-                          ></p>
+            {articles.length > 100
+              ? articles?.articles.map((article, index) => {
+                  return (
+                    <>
+                      <Card key={index} className={classes.root}>
+                        <CardHeader
+                          action={
+                            <IconButton aria-label="settings">
+                              <MoreVertIcon />
+                            </IconButton>
+                          }
+                          title={article.title}
+                          subheader={new Date(
+                            article.publishedAt
+                          ).toLocaleString("it-IT", options)}
+                        />
+                        {article.urlToImage ? (
+                          <CardMedia
+                            className={classes.media}
+                            image={article.urlToImage}
+                            title={article.title}
+                          />
                         ) : (
                           <Skeleton animation="wave" />
                         )}
-                      </Typography>
-                    </CardContent>
-                    <CardActions disableSpacing>
-                      <IconButton aria-label="add to favorites">
-                        <a
-                          title="leggi di piu"
-                          name="articolo redirect"
-                          href={article.url}
-                          target="_blank"
-                          rel="noreferrer noopener canonical"
-                        >
-                          <FavoriteIcon />{" "}
-                        </a>
-                      </IconButton>
-                      <IconButton aria-label="share">
-                        <ShareIcon />
-                      </IconButton>
+                        <CardContent>
+                          <Typography
+                            variant="body2"
+                            color="textSecondary"
+                            component="div"
+                          >
+                            {article.description ? (
+                              <p
+                                contentEditable="true"
+                                dangerouslySetInnerHTML={{
+                                  __html: `${article?.content?.substring(
+                                    0,
+                                    200
+                                  )}`,
+                                }}
+                              ></p>
+                            ) : (
+                              <Skeleton animation="wave" />
+                            )}
+                          </Typography>
+                        </CardContent>
+                        <CardActions disableSpacing>
+                          <IconButton aria-label="add to favorites">
+                            <a
+                              title="leggi di piu"
+                              name="articolo redirect"
+                              href={article.url}
+                              target="_blank"
+                              rel="noreferrer noopener canonical"
+                            >
+                              <FavoriteIcon />{" "}
+                            </a>
+                          </IconButton>
+                          <IconButton aria-label="share">
+                            <ShareIcon />
+                          </IconButton>
 
-                      <IconButton
-                        className={clsx(classes.expand, {
-                          [classes.expandOpen]: expanded,
-                        })}
-                        // onClick={() => handleExpandClick(index)}
-                        aria-expanded="false"
-                        aria-label="scopri di piu"
-                      >
-                        <ExpandMoreIcon />
-                      </IconButton>
-                    </CardActions>
-                  </Card>
-                </>
-              )
-            })}
+                          <IconButton
+                            className={clsx(classes.expand, {
+                              [classes.expandOpen]: expanded,
+                            })}
+                            // onClick={() => handleExpandClick(index)}
+                            aria-expanded="false"
+                            aria-label="scopri di piu"
+                          >
+                            <ExpandMoreIcon />
+                          </IconButton>
+                        </CardActions>
+                      </Card>
+                    </>
+                  )
+                })
+              : "troppe richieste"}
           </Masonry>
         </Container>
       </Layout>
@@ -336,5 +340,3 @@ export const pageQuery = graphql`
     }
   }
 `
-{
-}

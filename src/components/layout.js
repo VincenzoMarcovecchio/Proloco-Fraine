@@ -19,35 +19,13 @@ import config from "./bot/config"
 import useOnclickOutside from "react-cool-onclickoutside"
 
 const Layout = ({ children }) => {
-  const [Articles, setArticles] = useState([])
+  const [Articles, setArticles] = useState([
+    "stetv a la cas",
+    "la neve la sembre fatto",
+  ])
   const [openMenu, setOpenMenu] = useState(false)
   const [canRender, setCanRender] = useState(false)
   const [hasNavTag, setHasNavTag] = useState(false)
-
-  // const ref = useOnclickOutside(() => {
-  //   setOpenMenu(false)
-  // })
-  // useEffect(() => {
-  //   if (typeof window === "undefined" || !window.document) {
-  //     console.log(`bailing out of the useeffect. Going to continue to render??`)
-  //     return
-  //   }
-  // }, [])
-  // useEffect(() => setCanRender(true), [])
-
-  // useEffect(() => setHasNavTag(document.querySelector("body") != null), [])
-
-  // const handleClickBtn = () => {
-  //   setOpenMenu(!openMenu)
-  // }
-
-  useMemo(() => {
-    fetch(`https://prolocofraine.netlify.app/.netlify/functions/news`)
-      .then(response => response.json()) // parse JSON from request
-      .then(resultData => {
-        setArticles(resultData.articles)
-      })
-  })
 
   return (
     <>
