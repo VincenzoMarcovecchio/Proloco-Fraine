@@ -112,21 +112,20 @@ export default function Footer() {
                 </Link>
               </li>
             </ul>
-            <a href="https://www.buymeacoffee.com/Oa5oh3r" target="_blank">
-              <script
-                type="text/javascript"
-                src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js"
-                data-name="bmc-button"
-                data-slug="Oa5oh3r"
-                data-color="#FFDD00"
-                data-emoji="☕"
-                data-font="Cookie"
-                data-text="Offrimi un caffe"
-                data-outline-color="#000000"
-                data-font-color="#000000"
-                data-coffee-color="#ffffff"
-              ></script>
-            </a>
+
+            <script
+              type="text/javascript"
+              src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js"
+              data-name="bmc-button"
+              data-slug="Oa5oh3r"
+              data-color="#FFDD00"
+              data-emoji="☕"
+              data-font="Cookie"
+              data-text="Offrimi un caffe"
+              data-outline-color="#000000"
+              data-font-color="#000000"
+              data-coffee-color="#ffffff"
+            ></script>
           </div>
           <div className="icons-logos">
             <a
