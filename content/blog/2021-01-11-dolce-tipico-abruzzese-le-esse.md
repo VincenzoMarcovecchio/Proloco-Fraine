@@ -1,6 +1,6 @@
 ---
 title: Ma quanto sono buone le “Esse”‼️
-author: Giacomo
+author: Giacomo Di Pasquale
 date: 2021-01-11T23:13:10.104Z
 description: Un dolce semplicissimo, ma dal profumo inebriante dei semi di anice.Non c’è un battesimo, una comunione o un matrimonio senza le “esse”.
 keywords: ricette tradizionali esse abruzzesi italia cuoco chef cousine cinque stelle

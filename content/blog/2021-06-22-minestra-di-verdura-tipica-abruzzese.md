@@ -1,7 +1,7 @@
 ---
 
 title: Minestra di verdure e patate e minestra di zucchine e patate.
-author: Leonardo
+author: Leonardo Tilli
 date: 2021-06-22T23:13:10.104Z
 description: A Fraine, chi seminava un poco in anticipo le patate, quando arrivavano le prime zucchine, già cominciava a trovare anche qualche patatina nuova nell'orto...
 keywords: proloco significato unione nazionale proloco cucina ricette tradizionali esse abruzzesi italia cuoco chef cousine cinque-stelle paesi abruzzesi

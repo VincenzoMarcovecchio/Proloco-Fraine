@@ -13,7 +13,7 @@ export default function Template({
 }) {
   const { markdownRemark } = data // data.markdownRemark holds your post data
   const { frontmatter, html } = markdownRemark
-
+  console.log(markdownRemark)
   return (
     <Layout>
       <GatsbySeo
@@ -71,13 +71,17 @@ export default function Template({
             />
           )}
           <h1 style={{ margin: "2rem auto 2rem 0" }}>{frontmatter.title}</h1>
+          <div style={{ marginBottom: "2rem" }}>
+            <span>
+              <b>Autore:</b>&nbsp;{frontmatter.author}
+            </span>
+          </div>
           <time dateTime={frontmatter.date}> </time>
           <div
             className="blog-post-content"
             dangerouslySetInnerHTML={{ __html: html }}
           />
         </article>
-
 
         <FacebookProvider appId="407785027087673">
           <Comments href={`https://prolocofraine.org/${frontmatter.slug} `} />
@@ -96,6 +100,7 @@ export const pageQuery = graphql`
         slug
         title
         description
+        author
         tags
         cover
         keywords
