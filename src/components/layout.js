@@ -16,6 +16,26 @@ import { Helmet } from "react-helmet"
 const Layout = ({ children }) => {
   const [Articles, setArticles] = useState([
     { title: "stetv a la cas" },
+    { title: "stetv a la cas" },
+    { title: "stetv a la cas" },
+    { title: "stetv a la cas" },
+    { title: "stetv a la cas" },
+    { title: "stetv a la cas" },
+    { title: "stetv a la cas" },
+    { title: "stetv a la cas" },
+    { title: "stetv a la cas" },
+    { title: "stetv a la cas" },
+    { title: "stetv a la cas" },
+    { title: "stetv a la cas" },
+    { title: "stetv a la cas" },
+    { title: "stetv a la cas" },
+    { title: "stetv a la cas" },
+    { title: "stetv a la cas" },
+    { title: "stetv a la cas" },
+    { title: "stetv a la cas" },
+    { title: "stetv a la cas" },
+    { title: "stetv a la cas" },
+    { title: "stetv a la cas" },
     { title: "la neve la sembre fatto" },
   ])
   const [openMenu, setOpenMenu] = useState(false)
@@ -37,22 +57,24 @@ const Layout = ({ children }) => {
       <Footer />
       <div className="ticker-wrap">
         <div className="ticker">
-          {Articles.map(article => (
-            <div key={article.title} className="item">
-              <a
-                style={{
-                  textDecoration: "none",
-                  color: "white",
-                  textRendering: " optimizeSpeed",
-                }}
-                target="_blank"
-                href={"#"}
-                rel="canonical noopener noreferrer "
-              >
-                {article.title}
-              </a>
-            </div>
-          ))}
+          {Articles.map((article, index) => {
+            return (
+              <div key={index} className="item">
+                <a
+                  style={{
+                    textDecoration: "none",
+                    color: "white",
+                    textRendering: " optimizeSpeed",
+                  }}
+                  target="_blank"
+                  href={"#"}
+                  rel="canonical noopener noreferrer "
+                >
+                  {article.title}
+                </a>
+              </div>
+            )
+          })}
         </div>
       </div>
     </>
