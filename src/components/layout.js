@@ -12,10 +12,7 @@ import "./layout.css"
 import Footer from "../components/footer"
 import Cookie from "../components/cookie/Cookie"
 import { Helmet } from "react-helmet"
-import Chatbot from "react-chatbot-kit"
-import ActionProvider from "./bot/ActionProvider"
-import MessageParser from "./bot/MessageParser"
-import config from "./bot/config"
+
 import useOnclickOutside from "react-cool-onclickoutside"
 
 const Layout = ({ children }) => {
