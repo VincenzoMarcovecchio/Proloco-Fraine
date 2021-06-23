@@ -15,8 +15,8 @@ import { Helmet } from "react-helmet"
 
 const Layout = ({ children }) => {
   const [Articles, setArticles] = useState([
-    "stetv a la cas",
-    "la neve la sembre fatto",
+    { title: "stetv a la cas" },
+    { title: "la neve la sembre fatto" },
   ])
   const [openMenu, setOpenMenu] = useState(false)
   const [canRender, setCanRender] = useState(false)
@@ -46,7 +46,7 @@ const Layout = ({ children }) => {
                   textRendering: " optimizeSpeed",
                 }}
                 target="_blank"
-                href={article.url}
+                href={"#"}
                 rel="canonical noopener noreferrer "
               >
                 {article.title}
