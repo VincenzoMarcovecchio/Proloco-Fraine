@@ -83,18 +83,16 @@ export default function SwipeableTemporaryDrawer() {
             <ListItemText primary="Ultime Notizie" />
           </Link>
         </ListItem>
-        {["mater domini", "ricette"].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index === 0 ? <HouseIcon /> : <KitchenIcon />}
-            </ListItemIcon>
-            <Link replace to={`/${text}/`}>
-              <ListItemText
-                primary={text.charAt(0).toUpperCase() + text.slice(1)}
-              />
+        <ListItem button>
+          <ListItemIcon>
+            <Link to="/ricette-tipiche-abruzzesi/" replace>
+              <KitchenIcon />
             </Link>
-          </ListItem>
-        ))}
+          </ListItemIcon>
+          <Link to="/ricette-tipiche-abruzzesi/" replace>
+            <ListItemText primary="Ricette" />
+          </Link>
+        </ListItem>
       </List>
       <Divider />
 

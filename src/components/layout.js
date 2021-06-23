@@ -13,8 +13,6 @@ import Footer from "../components/footer"
 import Cookie from "../components/cookie/Cookie"
 import { Helmet } from "react-helmet"
 
-import useOnclickOutside from "react-cool-onclickoutside"
-
 const Layout = ({ children }) => {
   const [Articles, setArticles] = useState([
     "stetv a la cas",

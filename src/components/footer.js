@@ -113,7 +113,20 @@ export default function Footer() {
               </li>
             </ul>
             <a href="https://www.buymeacoffee.com/Oa5oh3r" target="_blank">
-              <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style={{ height: "60px", width: "217px" }} ></img>
+              <img
+                data-name="bmc-button"
+                data-slug="Oa5oh3r"
+                data-color="#FFDD00"
+                data-emoji="☕"
+                data-font="Cookie"
+                data-text="Offrimi un caffe"
+                data-outline-color="#000000"
+                data-font-color="#000000"
+                data-coffee-color="#ffffff"
+                src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
+                alt="Buy Me A Coffee"
+                style={{ height: "60px", width: "217px" }}
+              ></img>
             </a>
           </div>
           <div className="icons-logos">
