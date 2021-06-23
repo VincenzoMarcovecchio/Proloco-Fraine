@@ -8,7 +8,8 @@ import Tab from "@material-ui/core/Tab"
 import Typography from "@material-ui/core/Typography"
 import Box from "@material-ui/core/Box"
 import { GatsbySeo } from "gatsby-plugin-next-seo"
-import jsonData from "../data/ALTA.json"
+
+const jsonData = require("../data/ALTA.json")
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props
@@ -62,7 +63,6 @@ const Paggina = () => {
   const handleChange = (event, newValue) => {
     setValue(newValue)
   }
-  console.log(jsonData)
 
   return (
     <React.Fragment>
