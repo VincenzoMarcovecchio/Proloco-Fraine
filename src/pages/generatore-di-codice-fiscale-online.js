@@ -133,7 +133,7 @@ export default function Generatoredicodicefiscaleonline() {
       />
       <Layout>
         <Container className={classes.root} maxWidth="sm">
-          <img className={classes.image} src={flag} alt="italiana bandiera" />
+          {/* <img className={classes.image} src={flag} alt="italiana bandiera" /> */}
           <h1 style={{ margin: "3rem auto", zIndex: "10" }}>
             Codice Fiscale Online
           </h1>

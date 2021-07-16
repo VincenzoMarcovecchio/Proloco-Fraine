@@ -1,36 +1,80 @@
 import React, { useState, useEffect } from "react"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import { graphql } from "gatsby"
 import Container from "@material-ui/core/Container"
+import { GatsbySeo } from "gatsby-plugin-next-seo"
 
-const Lavoro = () => {
-  const [string, setString] = useState([])
+const Lavoro = data => {
+  // const [string, setString] = useState([])
+  // console.log(string)
+  // useEffect(() => {
+  //   fetch(`https://crawler222.herokuapp.com/`)
+  //     .then(res => res.json())
+  //     .then(data => (console.log(data), setString(data)))
+  // }, [])
 
-  console.log(string)
+  NodeList.prototype.map = Array.prototype.map
 
   useEffect(() => {
-    fetch(`https://crawler222.herokuapp.com/`)
-      .then(res => res.json())
-      .then(data => (console.log(data), setString(data)))
+    var divs = document.querySelectorAll(".tapItem")
+
+    for (let idx of divs) {
+      idx.href = idx.href.replace(
+        "http://prolocofraine.org/",
+        "https://it.indeed.com/"
+      )
+    }
   }, [])
 
   return (
     <Layout>
-      <SEO title="Offerte di lavoro in Abruzzo Fraien e dintorni" />
-      <h1>Offerte di lavoro </h1>
+      <GatsbySeo
+        title="Proloco Fraine | Offerte di lavoro in Abruzzo Fraine e dintorni"
+        description="Agenzia locale per il locale"
+        canonical="https://www.prolocofraine.org/offerte-di-lavoro-abruzzo-e-alto-vastese"
+        openGraph={{
+          url:
+            "https://www.prolocofraine.org/offerte-di-lavoro-abruzzo-e-alto-vastese",
+          title: "Offerte Di Lavoro",
+          description: "Agenzia locale per il locale",
+          images: [
+            {
+              url:
+                "https://images.unsplash.com/photo-1577401159468-3bbc7ee440b5?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8am9iJTIwc2VhcmNofGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60",
+              width: 800,
+              height: 600,
+              alt: "proloco fraine",
+            },
+            {
+              url:
+                "https://images.unsplash.com/photo-1577401159468-3bbc7ee440b5?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8am9iJTIwc2VhcmNofGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60",
+              width: 900,
+              height: 800,
+              alt: "proloco fraine",
+            },
+          ],
+          site_name: "Proloco Fraine",
+        }}
+        twitter={{
+          handle: "Vincenzo Marcovecchio",
+          site: "Proloco Fraine",
+          cardType: "summary_large_image",
+        }}
+      />
+
       <style>
         {`button {
               display:none
           }
-          a {
-            pointer-events: none;
-            cursor: default;
-          }`}
+          `}
       </style>
 
       <Container style={{ marginTop: "3rem" }} maxWidth="sm">
-        {string.results ? (
-          <div dangerouslySetInnerHTML={{ __html: string.results.title }}></div>
+        <h1>Offerte di lavoro </h1>
+        {data.data.results.title ? (
+          <div
+            dangerouslySetInnerHTML={{ __html: data.data.results.title }}
+          ></div>
         ) : (
           "caricamento in corso"
         )}
@@ -40,3 +84,11 @@ const Lavoro = () => {
 }
 
 export default Lavoro
+
+export const pageQuery = graphql`
+  query inner {
+    results {
+      title
+    }
+  }
+`

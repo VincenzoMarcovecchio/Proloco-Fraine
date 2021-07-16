@@ -52,6 +52,16 @@ module.exports = {
         rootKey: "articles",
       },
     },
+    {
+      resolve: "gatsby-source-custom-api",
+      options: {
+        url: {
+          development: "https://crawler222.herokuapp.com/",
+          production: "https://crawler222.herokuapp.com/", // on "gatsby build"
+        },
+        rootKey: "jobs",
+      },
+    },
 
     {
       resolve: `gatsby-source-filesystem`,
