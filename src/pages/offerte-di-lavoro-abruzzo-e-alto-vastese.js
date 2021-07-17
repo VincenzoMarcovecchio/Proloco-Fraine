@@ -13,8 +13,6 @@ const Lavoro = data => {
   //     .then(data => (console.log(data), setString(data)))
   // }, [])
 
-  NodeList.prototype.map = Array.prototype.map
-
   useEffect(() => {
     var divs = document.querySelectorAll(".tapItem")
 

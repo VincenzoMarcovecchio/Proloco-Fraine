@@ -113,7 +113,7 @@ export default function Footer() {
               </li>
             </ul>
             {
-              <script
+              <img
                 type="text/javascript"
                 src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js"
                 data-name="bmc-button"
@@ -125,9 +125,7 @@ export default function Footer() {
                 data-outline-color="#000000"
                 data-font-color="#000000"
                 data-coffee-color="#ffffff"
-              >
-                <li></li>
-              </script>
+              />
             }
           </div>
           <div className="icons-logos">
