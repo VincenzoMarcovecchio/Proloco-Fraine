@@ -17,8 +17,8 @@ const Lavoro = data => {
     var divs = document.querySelectorAll(".tapItem")
 
     for (let idx of divs) {
-      idx.href = idx.href.replace(
-        "http://prolocofraine.org/",
+      idx.href.replace(
+        "http://www.prolocofraine.org/",
         "https://it.indeed.com/"
       )
     }

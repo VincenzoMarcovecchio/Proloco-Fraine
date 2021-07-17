@@ -113,7 +113,7 @@ export default function Footer() {
               </li>
             </ul>
             {
-              <img
+              <script
                 type="text/javascript"
                 src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js"
                 data-name="bmc-button"
