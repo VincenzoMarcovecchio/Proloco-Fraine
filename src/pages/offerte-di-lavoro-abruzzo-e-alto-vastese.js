@@ -9,7 +9,8 @@ const Lavoro = data => {
     var divs = document.querySelectorAll(".tapItem")
 
     for (let idx of divs) {
-      idx.href = "https://it.indeed.com"
+      idx.href =
+        "https://it.indeed.com/jobs?q=&l=Fraine%2C+Abruzzo&radius=50&from=serpso&from=mobRdr&utm_source=%2Fm%2F&utm_medium=redir&utm_campaign=dt"
     }
   }, [])
 

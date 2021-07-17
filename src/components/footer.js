@@ -134,7 +134,9 @@ export default function Footer() {
                 data-outline-color="#000000"
                 data-font-color="#000000"
                 data-coffee-color="#ffffff"
-              />
+              >
+                <p></p>
+              </script>
             }
           </div>
           <div className="icons-logos">
