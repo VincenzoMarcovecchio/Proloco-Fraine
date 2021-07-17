@@ -5,22 +5,11 @@ import Container from "@material-ui/core/Container"
 import { GatsbySeo } from "gatsby-plugin-next-seo"
 
 const Lavoro = data => {
-  // const [string, setString] = useState([])
-  // console.log(string)
-  // useEffect(() => {
-  //   fetch(`https://crawler222.herokuapp.com/`)
-  //     .then(res => res.json())
-  //     .then(data => (console.log(data), setString(data)))
-  // }, [])
-
   useEffect(() => {
     var divs = document.querySelectorAll(".tapItem")
 
     for (let idx of divs) {
-      idx.href.replace(
-        "http://www.prolocofraine.org/",
-        "https://it.indeed.com/"
-      )
+      idx.href = "https://it.indeed.com"
     }
   }, [])
 
@@ -69,6 +58,7 @@ const Lavoro = data => {
 
       <Container style={{ marginTop: "3rem" }} maxWidth="sm">
         <h1>Offerte di lavoro </h1>
+        <br />
         {data.data.results.title ? (
           <div
             dangerouslySetInnerHTML={{ __html: data.data.results.title }}

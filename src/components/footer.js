@@ -111,6 +111,15 @@ export default function Footer() {
                   Agenzia Del Demanio Abruzzo
                 </Link>
               </li>
+              <li>
+                <Link
+                  replace
+                  rel="canonical noopener noreferrer"
+                  to="/offerte-di-lavoro-abruzzo-e-alto-vastese/"
+                >
+                  Job+
+                </Link>
+              </li>
             </ul>
             {
               <script
