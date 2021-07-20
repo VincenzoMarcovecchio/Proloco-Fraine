@@ -652,7 +652,7 @@ pre tt:after {
 
 }
 .hero h1::after {
-  content: "L'Associazione PRO LOCO Fraine ha come unico scopo l'organizzazione di eventi socio-culturali per l'intrattenimento di grandi e piccini e non solo...";
+  content: "L'Associazione PRO LOCO Fraine ha come scopo l'organizzazione di eventi socio-culturali per l'intrattenimento di grandi e piccini e non solo...";
   position: absolute;
   bottom: -5.6rem;
   left: 0;

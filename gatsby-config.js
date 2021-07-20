@@ -62,6 +62,16 @@ module.exports = {
         rootKey: "jobs",
       },
     },
+    {
+      resolve: "gatsby-source-custom-api",
+      options: {
+        url: {
+          development: "https://leggi99.herokuapp.com/",
+          production: "https://leggi99.herokuapp.com/", // on "gatsby build"
+        },
+        rootKey: "leggi",
+      },
+    },
 
     {
       resolve: `gatsby-source-filesystem`,

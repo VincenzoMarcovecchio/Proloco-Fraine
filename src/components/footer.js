@@ -120,24 +120,24 @@ export default function Footer() {
                   Job+
                 </Link>
               </li>
+              <li>
+                <Link
+                  replace
+                  rel="canonical noopener noreferrer"
+                  to="/ultimi-decreti-legge-esaminati-del-parlamento-italiano/"
+                >
+                  Decreti Legge
+                </Link>
+              </li>
             </ul>
-            {
-              <script
-                type="text/javascript"
-                src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js"
-                data-name="bmc-button"
-                data-slug="Oa5oh3r"
-                data-color="#FFDD00"
-                data-emoji="☕"
-                data-font="Cookie"
-                data-text="Offrimi un caffe"
-                data-outline-color="#000000"
-                data-font-color="#000000"
-                data-coffee-color="#ffffff"
-              >
-                <p></p>
-              </script>
-            }
+            <a href="https://ko-fi.com/R6R15E26B" target="_blank">
+              <img
+                height="36"
+                src="https://cdn.ko-fi.com/cdn/kofi3.png?v=2"
+                border="0"
+                alt="Buy Me a Coffee at ko-fi.com"
+              />
+            </a>
           </div>
           <div className="icons-logos">
             <a
