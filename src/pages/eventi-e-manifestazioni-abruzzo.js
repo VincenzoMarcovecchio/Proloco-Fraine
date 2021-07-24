@@ -119,7 +119,7 @@ html > body > div > div > main > div > div > span {
       </Container>
       <hr />
       <center style={{ marginTop: "2rem" }}>
-        <h2>❤️🍕 C'è dell'altro 🌍🍕 </h2>
+        <h2>C'è dell'altro 🍝🍝 </h2>
       </center>
       <Container maxWidth="sm">
         {data.data.puppa.results.corpo ? (
