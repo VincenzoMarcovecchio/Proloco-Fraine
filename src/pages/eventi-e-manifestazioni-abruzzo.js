@@ -64,6 +64,9 @@ const Manifesta = data => {
  .pollo h2 {
   display:none;
 }
+ .divvo h2 {
+  display:none;
+}
 .divvo ul li {
   list-style:initial;
 }

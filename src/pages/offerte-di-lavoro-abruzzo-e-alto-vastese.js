@@ -4,7 +4,7 @@ import { graphql } from "gatsby"
 import Container from "@material-ui/core/Container"
 import { GatsbySeo } from "gatsby-plugin-next-seo"
 
-const Lavoro = data => {
+const Lavoro = ({ data }) => {
   useEffect(() => {
     var divs = document.querySelectorAll(".tapItem")
 
@@ -60,9 +60,9 @@ const Lavoro = data => {
       <Container style={{ marginTop: "3rem" }} maxWidth="sm">
         <h1>Offerte di lavoro </h1>
         <br />
-        {data.data.results.title ? (
+        {data.jobs.results.title ? (
           <div
-            dangerouslySetInnerHTML={{ __html: data.data.results.title }}
+            dangerouslySetInnerHTML={{ __html: data.jobs.results.title }}
           ></div>
         ) : (
           "caricamento in corso"
@@ -75,9 +75,11 @@ const Lavoro = data => {
 export default Lavoro
 
 export const pageQuery = graphql`
-  query inner {
-    results {
-      title
+  query innert {
+    jobs {
+      results {
+        title
+      }
     }
   }
 `
