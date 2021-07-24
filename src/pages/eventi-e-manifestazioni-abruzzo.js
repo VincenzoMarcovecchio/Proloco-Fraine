@@ -37,15 +37,13 @@ const Manifesta = data => {
             "Gli ultimi aggiornamenti su sagre, feste di paese, serate danzanti in Abruzzo",
           images: [
             {
-              url:
-                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwmdgOe5cJrb4iylXWIRIri6Rlenj7CfEqQA&usqp=CAU",
+              url: "",
               width: 800,
               height: 600,
               alt: "Abruzzo logo turismo",
             },
             {
-              url:
-                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwmdgOe5cJrb4iylXWIRIri6Rlenj7CfEqQA&usqp=CAU",
+              url: "",
               width: 900,
               height: 800,
               alt: "Abruzzo logo turismo",
