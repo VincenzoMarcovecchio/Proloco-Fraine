@@ -72,6 +72,16 @@ module.exports = {
         rootKey: "leggi",
       },
     },
+    {
+      resolve: "gatsby-source-custom-api",
+      options: {
+        url: {
+          development: "https://leggi99.herokuapp.com/eventi/",
+          production: "https://leggi99.herokuapp.com/eventi/", // on "gatsby build"
+        },
+        rootKey: "puppa",
+      },
+    },
 
     {
       resolve: `gatsby-source-filesystem`,
