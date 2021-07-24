@@ -13,6 +13,7 @@ import AnnouncementIcon from "@material-ui/icons/Announcement"
 import HouseIcon from "@material-ui/icons/House"
 import MenuIcon from "@material-ui/icons/Menu"
 import KitchenIcon from "@material-ui/icons/Kitchen"
+import AirportShuttleIcon from "@material-ui/icons/AirportShuttle"
 import LocationCityIcon from "@material-ui/icons/LocationCity"
 import AppBar from "@material-ui/core/AppBar"
 import Box from "@material-ui/core/Box"
@@ -105,6 +106,16 @@ export default function SwipeableTemporaryDrawer() {
           </Link>
           <Link replace to="/paesi-limitrofi-e-mercati-locali/">
             <ListItemText primary="Mercati locali" />
+          </Link>
+        </ListItem>
+        <ListItem button>
+          <Link replace to="/eventi-e-manifestazioni-abruzzo/">
+            <ListItemIcon>
+              <AirportShuttleIcon />
+            </ListItemIcon>
+          </Link>
+          <Link replace to="/eventi-e-manifestazioni-abruzzo/">
+            <ListItemText primary="Calendario Eventi" />
           </Link>
         </ListItem>
 

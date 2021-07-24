@@ -82,6 +82,16 @@ module.exports = {
         rootKey: "puppa",
       },
     },
+    {
+      resolve: "gatsby-source-custom-api",
+      options: {
+        url: {
+          development: "https://leggi99.herokuapp.com/altri/",
+          production: "https://leggi99.herokuapp.com/altri/", // on "gatsby build"
+        },
+        rootKey: "hello",
+      },
+    },
 
     {
       resolve: `gatsby-source-filesystem`,
