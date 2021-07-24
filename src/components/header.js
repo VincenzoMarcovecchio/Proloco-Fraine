@@ -38,6 +38,7 @@ const useStyles = makeStyles({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+    fontSize: "large",
   },
 
   title: {
@@ -174,7 +175,7 @@ export default function SwipeableTemporaryDrawer() {
         >
           <MenuIcon />
         </IconButton>
-        &nbsp; Proloco Fraine
+        &nbsp; Proloco Fraine ❤️
       </Box>
 
       <SwipeableDrawer
