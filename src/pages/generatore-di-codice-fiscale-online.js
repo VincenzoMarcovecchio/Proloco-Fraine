@@ -28,7 +28,7 @@ const useStyles = makeStyles(theme => ({
       width: "100%",
     },
   },
-  text: { zIndex: "10", padding: "1.4rem 1.6rem 1.4rem 0.8rem" },
+  text: {  padding: "1.4rem 1.6rem 2.4rem 0.8rem" },
   image: {
     position: "absolute",
     left: "0",
@@ -101,7 +101,7 @@ export default function Generatoredicodicefiscaleonline() {
     <>
       <GatsbySeo
         title="Proloco Fraine | Codice Fiscale Online"
-        description="Generatore di codice fiscale online"
+        description="Generatore di codice fiscale online gratuito"
         canonical="https://www.prolocofraine.org/generatore-di-codice-fiscale-online"
         openGraph={{
           url:

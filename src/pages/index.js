@@ -192,8 +192,8 @@ const IndexPage = ({
           </video>
 
           <h1>
-            #ProLocoFraine
-            <span style={{ display: "block" }}>unisce</span>
+            ProLocoFraine
+
           </h1>
         </section>
 

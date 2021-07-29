@@ -72,7 +72,7 @@ export default function Category({ data }) {
       />
 
       <section className="blog-post-container">
-        <Link to="/">Torna indietro</Link>
+       
         <Container maxWidth="md">
           <h1 style={{ margin: "3rem auto 3rem 0" }}>
             Ricette tradizionali Frainesi

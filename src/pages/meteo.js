@@ -4,7 +4,7 @@ import SEO from "../components/seo"
 import Container from "@material-ui/core/Container"
 import App from "../components/meteo/App"
 
-const IndexPage = () => {
+const Meteo = () => {
   return (
     <>
       <Layout>
@@ -28,4 +28,4 @@ const IndexPage = () => {
   )
 }
 
-export default React.memo(IndexPage)
+export default Meteo

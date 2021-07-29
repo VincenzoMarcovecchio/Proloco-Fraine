@@ -12,7 +12,10 @@ tags:
   - animali smarriti
 ---
 
-Il nucleo della banca dati dell'Anagrafe Animali d'Affezione è costituito da un server web centrale, collocato presso il Ministero, che viene alimentato e aggiornato dalle Regioni. Le Regioni che riversano i dati rispondono della correttezza e completezza degli stessi.
+Il nucleo della banca dati dell'Anagrafe Animali d'Affezione è costituito da un server web centrale, collocato presso il Ministero, che viene alimentato e aggiornato dalle Regioni. 
+
+
+Le Regioni che riversano i dati rispondono della correttezza e completezza degli stessi.
 Tutte le regioni e le Province Autonome hanno avviato il caricamento della Banca Dati dell'Anagrafe Animali d'Affezione e procedono all'invio delle informazioni, contenute nelle rispettive anagrafi territoriali, almeno con cadenza mensile.
 
 Tutte le regioni inviano oltre al codice dell'identificativo (microchip o tatuaggio) informazioni relative all'animale quali la specie (cane, gatto, furetto), la razza e il sesso.
