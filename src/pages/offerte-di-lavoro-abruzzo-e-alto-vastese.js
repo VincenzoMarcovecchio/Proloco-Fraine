@@ -60,7 +60,7 @@ const Lavoro = ({ data }) => {
       <Container style={{ marginTop: "3rem" }} maxWidth="sm">
         <h1>Offerte di lavoro </h1>
         <br />
-        {data.jobs.results.title ? (
+        {data.jobs.results.title.length > 1 ? (
           <div
             dangerouslySetInnerHTML={{ __html: data.jobs.results.title }}
           ></div>
