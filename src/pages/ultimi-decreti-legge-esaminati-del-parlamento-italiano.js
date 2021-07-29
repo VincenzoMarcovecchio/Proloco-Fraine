@@ -1,8 +1,9 @@
 import React from "react"
-import { makeStyles } from "@material-ui/core/styles"
 import Layout from "../components/layout"
 import Container from "@material-ui/core/Container"
 import { GatsbySeo } from "gatsby-plugin-next-seo"
+import { graphql } from 'gatsby'
+
 
 const Decreti = ({ data }) => {
   return (
