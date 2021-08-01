@@ -56,8 +56,8 @@ module.exports = {
       resolve: "gatsby-source-custom-api",
      options: {
       url: {
-          development: "https://crawler222.herokuapp.com/",
-          production: "https://crawler222.herokuapp.com/", // on "gatsby build"
+          development: "https://mimmofranco.herokuapp.com/https://crawler222.herokuapp.com/",
+          production: "https://mimmofranco.herokuapp.com/https://crawler222.herokuapp.com/", // on "gatsby build"
        },
       rootKey: "jobs",
       },
@@ -66,7 +66,7 @@ module.exports = {
       resolve: "gatsby-source-custom-api",
       options: {
         url: {
-          development: "https://leggi99.herokuapp.com/",
+          development: "https://mimmofranco.herokuapp.com/https://leggi99.herokuapp.com/",
           production: "https://leggi99.herokuapp.com/", // on "gatsby build"
         },
         rootKey: "leggi",
@@ -100,7 +100,7 @@ module.exports = {
         path: `${__dirname}/content/blog`,
       },
     },
-    
+
     `gatsby-transformer-remark`,
 
     {
