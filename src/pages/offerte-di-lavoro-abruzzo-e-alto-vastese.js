@@ -75,7 +75,7 @@ const Lavoro = ({ data }) => {
 export default Lavoro
 
 export const pageQuery = graphql`
-  query innert {
+  query innerta {
     jobs {
       results {
         title
