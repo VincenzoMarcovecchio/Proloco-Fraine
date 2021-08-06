@@ -56,8 +56,8 @@ module.exports = {
       resolve: "gatsby-source-custom-api",
      options: {
       url: {
-          development: "https://mimmofranco.herokuapp.com/https://crawler222.herokuapp.com/",
-          production: "https://crawler222.herokuapp.com/", 
+          development: "https://mimmofranco.herokuapp.com/https://jobbio99.herokuapp.com/",
+          production: "https://jobbio99.herokuapp.com/", 
        },
       rootKey: "jobs",
       },
