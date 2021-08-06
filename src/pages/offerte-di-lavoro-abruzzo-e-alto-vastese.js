@@ -4,15 +4,16 @@ import { graphql } from "gatsby"
 import Container from "@material-ui/core/Container"
 import { GatsbySeo } from "gatsby-plugin-next-seo"
 
-const Lavoro = ({ data }) => {
-  useEffect(() => {
-    var divs = document.querySelectorAll(".tapItem")
-
-    for (let idx of divs) {
-      idx.href =
-        "https://it.indeed.com/jobs?q=&l=Fraine%2C+Abruzzo&radius=50&from=serpso&from=mobRdr&utm_source=%2Fm%2F&utm_medium=redir&utm_campaign=dt"
-    }
-  }, [])
+const Lavoro = () => {
+ 
+  // useEffect(() => {
+ //   var divs = document.querySelectorAll(".tapItem")
+//
+  //  for (let idx of divs) {
+    //  idx.href =
+      //  "https://it.indeed.com/jobs?q=&l=Fraine%2C+Abruzzo&radius=50&from=serpso&from=mobRdr&utm_source=%2Fm%2F&utm_medium=redir&utm_campaign=dt"
+  ///  }
+ // }, [])
 
   return (
     <Layout>
@@ -59,27 +60,14 @@ const Lavoro = ({ data }) => {
 
       <Container style={{ marginTop: "3rem" }} maxWidth="sm">
         <h1>Offerte di lavoro </h1>
-        <br />
-        {data.jobs.results.title.length > 1 ? (
-          <div
-            dangerouslySetInnerHTML={{ __html: data.jobs.results.title }}
-          ></div>
-        ) : (
-          "caricamento in corso"
-        )}
+        <br /> 
+    
+ 
       </Container>
-    </Layout>
+    
+      </Layout>
   )
 }
 
 export default Lavoro
 
-export const pageQuery = graphql`
-  query innerta {
-    jobs {
-      results {
-        title
-      }
-    }
-  }
-`

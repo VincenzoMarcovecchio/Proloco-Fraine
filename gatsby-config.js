@@ -52,16 +52,18 @@ module.exports = {
         rootKey: "articles",
       },
     },
-    {
-      resolve: "gatsby-source-custom-api",
-     options: {
-      url: {
-          development: "https://mimmofranco.herokuapp.com/https://jobbio99.herokuapp.com/",
-          production: "https://jobbio99.herokuapp.com/", 
-       },
-      rootKey: "jobs",
-      },
-    },
+
+  // {
+    //  resolve: "gatsby-source-custom-api",
+     // options: {
+     // url: {
+       //   development: "https://mimmofranco.herokuapp.com/https://jobbio99.herokuapp.com/",
+         // production: "https://jobbio99.herokuapp.com/", 
+     //  },
+     // rootKey: "jobs",
+    //  },
+   // },
+   
     {
       resolve: "gatsby-source-custom-api",
       options: {
