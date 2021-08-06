@@ -13,7 +13,7 @@ const Green = () => {
           url:
             "https://www.prolocofraine.org/green-pass-online-certificato",
           title: "Come ottenere il Covid Green Pass in Italia",
-          description="La Certificazione verde COVID-19 permette di accedere a eventi, strutture e altri luoghi pubblici in Italia e facilita gli spostamenti in Europa."
+          description:"La Certificazione verde COVID-19 permette di accedere a eventi, strutture e altri luoghi pubblici in Italia e facilita gli spostamenti in Europa."
           ,
 
           images: [
