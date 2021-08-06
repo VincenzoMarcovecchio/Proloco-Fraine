@@ -57,7 +57,7 @@ module.exports = {
      options: {
       url: {
           development: "https://mimmofranco.herokuapp.com/https://crawler222.herokuapp.com/",
-          production: "https://mimmofranco.herokuapp.com/https://crawler222.herokuapp.com/", // on "gatsby build"
+          production: "https://crawler222.herokuapp.com/", 
        },
       rootKey: "jobs",
       },
