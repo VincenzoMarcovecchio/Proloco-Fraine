@@ -130,7 +130,8 @@ export default function Footer() {
                 </Link>
               </li>
             </ul>
-            <a href="https://ko-fi.com/R6R15E26B" target="_blank">
+            <a href="https://ko-fi.com/R6R15E26B"  rel="canonical noopener noreferrer"
+              target="_blank">
               <img
                 height="36"
                 src="https://cdn.ko-fi.com/cdn/kofi3.png?v=2"
