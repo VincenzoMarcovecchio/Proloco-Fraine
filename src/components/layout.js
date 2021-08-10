@@ -55,12 +55,15 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Helmet>
+      <Helmet   htmlAttributes={{
+    lang: 'it',
+  }}>
         <script
           data-ad-client="ca-pub-7565213898571907"
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
         ></script>
+        {console.clear() }
       </Helmet>
       <Header />
       <main>{children}</main>
