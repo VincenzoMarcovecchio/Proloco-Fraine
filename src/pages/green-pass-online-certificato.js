@@ -2,6 +2,8 @@ import React from "react"
 import Layout from "../components/layout"
 import { GatsbySeo } from "gatsby-plugin-next-seo"
 import flag from "../images/abruzzo-logo.jpg"
+
+
 const Green = () => {
     return (
       <Layout>
@@ -42,7 +44,7 @@ const Green = () => {
         <center>
         
             <iframe
-              style={{ width: "100%", height: "100vh" }}
+              style={{ width: "100vw", height: "100vh" }}
               src="https://greenpass-decoder.debbaweb.it/"
             ></iframe>
  
