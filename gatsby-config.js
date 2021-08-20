@@ -45,9 +45,9 @@ module.exports = {
       options: {
         url: {
           development:
-            "https://newsapi.org/v2/top-headlines?country=it&apiKey=0121e101985943d88d6b3a5ac0817273", // on "gatsby develop"
+            "https://newsapi.org/v2/top-headlines?country=it&apiKey=be0e85ab6c7c4d20ad402a0f216017c3", // on "gatsby develop"
           production:
-            "https://newsapi.org/v2/top-headlines?country=it&apiKey=0121e101985943d88d6b3a5ac0817273", // on "gatsby build"
+            "https://newsapi.org/v2/top-headlines?country=it&apiKey=be0e85ab6c7c4d20ad402a0f216017c3", // on "gatsby build"
         },
         rootKey: "articles",
       },
