@@ -47,6 +47,7 @@ const Layout = ({ children }) => {
     { title: "stetv a la cas" },
     { title: "stetv a la cas" },
     { title: "stetv a la cas" },
+    { title: "stetv a la cas" },
     { title: "la neve la sembre fatto" },
   ])
   const [openMenu, setOpenMenu] = useState(false)
