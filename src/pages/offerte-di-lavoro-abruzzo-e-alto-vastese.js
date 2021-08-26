@@ -1,19 +1,18 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import Layout from "../components/layout"
 import { graphql } from "gatsby"
 import Container from "@material-ui/core/Container"
 import { GatsbySeo } from "gatsby-plugin-next-seo"
 
-const Lavoro = () => {
- 
-  // useEffect(() => {
- //   var divs = document.querySelectorAll(".tapItem")
-//
-  //  for (let idx of divs) {
-    //  idx.href =
-      //  "https://it.indeed.com/jobs?q=&l=Fraine%2C+Abruzzo&radius=50&from=serpso&from=mobRdr&utm_source=%2Fm%2F&utm_medium=redir&utm_campaign=dt"
-  ///  }
- // }, [])
+const Lavoro = data => {
+  useEffect(() => {
+    var divs = document.querySelectorAll(".tapItem")
+
+    for (let idx of divs) {
+      idx.href =
+        "https://it.indeed.com/jobs?q=&l=Fraine%2C+Abruzzo&radius=50&from=serpso&from=mobRdr&utm_source=%2Fm%2F&utm_medium=redir&utm_campaign=dt"
+    }
+  }, [])
 
   return (
     <Layout>
@@ -60,14 +59,25 @@ const Lavoro = () => {
 
       <Container style={{ marginTop: "3rem" }} maxWidth="sm">
         <h1>Offerte di lavoro </h1>
-        <br /> 
-    
- 
+        <br />
+        {data.data.results.title ? (
+          <div
+            dangerouslySetInnerHTML={{ __html: data.data.results.title }}
+          ></div>
+        ) : (
+          "caricamento in corso"
+        )}
       </Container>
-    
-      </Layout>
+    </Layout>
   )
 }
 
 export default Lavoro
 
+export const pageQuery = graphql`
+  query inner {
+    results {
+      title
+    }
+  }
+`

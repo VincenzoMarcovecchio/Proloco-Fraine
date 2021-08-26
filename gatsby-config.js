@@ -53,22 +53,22 @@ module.exports = {
       },
     },
 
-  // {
-    //  resolve: "gatsby-source-custom-api",
-     // options: {
-     // url: {
-       //   development: "https://mimmofranco.herokuapp.com/https://jobbio99.herokuapp.com/",
-         // production: "https://jobbio99.herokuapp.com/", 
-     //  },
-     // rootKey: "jobs",
-    //  },
-   // },
+ {
+      resolve: "gatsby-source-custom-api",
+      options: {
+     url: {
+          development: "https://mimmofranco.herokuapp.com/https://jobbio99.herokuapp.com/",
+         production: "https://jobbio99.herokuapp.com/", 
+      },
+     rootKey: "jobs",
+    },
+    },
    
     {
       resolve: "gatsby-source-custom-api",
       options: {
         url: {
-          development: "https://mimmofranco.herokuapp.com/https://leggi99.herokuapp.com/",
+          development: "https://leggi99.herokuapp.com/",
           production: "https://leggi99.herokuapp.com/", // on "gatsby build"
         },
         rootKey: "leggi",
