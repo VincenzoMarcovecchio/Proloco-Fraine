@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, {useEffect, useState } from "react"
 import Layout from "../components/layout"
 import { graphql } from "gatsby"
 import Container from "@material-ui/core/Container"
