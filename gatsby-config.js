@@ -69,7 +69,7 @@ module.exports = {
       options: {
         url: {
           development: "https://mimmofranco.herokuapp.com/https://leggi99.herokuapp.com/",
-          production: "https://leggi99.herokuapp.com/", // on "gatsby build"
+          production: "https://mimmofranco.herokuapp.com/https://leggi99.herokuapp.com/", // on "gatsby build"
         },
         rootKey: "leggi",
       },
@@ -79,7 +79,7 @@ module.exports = {
       options: {
         url: {
           development: "https://leggi99.herokuapp.com/eventi/",
-          production: "https://leggi99.herokuapp.com/eventi/", // on "gatsby build"
+          production: "https://mimmofranco.herokuapp.com/https://leggi99.herokuapp.com/eventi/", // on "gatsby build"
         },
         rootKey: "puppa",
       },
@@ -89,7 +89,7 @@ module.exports = {
       options: {
         url: {
           development: "https://leggi99.herokuapp.com/altri/",
-          production: "https://leggi99.herokuapp.com/altri/", // on "gatsby build"
+          production: "https://mimmofranco.herokuapp.com/https://leggi99.herokuapp.com/altri/", // on "gatsby build"
         },
         rootKey: "hello",
       },
