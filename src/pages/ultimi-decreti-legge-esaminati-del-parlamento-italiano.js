@@ -2,8 +2,7 @@ import React from "react"
 import Layout from "../components/layout"
 import Container from "@material-ui/core/Container"
 import { GatsbySeo } from "gatsby-plugin-next-seo"
-import { graphql } from 'gatsby'
-
+import { graphql } from "gatsby"
 
 const Decreti = ({ data }) => {
   return (
@@ -63,7 +62,7 @@ const Decreti = ({ data }) => {
       <Container style={{ marginTop: "3rem" }} maxWidth="sm">
         <h1>Decreti-Legge in corso di conversione ⚖️ 👨‍💻 </h1>
         <br />
-        {data.leggi.results.title ? (
+        {data.leggi.results ? (
           <div
             dangerouslySetInnerHTML={{ __html: data.leggi.results.title }}
           ></div>
