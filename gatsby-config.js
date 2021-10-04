@@ -23,7 +23,7 @@ module.exports = {
     `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-json`,
-     "gatsby-plugin-loadable-components-ssr",
+    "gatsby-plugin-loadable-components-ssr",
     {
       resolve: "gatsby-plugin-next-seo",
       options: {
@@ -54,33 +54,35 @@ module.exports = {
       },
     },
 
- {
-      resolve: "gatsby-source-custom-api",
-      options: {
-     url: {
-          development: "https://mimmofranco.herokuapp.com/https://jobbio99.herokuapp.com/",
-         production: "https://jobbio99.herokuapp.com/", 
-      },
-     rootKey: "jobs",
-    },
-    },
-   
     {
       resolve: "gatsby-source-custom-api",
       options: {
         url: {
-          development: "https://mimmofranco.herokuapp.com/https://leggi99.herokuapp.com/",
-          production: "https://mimmofranco.herokuapp.com/https://leggi99.herokuapp.com/", // on "gatsby build"
+          development:
+            "https://mimmofranco.herokuapp.com/https://jobbio99.herokuapp.com/",
+          production: "https://jobbio99.herokuapp.com/",
         },
-        rootKey: "leggi",
+        rootKey: "jobs",
       },
     },
+
+    // {
+    //  resolve: "gatsby-source-custom-api",
+    //  options: {
+    //  url: {
+    //  development: "https://mimmofranco.herokuapp.com/https://leggi99.herokuapp.com/",
+    // production: "https://mimmofranco.herokuapp.com/https://leggi99.herokuapp.com/", // on "gatsby build"
+    // },
+    //  rootKey: "leggi",
+    // },
+    //
     {
       resolve: "gatsby-source-custom-api",
       options: {
         url: {
           development: "https://leggi99.herokuapp.com/eventi/",
-          production: "https://mimmofranco.herokuapp.com/https://leggi99.herokuapp.com/eventi/", // on "gatsby build"
+          production:
+            "https://mimmofranco.herokuapp.com/https://leggi99.herokuapp.com/eventi/", // on "gatsby build"
         },
         rootKey: "puppa",
       },
@@ -90,7 +92,8 @@ module.exports = {
       options: {
         url: {
           development: "https://leggi99.herokuapp.com/altri/",
-          production: "https://mimmofranco.herokuapp.com/https://leggi99.herokuapp.com/altri/", // on "gatsby build"
+          production:
+            "https://mimmofranco.herokuapp.com/https://leggi99.herokuapp.com/altri/", // on "gatsby build"
         },
         rootKey: "hello",
       },
