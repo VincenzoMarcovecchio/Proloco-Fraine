@@ -23,7 +23,7 @@ module.exports = {
     `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-json`,
-     "gatsby-plugin-loadable-components-ssr",
+    "gatsby-plugin-loadable-components-ssr",
     {
       resolve: "gatsby-plugin-next-seo",
       options: {
@@ -54,22 +54,24 @@ module.exports = {
       },
     },
 
- {
-      resolve: "gatsby-source-custom-api",
-      options: {
-     url: {
-          development: "https://mimmofranco.herokuapp.com/https://jobbio99.herokuapp.com/",
-         production: "https://jobbio99.herokuapp.com", 
-      },
-     rootKey: "jobs",
-    },
-    },
-   
     {
       resolve: "gatsby-source-custom-api",
       options: {
         url: {
-          development: "https://mimmofranco.herokuapp.com/https://leggi99.herokuapp.com/",
+          development:
+            "https://mimmofranco.herokuapp.com/https://jobbio99.herokuapp.com",
+          production: "https://jobbio99.herokuapp.com",
+        },
+        rootKey: "jobs",
+      },
+    },
+
+    {
+      resolve: "gatsby-source-custom-api",
+      options: {
+        url: {
+          development:
+            "https://mimmofranco.herokuapp.com/https://leggi99.herokuapp.com",
           production: "https://leggi99.herokuapp.com", // on "gatsby build"
         },
         rootKey: "leggi",
@@ -79,7 +81,7 @@ module.exports = {
       resolve: "gatsby-source-custom-api",
       options: {
         url: {
-          development: "https://leggi99.herokuapp.com/eventi/",
+          development: "https://leggi99.herokuapp.com/eventi",
           production: "https://leggi99.herokuapp.com/eventi", // on "gatsby build"
         },
         rootKey: "puppa",
@@ -89,7 +91,7 @@ module.exports = {
       resolve: "gatsby-source-custom-api",
       options: {
         url: {
-          development: "https://leggi99.herokuapp.com/altri/",
+          development: "https://leggi99.herokuapp.com/altri",
           production: "https://leggi99.herokuapp.com/altri", // on "gatsby build"
         },
         rootKey: "hello",
@@ -225,7 +227,5 @@ module.exports = {
         policy: [{ userAgent: "*", allow: "/" }],
       },
     },
-
-    `gatsby-plugin-offline`,
   ],
 }

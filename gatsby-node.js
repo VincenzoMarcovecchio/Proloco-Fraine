@@ -26,6 +26,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
   const blogPostTemplate = require.resolve(`./src/templates/blogTemplate.js`)
   const categoryPage = path.resolve("src/templates/category.js")
+  const leggiPage = path.resolve("src/templates/decreti-legge.js")
 
   const result = await graphql(`
     {
@@ -40,6 +41,35 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
               category
             }
           }
+        }
+      }
+
+      leggi {
+        results {
+          title
+          quotes
+        }
+      }
+     
+      puppa {
+        results {
+          corpo
+        }
+      }
+      hello {
+        results {
+          rollo
+        }
+      }
+      articles {
+        articles {
+          author
+          title
+          description
+          url
+          urlToImage
+          publishedAt
+          content
         }
       }
     }
@@ -61,5 +91,44 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         slug: node.frontmatter.slug,
       },
     })
+  })
+
+  result.data.leggi.results.quotes.forEach(({ href }) => {
+    const url = new URL(href);
+    const rel = url.toString().substring(url.origin.length)
+    createPage({
+      path: rel,
+      component: leggiPage,
+      context: {
+
+        data: href
+      },
+    })
+  })
+  result.data.articles.articles.forEach(({      author,
+    title,
+    description,
+    url,
+    urlToImage,
+    publishedAt,
+    content }) => {
+    const ll = new URL(url);
+    const rel = ll.toString().substring(url.origin.length)
+    createPage({
+      path: rel,
+      component: leggiPage,
+      context: {
+
+        data: href
+      },
+    })
+  })
+  // Create category pages
+  createPage({
+    path: "/ultimi-decreti-legge-esaminati-del-parlamento-italiano",
+    component: leggiPage,
+    context: {
+      data: result.data.leggi.results.title,
+    },
   })
 }
