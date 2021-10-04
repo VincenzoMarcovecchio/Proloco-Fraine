@@ -4,7 +4,7 @@ import Container from "@material-ui/core/Container"
 import { GatsbySeo } from "gatsby-plugin-next-seo"
 import { graphql } from "gatsby"
 
-const Decreti = ( ) => {
+const Decreti = ({ data }) => {
   return (
     <Layout>
       <GatsbySeo
@@ -59,10 +59,16 @@ const Decreti = ( ) => {
               `}
       </style>
 
-      <Container style={{ marginTop: "3.1rem" }} maxWidth="sm">
+      <Container style={{ marginTop: "3rem" }} maxWidth="sm">
         <h1>Decreti-Legge in corso di conversione ⚖️ 👨‍💻 </h1>
         <br />
-     
+        {data.leggi.results.title ? (
+          <div
+            dangerouslySetInnerHTML={{ __html: data.leggi.results.title }}
+          ></div>
+        ) : (
+          "caricamento in corso"
+        )}
       </Container>
     </Layout>
   )
@@ -70,4 +76,12 @@ const Decreti = ( ) => {
 
 export default Decreti
 
-
+export const pageQuery = graphql`
+  query MyQuery {
+    leggi {
+      results {
+        title
+      }
+    }
+  }
+`

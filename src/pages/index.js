@@ -178,6 +178,7 @@ const IndexPage = ({
             autoPlay
             loop
             muted
+            poster="/staic/images/Paese tipico Abruzzese.jpg"
             style={{
               display: "grid",
               objectFit: "cover",
