@@ -23,6 +23,7 @@ module.exports = {
     `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-json`,
+     "gatsby-plugin-loadable-components-ssr",
     {
       resolve: "gatsby-plugin-next-seo",
       options: {

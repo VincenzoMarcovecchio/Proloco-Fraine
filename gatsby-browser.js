@@ -1,10 +1,10 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/browser-apis/
- */
 
-// You can delete this file if you're not using it
-// trigger an immediate page refresh when an update is found
+const loadableReady = require("@loadable/component").loadableReady
 
-// trigger an immediate page refresh when an
+exports.replaceHydrateFunction = () => {
+  return (element, container, callback) => {
+    loadableReady(() => {
+      ReactDOM.render(element, container, callback)
+    })
+  }
+}
