@@ -20,7 +20,7 @@ const Noti = ({ pageContext, data }) => {
             lio => lio.description == pageContext.data
           )[0].description
         }
-        canonical={single.url}
+        canonical={`https://www.prolocofraine.org/${pageContext.rela}`}
         openGraph={{
           url:
             `https://www.prolocofraine.org/${pageContext.rela}`,
