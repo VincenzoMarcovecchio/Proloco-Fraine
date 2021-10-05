@@ -5,8 +5,6 @@ import { GatsbySeo } from "gatsby-plugin-next-seo"
 import { graphql } from "gatsby"
 
 const Noti = ({ pageContext, data }) => {
-
-
   return (
     <Layout>
       <GatsbySeo
@@ -22,8 +20,7 @@ const Noti = ({ pageContext, data }) => {
         }
         canonical={`https://www.prolocofraine.org/${pageContext.rela}`}
         openGraph={{
-          url:
-            `https://www.prolocofraine.org/${pageContext.rela}`,
+          url: `https://www.prolocofraine.org/${pageContext.rela}`,
           title: `${
             data.articles.articles.filter(
               lio => lio.description == pageContext.data
@@ -56,14 +53,60 @@ const Noti = ({ pageContext, data }) => {
       />
 
       <Container style={{ marginTop: "3rem" }} maxWidth="sm">
-        <h1>
-          {
-            data.articles.articles.filter(
-              lio => lio.description == pageContext.data
-            )[0].title
-          }{" "}
-        </h1>
-        <h1>{pageContext.data}</h1>
+        <article className="blog-post">
+          {data.articles.articles.filter(
+            lio => lio.description == pageContext.data
+          )[0].urlToImage && (
+            <img
+              style={{ width: "100%", height: "65vh", objectFit: "cover" }}
+              alt={
+                data.articles.articles.filter(
+                  lio => lio.description == pageContext.data
+                )[0].title
+              }
+              src={
+                data.articles.articles.filter(
+                  lio => lio.description == pageContext.data
+                )[0].urlToImage
+              }
+            />
+          )}
+          <h1 style={{ margin: "2rem auto 2rem 0" }}>
+            {
+              data.articles.articles.filter(
+                lio => lio.description == pageContext.data
+              )[0].title
+            }
+          </h1>
+          <div style={{ marginBottom: "2rem" }}>
+            <span>
+              <b>Autore:</b>&nbsp;{" "}
+              {
+                data.articles.articles.filter(
+                  lio => lio.description == pageContext.data
+                )[0].author
+              }
+            </span>
+          </div>
+          <time
+            dateTime={
+              data.articles.articles.filter(
+                lio => lio.description == pageContext.data
+              )[0].publishedAt
+            }
+          >
+            
+          </time>
+          <div
+            className="blog-post-content"
+            dangerouslySetInnerHTML={{
+              __html: data.articles.articles.filter(
+                lio => lio.description == pageContext.data
+              )[0].content,
+            }}
+          />
+        </article>
+
         <br />
       </Container>
     </Layout>
