@@ -4,7 +4,7 @@ import Container from "@material-ui/core/Container"
 import { GatsbySeo } from "gatsby-plugin-next-seo"
 import { graphql } from "gatsby"
 
-const Noti = ({pageContext, data }) => {
+const Noti = ({ pageContext, data }) => {
   console.log(pageContext, data)
   return (
     <Layout>
@@ -63,10 +63,24 @@ const Noti = ({pageContext, data }) => {
       <Container style={{ marginTop: "3rem" }} maxWidth="sm">
         <h1>Decreti-Legge in corso di conversione ⚖️ 👨‍💻 </h1>
         <br />
-     
       </Container>
     </Layout>
   )
 }
 
 export default Noti
+export const pageQuery = graphql`
+  query($title: String!) {
+    articles(filter: $title) {
+      articles {
+        author
+        title
+        description
+        url
+        urlToImage
+        publishedAt
+        content
+      }
+    }
+  }
+`

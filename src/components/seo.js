@@ -49,7 +49,7 @@ function SEO({ title, description, keywords, image, pathname }) {
         <meta property="og:description" content={description} />
         <meta
           property="og:image"
-          content={`https://www.prolocofraine.org${image}`}
+          content={`${image}`}
         />
         {/* <!-- Twitter Meta Tags --> */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -57,7 +57,7 @@ function SEO({ title, description, keywords, image, pathname }) {
         <meta name="twitter:description" content={description} />
         <meta
           name="twitter:image"
-          content={`https://www.prolocofraine.org${image}`}
+          content={`https://www.prolocofraine.org${image} ||${image} `}
         />
         {/* <!-- Google / Search Engine Tags --> */}
         <meta itemprop="name" content="Proloco Fraine" />
