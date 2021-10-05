@@ -1,18 +1,10 @@
 import React from "react"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
 
 const Cinghiali = () => {
   return (
     <Layout>
-      <SEO
-        title="Il cinghiale come fonte di malattie
-infettive per il bestiame e
-per gli uomini"
-        description="Il cinghiale come fonte di malattie
-infettive per il bestiame e
-per gli uomini..."
-      />
+   
       <center>
         <object
           style={{ width: "100%", height: "100vh" }}

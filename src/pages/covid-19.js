@@ -1,6 +1,5 @@
 import React from "react"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
 import Container from "@material-ui/core/Container"
 import { makeStyles } from "@material-ui/core/styles"
 import Divider from "@material-ui/core/Divider"
@@ -52,13 +51,7 @@ const IndexPage = () => {
   return (
     <>
       <Layout>
-        <SEO
-          title="Covid-19"
-          description="EmergenzeHack informazioni dal comune di Fraine"
-          pathname="covid-19"
-          image={corona}
-          keywords="covid abruzzo notizie locali Fraine Vasto"
-        />
+      
         <Container style={{ marginTop: "3rem" }} maxWidth="sm">
           <center>
             <img
