@@ -70,12 +70,8 @@ const Noti = ({ pageContext, data }) => {
 
 export default Noti
 export const pageQuery = graphql`
-  query($data: String!) {
-    articles(
-      children: {
-        elemMatch: { internal: { description: { eq: $data } } }
-      }
-    ) {
+  query ciao {
+    articles {
       articles {
         author
         title

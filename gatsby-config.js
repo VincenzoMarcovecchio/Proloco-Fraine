@@ -51,6 +51,18 @@ module.exports = {
             "https://newsapi.org/v2/top-headlines?country=it&apiKey=be0e85ab6c7c4d20ad402a0f216017c3", // on "gatsby build"
         },
         rootKey: "articles",
+        schemas: {
+          articles: `
+                     author: String
+                     title: String
+                     description: String
+                     url: String
+                     urlToImage: String
+                     publishedAt: String
+                     content: String
+                   
+                    `,
+        },
       },
     },
 
@@ -58,8 +70,7 @@ module.exports = {
       resolve: "gatsby-source-custom-api",
       options: {
         url: {
-          development:
-            "https://jobbio99.herokuapp.com",
+          development: "https://jobbio99.herokuapp.com",
           production: "https://jobbio99.herokuapp.com",
         },
         rootKey: "jobs",
@@ -70,8 +81,7 @@ module.exports = {
       resolve: "gatsby-source-custom-api",
       options: {
         url: {
-          development:
-            "https://leggi99.herokuapp.com",
+          development: "https://leggi99.herokuapp.com",
           production: "https://leggi99.herokuapp.com", // on "gatsby build"
         },
         rootKey: "leggi",
