@@ -9,7 +9,7 @@ const Noti = ({ pageContext, data }) => {
   const [single, setSingle] = React.useState(null)
   React.useEffect(() => {
     setSingle(
-      data.articles.articles.filter(lio => lio.description !== pageContext.data)
+      data.articles.articles.filter(lio => lio.description == pageContext.data)
     )
    
   },[])
