@@ -6,6 +6,13 @@ import { graphql } from "gatsby"
 
 const Noti = ({ pageContext, data }) => {
   console.log(pageContext, data)
+  const [single, setSingle] = React.useState(null)
+  React.useEffect(() => {
+    setSingle(
+      data.articles.articles.filter(lio => lio.description !== pageContext.data)
+    )
+    console.log(single)
+  },[])
   return (
     <Layout>
       <GatsbySeo
