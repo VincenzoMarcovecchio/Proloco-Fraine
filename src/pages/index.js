@@ -178,7 +178,7 @@ const IndexPage = ({
             autoPlay
             loop
             muted
-            poster="/staic/images/Paese tipico Abruzzese.jpg"
+            poster="/images/medieval-church.png"
             style={{
               display: "grid",
               objectFit: "cover",

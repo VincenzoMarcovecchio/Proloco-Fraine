@@ -88,11 +88,15 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         path: rel,
         component: notiPage,
         context: {
-          data: description,
+          data: author,
+          title,
+          description,
+          url,
+          urlToImage,
+          publishedAt,
+          content,
         },
       })
     }
   )
-
- 
 }

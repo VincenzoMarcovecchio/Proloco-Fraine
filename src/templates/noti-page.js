@@ -5,7 +5,7 @@ import { GatsbySeo } from "gatsby-plugin-next-seo"
 import { graphql } from "gatsby"
 
 const Noti = ({pageContext, data }) => {
-  console.log(pageContext)
+  console.log(pageContext, data)
   return (
     <Layout>
       <GatsbySeo
