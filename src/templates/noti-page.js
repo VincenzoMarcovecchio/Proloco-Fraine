@@ -6,20 +6,15 @@ import { graphql } from "gatsby"
 
 const Noti = ({ pageContext, data }) => {
   console.log(pageContext, data)
-  const [single, setSingle] = React.useState(null)
-  React.useEffect(() => {
-    setSingle(
-      data.articles.articles.filter(lio => lio.description == pageContext.data)
-    )
-   
-  },[])
+  const [single, setSingle] = React.useState(data.articles.articles.filter(lio => lio.description == pageContext.data))
+
    console.log(single)
   return (
     <Layout>
       <GatsbySeo
-        title="Proloco Fraine | Decreti-Legge in corso di conversione"
-        description="Ultimi Decreti-Legge esaminati, Il parlamento live"
-        canonical="https://www.prolocofraine.org/ultimi-decreti-legge-esaminati-del-parlamento-italiano/"
+        title={single.author}
+        description={single.description}
+        canonical={single.url}
         openGraph={{
           url:
             "https://www.prolocofraine.org/ultimi-decreti-legge-esaminati-del-parlamento-italiano/",
@@ -51,25 +46,9 @@ const Noti = ({ pageContext, data }) => {
         }}
       />
 
-      <style>
-        {`caption {
-                 margin-top: 3rem;
-                 text-align: left;
-              }
-
-              .sddl{
-                  pointer-events:none;
-                  cursor:none
-              }
-              dt a {
-                  font-size: 2rem;
-                  text-decoration:underline !important;
-              }
-              `}
-      </style>
 
       <Container style={{ marginTop: "3rem" }} maxWidth="sm">
-        <h1>Decreti-Legge in corso di conversione ⚖️ 👨‍💻 </h1>
+        <h1>{single.description} </h1>
         <br />
       </Container>
     </Layout>
