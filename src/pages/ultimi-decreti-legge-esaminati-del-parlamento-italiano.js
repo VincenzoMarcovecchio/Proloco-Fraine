@@ -4,7 +4,7 @@ import Container from "@material-ui/core/Container"
 import { GatsbySeo } from "gatsby-plugin-next-seo"
 import { graphql } from "gatsby"
 
-const Decreti = ({ pageContext, data }) => {
+const Decreti = ({ data }) => {
   return (
     <Layout>
       <GatsbySeo
@@ -75,3 +75,13 @@ const Decreti = ({ pageContext, data }) => {
 }
 
 export default Decreti
+
+export const pageQuery = graphql`
+  query MyQuery {
+    leggi {
+      results {
+        title
+      }
+    }
+  }
+`

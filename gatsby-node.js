@@ -48,20 +48,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     }
   `)
 
-  const resultomeo = await graphql(`
-  {
-  
-    leggi {
-      results {
-        title
-        quotes {
-          ... 
-          }
-      }
-    }
-   
-  }
-`)
+
   const resulto = await graphql(`
   {
   
@@ -97,17 +84,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     })
   })
 
-  resultomeo.data.leggi.results.quotes.forEach(({ href }) => {
-    const url = new URL(href)
-    const rel = url.toString().substring(url.origin.length)
-    createPage({
-      path: rel,
-      component: leggiPage,
-      context: {
-        data: href,
-      },
-    })
-  })
+
  
 
   resulto.data.articles.articles.forEach(({
@@ -130,11 +107,4 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   })
  
   // Create category pages
-  createPage({
-    path: "/ultimi-decreti-legge-esaminati-del-parlamento-italiano",
-    component: leggiPage,
-    context: {
-      data: resultomeo.data.leggi.results.title,
-    },
-  })
 }
