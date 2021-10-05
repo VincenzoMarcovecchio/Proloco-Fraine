@@ -9,6 +9,7 @@ const Noti = ({ pageContext, data }) => {
   const [single, setSingle] = React.useState(data.articles.articles.filter(lio => lio.description == pageContext.data))
 
    console.log(single)
+   console.log(data.articles.articles.filter(lio => lio.description == pageContext.data)[0].title)
   return (
     <Layout>
       <GatsbySeo
