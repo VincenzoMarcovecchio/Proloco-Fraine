@@ -11,8 +11,9 @@ const Noti = ({ pageContext, data }) => {
     setSingle(
       data.articles.articles.filter(lio => lio.description !== pageContext.data)
     )
-    console.log(single)
+   
   },[])
+   console.log(single)
   return (
     <Layout>
       <GatsbySeo
