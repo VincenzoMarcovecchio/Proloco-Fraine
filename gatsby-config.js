@@ -59,7 +59,7 @@ module.exports = {
       options: {
         url: {
           development:
-            "https://mimmofranco.herokuapp.com/https://jobbio99.herokuapp.com",
+            "https://jobbio99.herokuapp.com",
           production: "https://jobbio99.herokuapp.com",
         },
         rootKey: "jobs",
@@ -71,7 +71,7 @@ module.exports = {
       options: {
         url: {
           development:
-            "https://mimmofranco.herokuapp.com/https://leggi99.herokuapp.com",
+            "https://leggi99.herokuapp.com",
           production: "https://leggi99.herokuapp.com", // on "gatsby build"
         },
         rootKey: "leggi",

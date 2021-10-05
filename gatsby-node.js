@@ -27,6 +27,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const blogPostTemplate = require.resolve(`./src/templates/blogTemplate.js`)
   const categoryPage = path.resolve("src/templates/category.js")
   const leggiPage = path.resolve("src/templates/decreti-legge.js")
+  const notiPage = path.resolve("src/templates/noti-page.js")
 
   const result = await graphql(`
     {
@@ -43,40 +44,41 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           }
         }
       }
-
-      leggi {
-        results {
-          title
-          quotes {
-             ... 
-            }
-        }
-      }
      
-      puppa {
-        results {
-          corpo
-        }
-      }
-      hello {
-        results {
-          rollo
-        }
-      }
-      articles {
-        articles {
-          author
-          title
-          description
-          url
-          urlToImage
-          publishedAt
-          content
-        }
-      }
     }
   `)
 
+  const resultomeo = await graphql(`
+  {
+  
+    leggi {
+      results {
+        title
+        quotes {
+          ... 
+          }
+      }
+    }
+   
+  }
+`)
+  const resulto = await graphql(`
+  {
+  
+    articles {
+      articles {
+        author
+        title
+        description
+        url
+        urlToImage
+        publishedAt
+        content
+      }
+    }   
+   
+  }
+`)
   // Handle errors
   if (result.errors) {
     reporter.panicOnBuild(`Error while running GraphQL query.`)
@@ -95,42 +97,44 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     })
   })
 
-  result.data.leggi.results.quotes.forEach(({ href }) => {
-    const url = new URL(href);
+  resultomeo.data.leggi.results.quotes.forEach(({ href }) => {
+    const url = new URL(href)
     const rel = url.toString().substring(url.origin.length)
     createPage({
       path: rel,
       component: leggiPage,
       context: {
-
-        data: href
+        data: href,
       },
     })
   })
-  result.data.articles.articles.forEach(({      author,
+ 
+
+  resulto.data.articles.articles.forEach(({
+    author,
     title,
     description,
     url,
     urlToImage,
     publishedAt,
     content }) => {
-    const ll = new URL(url);
-    const rel = ll.toString().substring(url.origin.length)
+    const urla = new URL(url)
+    const rel = urla.toString().substring(url.origin.length)
     createPage({
       path: rel,
-      component: leggiPage,
+      component: notiPage,
       context: {
-
-        data: description
+        data: description,
       },
     })
   })
+ 
   // Create category pages
   createPage({
     path: "/ultimi-decreti-legge-esaminati-del-parlamento-italiano",
     component: leggiPage,
     context: {
-      data: result.data.leggi.results.title,
+      data: resultomeo.data.leggi.results.title,
     },
   })
 }
