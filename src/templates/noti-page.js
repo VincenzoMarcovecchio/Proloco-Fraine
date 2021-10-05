@@ -5,36 +5,44 @@ import { GatsbySeo } from "gatsby-plugin-next-seo"
 import { graphql } from "gatsby"
 
 const Noti = ({ pageContext, data }) => {
-  console.log(pageContext, data)
-  const [single, setSingle] = React.useState(data.articles.articles.filter(lio => lio.description == pageContext.data))
 
-   console.log(single)
-   console.log(data.articles.articles.filter(lio => lio.description == pageContext.data)[0].title)
+
   return (
     <Layout>
       <GatsbySeo
-        title={single.author}
-        description={single.description}
+        title={
+          data.articles.articles.filter(
+            lio => lio.description == pageContext.data
+          )[0].title
+        }
+        description={
+          data.articles.articles.filter(
+            lio => lio.description == pageContext.data
+          )[0].description
+        }
         canonical={single.url}
         openGraph={{
           url:
-            "https://www.prolocofraine.org/ultimi-decreti-legge-esaminati-del-parlamento-italiano/",
-          title: "Ultimi Decreti-Legge esaminati",
-          description:
-            " Il parlamento live, gli ultimi Decreti-Legge esaminati",
+            `https://www.prolocofraine.org/${pageContext.rela}`,
+          title: `${
+            data.articles.articles.filter(
+              lio => lio.description == pageContext.data
+            )[0].title
+          }`,
+          description: `${
+            data.articles.articles.filter(
+              lio => lio.description == pageContext.data
+            )[0].title
+          }`,
           images: [
             {
-              url:
-                "https://www.parlamento.it/projects/parlamento/img/testata/imm_parlamento.gif",
+              url: `${
+                data.articles.articles.filter(
+                  lio => lio.description == pageContext.data
+                )[0].urlToImage
+              }`,
               width: 800,
               height: 600,
-              alt: "proloco fraine",
-            },
-            {
-              url:
-                "https://www.parlamento.it/projects/parlamento/img/testata/imm_parlamento.gif",
-              width: 900,
-              height: 800,
               alt: "proloco fraine",
             },
           ],
@@ -47,9 +55,15 @@ const Noti = ({ pageContext, data }) => {
         }}
       />
 
-
       <Container style={{ marginTop: "3rem" }} maxWidth="sm">
-        <h1>{single.description} </h1>
+        <h1>
+          {
+            data.articles.articles.filter(
+              lio => lio.description == pageContext.data
+            )[0].title
+          }{" "}
+        </h1>
+        <h1>{pageContext.data}</h1>
         <br />
       </Container>
     </Layout>
