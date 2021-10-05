@@ -41,9 +41,9 @@ const Decreti = ({ data }) => {
           cardType: "summary_large_image",
         }}
       />
-      {data.leggi.results.quotes.map(lol => {
+      {data.leggi.results.quotes? data.leggi.results.quotes.map(lol => {
         return <link rel="canonical" href={lol.href} />
-      })}
+      }): null}
       <style>
         {`caption {
                  margin-top: 3rem;
