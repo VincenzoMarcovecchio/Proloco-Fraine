@@ -47,7 +47,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       leggi {
         results {
           title
-          quotes
+          quotes {
+             ... 
+            }
         }
       }
      
@@ -119,7 +121,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       component: leggiPage,
       context: {
 
-        data: href
+        data: description
       },
     })
   })
