@@ -7998,7 +7998,7 @@ function Test() {
   }
 
   return (
-    <React.Fragment>
+    <>
       <GatsbySeo
         title="Proloco Fraine | Agenzia Del Demanio Abruzzo"
         description="Composizione e valori dei beni patrimoniali dello Stato in base all'art. 828 C.C. aggregato per Regione, Provincia. Elenco delle Aree dello Stato in base all'art. 828 C.C. fino al dettaglio della singola area."
@@ -8033,7 +8033,7 @@ function Test() {
           cardType: "summary_large_image",
         }}
       />
-      <Layout>
+      
         <Container
           style={{
             margin: "5rem auto",
@@ -8179,7 +8179,7 @@ function Test() {
           </div>
         </Container>
       
-    </React.Fragment>
+    </>
   )
 }
 
