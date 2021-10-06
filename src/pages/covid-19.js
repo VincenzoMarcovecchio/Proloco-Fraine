@@ -1,5 +1,4 @@
 import React from "react"
-import Layout from "../components/layout"
 import Container from "@material-ui/core/Container"
 import { makeStyles } from "@material-ui/core/styles"
 import Divider from "@material-ui/core/Divider"
@@ -50,7 +49,7 @@ const IndexPage = () => {
 
   return (
     <>
-      <Layout>
+    
       
         <Container style={{ marginTop: "3rem" }} maxWidth="sm">
           <center>
@@ -94,7 +93,7 @@ const IndexPage = () => {
             </iframe>
           </center>
         </Grid>
-      </Layout>
+      </>
     </>
   )
 }

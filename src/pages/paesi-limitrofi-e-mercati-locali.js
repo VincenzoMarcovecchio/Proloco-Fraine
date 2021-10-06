@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
 import { withStyles, makeStyles } from "@material-ui/core/styles"
 import Table from "@material-ui/core/Table"
 import TableBody from "@material-ui/core/TableBody"
@@ -51,12 +49,8 @@ const useStyles = makeStyles({
 export default function CustomizedTables() {
   const classes = useStyles()
   return (
-    <Layout>
-      <SEO
-        title="Mercati locali Abruzzesi e non solo"
-        description="I giorni in cui si svolgono i nostri mercati"
-        keywords="mercati locali abruzzo sussistenza biologico sviluppo rurale"
-      ></SEO>
+    <>
+     
       <Container className={classes.root}>
         <TableContainer component={Paper}>
           <Table className={classes.table} aria-label="customized table">
@@ -87,6 +81,6 @@ export default function CustomizedTables() {
           </Table>
         </TableContainer>
       </Container>
-    </Layout>
+    </>
   )
 }

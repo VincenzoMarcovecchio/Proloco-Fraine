@@ -8,7 +8,6 @@ import CardMedia from "@material-ui/core/CardMedia"
 import Button from "@material-ui/core/Button"
 import Typography from "@material-ui/core/Typography"
 import { graphql } from "gatsby"
-import Layout from "../components/layout"
 import { Link } from "gatsby"
 import Grid from "@material-ui/core/Grid"
 import Container from "@material-ui/core/Container"
@@ -33,7 +32,7 @@ export default function Category({ data }) {
   const { allMarkdownRemark } = data // data.markdownRemark holds your post data
 
   return (
-    <Layout>
+    <>
       <BlogJsonLd
         url="https://prolocofraine.org/ricette"
         headline="Proloco Fraine | Ricette tradizionali Abruzzesi"
@@ -122,7 +121,7 @@ export default function Category({ data }) {
           </Grid>
         </Container>
       </section>
-    </Layout>
+    </>
   )
 }
 

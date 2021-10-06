@@ -1,6 +1,5 @@
 import React, { useState } from "react"
 import "date-fns"
-import Layout from "../components/layout"
 import Container from "@material-ui/core/Container"
 import TextField from "@material-ui/core/TextField"
 import { makeStyles } from "@material-ui/core/styles"
@@ -131,7 +130,7 @@ export default function Generatoredicodicefiscaleonline() {
           cardType: "summary_large_image",
         }}
       />
-      <Layout>
+      <>
         <Container className={classes.root} maxWidth="sm">
           {/* <img className={classes.image} src={flag} alt="italiana bandiera" /> */}
           <h1 style={{ margin: "3rem auto", zIndex: "10" }}>
@@ -340,7 +339,7 @@ export default function Generatoredicodicefiscaleonline() {
           <br></br>
           <br></br>
         </Container>
-      </Layout>
+      </>
     </>
   )
 }

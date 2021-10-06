@@ -1,9 +1,8 @@
 import React from "react"
-import Layout from "../components/layout"
 
 const Cinghiali = () => {
   return (
-    <Layout>
+    <>
    
       <center>
         <object
@@ -17,7 +16,7 @@ const Cinghiali = () => {
           ></iframe>
         </object>
       </center>
-    </Layout>
+    </>
   )
 }
 

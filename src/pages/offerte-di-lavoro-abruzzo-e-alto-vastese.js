@@ -1,5 +1,4 @@
 import React, {useEffect, useState } from "react"
-import Layout from "../components/layout"
 import { graphql } from "gatsby"
 import Container from "@material-ui/core/Container"
 import { GatsbySeo } from "gatsby-plugin-next-seo"
@@ -15,7 +14,7 @@ const Lavoro = data => {
   }, [])
 
   return (
-    <Layout>
+    <>
       <GatsbySeo
         title="Proloco Fraine | Offerte di lavoro in Abruzzo Fraine e dintorni"
         description="Agenzia locale per il locale"
@@ -68,7 +67,7 @@ const Lavoro = data => {
           "caricamento in corso"
         )}
       </Container>
-    </Layout>
+    </>
   )
 }
 

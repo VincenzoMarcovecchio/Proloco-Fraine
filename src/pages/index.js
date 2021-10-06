@@ -1,5 +1,4 @@
 import React, { useState } from "react"
-import Layout from "../components/layout"
 import PostLink from "../components/postLink"
 import clsx from "clsx"
 import Container from "@material-ui/core/Container"
@@ -104,7 +103,7 @@ const IndexPage = ({
 
   return (
     <>
-      <Layout>
+      <>
         <GatsbySeo
           title="Proloco Fraine"
           description="L'Associazione PRO LOCO Fraine ha come scopo l'organizzazione di eventi socio-culturali per l'intrattenimento di grandi e piccini, e non solo..."
@@ -304,7 +303,7 @@ const IndexPage = ({
               : "troppe richieste"}
           </Masonry>
         </Container>
-      </Layout>
+      </>
     </>
   )
 }

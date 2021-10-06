@@ -1,5 +1,4 @@
 import React from "react"
-import Layout from "../components/layout"
 import Container from "@material-ui/core/Container"
 import loadable from "@loadable/component"
 const Meteo = () => {
@@ -7,7 +6,7 @@ const Meteo = () => {
 
   return (
     <>
-      <Layout>
+      <>
         <p>suggerimenti per le giornate, ben accetti...</p>
         <Container
           style={{
@@ -18,7 +17,7 @@ const Meteo = () => {
         >
           <LazyComponent />
         </Container>
-      </Layout>
+      </>
     </>
   )
 }

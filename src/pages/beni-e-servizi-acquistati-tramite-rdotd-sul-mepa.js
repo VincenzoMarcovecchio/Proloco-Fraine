@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react"
-import Layout from "../components/layout"
 import { GatsbySeo } from "gatsby-plugin-next-seo"
 import Container from "@material-ui/core/Container"
 import proloco from "../images/proloco.jpg"
@@ -52,7 +51,7 @@ https://dati.consip.it/api/action/datastore_search?resource_id=516f01ae-ec07-4b2
   })
 
   return (
-    <Layout>
+  <>
       <GatsbySeo
         title="Proloco Fraine | Beni e Servizi Acquistati Tramite RdO/TD sul MEPA 2020"
         description="Il dataset contiene informazioni di sintesi dei beni/servizi acquistati tramite RdO e Trattative dirette nell’ambito del Mepa. Consente di analizzare la spesa della PA in termini di: numero PA che hanno stipulato contratti, numero punti ordinanti, numero contratti stipulati, numero fornitori che hanno stipulato contratti. I dati sono aggregati rispetto alla tipologia e alla provincia dell’amministrazione che ha stipulato contratti, alla regione del fornitore che ha stipulato contratti, al bene/servizio acquistato, alla classificazione CPV del bene/servizio acquistato, al bando Mepa e alla relativa categoria di abilitazione su cui sono disponibili i beni/servizi acquistati, al tipo negoziazione (RdO/TD). Trattandosi di dati aggregati, non tutti gli indicatori sono additivi."
@@ -134,7 +133,7 @@ https://dati.consip.it/api/action/datastore_search?resource_id=516f01ae-ec07-4b2
           })}
         </Grid>
       </Container>
-    </Layout>
+    </>
   )
 }
 

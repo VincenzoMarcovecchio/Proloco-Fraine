@@ -4,8 +4,6 @@ import SwipeableViews from "react-swipeable-views"
 import AppBar from "@material-ui/core/AppBar"
 import Tabs from "@material-ui/core/Tabs"
 import Tab from "@material-ui/core/Tab"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
 import { GatsbySeo } from "gatsby-plugin-next-seo"
 import Container from "@material-ui/core/Container"
 import TreeviewsComponents from "../components/treeview/TreeviewsComponents"
@@ -32,11 +30,8 @@ function FullWidthTabs() {
   }
 
   return (
-    <Layout>
-      <SEO
-        title="Open bilanci del comune di Fraine"
-        description="Entrate ed uscite preventive del comune di Fraine secondo i dati forniti da openbilanci"
-      />
+    <>
+     
       <Container maxWidth="md">
         <AppBar position="static" color="default">
           <Tabs
@@ -64,7 +59,7 @@ function FullWidthTabs() {
           </TabPanel>
         </SwipeableViews>
       </Container>
-    </Layout>
+    </>
   )
 }
 export default React.memo(FullWidthTabs)

@@ -1,12 +1,11 @@
 import React from "react"
-import Layout from "../components/layout"
 import Container from "@material-ui/core/Container"
 import { GatsbySeo } from "gatsby-plugin-next-seo"
 import { graphql } from "gatsby"
 
 const Decreti = ({ data }) => {
   return (
-    <Layout>
+    <>
       <GatsbySeo
         title="Proloco Fraine | Decreti-Legge in corso di conversione"
         description="Ultimi Decreti-Legge esaminati, Il parlamento live"
@@ -72,7 +71,7 @@ const Decreti = ({ data }) => {
           "caricamento in corso"
         )}
       </Container>
-    </Layout>
+    </>
   )
 }
 

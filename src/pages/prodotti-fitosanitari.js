@@ -1,6 +1,5 @@
 import React, { useState, useEffect, memo } from "react"
 import { makeStyles } from "@material-ui/core/styles"
-import Layout from "../components/layout"
 import Container from "@material-ui/core/Container"
 import Fito from "../components/fitocomponent/Fito"
 import InfiniteScroll from "react-infinite-scroll-component"
@@ -55,7 +54,7 @@ function FitoSanitari() {
   }
 
   return (
-    <Layout>
+    <>
       <GatsbySeo
         title="Proloco Fraine | Prodotti Fitosanitari"
         description="Banca dati dei prodotti fitosanitari"
@@ -145,7 +144,7 @@ function FitoSanitari() {
           </InfiniteScroll>
         </Container>
       </section>
-    </Layout>
+    </>
   )
 }
 export default memo(FitoSanitari)

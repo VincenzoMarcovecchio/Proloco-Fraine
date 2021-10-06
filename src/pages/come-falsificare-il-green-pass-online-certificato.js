@@ -1,12 +1,11 @@
 import React from "react"
-import Layout from "../components/layout"
 import { GatsbySeo } from "gatsby-plugin-next-seo"
 import flag from "../images/abruzzo-logo.jpg"
 
 
 const Green = () => {
     return (
-      <Layout>
+      <>
         <GatsbySeo
         title="Come ottenere il Covid Green Pass in Italia"
         description="La Certificazione verde COVID-19 permette di accedere a eventi, strutture e altri luoghi pubblici in Italia e facilita gli spostamenti in Europa."
@@ -49,7 +48,7 @@ const Green = () => {
             ></iframe>
  
         </center>
-      </Layout>
+      </>
     )
   }
   

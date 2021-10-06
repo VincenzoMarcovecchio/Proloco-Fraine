@@ -1,5 +1,4 @@
 import React, { useRef, useEffect, useState } from "react"
-import Layout from "../components/layout"
 import Chart from "../components/charts/SortSelection"
 import Container from "@material-ui/core/Container"
 import PropTypes from "prop-types"
@@ -8179,7 +8178,7 @@ function Test() {
             </TabPanel>
           </div>
         </Container>
-      </Layout>
+      
     </React.Fragment>
   )
 }

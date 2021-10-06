@@ -1,9 +1,8 @@
 import React from "react"
 import { LocalBusinessJsonLd } from "gatsby-plugin-next-seo"
-import Layout from "../components/layout"
 const Mater = () => (
   <React.Fragment>
-    <Layout>
+    
       <LocalBusinessJsonLd
         type="Restaurant"
         id="http://prolocofraine.org/mater-domini"
@@ -25,7 +24,7 @@ const Mater = () => (
         images={["https://prolocofraine.org/images/Paese tipico Abruzzese.jpg"]}
       />
       <h1>hello from mater domini</h1>
-    </Layout>
+
   </React.Fragment>
 )
 

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react"
-import Layout from "../components/layout"
 import { graphql } from "gatsby"
 import { GatsbySeo } from "gatsby-plugin-next-seo"
 import Container from "@material-ui/core/Container"
@@ -26,7 +25,7 @@ const Manifesta = data => {
   }, [])
 
   return (
-    <Layout>
+    <>
       <GatsbySeo
         title="Eventi e manifestazioni Abruzzesi 2021"
         description="Gli ultimi aggiornamenti su sagre, feste di paese, serate danzanti in Abruzzo"
@@ -134,7 +133,7 @@ html > body > div > div > main > div > div > span {
           "caricamento in corso"
         )}
       </Container>
-    </Layout>
+    </>
   )
 }
 
