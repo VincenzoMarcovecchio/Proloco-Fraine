@@ -49,51 +49,48 @@ const IndexPage = () => {
 
   return (
     <>
-    
-      
-        <Container style={{ marginTop: "3rem" }} maxWidth="sm">
-          <center>
-            <img
-              className={classes.gridItem}
-              alt="coronavirus illustrazione animata"
-              src={corona}
-              loa
-            />
-          </center>
-        </Container>
+      <Container style={{ marginTop: "3rem" }} maxWidth="sm">
+        <center>
+          <img
+            className={classes.gridItem}
+            alt="coronavirus illustrazione animata"
+            src={corona}
+            loa
+          />
+        </center>
+      </Container>
 
-        <Grid className={classes.gridItem} item xs={12} md={6}>
-          <center>
-            <iframe
-              style={{ margin: "auto" }}
-              height="300"
-              width="500"
-              frameBorder="0"
-              allowFullScreen
-              src="//umap.openstreetmap.fr/it/map/covid19italiahelp_434021?scaleControl=false&miniMap=false&scrollWheelZoom=false&zoomControl=true&allowEdit=false&moreControl=true&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=true&onLoadPanel=undefined&captionBar=false"
-            ></iframe>
-            <p>
-              <a href="//umap.openstreetmap.fr/it/map/covid19italiahelp_434021">
-                Visualizza a schermo intero
-              </a>
-            </p>
-          </center>
-          <center>
-            <iframe
-              style={{ margin: "auto" }}
-              width="1440"
-              height="500"
-              title="iframe del sito "
-              src="https://covid19italia.help/segnala-base/"
-              frameborder="0"
-            >
-              <a href="https://covid19italia.help/segnala-base/">
-                Segnalazioni Covid19Italia.help
-              </a>
-            </iframe>
-          </center>
-        </Grid>
-      </>
+      <Grid className={classes.gridItem} item xs={12} md={6}>
+        <center>
+          <iframe
+            style={{ margin: "auto" }}
+            height="300"
+            width="500"
+            frameBorder="0"
+            allowFullScreen
+            src="//umap.openstreetmap.fr/it/map/covid19italiahelp_434021?scaleControl=false&miniMap=false&scrollWheelZoom=false&zoomControl=true&allowEdit=false&moreControl=true&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=true&onLoadPanel=undefined&captionBar=false"
+          ></iframe>
+          <p>
+            <a href="//umap.openstreetmap.fr/it/map/covid19italiahelp_434021">
+              Visualizza a schermo intero
+            </a>
+          </p>
+        </center>
+        <center>
+          <iframe
+            style={{ margin: "auto" }}
+            width="1440"
+            height="500"
+            title="iframe del sito "
+            src="https://covid19italia.help/segnala-base/"
+            frameborder="0"
+          >
+            <a href="https://covid19italia.help/segnala-base/">
+              Segnalazioni Covid19Italia.help
+            </a>
+          </iframe>
+        </center>
+      </Grid>
     </>
   )
 }
