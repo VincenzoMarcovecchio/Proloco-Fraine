@@ -1,12 +1,11 @@
 import React from "react"
-import Layout from "../components/layout"
 import Container from "@material-ui/core/Container"
 import { GatsbySeo } from "gatsby-plugin-next-seo"
 import { graphql } from "gatsby"
 
 const Noti = ({ pageContext, data }) => {
   return (
-    <Layout>
+    <>
       <GatsbySeo
         title={
           data.articles.articles.filter(
@@ -109,7 +108,7 @@ const Noti = ({ pageContext, data }) => {
 
         <br />
       </Container>
-    </Layout>
+    </>
   )
 }
 
