@@ -85,12 +85,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       const urla = new URL(url)
       const rel = urla.toString().substring(urla.origin.length)
       createPage({
-        path: rel,
         component: notiPage,
         context: {
           rela: rel,
           data: description,
-       
         },
       })
     }

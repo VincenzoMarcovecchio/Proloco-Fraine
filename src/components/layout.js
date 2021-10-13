@@ -14,42 +14,6 @@ import Cookie from "../components/cookie/Cookie"
 import { Helmet } from "react-helmet"
 
 const Layout = ({ children }) => {
-  const [Articles, setArticles] = useState([
-    { title: "la neve la sembre fatto" },
-    { title: "la neve la sembre fatto" },
-    { title: "la neve la sembre fatto" },
-    { title: "la neve la sembre fatto" },
-    { title: "la neve la sembre fatto" },
-    { title: "la neve la sembre fatto" },
-    { title: "la neve la sembre fatto" },
-    { title: "la neve la sembre fatto" },
-    { title: "la neve la sembre fatto" },
-    { title: "la neve la sembre fatto" },
-    { title: "la neve la sembre fatto" },
-    { title: "stetv a la cas" },
-    { title: "stetv a la cas" },
-    { title: "stetv a la cas" },
-    { title: "stetv a la cas" },
-    { title: "stetv a la cas" },
-    { title: "stetv a la cas" },
-    { title: "stetv a la cas" },
-    { title: "stetv a la cas" },
-    { title: "stetv a la cas" },
-    { title: "stetv a la cas" },
-    { title: "stetv a la cas" },
-    { title: "stetv a la cas" },
-    { title: "stetv a la cas" },
-    { title: "stetv a la cas" },
-    { title: "stetv a la cas" },
-    { title: "stetv a la cas" },
-    { title: "stetv a la cas" },
-    { title: "stetv a la cas" },
-    { title: "stetv a la cas" },
-    { title: "stetv a la cas" },
-    { title: "stetv a la cas" },
-    { title: "stetv a la cas" },
-    { title: "la neve la sembre fatto" },
-  ])
   const [openMenu, setOpenMenu] = useState(false)
   const [canRender, setCanRender] = useState(false)
   const [hasNavTag, setHasNavTag] = useState(false)
@@ -65,28 +29,6 @@ const Layout = ({ children }) => {
       <main>{children}</main>
       <Cookie />
       <Footer />
-      <div className="ticker-wrap">
-        <div className="ticker">
-          {Articles.map((article, index) => {
-            return (
-              <div key={index} className="item">
-                <a
-                  style={{
-                    textDecoration: "none",
-                    color: "white",
-                    textRendering: " optimizeSpeed",
-                  }}
-                  target="_blank"
-                  href={"#"}
-                  rel="canonical noopener noreferrer "
-                >
-                  {article.title}
-                </a>
-              </div>
-            )
-          })}
-        </div>
-      </div>
     </>
   )
 }
