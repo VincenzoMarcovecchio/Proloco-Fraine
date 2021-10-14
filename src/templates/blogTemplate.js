@@ -13,9 +13,9 @@ export default function Template({
 }) {
   const { markdownRemark } = data // data.markdownRemark holds your post data
   const { frontmatter, html } = markdownRemark
-  console.log(markdownRemark)
+
   return (
-    <Layout>
+    <>
       <GatsbySeo
         title={`${frontmatter.title}`}
         description={`${frontmatter.description}`}
@@ -87,7 +87,7 @@ export default function Template({
           <Comments href={`https://prolocofraine.org/${frontmatter.slug} `} />
         </FacebookProvider>
       </Container>
-    </Layout>
+    </>
   )
 }
 
