@@ -1,23 +1,14 @@
 import React from "react"
+import loadable from "@loadable/component"
+const Cin = loadable(() => import("../components/shitcontent/cinghio"))
 
-const Cinghiali = () => {
+
+const Runo = () => {
   return (
     <>
-   
-      <center>
-        <object
-          style={{ width: "100%", height: "100vh" }}
-          data="https://www.info.asl2abruzzo.it/files/151123_cinghiali_relazione.pdf"
-          type="application/pdf"
-        >
-          <iframe
-            style={{ width: "100%", height: "100vh" }}
-            src="https://www.info.asl2abruzzo.it/files/151123_cinghiali_relazione.pdf"
-          ></iframe>
-        </object>
-      </center>
+      <Cin />
     </>
   )
 }
 
-export default Cinghiali
+export default Runo

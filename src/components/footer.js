@@ -5,9 +5,8 @@ import logoabruzzo from "../images/abruzzo-turismo.svg"
 import acqualife from "../images/acqualife.png"
 import contipubbliciterritoriali from "../images/conti-pubblici-territoriali.svg"
 import opendata from "../images/open-data.svg"
-import postsisma from "../images/post-sisma.svg"
-import proteggereambiente from "../images/proteggere-lambiente.jpg"
 import { Link } from "gatsby"
+
 
 export default function Footer() {
   const useStyles = makeStyles({
@@ -188,7 +187,7 @@ export default function Footer() {
           </div>
 
           <span style={{ margin: "0 auto 3rem 0" }}>
-            © {new Date().getFullYear()}, Fatto A Fraine Con
+            © {new Date().getFullYear()}, Fatto a Fraine con
             <a
               target="_blank"
               rel="canonical noopener noreferrer"

@@ -23,6 +23,13 @@ module.exports = {
     `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-json`,
+    
+    {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+        component: require.resolve(`./src/components/layout.js`),
+      },
+    },
 
     "gatsby-plugin-loadable-components-ssr",
     {
@@ -231,12 +238,7 @@ module.exports = {
         ],
       },
     },
-    {
-      resolve: `gatsby-plugin-layout`,
-      options: {
-        component: require.resolve(`./src/components/layout.js`),
-      },
-    },
+
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
