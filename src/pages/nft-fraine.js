@@ -10,15 +10,13 @@ const NotFoundPage = () => {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `${process.env.NFT}`,
+          Authorization: `${process.env.GATSBY_NFT}`,
         },
       }
     )
       .then(data => data.json())
       .then(resa => setRes(resa))
   }, [])
-
-
 
   return (
     <>
