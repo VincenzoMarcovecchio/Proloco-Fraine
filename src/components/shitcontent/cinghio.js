@@ -1,6 +1,6 @@
 import React from "react"
 
-export const Cinghiali = () => {
+ const Cinghiali = () => {
     return (
       <>
      
@@ -19,3 +19,4 @@ export const Cinghiali = () => {
       </>
     )
   }
+  export default Cinghiali
