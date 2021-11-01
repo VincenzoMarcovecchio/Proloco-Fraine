@@ -23,12 +23,7 @@ module.exports = {
     `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-json`,
-        {
-      resolve: `gatsby-plugin-force-trailing-slashes`,
-      options: {
-        excludedPaths: [`/404.html`],
-      },
-    },
+     
     
     {
       resolve: `gatsby-plugin-layout`,
