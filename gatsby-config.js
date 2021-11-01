@@ -23,6 +23,12 @@ module.exports = {
     `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-json`,
+        {
+      resolve: `gatsby-plugin-force-trailing-slashes`,
+      options: {
+        excludedPaths: [`/404.html`],
+      },
+    },
     
     {
       resolve: `gatsby-plugin-layout`,
@@ -246,5 +252,11 @@ module.exports = {
         policy: [{ userAgent: "*", allow: "/" }],
       },
     },
+    {
+      resolve: `gatsby-plugin-netlify-identity-gotrue`,
+      options: {
+        url: `https://www.prolocofraine.org`
+      }
+    }
   ],
 }
