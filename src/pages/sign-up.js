@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { navigate } from 'gatsby';
 
 
-export default () => {
+ const Signup = () => {
   const identity = useIdentityContext()
   const { register, handleSubmit, errors } = useForm()
   const [formError, setFormError] = useState(false)
@@ -181,3 +181,5 @@ export default () => {
     </>
   )
 }
+
+export default Signup;
