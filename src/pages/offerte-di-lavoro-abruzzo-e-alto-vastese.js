@@ -1,4 +1,4 @@
-import React, {useEffect, useState } from "react"
+import React, {useEffect } from "react"
 import { graphql } from "gatsby"
 import Container from "@material-ui/core/Container"
 import { GatsbySeo } from "gatsby-plugin-next-seo"
@@ -59,7 +59,7 @@ const Lavoro = data => {
       <Container style={{ marginTop: "3rem" }} maxWidth="sm">
         <h1>Offerte di lavoro </h1>
         <br />
-        {data.data.results.title ? (
+        {data.data.results.title !== null ? (
           <div
             dangerouslySetInnerHTML={{ __html: data.data.results.title }}
           ></div>
