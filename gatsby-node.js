@@ -81,7 +81,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   })
 
   resulto.data.articles.articles.forEach(
-    ({ author, title, description, url, urlToImage, publishedAt, content }) => {
+    ({  description, url }) => {
       const urla = new URL(url)
       const rel = urla.toString().substring(urla.origin.length)
       createPage({
