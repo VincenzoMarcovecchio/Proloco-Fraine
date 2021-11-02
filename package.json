@@ -46,6 +46,7 @@
     "react": "^16.12.0",
     "react-chartjs-2": "^3.0.3",
     "react-chatbot-kit": "^1.1.20",
+    "react-netlify-identity-widget": "^0.1.4",
     "react-cool-onclickoutside": "^1.6.2",
     "react-dom": "^16.12.0",
     "react-facebook": "^8.1.4",
