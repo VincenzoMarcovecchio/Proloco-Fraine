@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { useIdentityContext } from "react-netlify-identity-gotrue"
 import { useForm } from "react-hook-form"
 import { navigate } from "gatsby"
-import Layout from "../components/Layout"
+import Layout from "../components/layout"
 
 const Signup = () => {
   const identity = useIdentityContext()
