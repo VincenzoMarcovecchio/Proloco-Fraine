@@ -254,7 +254,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-netlify-identity-gotrue`,
       options: {
-        url: `https://www.prolocofraine.org`,
+        url: `https://prolocofraine.netlify.app`,
       },
     },
   ],
