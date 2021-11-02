@@ -1,0 +1,5 @@
+backend:
+  name: git-gateway
+
+# when using the default proxy server port
+local_backend: true
