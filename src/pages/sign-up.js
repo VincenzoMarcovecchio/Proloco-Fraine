@@ -2,7 +2,6 @@ import React, { useState } from "react"
 import { useIdentityContext } from "react-netlify-identity-gotrue"
 import { useForm } from "react-hook-form"
 import { navigate } from "gatsby"
-import Layout from "../components/layout"
 
 const Signup = () => {
   const identity = useIdentityContext()
@@ -28,7 +27,7 @@ const Signup = () => {
 
   return (
     <React.Fragment>
-      <Layout>
+    
         <div>
           <p>
             This form is an example of Netlify Identity's ability to leverage
@@ -266,7 +265,7 @@ const Signup = () => {
             )}
           </div>
         </div>
-      </Layout>
+    
     </React.Fragment>
   )
 }
