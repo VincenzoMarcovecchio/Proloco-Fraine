@@ -19,6 +19,12 @@ module.exports = {
   },
 
   plugins: [
+    {
+      resolve: `gatsby-plugin-netlify-identity-gotrue`,
+      options: {
+        url: `https://prolocofraine.netlify.app`,
+      },
+    },
     `gatsby-plugin-material-ui`,
     `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-react-helmet`,
@@ -30,7 +36,7 @@ module.exports = {
         component: require.resolve(`./src/components/layout.js`),
       },
     },
-  
+
     "gatsby-plugin-loadable-components-ssr",
     {
       resolve: "gatsby-plugin-next-seo",
@@ -244,12 +250,6 @@ module.exports = {
       options: {
         sitemap: "https://www.prolocofraine.org/sitemap.xml",
         policy: [{ userAgent: "*", allow: "/" }],
-      },
-    },
-    {
-      resolve: `gatsby-plugin-netlify-identity-gotrue`,
-      options: {
-        url: `https://prolocofraine.netlify.app`,
       },
     },
   ],
