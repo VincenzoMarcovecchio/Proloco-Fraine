@@ -15,7 +15,7 @@ export default function Template({
   const { frontmatter, html } = markdownRemark
 
   return (
-    <>
+    <React.Fragment>
       <GatsbySeo
         title={`${frontmatter.title}`}
         description={`${frontmatter.description}`}
@@ -87,7 +87,7 @@ export default function Template({
           <Comments href={`https://prolocofraine.org/${frontmatter.slug} `} />
         </FacebookProvider>
       </Container>
-    </>
+    </React.Fragment>
   )
 }
 
