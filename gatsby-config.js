@@ -30,12 +30,7 @@ module.exports = {
         component: require.resolve(`./src/components/layout.js`),
       },
     },
-    {
-      resolve: `gatsby-plugin-force-trailing-slashes`,
-      options: {
-        excludedPaths: [`/404.html`],
-      },
-    },
+  
     "gatsby-plugin-loadable-components-ssr",
     {
       resolve: "gatsby-plugin-next-seo",
