@@ -20,11 +20,12 @@ module.exports = {
 
   plugins: [
     {
-      resolve: `gatsby-plugin-netlify-identity`,
+      resolve: `gatsby-plugin-netlify-identity-gotrue`,
       options: {
-        url: `https://prolocofraine.org`, // required!
+        url: `https://prolocofraine.org`,
       },
     },
+
 
     `gatsby-plugin-material-ui`,
     `gatsby-plugin-netlify-cms`,

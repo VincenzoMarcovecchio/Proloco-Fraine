@@ -6,7 +6,7 @@ exports.wrapRootElement = ({ element }, { url }) => {
   React.createElement(
     NetlifyIdentityContext,
     {
-      url: url,
+      url: "https://prolocofraine.org",
     },
     element
   )
