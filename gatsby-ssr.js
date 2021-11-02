@@ -2,7 +2,7 @@ const React = require("react")
 const { Helmet } = require("react-helmet")
 const { NetlifyIdentityContext } = require("react-netlify-identity-gotrue")
 
-exports.wrapRootElement = ({ element }, { url }) =>
+exports.wrapRootElement = ({ element }, { url }) => {
   React.createElement(
     NetlifyIdentityContext,
     {
@@ -10,6 +10,9 @@ exports.wrapRootElement = ({ element }, { url }) =>
     },
     element
   )
+}
+
+
 exports.onRenderBody = (
   { setHeadComponents, setHtmlAttributes, setBodyAttributes },
   pluginOptions
