@@ -101,18 +101,15 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     )
 
     let jsona = await discussions.json()
-    
+
     console.log(jsona)
 
-   await jsona.results.bindings.forEach(dis => {
-      let friendlySlug = await dis.inDiscussione.value
-        .replace(/\W+/g, "-")
-       
-        let cut = await friendlySlug.substring(0, friendlySlug.length - 15)
-        
+    await jsona.results.bindings.forEach(async dis => {
+      let friendlySlug = await dis.inDiscussione.value.replace(/\./g,' ')
+       await friendlySlug.replace(/\W+/g, "-")
 
       createPage({
-        path: cut,
+        path: friendlySlug,
         component: lastTemplate,
         context: {
           data: dis,
