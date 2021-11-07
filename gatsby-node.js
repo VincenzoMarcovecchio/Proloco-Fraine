@@ -8,7 +8,7 @@
 
 const path = require("path")
 const parameterize = require("parameterize")
-
+const fetch = require("node-fetch")
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
@@ -47,6 +47,23 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       }
     }
   `)
+  
+  const discussions = await fetch(
+    "http://dati.camera.it/sparql?query=%23%23%23%23+ultime+100+discussioni+in+organi+ed+aula%0D%0A%0D%0Aselect+distinct+%3Fseduta+%3FdataSeduta+%3FinDiscussione++%3Fcommissione+%3Faula+%3Fresoconto+where+%7B%0D%0A++%3Fseduta+a+ocd%3Aseduta%3B+ocd%3Arif_leg+%3Chttp%3A%2F%2Fdati.camera.it%2Focd%2Flegislatura.rdf%2Frepubblica_18%3E%3B+dc%3Adate+%3FdataSeduta.%0D%0A++%3Fdiscussione+a+ocd%3Adiscussione%3B+ocd%3Arif_seduta+%3Fseduta%3B+dc%3Atitle+%3FinDiscussione.%0D%0A++OPTIONAL%7B%3Fseduta+ocd%3Arif_organo+%3Forgano.+%3Forgano+dc%3Atitle+%3Fcommissione%7D%0D%0A++OPTIONAL%7B%3Fseduta+ocd%3Arif_assemblea+%3Fassemblea.+BIND%28%22Aula%22+AS+%3Faula%29%7D%0D%0A++OPTIONAL%7B%3Fseduta+dc%3Arelation+%3Fresoconto.+FILTER%28REGEX%28STR%28%3Fresoconto%29%2C%27pdf%27%29%29%7D%0D%0A%0D%0A%7D+ORDER+BY+DESC%28%3FdataSeduta%29+LIMIT+100+%0D%0A+%0D%0A%09%09%0D%0A%09&debug=on&default-graph-uri=&format=application%2Fsparql-results%2Bjson"
+  )
+
+  discussions.results.bindings.forEach(dis => {
+    let friendlySlug = dis.inDiscussione.replace(/\W+/g, "-")
+
+    createPage({
+      path: friendlySlug,
+      component: blogPostTemplate,
+      context: {
+        // additional data can be passed via context
+        data: dis,
+      },
+    })
+  })
 
   const resulto = await graphql(`
     {
@@ -81,18 +98,16 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     })
   })
 
-  resulto.data.articles.articles.forEach(
-    ({  description, url }) => {
-      const urla = new URL(url)
-      const rel = urla.toString().substring(urla.origin.length)
-      createPage({
-        path: rel,
-        component: notiPage,
-        context: {
-          rela: rel,
-          data: description,
-        },
-      })
-    }
-  )
+  resulto.data.articles.articles.forEach(({ description, url }) => {
+    const urla = new URL(url)
+    const rel = urla.toString().substring(urla.origin.length)
+    createPage({
+      path: rel,
+      component: notiPage,
+      context: {
+        rela: rel,
+        data: description,
+      },
+    })
+  })
 }
