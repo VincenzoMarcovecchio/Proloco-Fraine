@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react"
+import React, { useCallback, useState } from "react"
 import Chart from "../components/charts/SortSelection"
 import Container from "@material-ui/core/Container"
 import PropTypes from "prop-types"
@@ -10,7 +10,7 @@ import Typography from "@material-ui/core/Typography"
 import Box from "@material-ui/core/Box"
 import { GatsbySeo } from "gatsby-plugin-next-seo"
 
-function TabPanel(props) {
+const TabPanel = (props)=> {
   const { children, value, index, ...other } = props
 
   return (
@@ -7984,14 +7984,14 @@ function Test() {
     // },
   ])
 
-  const aquila = aree.filter(area => area.Provincia === "L'AQUILA")
-  const chieti = aree.filter(area => area.Provincia === "CHIETI")
-  const pescara = aree.filter(area => area.Provincia === "PESCARA")
-  const teramo = aree.filter(area => area.Provincia === "TERAMO")
+  const aquila = useCallback(aree.filter(area => area.Provincia === "L'AQUILA"))
+  const chieti = useCallback(aree.filter(area => area.Provincia === "CHIETI"))
+  const pescara = useCallback(aree.filter(area => area.Provincia === "PESCARA"))
+  const teramo = useCallback(aree.filter(area => area.Provincia === "TERAMO"))
 
   const classes = useStyles()
 
-  const [value, setValue] = React.useState(0)
+  const [value, setValue] = useState(0)
 
   const handleChange = (event, newValue) => {
     setValue(newValue)

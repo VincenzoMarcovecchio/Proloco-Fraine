@@ -106,10 +106,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
     await jsona.results.bindings.forEach(async dis => {
       let friendlySlug = await dis.inDiscussione.value.replace(/\./g,' ')
-       await friendlySlug.replace(/\W+/g, "-")
+      let friend = await friendlySlug.replace(/\W+/g, "-")
 
       createPage({
-        path: friendlySlug,
+        path: friend,
         component: lastTemplate,
         context: {
           data: dis,
