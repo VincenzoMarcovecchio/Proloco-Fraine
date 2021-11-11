@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, {  useEffect } from "react"
 import { graphql } from "gatsby"
 import { GatsbySeo } from "gatsby-plugin-next-seo"
 import Container from "@material-ui/core/Container"
@@ -16,11 +16,12 @@ const Manifesta = data => {
   }, [])
 
   useEffect(() => {
-    var divs = document.querySelectorAll(".pollo a")
+    var divs = document.querySelectorAll(".item.item1.item-first.image-present.align-left a")
 
     for (let idx of divs) {
       idx.target = "_blank"
       idx.rel = "noopener noreferrer canonical"
+      
     }
   }, [])
 
@@ -101,6 +102,12 @@ html > body > div > div > main > div > div > span {
   display:none;
 
 }
+
+.elm-item-organizer {
+  overflow-x: visible;
+  width: auto;
+}
+
 `}{" "}
       </style>
       <center style={{ marginTop: "2rem" }}>
