@@ -16,7 +16,7 @@ const Manifesta = data => {
   }, [])
 
   useEffect(() => {
-    var divs = document.querySelectorAll(".item.item1.item-first.image-present.align-left a")
+    var divs = document.querySelectorAll(".item-title")
 
     for (let idx of divs) {
       idx.target = "_blank"
@@ -93,6 +93,10 @@ html > body > div > div > main > div > div > span {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 1em;
 }
+
+.elm-wrapper .elm-events-pro-wrapper {
+  padding: 3rem 0;
+}
 .entry-date{
   display:none;
 }
@@ -103,10 +107,6 @@ html > body > div > div > main > div > div > span {
 
 }
 
-.elm-item-organizer {
-  overflow-x: visible;
-  width: auto;
-}
 
 `}{" "}
       </style>
