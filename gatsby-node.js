@@ -106,8 +106,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
     await jsona.results.bindings.forEach(async dis => {
       let friendlySlug = await dis.inDiscussione.value.replace(/\./g, " ")
-      friendlySlug = await dis.inDiscussione.valuex.replace(/[{()}]/g, " ");
-      friendlySlug = await dis.inDiscussione.valuex.replace(/\.[^/.]+$/, " ")
+      friendlySlug = await dis.inDiscussione.value.replace(/[{()}]/g, " ");
+      friendlySlug = await dis.inDiscussione.value.replace(/\.[^/.]+$/, " ")
       friendlySlug = await dis.inDiscussione.value.replace(/\s+|[,\/]/g, "-")
     
 
@@ -118,6 +118,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           data: dis,
         },
       })
+      
     })
   } catch (e) {
     console.log(e)
