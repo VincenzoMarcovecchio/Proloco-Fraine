@@ -103,18 +103,19 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     let jsona = await discussions.json()
 
     console.log(jsona)
-
+    function removeExtension(filename) {
+      var lastDotPosition = filename.lastIndexOf(".json")
+      if (lastDotPosition === -1) return filename
+      else return filename.substr(0, lastDotPosition)
+    }
     await jsona.results.bindings.forEach(async dis => {
-      let friendlySlug = await dis.inDiscussione.value.replace(/\./g, " ")
-      friendlySlug = await dis.inDiscussione.value.replace(
-        /(json)\d(\.\w+)/,
-        " "
-      )
-      friendlySlug = await friendlySlug.replace(/\W+/g, "-")
-      friendlySlug = await friendlySlug.substring(0, friendlySlug.lastIndexOf('.json'))
-
+      
+      let friendlySlug = await removeExtension(dis.inDiscussione.value)
+      let friendlySluga = await friendlySlug.replace(/\W+/g, "-")
+     
+      await friendlySluga.substring(0, 150);
       createPage({
-        path: friendlySlug,
+        path: friendlySluga,
         component: lastTemplate,
         context: {
           data: dis,
