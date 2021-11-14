@@ -113,9 +113,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       let friendlySlug = await removeExtension(dis.inDiscussione.value)
       let friendlySluga = await friendlySlug.replace(/\W+/g, "-")
      
-      await friendlySluga.substring(0, 150);
       createPage({
-        path: friendlySluga,
+        path: friendlySluga.substring(0, 150),
         component: lastTemplate,
         context: {
           data: dis,
