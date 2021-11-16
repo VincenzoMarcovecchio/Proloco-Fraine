@@ -1,4 +1,4 @@
-import React, {  useEffect } from "react"
+import React, { useEffect } from "react"
 import { graphql } from "gatsby"
 import { GatsbySeo } from "gatsby-plugin-next-seo"
 import Container from "@material-ui/core/Container"
@@ -21,7 +21,6 @@ const Manifesta = data => {
     for (let idx of divs) {
       idx.target = "_blank"
       idx.rel = "noopener noreferrer canonical"
-      
     }
   }, [])
 
@@ -63,6 +62,10 @@ const Manifesta = data => {
 
  .pollo h2 {
   display:none;
+}
+.pollo{
+  background-color: #3f51b5;
+  padding-top:2rem;
 }
  .divvo h2 {
   display:none;
@@ -111,7 +114,7 @@ html > body > div > div > main > div > div > span {
 `}{" "}
       </style>
       <center style={{ marginTop: "2rem" }}>
-        <h2>❤️🍕 Eventi e manifestazioni Abruzzesi 2021 🌍🍕 </h2>
+        <h2>❤️ Eventi e manifestazioni Abruzzesi 2021 🌍 </h2>
       </center>
 
       <Container style={{ marginTop: "3rem" }} maxWidth="md">
