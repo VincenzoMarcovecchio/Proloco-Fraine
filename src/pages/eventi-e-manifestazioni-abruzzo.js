@@ -66,6 +66,7 @@ const Manifesta = data => {
 .pollo{
   background-color: #3f51b5;
   padding-top:2rem;
+  margin-bottom: 2rem;
 }
  .divvo h2 {
   display:none;
