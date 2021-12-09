@@ -84,7 +84,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   resulto.data.articles.articles.forEach(({ description, url }) => {
     const urla = new URL(url)
-    const rel = urla.toString().substring(urla.origin.length)
+    const rel = urla.toString().substring(urla.origin.length).replace("#", "")
     createPage({
       path: rel,
       component: notiPage,
@@ -103,17 +103,16 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     let jsona = await discussions.json()
 
     console.log(jsona)
-    
+
     function removeExtension(filename) {
       var lastDotPosition = filename.lastIndexOf(".json")
       if (lastDotPosition === -1) return filename
       else return filename.substr(0, lastDotPosition)
     }
     await jsona.results.bindings.forEach(async dis => {
-      
       let friendlySlug = await removeExtension(dis.inDiscussione.value)
       let friendlySluga = await friendlySlug.replace(/\W+/g, "-")
-     
+
       createPage({
         path: friendlySluga.substring(0, 150),
         component: lastTemplate,

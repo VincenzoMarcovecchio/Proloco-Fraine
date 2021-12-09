@@ -256,7 +256,7 @@ const IndexPage = ({
                           >
                             {article.description ? (
                               <p
-                                contentEditable="true"
+                  
                                 dangerouslySetInnerHTML={{
                                   __html: `${article?.content?.substring(
                                     0,
