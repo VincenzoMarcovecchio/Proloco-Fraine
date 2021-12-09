@@ -84,7 +84,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   resulto.data.articles.articles.forEach(({ description, url }) => {
     const urla = new URL(url)
-    const rel = urla.toString().substring(urla.origin.length).replace("#", "")
+    const rel = urla.toString().substring(urla.origin.length).replace("#", "").replace("?", "")
     createPage({
       path: rel,
       component: notiPage,
