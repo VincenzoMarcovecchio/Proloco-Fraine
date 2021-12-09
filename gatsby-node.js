@@ -103,6 +103,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     let jsona = await discussions.json()
 
     console.log(jsona)
+    
     function removeExtension(filename) {
       var lastDotPosition = filename.lastIndexOf(".json")
       if (lastDotPosition === -1) return filename

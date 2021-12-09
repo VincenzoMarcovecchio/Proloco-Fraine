@@ -63,7 +63,7 @@ const Manifesta = data => {
  .pollo h2 {
   display:none;
 }
-.pollo{
+.pollo {
   background-color: #3f51b5;
   padding-top:2rem;
   margin-bottom: 2rem;
@@ -112,7 +112,7 @@ html > body > div > div > main > div > div > span {
 }
 
 
-`}{" "}
+`}
       </style>
       <center style={{ marginTop: "2rem" }}>
         <h2>❤️ Eventi e manifestazioni Abruzzesi 2021 🌍 </h2>
