@@ -64,7 +64,7 @@ const Manifesta = data => {
   display:none;
 }
 .pollo {
-  background-color: #3f51b5;
+  
   padding-top:2rem;
   margin-bottom: 2rem;
 }
@@ -110,7 +110,9 @@ html > body > div > div > main > div > div > span {
   display:none;
 
 }
-
+.item-excerpt{
+  color:rgba(0,0,0,.8);
+}
 
 `}
       </style>
