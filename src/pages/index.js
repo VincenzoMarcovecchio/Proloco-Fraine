@@ -296,7 +296,7 @@ const IndexPage = ({
                             aria-expanded="false"
                             aria-label="scopri di piu"
                           >
-                            <Link to={`/${rel}`}>
+                            <Link replace to={`/${rel}/`}>
                               <ExpandMoreIcon />
                             </Link>
                           </IconButton>
