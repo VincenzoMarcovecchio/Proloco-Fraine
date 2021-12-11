@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import PostLink from "../components/postLink"
+import { Link } from "gatsby"
 import clsx from "clsx"
 import Container from "@material-ui/core/Container"
 import movie from "../Fraine.mp4"
@@ -191,10 +192,7 @@ const IndexPage = ({
             Your browser does not support the video tag.
           </video>
 
-          <h1>
-            ProLocoFraine
-
-          </h1>
+          <h1>ProLocoFraine</h1>
         </section>
 
         <Container maxWidth="lg">
@@ -225,6 +223,12 @@ const IndexPage = ({
           >
             {articles.articles[2].content.length > 50
               ? articles.articles.map((article, index) => {
+                  const urla = new URL(article.url)
+                  const rel = urla
+                    .toString()
+                    .substring(urla.origin.length)
+                    .replace("#", "")
+                    .replace("?", "")
                   return (
                     <>
                       <Card key={index} className={classes.root}>
@@ -256,7 +260,6 @@ const IndexPage = ({
                           >
                             {article.description ? (
                               <p
-                  
                                 dangerouslySetInnerHTML={{
                                   __html: `${article?.content?.substring(
                                     0,
@@ -293,7 +296,9 @@ const IndexPage = ({
                             aria-expanded="false"
                             aria-label="scopri di piu"
                           >
-                            <ExpandMoreIcon />
+                            <Link to={`/${rel}`}>
+                              <ExpandMoreIcon />
+                            </Link>
                           </IconButton>
                         </CardActions>
                       </Card>

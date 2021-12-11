@@ -75,8 +75,10 @@ export default Lavoro
 
 export const pageQuery = graphql`
   query inner {
-    results {
-      title
+    jobs {
+      results {
+        title
+      }
     }
   }
 `

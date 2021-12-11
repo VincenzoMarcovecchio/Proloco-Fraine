@@ -2,9 +2,9 @@ import React from "react"
 import Container from "@material-ui/core/Container"
 
 export default function Ciccccc({
-  data, // this prop will be injected by the GraphQL query below.
+  pageContext, // this prop will be injected by the GraphQL query below.
 }) {
- console.log(data)
+ console.log(pageContext)
   return (
     <React.Fragment>
       
