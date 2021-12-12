@@ -162,19 +162,21 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     }
 
     await test()
+    
+    tenPages.forEach(async kok => {
+      let luca = await kok.title.replace(/\s+/g, "-").toLowerCase()
+  
+      createPage({
+        path: `/${luca}/`,
+        component: nuoveNews,
+        context: {
+          data: kok,
+        },
+      })
+    })
   } catch (error) {
     console.log(error)
   }
 
-  tenPages.forEach(async kok => {
-    let luca = await kok.title.replace(/\s+/g, "-").toLowerCase()
 
-    createPage({
-      path: `/${luca}/`,
-      component: nuoveNews,
-      context: {
-        data: kok,
-      },
-    })
-  })
 }

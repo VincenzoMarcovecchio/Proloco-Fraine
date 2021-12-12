@@ -7,7 +7,7 @@ const Strutto = ({ pageContext }) => {
 
   let strutte = pageContext.data
   let title = strutte[Object.keys(strutte)[2]]
-   
+
   let stelle = strutte[Object.keys(strutte)[3]]
   let where = strutte[Object.keys(strutte)[5]]
 
@@ -68,6 +68,7 @@ const Strutto = ({ pageContext }) => {
 
       <Container style={{ marginTop: "3rem" }} maxWidth="sm">
         <h1>{title}</h1>
+        <p>{where}</p>
       </Container>
     </>
   )
