@@ -107,8 +107,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
     let jsona = await discussions.json()
 
-    console.log(jsona)
-
     function removeExtension(filename) {
       var lastDotPosition = filename.lastIndexOf(".json")
       if (lastDotPosition === -1) return filename
@@ -132,7 +130,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   await strutto.forEach(dis => {
     createPage({
-      path: dis.__1.toLowerCase().replace(/\W+/g, "-"),
+      path: `/${dis.__1.toLowerCase().replace(/\W+/g, "-")}/`,
       component: struttoTemplate,
       context: {
         data: dis,
