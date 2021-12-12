@@ -1,6 +1,6 @@
 import React from "react"
 import Container from "@material-ui/core/Container"
-import { GatsbySeo } from "gatsby-plugin-next-seo"
+import { GatsbySeo, LocalBusinessJsonLd } from "gatsby-plugin-next-seo"
 
 const Strutto = ({ pageContext }) => {
   console.log(pageContext)
