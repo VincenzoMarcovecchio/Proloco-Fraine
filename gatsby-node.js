@@ -5,7 +5,7 @@
  */
 
 // You can delete this file if you're not using it
-
+const strutto = require("./src/components/strutture.json")
 const path = require("path")
 const parameterize = require("parameterize")
 const fetch = require("node-fetch")
@@ -30,6 +30,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const leggiPage = path.resolve("src/templates/decreti-legge.js")
   const notiPage = path.resolve("src/templates/noti-page.js")
   const lastTemplate = path.resolve("src/templates/lastTemplate.js")
+  const struttoTemplate = path.resolve("src/templates/struttoTemplate.js")
 
   const result = await graphql(`
     {
@@ -84,7 +85,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   resulto.data.articles.articles.forEach(({ description, url }) => {
     const urla = new URL(url)
-    const rel = urla.toString().substring(urla.origin.length).replace("#", "").replace("?", "")
+    const rel = urla
+      .toString()
+      .substring(urla.origin.length)
+      .replace("#", "")
+      .replace("?", "")
     createPage({
       path: rel,
       component: notiPage,
@@ -124,4 +129,14 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   } catch (e) {
     console.log(e)
   }
+
+  await strutto.forEach(dis => {
+    createPage({
+      path: dis.__1.toLowerCase().replace(/\W+/g, "-"),
+      component: struttoTemplate,
+      context: {
+        data: dis,
+      },
+    })
+  })
 }
