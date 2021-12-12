@@ -128,9 +128,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     console.log(e)
   }
 
-  await strutto.forEach(dis => {
+  await strutto.forEach(async dis => {
+    let patto = await dis[Object.keys(dis)[1]].replace(/\W+/g, "-")
+
     createPage({
-      path: `/${dis.__1.toLowerCase().replace(/\W+/g, "-")}/`,
+      path: `/${patto}/`,
       component: struttoTemplate,
       context: {
         data: dis,
