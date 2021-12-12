@@ -7,12 +7,10 @@ const Strutto = ({ pageContext }) => {
 
   let strutte = pageContext.data
   let title = strutte[Object.keys(strutte)[2]]
-    .replace(/\W+/g, "-")
-    .toLowerCase()
+   
   let stelle = strutte[Object.keys(strutte)[3]]
   let where = strutte[Object.keys(strutte)[5]]
-    .replace(/\W+/g, "-")
-    .toLowerCase()
+
   let tel = strutte[Object.keys(strutte)[6]]
   let indi = strutte[Object.keys(strutte)[8]]
   let provi = strutte[Object.keys(strutte)[4]]
