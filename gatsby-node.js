@@ -31,6 +31,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const notiPage = path.resolve("src/templates/noti-page.js")
   const lastTemplate = path.resolve("src/templates/lastTemplate.js")
   const struttoTemplate = path.resolve("src/templates/struttoTemplate.js")
+  const nuoveNews = path.resolve("src/templates/nuoveNews.js")
 
   const result = await graphql(`
     {
@@ -130,12 +131,50 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   await strutto.forEach(async dis => {
     let patto = await dis[Object.keys(dis)[2]]
-   
+      .replace(/\s+/g, "-")
+      .toLowerCase()
+
     createPage({
       path: `/${patto}/`,
       component: struttoTemplate,
       context: {
         data: dis,
+      },
+    })
+  })
+
+  try {
+    let tenPages = []
+
+    async function create(i) {
+      let rocknroll = await fetch(
+        `https://newsdata.io/api/1/news?apikey=pub_27444837fea2a2e2cc240d2e4d3dcab923c4&country=it&page=${i}`
+      )
+      let kof = await rocknroll.json()
+      return tenPages.push(kof.results)
+    }
+
+    async function test() {
+      //somelogic part here
+      for (let i = 0; i < 10; i++) {
+        // some codeing part here
+        await create(i)
+      }
+    }
+
+    await test()
+  } catch (error) {
+    console.log(error)
+  }
+
+  tenPages.forEach(async kok => {
+    let luca = await kok.title.replace(/\s+/g, "-").toLowerCase()
+
+    createPage({
+      path: `/${luca}/`,
+      component: nuoveNews,
+      context: {
+        data: kok,
       },
     })
   })

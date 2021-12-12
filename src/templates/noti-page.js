@@ -93,9 +93,7 @@ const Noti = ({ pageContext, data }) => {
                 lio => lio.description == pageContext.data
               )[0].publishedAt
             }
-          >
-            
-          </time>
+          ></time>
           <div
             className="blog-post-content"
             dangerouslySetInnerHTML={{
