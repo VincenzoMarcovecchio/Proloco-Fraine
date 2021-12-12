@@ -131,8 +131,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   await strutto.forEach(async dis => {
     let patto = await dis[Object.keys(dis)[2]]
-      .replace(/\s+/g, "-")
-      .toLowerCase()
+    
 
     createPage({
       path: `/${patto}/`,
