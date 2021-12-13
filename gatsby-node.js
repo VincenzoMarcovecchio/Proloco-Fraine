@@ -162,6 +162,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     }
 
     await test()
+    
+    console.log(tenPages);
 
     await tenPages.forEach(async kok => {
       let luca = await kok.title.replace(/\s+/g, "-").toLowerCase()
