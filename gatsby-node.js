@@ -141,31 +141,13 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     })
   })
 
-  
-    let tenPages = []
+  while (i < 10) {
+    let rocknroll = await fetch(
+      `https://newsdata.io/api/1/news?apikey=pub_27444837fea2a2e2cc240d2e4d3dcab923c4&country=it&page=${i}`
+    )
+    let kof = await rocknroll.json()
 
-    async function create(i) {
-      let rocknroll = await fetch(
-        `https://newsdata.io/api/1/news?apikey=pub_27444837fea2a2e2cc240d2e4d3dcab923c4&country=it&page=${i}`
-      )
-      let kof = await rocknroll.json()
-      
-      tenPages.push(kof.results)
-    }
-
-    function test() {
-      //somelogic part here
-      for (let i = 0; i < 10; i++) {
-        // some codeing part here
-        create(i)
-      }
-    }
-
-    await test()
-    
-    console.log(tenPages);
-
-    await tenPages.forEach(async kok => {
+    await kof.results.forEach(async kok => {
       let luca = await kok.title.replace(/\s+/g, "-").toLowerCase()
 
       createPage({
@@ -176,5 +158,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         },
       })
     })
- 
+    i++
+  }
 }

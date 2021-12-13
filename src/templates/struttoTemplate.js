@@ -68,7 +68,12 @@ const Strutto = ({ pageContext }) => {
 
       <Container style={{ marginTop: "3rem" }} maxWidth="sm">
         <h1>{title}</h1>
-        <p>{where}</p>
+        <p>{tipostrutta}</p>
+        <p>
+          {where} | {stelle}
+        </p>
+        <p>{indi}</p>
+        <p>{tel}</p>
       </Container>
     </>
   )
