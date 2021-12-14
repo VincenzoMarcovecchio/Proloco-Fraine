@@ -154,7 +154,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       let vgv = await luca.replace(/\?/g, "-").toLowerCase()
       let dfd = await vgv.replace(/\#/g, "-").toLowerCase()
 
-      createPage({
+     await createPage({
         path: `/${dfd}/`,
         component: nuoveNews,
         context: {
