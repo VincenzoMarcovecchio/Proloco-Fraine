@@ -1,7 +1,5 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/layout"
-import { Link } from "gatsby"
 import Container from "@material-ui/core/Container"
 import { GatsbySeo } from "gatsby-plugin-next-seo"
 import { ArticleJsonLd } from "gatsby-plugin-next-seo"

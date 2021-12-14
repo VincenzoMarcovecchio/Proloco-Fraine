@@ -15,7 +15,7 @@ const Strutto = ({ pageContext }) => {
   let indi = strutte[Object.keys(strutte)[8]]
   let provi = strutte[Object.keys(strutte)[4]]
   let posco = strutte[Object.keys(strutte)[7]]
-  let tipostrutta = strutte[Object.keys(strutte)[1]].toLowerCase()
+  let tipostrutta = strutte[Object.keys(strutte)[1]]
 
   return (
     <>
@@ -68,7 +68,7 @@ const Strutto = ({ pageContext }) => {
 
       <Container style={{ marginTop: "3rem" }} maxWidth="sm">
         <h1>{title}</h1>
-        <p>{tipostrutta}</p>
+        <p style={{ textTransform: "capitalize" }}>{tipostrutta}</p>
         <p>
           {where} | {stelle}
         </p>
