@@ -1,7 +1,7 @@
 import React from "react"
 import { GatsbySeo } from "gatsby-plugin-next-seo"
-import Box from "@mui/material/Box"
-import Typography from "@mui/material/Typography"
+import Box from "@material-ui/core/Box"
+import Typography from "@material-ui/core/Typography"
 
 const Bolla = async ({ pageContext }) => {
   console.log(pageContext)
