@@ -170,12 +170,12 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     ),
   ])
 
-  kof.results.forEach(async kok => {
+ await kof.results.forEach(async kok => {
     let luca = await kok.title.replace(/\s+/g, "-").toLowerCase()
     let vgv = await luca.replace(/\?/g, "-").toLowerCase()
     let dfd = await vgv.replace(/\#/g, "-").toLowerCase()
 
-     createPage({
+    await createPage({
       path: `/${dfd}/`,
       component: nuoveNews,
       context: {
