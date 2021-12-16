@@ -143,40 +143,17 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const getJSON = uri => fetch(uri).then(response => response.json())
 
-  const [kof] = await Promise.all([
-    getJSON(
-      `https://newsdata.io/api/1/news?apikey=pub_27444837fea2a2e2cc240d2e4d3dcab923c4&country=it&page=0`
-    ),
-    getJSON(
-      `https://newsdata.io/api/1/news?apikey=pub_27444837fea2a2e2cc240d2e4d3dcab923c4&country=it&page=1`
-    ),
-    getJSON(
-      `https://newsdata.io/api/1/news?apikey=pub_27444837fea2a2e2cc240d2e4d3dcab923c4&country=it&page=2`
-    ),
-    getJSON(
-      `https://newsdata.io/api/1/news?apikey=pub_27444837fea2a2e2cc240d2e4d3dcab923c4&country=it&page=3`
-    ),
-    getJSON(
-      `https://newsdata.io/api/1/news?apikey=pub_27444837fea2a2e2cc240d2e4d3dcab923c4&country=it&page=4`
-    ),
-    getJSON(
-      `https://newsdata.io/api/1/news?apikey=pub_27444837fea2a2e2cc240d2e4d3dcab923c4&country=it&page=5`
-    ),
-    getJSON(
-      `https://newsdata.io/api/1/news?apikey=pub_27444837fea2a2e2cc240d2e4d3dcab923c4&country=it&page=6`
-    ),
-    getJSON(
-      `https://newsdata.io/api/1/news?apikey=pub_27444837fea2a2e2cc240d2e4d3dcab923c4&country=it&page=7`
-    ),
-  ])
+  const kof = await getJSON(
+    `https://newsdata.io/api/1/news?apikey=pub_27444837fea2a2e2cc240d2e4d3dcab923c4&country=it&page=1`
+  )
 
- await kof.results.forEach(async kok => {
+  await kof.results.forEach(async kok => {
     let luca = await kok.title.replace(/\s+/g, "-").toLowerCase()
-    let vgv = await luca.replace(/\?/g, "-").toLowerCase()
-    let dfd = await vgv.replace(/\#/g, "-").toLowerCase()
+    let fabio = await luca.replace(/\?/g, "-").toLowerCase()
+    let gianni = await fabio.replace(/\#/g, "-").toLowerCase()
 
     await createPage({
-      path: `/${dfd}/`,
+      path: `/${gianni}/`,
       component: nuoveNews,
       context: {
         data: kok,
