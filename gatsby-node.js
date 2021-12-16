@@ -144,24 +144,27 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   let i = 0
 
   while (i < 10) {
-    let rocknroll = await fetch(
-      `https://newsdata.io/api/1/news?apikey=pub_27444837fea2a2e2cc240d2e4d3dcab923c4&country=it&page=${i}`
-    )
-    let kof = await rocknroll.json()
+    async function ciao(p) {
+      let rocknroll = await fetch(
+        `https://newsdata.io/api/1/news?apikey=pub_27444837fea2a2e2cc240d2e4d3dcab923c4&country=it&page=${p}`
+      )
+      let kof = await rocknroll.json()
 
-    await kof.results.forEach(async kok => {
-      let luca = await kok.title.replace(/\s+/g, "-").toLowerCase()
-      let vgv = await luca.replace(/\?/g, "-").toLowerCase()
-      let dfd = await vgv.replace(/\#/g, "-").toLowerCase()
+      await kof.results.forEach(async kok => {
+        let luca = await kok.title.replace(/\s+/g, "-").toLowerCase()
+        let vgv = await luca.replace(/\?/g, "-").toLowerCase()
+        let dfd = await vgv.replace(/\#/g, "-").toLowerCase()
 
-     await createPage({
-        path: `/${dfd}/`,
-        component: nuoveNews,
-        context: {
-          data: kok,
-        },
+        await createPage({
+          path: `/${dfd}/`,
+          component: nuoveNews,
+          context: {
+            data: kok,
+          },
+        })
       })
-    })
+    }
+    ciao(i)
     i++
   }
 }
