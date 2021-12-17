@@ -91,8 +91,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       .substring(urla.origin.length)
       .replace("#", "")
       .replace("?", "")
+
     createPage({
-      path: rel,
+      path: `/${rel}/`,
       component: notiPage,
       context: {
         rela: rel,
@@ -141,7 +142,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     })
   })
 
-  const getJSON = uri => fetch(uri).then(response => response.json())
+  let getJSON = uri => fetch(uri).then(response => response.json())
 
   const kof = await getJSON(
     `https://newsdata.io/api/1/news?apikey=pub_27444837fea2a2e2cc240d2e4d3dcab923c4&country=it&page=1`
@@ -150,7 +151,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   await kof.results.forEach(async kok => {
     let luca = await kok.title.replace(/\s+/g, "-").toLowerCase()
     let fabio = await luca.replace(/\?/g, "-").toLowerCase()
-    let gianni = await fabio.replace(/\#/g, "-").toLowerCase()
+    let gianni = await fabio.replace(/\#/g, "-").toLowerCase().substring(0, 100)
 
     await createPage({
       path: `/${gianni}/`,
