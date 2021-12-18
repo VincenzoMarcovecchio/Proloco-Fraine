@@ -87,7 +87,7 @@ const Strutto = ({ pageContext }) => {
         </p>
         <p>
           <b>Indirizzo:&nbsp;</b>
-          {indi}
+          {indirizzo}
         </p>
         <p>
           <b>Tel:&nbsp;</b>
