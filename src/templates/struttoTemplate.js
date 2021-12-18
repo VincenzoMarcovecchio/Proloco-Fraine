@@ -3,7 +3,7 @@ import Container from "@material-ui/core/Container"
 import { GatsbySeo, LocalBusinessJsonLd } from "gatsby-plugin-next-seo"
 
 const Strutto = ({ pageContext }) => {
-  console.log(pageContext)
+ 
 
   let strutte = pageContext.data
   let title = strutte[Object.keys(strutte)[2]]

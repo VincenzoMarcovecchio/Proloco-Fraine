@@ -4,7 +4,7 @@ import { GatsbySeo, LocalBusinessJsonLd } from "gatsby-plugin-next-seo"
 import Box from "@material-ui/core/Box"
 import Typography from "@material-ui/core/Typography"
 const Strutto = ({ pageContext }) => {
-  console.log(pageContext)
+  
 
   let dis = pageContext.data
   let tiposquo = dis.cdes_tipo_scuola.replace(/\W+/g, "-")

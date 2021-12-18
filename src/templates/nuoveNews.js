@@ -4,7 +4,6 @@ import Box from "@material-ui/core/Box"
 import Typography from "@material-ui/core/Typography"
 
 const Bolla =  ({ pageContext }) => {
-  console.log(pageContext)
   let luca =  pageContext.data.title.replace(/\s+/g, "-").toLowerCase()
   let vgv =  luca.replace(/\?/g, "-").toLowerCase()
   let dfd =  vgv.replace(/\#/g, "-").toLowerCase()
