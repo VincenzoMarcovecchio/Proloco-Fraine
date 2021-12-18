@@ -3,27 +3,27 @@ import Container from "@material-ui/core/Container"
 import { GatsbySeo, LocalBusinessJsonLd } from "gatsby-plugin-next-seo"
 import Box from "@material-ui/core/Box"
 import Typography from "@material-ui/core/Typography"
-const Strutto =  ({ pageContext }) => {
+const Strutto = ({ pageContext }) => {
   console.log(pageContext)
 
   let dis = pageContext.data
-  let tiposquo =  dis.cdes_tipo_scuola.replace(/\W+/g, "-")
-  let lunom =  dis.cdenominazione.replace(/\W+/g, "-")
-  let tutto =  `/${tiposquo}${lunom}/`
-  let comune =  dis.cistat_com
-  let provincia =  dis.cistat_prov
-  let regione =  dis.cistat_reg
-  let denom =  dis.cdenominazione
-  let tipodisplay =  dis.cdes_tipo_scuola.toLowerCase()
-  let indirizzo =  dis.cindirizzo
-  let telefono =  dis.ctelefono
-  let fax =  dis.cfax
-  let email =  dis.cemail
-  let posce =  dis.cpec
-  let web =  dis.csito_web
-  let codice =  dis.ccod_istituto_principale
-  let costatale =  dis.cstatale
-  let cap =  dis.ccap
+  let tiposquo = dis.cdes_tipo_scuola.replace(/\W+/g, "-")
+  let lunom = dis.cdenominazione.replace(/\W+/g, "-")
+  let tutto = `/${tiposquo}${lunom}/`
+  let comune = dis.cistat_com
+  let provincia = dis.cistat_prov
+  let regione = dis.cistat_reg
+  let denom = dis.cdenominazione
+  let tipodisplay = dis.cdes_tipo_scuola.toLowerCase()
+  let indirizzo = dis.cindirizzo
+  let telefono = dis.ctelefono
+  let fax = dis.cfax
+  let email = dis.cemail
+  let posce = dis.cpec
+  let web = dis.csito_web
+  let codice = dis.ccod_istituto_principale
+  let costatale = dis.cstatale
+  let cap = dis.ccap
 
   return (
     <>
@@ -58,8 +58,7 @@ const Strutto =  ({ pageContext }) => {
           url: `https://www.prolocofraine.org/${tutto}`,
           title: `${tipodisplay} ${denom} - ${comune} 
           `,
-          description=`${tipodisplay} ${denom} - ${comune} 
-          `,
+
           images: [
             {
               url: `https://www.regione.abruzzo.it/`,
@@ -77,20 +76,39 @@ const Strutto =  ({ pageContext }) => {
         }}
       />
 
-<Box sx={{ width: "100%", maxWidth: 500 }}>
-<Typography variant="h1" component="div" gutterBottom>
-{`${tipodisplay} ${denom}
-  `}</Typography>
+      <Box sx={{ width: "100%", maxWidth: 500 }}>
+        <Typography variant="h1" component="div" gutterBottom>
+          {`${tipodisplay} ${denom}
+  `}
+        </Typography>
         <p style={{ textTransform: "capitalize" }}>{tipodisplay}</p>
         <p>
           {comune} | {provincia}
         </p>
-        <p><b>Indirizzo:&nbsp;</b>{indi}</p>
-        <p><b>Tel:&nbsp;</b>{telefono}</p>
-        <p><b>Email:&nbsp;</b>{email}</p>
-        <p><b>Posta elettronica certificata:&nbsp;</b>{posce}</p>
-        <p><b>Fax:&nbsp;</b>{fax}</p>
-        <p><b>Sito web:&nbsp;</b>{web}</p>
+        <p>
+          <b>Indirizzo:&nbsp;</b>
+          {indi}
+        </p>
+        <p>
+          <b>Tel:&nbsp;</b>
+          {telefono}
+        </p>
+        <p>
+          <b>Email:&nbsp;</b>
+          {email}
+        </p>
+        <p>
+          <b>Posta elettronica certificata:&nbsp;</b>
+          {posce}
+        </p>
+        <p>
+          <b>Fax:&nbsp;</b>
+          {fax}
+        </p>
+        <p>
+          <b>Sito web:&nbsp;</b>
+          {web}
+        </p>
       </Box>
     </>
   )

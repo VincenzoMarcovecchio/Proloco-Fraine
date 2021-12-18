@@ -147,11 +147,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   await squo.forEach(async dis => {
     let tiposquo = await dis.cdes_tipo_scuola.replace(/\W+/g, "-")
     let lunom = await dis.cdenominazione.replace(/\W+/g, "-")
-    let tutto = await `/${tiposquo}${lunom}/`
-    let lutto = await tutto.replace(/\W+/g, "-").toLowerCase()
-    //lutto = await lutto.replace(/\.json/g, "-")
+
     createPage({
-      path: `/${lutto}/`,
+      path: `/${tiposquo}${lunom}/`,
       component: squoTemplate,
       context: {
         data: dis,
