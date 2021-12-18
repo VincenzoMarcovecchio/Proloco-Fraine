@@ -7,7 +7,8 @@ const Strutto = ({ pageContext }) => {
 
   let strutte = pageContext.data
   let title = strutte[Object.keys(strutte)[2]]
-
+  let email = strutte[Object.keys(strutte)[11]]
+  let sito = strutte[Object.keys(strutte)[13]]
   let stelle = strutte[Object.keys(strutte)[3]]
   let where = strutte[Object.keys(strutte)[5]]
 
@@ -72,8 +73,11 @@ const Strutto = ({ pageContext }) => {
         <p>
           {where} | {stelle}
         </p>
-        <p>{indi}</p>
-        <p>{tel}</p>
+        <p><b>Indirizzo:&nbsp;</b>{indi}</p>
+        <p><b>Telefono:&nbsp;</b>{tel}</p>
+        <p><b>Email:&nbsp;</b>{email}</p>
+        <p><b>Web:&nbsp;</b>{sito}</p>
+        <small style={{ marginTop: "3rem" }}>OPEN DATA REGIONE ABRUZZO GENNAIO 2021</small>
       </Container>
     </>
   )

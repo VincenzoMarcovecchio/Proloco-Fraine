@@ -3,11 +3,11 @@ import { GatsbySeo } from "gatsby-plugin-next-seo"
 import Box from "@material-ui/core/Box"
 import Typography from "@material-ui/core/Typography"
 
-const Bolla = async ({ pageContext }) => {
+const Bolla =  ({ pageContext }) => {
   console.log(pageContext)
-  let luca = await pageContext.data.title.replace(/\s+/g, "-").toLowerCase()
-  let vgv = await luca.replace(/\?/g, "-").toLowerCase()
-  let dfd = await vgv.replace(/\#/g, "-").toLowerCase()
+  let luca =  pageContext.data.title.replace(/\s+/g, "-").toLowerCase()
+  let vgv =  luca.replace(/\?/g, "-").toLowerCase()
+  let dfd =  vgv.replace(/\#/g, "-").toLowerCase()
 
   return (
     <>

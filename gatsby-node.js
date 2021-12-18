@@ -6,6 +6,7 @@
 
 // You can delete this file if you're not using it
 const strutto = require("./src/components/strutture.json")
+const squo = require("./src/data/squole.json")
 const path = require("path")
 const parameterize = require("parameterize")
 const fetch = require("node-fetch")
@@ -31,6 +32,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const notiPage = path.resolve("src/templates/noti-page.js")
   const lastTemplate = path.resolve("src/templates/lastTemplate.js")
   const struttoTemplate = path.resolve("src/templates/struttoTemplate.js")
+  const squoTemplate = path.resolve("src/templates/squoTemplate.js")
   const nuoveNews = path.resolve("src/templates/nuoveNews.js")
 
   const result = await graphql(`
@@ -142,9 +144,24 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     })
   })
 
+  await squo.forEach(async dis => {
+    let tiposquo = await dis.cdes_tipo_scuola.replace(/\W+/g, "-")
+    let lunom = await dis.cdenominazione.replace(/\W+/g, "-")
+    let tutto = await `/${tiposquo}${lunom}/`
+    let lutto = await tutto.replace(/\W+/g, "-").toLowerCase()
+    //lutto = await lutto.replace(/\.json/g, "-")
+    createPage({
+      path: `/${lutto}/`,
+      component: squoTemplate,
+      context: {
+        data: dis,
+      },
+    })
+  })
+
   //let getJSON = uri => fetch(uri).then(response => response.json())
 
- // const kof = await getJSON(
+  // const kof = await getJSON(
   //  `https://newsdata.io/api/1/news?apikey=pub_27444837fea2a2e2cc240d2e4d3dcab923c4&country=it&page=1`
   //)
 

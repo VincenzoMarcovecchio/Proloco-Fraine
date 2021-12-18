@@ -1,6 +1,6 @@
 import React from "react"
 import Container from "@material-ui/core/Container"
-import { GatsbySeo } from "gatsby-plugin-next-seo"
+import { GatsbySeo, ArticleJsonLd } from "gatsby-plugin-next-seo"
 import { graphql } from "gatsby"
 
 const Noti = ({ pageContext, data }) => {
@@ -20,6 +20,25 @@ const Noti = ({ pageContext, data }) => {
         canonical={`https://www.prolocofraine.org/${pageContext.rela}`}
         openGraph={{
           url: `https://www.prolocofraine.org/${pageContext.rela}`,
+          type: "article",
+          article: {
+            publishedTime: data.articles.articles.filter(
+              lio => lio.description == pageContext.data
+            )[0].publishedAt,
+            modifiedTime: data.articles.articles.filter(
+              lio => lio.description == pageContext.data
+            )[0].publishedAt,
+            expirationTime: data.articles.articles.filter(
+              lio => lio.description == pageContext.data
+            )[0].publishedAt,
+            section: "Section II",
+            authors: [
+              data.articles.articles.filter(
+                lio => lio.description == pageContext.data
+              )[0].author,
+            ],
+            tags: ["News", "Abruzzo", "Cronaca"],
+          },
           title: `${
             data.articles.articles.filter(
               lio => lio.description == pageContext.data
