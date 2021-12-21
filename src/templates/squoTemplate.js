@@ -1,5 +1,4 @@
 import React from "react"
-import Container from "@material-ui/core/Container"
 import { GatsbySeo, LocalBusinessJsonLd } from "gatsby-plugin-next-seo"
 import Box from "@material-ui/core/Box"
 import Typography from "@material-ui/core/Typography"

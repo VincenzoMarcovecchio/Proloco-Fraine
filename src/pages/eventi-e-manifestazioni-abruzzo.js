@@ -24,6 +24,18 @@ const Manifesta = data => {
     }
   }, [])
 
+  useEffect(() => {
+    
+    fetch(
+      `http://localhost:8000/.netlify/functions/eventiabruzzo`
+    )
+      .then(response => response.json())
+      .then(data => {
+      console.log(data)
+      })
+
+  
+  }, [])
   return (
     <>
       <GatsbySeo

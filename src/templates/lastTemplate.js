@@ -11,6 +11,7 @@ export default function Ciccccc({
       <Container maxWidth="sm">
         <article className="blog-post">
           ciao
+          <pre>{pageContext.data}</pre>
         </article>
 
         

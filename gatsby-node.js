@@ -121,7 +121,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       let friendlySluga = await friendlySlug.replace(/\W+/g, "-")
 
       createPage({
-        path: friendlySluga.substring(0, 150),
+        path: friendlySluga.substring(1, 150),
         component: lastTemplate,
         context: {
           data: dis,
