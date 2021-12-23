@@ -8,7 +8,6 @@
 const strutto = require("./src/components/strutture.json")
 const squo = require("./src/data/squole.json")
 const path = require("path")
-const parameterize = require("parameterize")
 const fetch = require("node-fetch")
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
@@ -149,7 +148,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     let lunom = await dis.cdenominazione.replace(/\W+/g, "-")
 
     createPage({
-      path: `/${tiposquo}${lunom}/`,
+      path: `/${tiposquo}-${lunom}/`,
       component: squoTemplate,
       context: {
         data: dis,
