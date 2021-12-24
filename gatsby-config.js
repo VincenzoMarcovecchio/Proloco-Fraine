@@ -97,8 +97,8 @@ module.exports = {
       resolve: "gatsby-source-custom-api",
       options: {
         url: {
-          development: "https://leggi99.herokuapp.com/",
-          production: "https://leggi99.herokuapp.com/", // on "gatsby build"
+          development: "https://leggi98.herokuapp.com/",
+          production: "https://leggi98.herokuapp.com/", // on "gatsby build"
         },
         rootKey: "leggi",
       },
@@ -107,8 +107,8 @@ module.exports = {
       resolve: "gatsby-source-custom-api",
       options: {
         url: {
-          development: "https://leggi99.herokuapp.com/eventi",
-          production: "https://leggi99.herokuapp.com/eventi", // on "gatsby build"
+          development: "https://leggi98.herokuapp.com/eventi",
+          production: "https://leggi98.herokuapp.com/eventi", // on "gatsby build"
         },
         rootKey: "puppa",
       },
@@ -117,8 +117,8 @@ module.exports = {
       resolve: "gatsby-source-custom-api",
       options: {
         url: {
-          development: "https://leggi99.herokuapp.com/altri",
-          production: "https://leggi99.herokuapp.com/altri", // on "gatsby build"
+          development: "https://leggi98.herokuapp.com/altri",
+          production: "https://leggi98.herokuapp.com/altri", // on "gatsby build"
         },
         rootKey: "hello",
       },
