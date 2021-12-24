@@ -131,11 +131,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   }
 
   await strutto.forEach(async dis => {
-    let patto = await dis[Object.keys(dis)[2]]
-    let friendlySluga = await patto.replace(/\W+/g, "-")
+    let luca = await dis[Object.keys(dis)[2]]
 
     createPage({
-      path: `/${friendlySluga}/`,
+      path: `/${luca}/`,
       component: struttoTemplate,
       context: {
         data: dis,
