@@ -143,18 +143,18 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     })
   })
 
- // await squo.forEach(async dis => {
- //   let tiposquo = await dis.cdes_tipo_scuola.replace(/\W+/g, "-")
- //   let lunom = await dis.cdenominazione.replace(/\W+/g, "-")
-//
-  //  createPage({
- //     path: `/${tiposquo}-${lunom}/`,
- //     component: squoTemplate,
- //     context: {
- //       data: dis,
- //     },
- //   })
- // })
+  await squo.forEach(async dis => {
+    let tiposquo = await dis.cdes_tipo_scuola.replace(/\W+/g, "-")
+    let lunom = await dis.cdenominazione.replace(/\W+/g, "-")
+
+    createPage({
+     path: `/${tiposquo}-${lunom}/`,
+     component: squoTemplate,
+      context: {
+        data: dis,
+      },
+    })
+  })
 
   let getJSON = uri => fetch(uri).then(response => response.json())
 
