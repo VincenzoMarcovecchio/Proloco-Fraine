@@ -134,7 +134,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     let luca = await dis[Object.keys(dis)[2]]
 
     createPage({
-      path: `/${luca.replace(/\s+/g, "-").toLowerCase()}/`,
+      path: `/${luca}/`,
       component: struttoTemplate,
       context: {
         data: dis,
