@@ -5,6 +5,7 @@ import Tab from "@material-ui/core/Tab"
 import Typography from "@material-ui/core/Typography"
 import Container from "@material-ui/core/Container"
 import loadable from "@loadable/component"
+import Box from "@material-ui/core/Box"
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props
