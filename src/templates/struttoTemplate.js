@@ -3,8 +3,6 @@ import Container from "@material-ui/core/Container"
 import { GatsbySeo, LocalBusinessJsonLd } from "gatsby-plugin-next-seo"
 
 const Strutto = ({ pageContext }) => {
- 
-
   let strutte = pageContext.data
   let title = strutte[Object.keys(strutte)[2]]
   let email = strutte[Object.keys(strutte)[11]]
@@ -12,8 +10,8 @@ const Strutto = ({ pageContext }) => {
   let stelle = strutte[Object.keys(strutte)[3]]
   let where = strutte[Object.keys(strutte)[5]]
 
-  let tel = strutte[Object.keys(strutte)[6]]
-  let indi = strutte[Object.keys(strutte)[8]]
+  let tel = strutte[Object.keys(strutte)[9]]
+  let indi = strutte[Object.keys(strutte)[7]]
   let provi = strutte[Object.keys(strutte)[4]]
   let posco = strutte[Object.keys(strutte)[7]]
   let tipostrutta = strutte[Object.keys(strutte)[1]]
@@ -73,11 +71,36 @@ const Strutto = ({ pageContext }) => {
         <p>
           {where} | {stelle}
         </p>
-        <p><b>Indirizzo:&nbsp;</b>{indi}</p>
-        <p><b>Telefono:&nbsp;</b>{tel}</p>
-        <p><b>Email:&nbsp;</b>{email}</p>
-        <p><b>Web:&nbsp;</b>{sito}</p>
-        <small style={{ marginTop: "3rem" }}>OPEN DATA REGIONE ABRUZZO GENNAIO 2021</small>
+        <p>
+          <b>Indirizzo:&nbsp;</b>
+          {indi}
+        </p>
+        <p>
+          <b>Telefono:&nbsp;</b>
+          {tel}
+        </p>
+        <p>
+          <b>Email:&nbsp;</b>
+          {email}
+        </p>
+        <p>
+          <b>Web:&nbsp;</b>
+          {sito}
+        </p>
+        <small style={{ marginTop: "3rem", marginBottom: "2rem" }}>
+          OPEN DATA REGIONE ABRUZZO GENNAIO 2021
+        </small>
+
+        <iframe
+          width="450"
+          height="250"
+          frameborder="0"
+          style="border:0"
+          src={`https://www.google.com/maps/embed/v1/search
+  ?key=AIzaSyDrK_Ro5O8dkIdQP1zVaCOJh15QUmm10wQ
+  &q=${title}${where}`}
+          allowfullscreen
+        ></iframe>
       </Container>
     </>
   )

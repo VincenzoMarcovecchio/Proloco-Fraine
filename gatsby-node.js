@@ -6,7 +6,6 @@
 
 // You can delete this file if you're not using it
 const strutto = require("./src/components/strutture.json")
-const squo = require("./src/data/squole.json")
 const path = require("path")
 const fetch = require("node-fetch")
 const { createFilePath } = require(`gatsby-source-filesystem`)
@@ -143,18 +142,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     })
   })
 
-  await squo.forEach(async dis => {
-    let tiposquo = await dis.cdes_tipo_scuola.replace(/\W+/g, "-")
-    let lunom = await dis.cdenominazione.replace(/\W+/g, "-")
 
-    createPage({
-     path: `/${tiposquo}-${lunom}/`,
-     component: squoTemplate,
-      context: {
-        data: dis,
-      },
-    })
-  })
 
   let getJSON = uri => fetch(uri).then(response => response.json())
 
