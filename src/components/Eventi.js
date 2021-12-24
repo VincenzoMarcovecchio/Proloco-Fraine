@@ -1,4 +1,3 @@
-export default NewComponent
 const NewComponent = () => {
   return (
     <>
@@ -5105,3 +5104,5 @@ const NewComponent = () => {
     </>
   )
 }
+
+export default NewComponent;
