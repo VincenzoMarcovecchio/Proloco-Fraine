@@ -1,6 +1,6 @@
 import React from "react"
 import { GatsbySeo } from "gatsby-plugin-next-seo"
-import Box from "@material-ui/core/Box"
+import Container from "@material-ui/core/Container"
 import Typography from "@material-ui/core/Typography"
 
 const Bolla =  ({ pageContext }) => {
@@ -37,7 +37,7 @@ const Bolla =  ({ pageContext }) => {
           cardType: "summary_large_image",
         }}
       />
-      <Box sx={{ width: "100%", maxWidth: 500 }}>
+      <Container style={{ marginTop: "3rem" }} maxWidth="sm">
         <article className="blog-post">
           {pageContext.data.image_url && (
             <img
@@ -47,7 +47,7 @@ const Bolla =  ({ pageContext }) => {
             />
           )}
 
-          <Typography variant="h1" component="div" gutterBottom>
+          <Typography variant="h2" component="div" gutterBottom>
             {pageContext.data.title}
           </Typography>
           <div style={{ marginBottom: "2rem" }}>
@@ -73,7 +73,7 @@ const Bolla =  ({ pageContext }) => {
             </a>
           </Typography>
         </article>
-      </Box>
+      </Container>
     </>
   )
 }
