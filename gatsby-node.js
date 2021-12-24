@@ -150,7 +150,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   await kof.results.forEach(async kok => {
     let luca = await kok.title.replace(/\s+/g, "-").toLowerCase()
-    let fabio = await luca.replace(/\?/g, "-").toLowerCase()
+    let fabio = await luca.replace(/\?/g, "-")
 
     await createPage({
       path: `/${fabio}/`,

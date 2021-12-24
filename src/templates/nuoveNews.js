@@ -5,8 +5,7 @@ import Typography from "@material-ui/core/Typography"
 
 const Bolla =  ({ pageContext }) => {
   let luca =  pageContext.data.title.replace(/\s+/g, "-").toLowerCase()
-  let vgv =  luca.replace(/\?/g, "-").toLowerCase()
-  let dfd =  vgv.replace(/\#/g, "-").toLowerCase()
+  let vgv =  luca.replace(/\?/g, "-")
 
   return (
     <>
@@ -15,9 +14,9 @@ const Bolla =  ({ pageContext }) => {
         description={`${
           pageContext.data.full_description || pageContext.data.description
         }`}
-        canonical={`https://www.prolocofraine.org/${dfd}`}
+        canonical={`https://www.prolocofraine.org/${vgv}`}
         openGraph={{
-          url: `https://www.prolocofraine.org/${dfd}`,
+          url: `https://www.prolocofraine.org/${vgv}`,
           title: `${pageContext.data.title}`,
           description: `${
             pageContext.data.full_description || pageContext.data.description
