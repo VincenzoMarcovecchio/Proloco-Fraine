@@ -16,7 +16,7 @@ const Manifesta = data => {
   }, [])
 
   fetch(`https://mimmofranco.herokuapp.com/
-  http://localhost:8000/.netlify/functions/eventiabruzzo`)
+  https://prolocofraine.org/.netlify/functions/eventiabruzzo`)
     .then(response => response.json())
     .then(data => {
       console.log(data)
@@ -30,8 +30,6 @@ const Manifesta = data => {
       idx.rel = "noopener noreferrer canonical"
     }
   }, [])
-
-
 
   return (
     <>
