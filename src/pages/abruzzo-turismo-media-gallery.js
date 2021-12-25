@@ -4,8 +4,8 @@ import Tabs from "@material-ui/core/Tabs"
 import Tab from "@material-ui/core/Tab"
 import Typography from "@material-ui/core/Typography"
 import Container from "@material-ui/core/Container"
-import loadable from "@loadable/component"
 import Box from "@material-ui/core/Box"
+import NewComponent from "../components/Eventi.js"
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props
@@ -46,7 +46,7 @@ export default function BasicTabs() {
   const handleChange = (event, newValue) => {
     setValue(newValue)
   }
-  const LazyComponent = loadable(() => import(`../components/Eventi.js`))
+ 
 
   return (
     <Container style={{ marginTop: "3rem" }} maxWidth="sm">
@@ -61,7 +61,7 @@ export default function BasicTabs() {
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
-        <LazyComponent />
+        <NewComponent />
       </TabPanel>
       <TabPanel value={value} index={1}>
         Instagram
