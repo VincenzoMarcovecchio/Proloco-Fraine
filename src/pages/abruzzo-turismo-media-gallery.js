@@ -61,7 +61,6 @@ export default function BasicTabs() {
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
-        <NewComponent />
       </TabPanel>
       <TabPanel value={value} index={1}>
         Instagram
