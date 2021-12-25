@@ -57,7 +57,7 @@ const Lavoro = ({ data }) => {
       </style>
 
       <Container style={{ marginTop: "3rem" }} maxWidth="sm">
-        <h1>Offerte di lavoro </h1>
+        <h1>Offerte di lavoro ricerca avanzata ;) </h1>
         <br />
         {data.jobs.results.title !== null ? (
           <div
