@@ -15,13 +15,6 @@ const Manifesta = data => {
     }
   }, [])
 
-  fetch(`https://mimmofranco.herokuapp.com/
-  https://prolocofraine.org/.netlify/functions/eventiabruzzo`)
-    .then(response => response.json())
-    .then(data => {
-      console.log(data)
-    })
-
   useEffect(() => {
     var divs = document.querySelectorAll(".item-title")
 
@@ -29,6 +22,10 @@ const Manifesta = data => {
       idx.target = "_blank"
       idx.rel = "noopener noreferrer canonical"
     }
+    fetch(`https://mimmofranco.herokuapp.com/
+    https://prolocofraine.org/.netlify/functions/eventiabruzzo`).then(data => {
+      console.log(data)
+    })
   }, [])
 
   return (
