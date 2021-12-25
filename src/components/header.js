@@ -179,16 +179,16 @@ export default function SwipeableTemporaryDrawer() {
   return (
     <AppBar className={classes.root} position="static">
       <Box className={classes.wrapper} component="div" m={0.5}>
-        <div>
-        <IconButton
-          color="inherit"
-          aria-label="menu"
-          aria-expanded={state.left}
-          onClick={toggleDrawer("left", true)}
-        >
-          <MenuIcon />
-        </IconButton>
-        &nbsp; Proloco Fraine 
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <IconButton
+            color="inherit"
+            aria-label="menu"
+            aria-expanded={state.left}
+            onClick={toggleDrawer("left", true)}
+          >
+            <MenuIcon />
+          </IconButton>
+          &nbsp; Proloco Fraine
         </div>
         <AccountCircleIcon />
       </Box>

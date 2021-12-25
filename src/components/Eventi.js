@@ -2,12 +2,12 @@ import React from "react"
 import { graphql } from "gatsby"
 import Container from "@material-ui/core/Container"
 
-const NewComponent = ({ data }) => {
+const NewComponent = data => {
   return (
     <Container style={{ marginTop: "3rem" }} maxWidth="sm">
-      {data.pollodocs.results.title ? (
+      {data.data.pollodocs.results.title ? (
         <div
-          dangerouslySetInnerHTML={{ __html: data.pollodocs.results.title }}
+          dangerouslySetInnerHTML={{ __html: data.data.pollodocs.results.title }}
         ></div>
       ) : (
         "caricamento in corso"
