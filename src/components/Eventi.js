@@ -5,7 +5,7 @@ import Container from "@material-ui/core/Container"
 const NewComponent = data => {
   return (
     <Container style={{ marginTop: "3rem" }} maxWidth="sm">
-      {data.data.pollodocs.results.title !== undefined ? (
+      {data.data.pollodocs !== undefined ? (
         <div
           dangerouslySetInnerHTML={{
             __html: data.data.pollodocs.results.title,
@@ -18,8 +18,8 @@ const NewComponent = data => {
   )
 }
 
-export const pageQuery = graphql`
-  {
+export const cazzoDio = graphql`
+  query ciao {
     pollodocs {
       results {
         title
