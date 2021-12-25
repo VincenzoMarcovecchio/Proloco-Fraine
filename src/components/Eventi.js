@@ -19,7 +19,7 @@ const NewComponent = data => {
 }
 
 export const cazzoDio = graphql`
-  query ciao {
+  query gallo {
     pollodocs {
       results {
         title
