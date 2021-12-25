@@ -26,7 +26,6 @@ module.exports = {
       },
     },
 
-
     `gatsby-plugin-material-ui`,
     `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-react-helmet`,
@@ -101,6 +100,36 @@ module.exports = {
           production: "https://leggi98.herokuapp.com/", // on "gatsby build"
         },
         rootKey: "leggi",
+      },
+    },
+    {
+      resolve: "gatsby-source-custom-api",
+      options: {
+        url: {
+          development: "https://pollolo.herokuapp.com/2",
+          production: "https://pollolo.herokuapp.com/2", // on "gatsby build"
+        },
+        rootKey: "pollo2",
+      },
+    },
+    {
+      resolve: "gatsby-source-custom-api",
+      options: {
+        url: {
+          development: "https://pollolo.herokuapp.com/1",
+          production: "https://pollolo.herokuapp.com/1", // on "gatsby build"
+        },
+        rootKey: "pollo1",
+      },
+    },
+    {
+      resolve: "gatsby-source-custom-api",
+      options: {
+        url: {
+          development: "https://pollolo.herokuapp.com/docs",
+          production: "https://pollolo.herokuapp.com/docs", // on "gatsby build"
+        },
+        rootKey: "pollodocs",
       },
     },
     {

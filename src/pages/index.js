@@ -296,7 +296,7 @@ const IndexPage = ({
                             aria-expanded="false"
                             aria-label="scopri di piu"
                           >
-                            <Link replace to={`/${rel}/`}>
+                            <Link replace to={`https:.prolocofraine.org/${rel}/`}>
                               <ExpandMoreIcon />
                             </Link>
                           </IconButton>

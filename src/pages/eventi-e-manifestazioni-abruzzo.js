@@ -22,7 +22,9 @@ const Manifesta = data => {
       idx.target = "_blank"
       idx.rel = "noopener noreferrer canonical"
     }
-    fetch(`https://mimmofranco.herokuapp.com/https://prolocofraine.org/.netlify/functions/eventiabruzzo`).then(data => {
+    fetch(
+      `https://mimmofranco.herokuapp.com/https://prolocofraine.org/.netlify/functions/eventiabruzzo`
+    ).then(data => {
       console.log(data)
     })
   }, [])
@@ -136,6 +138,19 @@ html > body > div > div > main > div > div > span {
         )}
       </Container>
       <hr />
+      <Container style={{ marginTop: "3rem" }} maxWidth="lg">
+        {data.data.hello.results.rollo ? (
+          <div
+            className="pollo"
+            dangerouslySetInnerHTML={{
+              __html: data.data.pollo1.results.title,
+            }}
+          ></div>
+        ) : (
+          "caricamento in corso"
+        )}
+      </Container>
+      <hr />
       <center style={{ marginTop: "2rem" }}>
         <h2>C'è dell'altro 🍝🍝 </h2>
       </center>
@@ -165,6 +180,11 @@ export const pageQuery = graphql`
     hello {
       results {
         rollo
+      }
+    }
+    pollo1 {
+      results {
+        title
       }
     }
   }
