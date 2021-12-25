@@ -16,7 +16,7 @@ const Strutto = ({ pageContext }) => {
   let posco = strutte[Object.keys(strutte)[7]]
   let tipostrutta = strutte[Object.keys(strutte)[1]]
 
-  window !== undefined &&
+  typeof window !== "undefined" &&
     window.addEventListener("load", function () {
       let iDiv = document.getElementById("iframe1")
 
