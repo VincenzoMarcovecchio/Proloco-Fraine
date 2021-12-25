@@ -3,7 +3,7 @@
 const fetch = require("node-fetch")
 
 exports.handler = async function (event, context, callback) {
-  if (event.httpMethod !== "POST") {
+  if (event.httpMethod !== "GET") {
     return { statusCode: 405, body: "Method Not Allowed" }
   }
 
@@ -29,6 +29,7 @@ exports.handler = async function (event, context, callback) {
       "user-agent":
         "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Mobile Safari/537.36",
       "x-requested-with": "XMLHttpRequest",
+      " Access-Control-Allow-Origin":""
     },
     method: "POST",
     body: JSON.stringify(

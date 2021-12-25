@@ -15,6 +15,13 @@ const Manifesta = data => {
     }
   }, [])
 
+  fetch(`https://mimmofranco.herokuapp.com/
+  http://localhost:8000/.netlify/functions/eventiabruzzo`)
+    .then(response => response.json())
+    .then(data => {
+      console.log(data)
+    })
+
   useEffect(() => {
     var divs = document.querySelectorAll(".item-title")
 
@@ -24,18 +31,8 @@ const Manifesta = data => {
     }
   }, [])
 
-  useEffect(() => {
-    
-    fetch(
-      `http://localhost:8000/.netlify/functions/eventiabruzzo`
-    )
-      .then(response => response.json())
-      .then(data => {
-      console.log(data)
-      })
 
-  
-  }, [])
+
   return (
     <>
       <GatsbySeo
@@ -132,7 +129,7 @@ html > body > div > div > main > div > div > span {
         <h2>❤️ Eventi e manifestazioni Abruzzesi 2021 🌍 </h2>
       </center>
 
-      <Container style={{ marginTop: "3rem" }} maxWidth="md">
+      <Container style={{ marginTop: "3rem" }} maxWidth="lg">
         {data.data.hello.results.rollo ? (
           <div
             className="pollo"

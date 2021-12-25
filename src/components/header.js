@@ -10,7 +10,7 @@ import ListItem from "@material-ui/core/ListItem"
 import ListItemIcon from "@material-ui/core/ListItemIcon"
 import ListItemText from "@material-ui/core/ListItemText"
 import AnnouncementIcon from "@material-ui/icons/Announcement"
-import HouseIcon from "@material-ui/icons/House"
+import AddAPhotoIcon from "@material-ui/icons/AddAPhoto"
 import MenuIcon from "@material-ui/icons/Menu"
 import KitchenIcon from "@material-ui/icons/Kitchen"
 import AirportShuttleIcon from "@material-ui/icons/AirportShuttle"
@@ -21,6 +21,7 @@ import PermIdentityIcon from "@material-ui/icons/PermIdentity"
 import DataUsageIcon from "@material-ui/icons/DataUsage"
 import LocalHospitalIcon from "@material-ui/icons/LocalHospital"
 import WbSunnyIcon from "@material-ui/icons/WbSunny"
+import AccountCircleIcon from "@material-ui/icons/AccountCircle"
 
 const useStyles = makeStyles({
   list: {
@@ -36,9 +37,10 @@ const useStyles = makeStyles({
   },
   wrapper: {
     display: "flex",
-    justifyContent: "center",
+    justifyContent: "space-between",
     alignItems: "center",
-    fontSize: "large",
+    fontSize: "inherit",
+    width: "93%",
   },
 
   title: {
@@ -119,6 +121,16 @@ export default function SwipeableTemporaryDrawer() {
             <ListItemText primary="Calendario Eventi" />
           </Link>
         </ListItem>
+        <ListItem button>
+          <Link replace to="/abruzzo-turismo-media-gallery/">
+            <ListItemIcon>
+              <AddAPhotoIcon />
+            </ListItemIcon>
+          </Link>
+          <Link replace to="/abruzzo-turismo-media-gallery/">
+            <ListItemText primary="Media Gallery" />
+          </Link>
+        </ListItem>
 
         <ListItem button>
           <Link replace to="/generatore-di-codice-fiscale-online/">
@@ -167,6 +179,7 @@ export default function SwipeableTemporaryDrawer() {
   return (
     <AppBar className={classes.root} position="static">
       <Box className={classes.wrapper} component="div" m={0.5}>
+        <div>
         <IconButton
           color="inherit"
           aria-label="menu"
@@ -175,7 +188,9 @@ export default function SwipeableTemporaryDrawer() {
         >
           <MenuIcon />
         </IconButton>
-        &nbsp; Proloco Fraine ⛪
+        &nbsp; Proloco Fraine 
+        </div>
+        <AccountCircleIcon />
       </Box>
 
       <SwipeableDrawer

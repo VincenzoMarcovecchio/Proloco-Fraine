@@ -1,114 +1,20 @@
 import React from "react"
 const NewComponent = () => {
+React.useEffect(()=> {
+  const images = document.querySelectorAll(".gavias-blockbuilder-content img")
+  
+  for (var i = images.length;  i++; ) {
+    
+    var img = images[i],
+    srca = img.src.replace( `../../../../../`, "https://abruzzoturismo.it/")
+    img.src = srca
+  
+  }
+},[])
+
+
   return (
     <>
-      <link
-        href="https://abruzzoturismo.it/core/themes/classy/css/components/messages.css?r4izgf"
-        type="text/css"
-        rel="stylesheet"
-      />
-      <link
-        href="https://abruzzoturismo.it/core/themes/stable/css/system/components/ajax-progress.module.css?r4izgf"
-        type="text/css"
-        rel="stylesheet"
-      />
-      <link
-        href="https://abruzzoturismo.it/core/themes/stable/css/system/components/align.module.css?r4izgf"
-        type="text/css"
-        rel="stylesheet"
-      />
-      <link
-        href="https://abruzzoturismo.it/core/themes/stable/css/system/components/autocomplete-loading.module.css?r4izgf"
-        type="text/css"
-        rel="stylesheet"
-      />
-      <link
-        href="https://abruzzoturismo.it/core/themes/stable/css/system/components/clearfix.module.css?r4izgf"
-        type="text/css"
-        rel="stylesheet"
-      />
-      <link
-        href="https://abruzzoturismo.it/core/themes/stable/css/system/components/container-inline.module.css?r4izgf"
-        type="text/css"
-        rel="stylesheet"
-      />
-      <link
-        href="https://abruzzoturismo.it/core/themes/stable/css/system/components/details.module.css?r4izgf"
-        type="text/css"
-        rel="stylesheet"
-      />
-      <link
-        href="https://abruzzoturismo.it/core/themes/stable/css/system/components/fieldgroup.module.css?r4izgf"
-        type="text/css"
-        rel="stylesheet"
-      />
-      <link
-        href="https://abruzzoturismo.it/core/themes/stable/css/system/components/hidden.module.css?r4izgf"
-        type="text/css"
-        rel="stylesheet"
-      />
-      <link
-        href="https://abruzzoturismo.it/core/themes/stable/css/system/components/item-list.module.css?r4izgf"
-        type="text/css"
-        rel="stylesheet"
-      />
-      <link
-        href="https://abruzzoturismo.it/core/themes/stable/css/system/components/js.module.css?r4izgf"
-        type="text/css"
-        rel="stylesheet"
-      />
-      <link
-        href="https://abruzzoturismo.it/core/themes/stable/css/system/components/tree-child.module.css?r4izgf"
-        type="text/css"
-        rel="stylesheet"
-      />
-      <link
-        href="https://abruzzoturismo.it/core/themes/stable/css/system/components/tablesort.module.css?r4izgf"
-        type="text/css"
-        rel="stylesheet"
-      />
-      <link
-        href="https://abruzzoturismo.it/core/themes/stable/css/system/components/tabledrag.module.css?r4izgf"
-        type="text/css"
-        rel="stylesheet"
-      />
-
-      <link
-        href="https://abruzzoturismo.it/themes/gavias_sanbro/css/custom.css"
-        type="text/css"
-        rel="stylesheet"
-      />
-      <link
-        href="https://abruzzoturismo.it/themes/gavias_sanbro/css/sliderlayer.css?r4izgf"
-        type="text/css"
-        rel="stylesheet"
-      />
-      <link
-        href="https://abruzzoturismo.it/themes/gavias_sanbro/css/custom.css"
-        type="text/css"
-        rel="stylesheet"
-      />
-      <link
-        href="https://abruzzoturismo.it/themes/gavias_sanbro/css/sliderlayer.css?r4izgf"
-        type="text/css"
-        rel="stylesheet"
-      />
-      <link
-        href="https://abruzzoturismo.it/themes/gavias_sanbro/css/custom.css"
-        type="text/css"
-        rel="stylesheet"
-      />
-      <link
-        href="https://abruzzoturismo.it/themes/gavias_sanbro/css/sliderlayer.css?r4izgf"
-        type="text/css"
-        rel="stylesheet"
-      />
-      <link
-        href="https://abruzzoturismo.it/themes/gavias_sanbro/css/sliderlayer.css?r4izgf"
-        type="text/css"
-        rel="stylesheet"
-      />
-
       <div className="field field--name-field-block-builder field--type-blockbuilder field--label-hidden field__item">
         <div className="gavias-blockbuilder-content">
           <div className="gavias-blockbuilder-content">
@@ -5106,4 +5012,4 @@ const NewComponent = () => {
   )
 }
 
-export default NewComponent;
+export default NewComponent
