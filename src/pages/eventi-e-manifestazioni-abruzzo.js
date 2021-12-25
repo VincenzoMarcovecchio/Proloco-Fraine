@@ -17,16 +17,23 @@ const Manifesta = data => {
 
   useEffect(() => {
     var divs = document.querySelectorAll(".item-title")
+    var an = document.querySelectorAll(".no-border a")
+    var imga = document.querySelectorAll(".no-border img")
+
+    imga.forEach(element => {
+      let srca = `https://abruzzoturismo.com${element.src}`
+      element.src = srca
+    })
+
+    an.forEach(element => {
+      let srca = `https://abruzzoturismo.com${element.href}`
+      element.href = srca
+    })
 
     for (let idx of divs) {
       idx.target = "_blank"
       idx.rel = "noopener noreferrer canonical"
     }
-    fetch(
-      `https://mimmofranco.herokuapp.com/https://prolocofraine.org/.netlify/functions/eventiabruzzo`
-    ).then(data => {
-      console.log(data)
-    })
   }, [])
 
   return (
@@ -140,12 +147,20 @@ html > body > div > div > main > div > div > span {
       <hr />
       <Container style={{ marginTop: "3rem" }} maxWidth="lg">
         {data.data.hello.results.rollo ? (
-          <div
-            className="pollo"
-            dangerouslySetInnerHTML={{
-              __html: data.data.pollo1.results.title,
-            }}
-          ></div>
+          <>
+            <div
+              className="pollo"
+              dangerouslySetInnerHTML={{
+                __html: data.data.pollo1.results.title,
+              }}
+            ></div>
+            <div
+              className="pollo"
+              dangerouslySetInnerHTML={{
+                __html: data.data.pollo2.results.title,
+              }}
+            ></div>
+          </>
         ) : (
           "caricamento in corso"
         )}

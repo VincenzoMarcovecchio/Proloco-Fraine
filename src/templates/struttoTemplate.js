@@ -16,6 +16,13 @@ const Strutto = ({ pageContext }) => {
   let posco = strutte[Object.keys(strutte)[7]]
   let tipostrutta = strutte[Object.keys(strutte)[1]]
 
+  window !== undefined &&
+    window.addEventListener("load", function () {
+      let iDiv = document.getElementById("iframe1")
+
+      iDiv.src = `https://www.google.com/maps/embed/v1/search
+    ?key=AIzaSyDrK_Ro5O8dkIdQP1zVaCOJh15QUmm10wQ&q=${title}${where}`
+    })
   return (
     <>
       <LocalBusinessJsonLd
@@ -95,9 +102,8 @@ const Strutto = ({ pageContext }) => {
           width="450"
           height="250"
           frameBorder="0"
+          id="iframe1"
           style={{ border: "0" }}
-          src={`https://www.google.com/maps/embed/v1/search
-  ?key=AIzaSyDrK_Ro5O8dkIdQP1zVaCOJh15QUmm10wQ&q=${title}${where}`}
           allowfullscreen
         ></iframe>
       </Container>

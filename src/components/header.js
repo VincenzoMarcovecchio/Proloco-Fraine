@@ -22,6 +22,8 @@ import DataUsageIcon from "@material-ui/icons/DataUsage"
 import LocalHospitalIcon from "@material-ui/icons/LocalHospital"
 import WbSunnyIcon from "@material-ui/icons/WbSunny"
 import AccountCircleIcon from "@material-ui/icons/AccountCircle"
+import IconButton from "@material-ui/core/IconButton"
+import Tooltip from "@material-ui/core/Tooltip"
 
 const useStyles = makeStyles({
   list: {
@@ -190,7 +192,11 @@ export default function SwipeableTemporaryDrawer() {
           </IconButton>
           &nbsp; Proloco Fraine
         </div>
-        <AccountCircleIcon />
+        <Tooltip title="Cosa fare con il login?">
+          <IconButton>
+            <AccountCircleIcon />
+          </IconButton>
+        </Tooltip>
       </Box>
 
       <SwipeableDrawer
