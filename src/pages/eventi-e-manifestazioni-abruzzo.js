@@ -22,8 +22,7 @@ const Manifesta = data => {
       idx.target = "_blank"
       idx.rel = "noopener noreferrer canonical"
     }
-    fetch(`https://mimmofranco.herokuapp.com/
-    https://prolocofraine.org/.netlify/functions/eventiabruzzo`).then(data => {
+    fetch(`https://mimmofranco.herokuapp.com/https://prolocofraine.org/.netlify/functions/eventiabruzzo`).then(data => {
       console.log(data)
     })
   }, [])

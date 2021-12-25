@@ -28,8 +28,7 @@ exports.handler = async function (event, context, callback) {
       "sec-gpc": "1",
       "user-agent":
         "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Mobile Safari/537.36",
-      "x-requested-with": "XMLHttpRequest",
-      " Access-Control-Allow-Origin":""
+      "x-requested-with": "XMLHttpRequest"
     },
     method: "POST",
     body: JSON.stringify(
