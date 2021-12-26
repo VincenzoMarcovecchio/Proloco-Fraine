@@ -21,7 +21,7 @@ const Manifesta = data => {
     var imga = document.querySelectorAll(".no-border img")
 
     imga.forEach(element => {
-      let srca = `https://abruzzoturismo.com${element.src}`
+      let srca = `https://abruzzoturismo.com${element.src.replace("https://prolocofraine.org","")}`
       element.src = srca
     })
 
@@ -130,6 +130,7 @@ html > body > div > div > main > div > div > span {
       </style>
       <center style={{ marginTop: "2rem" }}>
         <h2>❤️ Eventi e manifestazioni Abruzzesi 2021 🌍 </h2>
+        <small>il top del top ;)</small>
       </center>
 
       <Container style={{ marginTop: "3rem" }} maxWidth="lg">
