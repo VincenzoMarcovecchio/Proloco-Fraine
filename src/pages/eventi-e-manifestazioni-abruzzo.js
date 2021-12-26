@@ -5,6 +5,7 @@ import Container from "@material-ui/core/Container"
 import loga from "../images/abruzzo-logo.jpg"
 
 const Manifesta = data => {
+
   useEffect(() => {
     var divs = document.querySelectorAll(".divvo a")
 
@@ -22,9 +23,14 @@ const Manifesta = data => {
 
     imga.forEach(async element => {
       let sorca = await element.src
-      let gigi = await sorca.replace("https://prolocofraine.org", "")
+      let gigi = await sorca.replace('https://prolocofraine.org'/g, "")
       let srca = await `https://abruzzoturismo.com${gigi}`
-      return (element.src = srca)
+      element.src = srca
+    })
+
+    an.forEach(element => {
+      let srca = `https://abruzzoturismo.com${element.href}`
+      element.href = srca
     })
 
     for (let idx of divs) {
