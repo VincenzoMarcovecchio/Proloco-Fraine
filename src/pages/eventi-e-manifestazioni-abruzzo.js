@@ -20,8 +20,9 @@ const Manifesta = data => {
     var an = document.querySelectorAll(".no-border a")
     var imga = document.querySelectorAll(".no-border img")
 
-    imga.forEach(element => {
-      let srca = `https://abruzzoturismo.com${element.src.replace("https://prolocofraine.org","")}`
+    imga.forEach(async element => {
+      await element.src.replace("https://prolocofraine.org", "")
+      let srca = await `https://abruzzoturismo.com${element.src}`
       element.src = srca
     })
 

@@ -298,8 +298,7 @@ const IndexPage = ({
                           >
                             <Link
                               rel="noreferrer noopener canonical"
-                              replace
-                              to={`https://prolocofraine.org/${rel}/`}
+                              to={`${article.url}`}
                             >
                               <ExpandMoreIcon />
                             </Link>
