@@ -151,9 +151,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   await kof.results.forEach(async kok => {
     let luca = await kok.title.replace(/\s+/g, "-").toLowerCase()
     let fabio = await luca.replace(/\?/g, "-")
+    let lore = await fabio.replace(/\%/g, "-")
 
     await createPage({
-      path: `/${fabio}/`,
+      path: `/${lore}/`,
       component: nuoveNews,
       context: {
         data: kok,
@@ -168,9 +169,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   await roof.results.forEach(async kok => {
     let luca = await kok.title.replace(/\s+/g, "-").toLowerCase()
     let fabio = await luca.replace(/\?/g, "-")
+    let lore = await fabio.replace(/\%/g, "-")
 
     await createPage({
-      path: `/${fabio}/`,
+      path: `/${lore}/`,
       component: nuoveNews,
       context: {
         data: kok,
@@ -184,9 +186,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   await cane.results.forEach(async kok => {
     let luca = await kok.title.replace(/\s+/g, "-").toLowerCase()
     let fabio = await luca.replace(/\?/g, "-")
+    let lore = await fabio.replace(/\%/g, "-")
+
 
     await createPage({
-      path: `/${fabio}/`,
+      path: `/${lore}/`,
       component: nuoveNews,
       context: {
         data: kok,
