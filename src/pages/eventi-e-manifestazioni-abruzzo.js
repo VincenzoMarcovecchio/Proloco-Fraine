@@ -23,13 +23,15 @@ const Manifesta = data => {
 
     imga.forEach(async element => {
       let sorca = await element.src
-      let gigi = await sorca.replace('https://prolocofraine.org'/g, "")
-      let srca = await `https://abruzzoturismo.com${gigi}`
-      element.src = srca
+      let gigi = await sorca.replace(window.location.origin, "")
+      element.src = `https://abruzzoturismo.it${gigi}`
+     
     })
 
-    an.forEach(element => {
-      let srca = `https://abruzzoturismo.com${element.href}`
+    an.forEach(async element => {  
+      let sorca = await element.href
+      let gigi = await sorca.replace(window.location.origin, "")
+      let srca = `https://abruzzoturismo.it${gigi}`
       element.href = srca
     })
 
