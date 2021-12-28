@@ -208,13 +208,13 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     let susa = await fetch(
       `https://sheltered-meadow-66603.herokuapp.com/noti/${luca}`
     )
-    const lola = await susa.json()
+    
 
     await createPage({
       path: `/${luca}/`,
       component: abruNews,
       context: {
-        data: lola.results,
+        data: susa,
       },
     })
   })
