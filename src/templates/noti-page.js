@@ -3,58 +3,41 @@ import Container from "@material-ui/core/Container"
 import { GatsbySeo, ArticleJsonLd } from "gatsby-plugin-next-seo"
 import { graphql } from "gatsby"
 
-const Noti = ({ pageContext, data }) => {
+const Noti = ({ pageContext, data,duto }) => {
+  console.log(pageContext.duto.title)
   return (
     <>
       <GatsbySeo
         title={
-          data.articles.articles.filter(
-            lio => lio.description == pageContext.data
-          )[0].title
+          pageContext.duto.title
         }
         description={
-          data.articles.articles.filter(
-            lio => lio.description == pageContext.data
-          )[0].description
+          pageContext.duto.description
         }
         canonical={`https://www.prolocofraine.org/${pageContext.rela}`}
         openGraph={{
           url: `https://www.prolocofraine.org/${pageContext.rela}`,
           type: "article",
           article: {
-            publishedTime: data.articles.articles.filter(
-              lio => lio.description == pageContext.data
-            )[0].publishedAt,
-            modifiedTime: data.articles.articles.filter(
-              lio => lio.description == pageContext.data
-            )[0].publishedAt,
-            expirationTime: data.articles.articles.filter(
-              lio => lio.description == pageContext.data
-            )[0].publishedAt,
+            publishedTime: pageContext.duto.publishedAt,
+            modifiedTime: pageContext.duto.publishedAt,
+            expirationTime: pageContext.duto.publishedAt,
             section: "Section II",
             authors: [
-              data.articles.articles.filter(
-                lio => lio.description == pageContext.data
-              )[0].author,
+              pageContext.duto.author,
             ],
             tags: ["News", "Abruzzo", "Cronaca"],
           },
           title: `${
-            data.articles.articles.filter(
-              lio => lio.description == pageContext.data
-            )[0].title
+            pageContext.duto.title
           }`,
           description: `${
-            data.articles.articles.filter(
-              lio => lio.description == pageContext.data
-            )[0].title
+            pageContext.duto.description 
           }`,
           images: [
             {
               url: `${
-                data.articles.articles.filter(
-                  lio => lio.description == pageContext.data
-                )[0].urlToImage
+                pageContext.duto.urlToImage
               }`,
               width: 800,
               height: 600,
