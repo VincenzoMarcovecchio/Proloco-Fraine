@@ -102,6 +102,7 @@ const Strutto = ({ pageContext }) => {
           width="450"
           height="250"
           frameBorder="0"
+          title={title}
           id="iframe1"
           style={{ border: "0" }}
           allowfullscreen

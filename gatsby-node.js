@@ -31,6 +31,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const lastTemplate = path.resolve("src/templates/lastTemplate.js")
   const struttoTemplate = path.resolve("src/templates/struttoTemplate.js")
   const squoTemplate = path.resolve("src/templates/squoTemplate.js")
+  const abruNews = path.resolve("src/templates/abruNews.js")
   const nuoveNews = path.resolve("src/templates/nuoveNews.js")
 
   const result = await graphql(`
@@ -179,7 +180,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       },
     })
   })
-  
+
   const cane = await getJSON(
     `https://newsdata.io/api/1/news?apikey=pub_27444837fea2a2e2cc240d2e4d3dcab923c4&country=it&page=3`
   )
@@ -189,12 +190,28 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     let fabio = await luca.replace(/\?/g, "-")
     let lore = await fabio.replace(/\%/g, "-")
 
-
     await createPage({
       path: `/${lore}/`,
       component: nuoveNews,
       context: {
         data: kok,
+      },
+    })
+  })
+
+  const friz = await fetch(`https://sheltered-meadow-66603.herokuapp.com/1`)
+
+  await friz.results.forEach(async kok => {
+    let luca = await kok.splice("/")[4]
+    let susa = await fetch(
+      `https://sheltered-meadow-66603.herokuapp.com/noti/${luca}`
+    )
+
+    await createPage({
+      path: `/${luca}/`,
+      component: abruNews,
+      context: {
+        data: susa.results,
       },
     })
   })
