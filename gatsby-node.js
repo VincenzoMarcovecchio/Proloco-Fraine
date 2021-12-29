@@ -218,7 +218,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       let luca = await kok.split("/")[4]
       try {
         let rollot = await axios.get(
-          `https://sheltered-meadow-66603.herokuapp.com/noti/${luca}`,
+          `https://mimmofranco.herokuapp.com/https://sheltered-meadow-66603.herokuapp.com/noti/${luca}`,
           {
             headers: {
               Accept:
