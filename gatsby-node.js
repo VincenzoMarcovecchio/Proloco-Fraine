@@ -218,21 +218,13 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       let luca = await kok.split("/")[4]
       try {
         let rollot = await axios.get(
-          `https://mimmofranco.herokuapp.com/https://sheltered-meadow-66603.herokuapp.com/noti/${luca}`,
+          `https://sheltered-meadow-66603.herokuapp.com/noti/${luca}`,
           {
             headers: {
               Accept:
               "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
               "Accept-Encoding": "gzip, deflate, br",
               "User-Agent": "axios 0.21.1",
-              "Accept-Language": "en-GB,en-US;q=0.9,en;q=0.8",
-              "Host": "sheltered-meadow-66603.herokuapp.com",
-              "Sec-Fetch-Dest": "document",
-              "Sec-Fetch-Mode": "navigate",
-              "Sec-Fetch-Site": "none",
-              "Sec-Fetch-User": "?1",
-              "Sec-GPC": 1,
-              "Upgrade-Insecure-Requests": 1,
             },
           }
         )
