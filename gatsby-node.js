@@ -228,7 +228,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           }
         )
 
-        createPage({
+        return createPage({
           path: `/${luca}/`,
           component: abruNews,
           context: {
