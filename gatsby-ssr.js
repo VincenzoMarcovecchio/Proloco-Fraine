@@ -1,16 +1,5 @@
 const React = require("react")
 const { Helmet } = require("react-helmet")
-const { NetlifyIdentityContext } = require("react-netlify-identity-gotrue")
-
-exports.wrapRootElement = ({ element }, { url }) => {
-  React.createElement(
-    NetlifyIdentityContext,
-    {
-      url: "https://prolocofraine.org",
-    },
-    element
-  )
-}
 
 
 exports.onRenderBody = (
