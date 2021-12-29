@@ -201,9 +201,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   })
 
   const friz = await fetch(`https://sheltered-meadow-66603.herokuapp.com/1`)
-  const lola = await friz.json()
 
-  await lola.results.forEach(async kok => {
+  await friz.results.forEach(async kok => {
     let luca = await kok.split("/")[4]
     let susa = await fetch(
       `https://sheltered-meadow-66603.herokuapp.com/noti/${luca}`
