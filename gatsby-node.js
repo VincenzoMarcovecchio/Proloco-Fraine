@@ -9,7 +9,7 @@ const strutto = require("./src/components/strutture.json")
 const path = require("path")
 const fetch = require("node-fetch")
 const { createFilePath } = require(`gatsby-source-filesystem`)
-const axios = require("axios")
+const axios = require("axios").default
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
   if (node.internal.type === `MarkdownRemark`) {
@@ -216,18 +216,27 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   `).then(res => {
     res.data.links.results.forEach(async kok => {
       let luca = await kok.split("/")[4]
+      try {
+        let rollot = await axios.get(
+          `https://sheltered-meadow-66603.herokuapp.com/noti/${luca}`,
+          {
+            headers: {
+              Accept: "application/json",
+              "User-Agent": "axios 0.21.1",
+            },
+          }
+        )
 
-      let rollot = await axios.get(
-        `https://sheltered-meadow-66603.herokuapp.com/noti/${luca}`
-      )
-
-      createPage({
-        path: `/${luca}/`,
-        component: abruNews,
-        context: {
-          data: rollot,
-        },
-      })
+      await  createPage({
+          path: `/${luca}/`,
+          component: abruNews,
+          context: {
+            data: rollot,
+          },
+        })
+      } catch (err) {
+        console.log("received error: ", err.toJSON())
+      }
     })
   })
 }
