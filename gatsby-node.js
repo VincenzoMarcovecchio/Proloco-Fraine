@@ -9,7 +9,7 @@ const strutto = require("./src/components/strutture.json")
 const path = require("path")
 const fetch = require("node-fetch")
 const { createFilePath } = require(`gatsby-source-filesystem`)
-
+const axios = require("axios")
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
   if (node.internal.type === `MarkdownRemark`) {
@@ -216,17 +216,15 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   `).then(res => {
     res.data.links.results.forEach(async kok => {
       let luca = await kok.split("/")[4]
+      let [pokemonData] = await Promise.all([
+        getJSON(`https://sheltered-meadow-66603.herokuapp.com/noti/${luca}`),
+      ])
 
-      let susa = await fetch(
-        `https://sheltered-meadow-66603.herokuapp.com/noti/${luca}`
-      )
-      
-
-      await createPage({
+      createPage({
         path: `/${luca}/`,
         component: abruNews,
         context: {
-          data: susa.results,
+          data: pokemonData,
         },
       })
     })
