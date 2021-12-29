@@ -216,8 +216,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   `).then(res => {
     res.data.links.results.forEach(async kok => {
       let luca = await kok.split("/")[4]
+
       let [pokemonData] = await Promise.all([
-        getJSON(`https://sheltered-meadow-66603.herokuapp.com/noti/${luca}`),
+        axios.get(`https://sheltered-meadow-66603.herokuapp.com/noti/${luca}`),
       ])
 
       createPage({
