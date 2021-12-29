@@ -246,7 +246,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           },
         })
       } catch (err) {
-        console.log("received error: ", err.toJSON())
+        console.log(err)
       }
     })
   })
