@@ -4,7 +4,6 @@ import Container from "@material-ui/core/Container"
 import Typography from "@material-ui/core/Typography"
 
 const Abruzzio = ({ pageContext }) => {
-  let luca = pageContext.data
   console.log(pageContext)
 
   return (

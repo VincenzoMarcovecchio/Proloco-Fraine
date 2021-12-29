@@ -215,7 +215,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     }
   `).then(res => {
     res.data.links.results.forEach(async kok => {
-     
       try {
         let luca = await kok.split("/")[4]
         let rollot = await fetch(
@@ -223,15 +222,13 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           {
             headers: {
               Accept:
-              "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
+                "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
               "Accept-Encoding": "gzip, deflate, br",
-           
             },
           }
         )
-        //b
 
-        await createPage({
+        createPage({
           path: `/${luca}/`,
           component: abruNews,
           context: {
