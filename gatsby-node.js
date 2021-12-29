@@ -217,15 +217,15 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     res.data.links.results.forEach(async kok => {
       let luca = await kok.split("/")[4]
 
-      let [pokemonData] = await Promise.all([
-        axios.get(`https://sheltered-meadow-66603.herokuapp.com/noti/${luca}`),
-      ])
+      let rollot = await axios.get(
+        `https://sheltered-meadow-66603.herokuapp.com/noti/${luca}`
+      )
 
       createPage({
         path: `/${luca}/`,
         component: abruNews,
         context: {
-          data: pokemonData,
+          data: rollot,
         },
       })
     })
