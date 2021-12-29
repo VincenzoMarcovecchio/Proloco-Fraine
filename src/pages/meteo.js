@@ -2,6 +2,7 @@ import React from "react"
 import Container from "@material-ui/core/Container"
 import loadable from "@loadable/component"
 const Meteo =  () => {
+  //kk
   const LazyComponent = loadable(() => import(`../components/meteo/App`))
 
   return (
