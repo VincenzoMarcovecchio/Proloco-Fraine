@@ -222,18 +222,17 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           {
             headers: {
               Accept:
-                "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
-              " Accept-Encoding": "gzip, deflate, br",
-              " Accept-Language": "en-GB,en-US;q=0.9,en;q=0.8",
-              " Host": "sheltered-meadow-66603.herokuapp.com",
-              " Sec-Fetch-Dest": "document",
-              " Sec-Fetch-Mode": "navigate",
-              " Sec-Fetch-Site": "none",
-              " Sec-Fetch-User": "?1",
-              " Sec-GPC": 1,
-              " Upgrade-Insecure-Requests": 1,
-              " User-Agent":
-                "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Mobile Safari/537.36",
+              "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
+              "Accept-Encoding": "gzip, deflate, br",
+              "User-Agent": "axios 0.21.1",
+              "Accept-Language": "en-GB,en-US;q=0.9,en;q=0.8",
+              "Host": "sheltered-meadow-66603.herokuapp.com",
+              "Sec-Fetch-Dest": "document",
+              "Sec-Fetch-Mode": "navigate",
+              "Sec-Fetch-Site": "none",
+              "Sec-Fetch-User": "?1",
+              "Sec-GPC": 1,
+              "Upgrade-Insecure-Requests": 1,
             },
           }
         )
