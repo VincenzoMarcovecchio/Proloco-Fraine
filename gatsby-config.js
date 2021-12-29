@@ -106,6 +106,16 @@ module.exports = {
       resolve: "gatsby-source-custom-api",
       options: {
         url: {
+          development: "https://sheltered-meadow-66603.herokuapp.com/1",
+          production: "https://sheltered-meadow-66603.herokuapp.com/1", // on "gatsby build"
+        },
+        rootKey: "links",
+      },
+    },
+    {
+      resolve: "gatsby-source-custom-api",
+      options: {
+        url: {
           development: "https://pollolo.herokuapp.com/2",
           production: "https://pollolo.herokuapp.com/2", // on "gatsby build"
         },

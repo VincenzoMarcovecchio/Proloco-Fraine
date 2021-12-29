@@ -5,7 +5,7 @@ import Typography from "@material-ui/core/Typography"
 
 const Abruzzio = ({ pageContext }) => {
   let luca = pageContext.data
-  console.log(luca)
+  console.log(pageContext)
 
   return (
     <>

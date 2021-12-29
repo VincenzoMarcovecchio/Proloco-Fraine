@@ -164,57 +164,71 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     })
   })
 
-  const roof = await getJSON(
-    `https://newsdata.io/api/1/news?apikey=pub_27444837fea2a2e2cc240d2e4d3dcab923c4&country=it&page=2`
-  )
+  try {
+    const roof = await getJSON(
+      `https://newsdata.io/api/1/news?apikey=pub_27444837fea2a2e2cc240d2e4d3dcab923c4&country=it&page=2`
+    )
 
-  await roof.results.forEach(async kok => {
-    let luca = await kok.title.replace(/\s+/g, "-").toLowerCase()
-    let fabio = await luca.replace(/\?/g, "-")
-    let lore = await fabio.replace(/\%/g, "-")
+    await roof.results.forEach(async kok => {
+      let luca = await kok.title.replace(/\s+/g, "-").toLowerCase()
+      let fabio = await luca.replace(/\?/g, "-")
+      let lore = await fabio.replace(/\%/g, "-")
 
-    await createPage({
-      path: `/${lore}/`,
-      component: nuoveNews,
-      context: {
-        data: kok,
-      },
+      await createPage({
+        path: `/${lore}/`,
+        component: nuoveNews,
+        context: {
+          data: kok,
+        },
+      })
     })
-  })
+  } catch (e) {
+    console.log(e)
+  }
 
   const cane = await getJSON(
     `https://newsdata.io/api/1/news?apikey=pub_27444837fea2a2e2cc240d2e4d3dcab923c4&country=it&page=3`
   )
+  try {
+    await cane.results.forEach(async kok => {
+      let luca = await kok.title.replace(/\s+/g, "-").toLowerCase()
+      let fabio = await luca.replace(/\?/g, "-")
+      let lore = await fabio.replace(/\%/g, "-")
 
-  await cane.results.forEach(async kok => {
-    let luca = await kok.title.replace(/\s+/g, "-").toLowerCase()
-    let fabio = await luca.replace(/\?/g, "-")
-    let lore = await fabio.replace(/\%/g, "-")
-
-    await createPage({
-      path: `/${lore}/`,
-      component: nuoveNews,
-      context: {
-        data: kok,
-      },
+      await createPage({
+        path: `/${lore}/`,
+        component: nuoveNews,
+        context: {
+          data: kok,
+        },
+      })
     })
-  })
+  } catch (e) {
+    console.log(e)
+  }
 
-  const friz = await fetch(`https://sheltered-meadow-66603.herokuapp.com/1`)
+  await graphql(`
+    {
+      links {
+        results
+      }
+    }
+  `).then(res => {
+    res.data.links.results.forEach(async kok => {
+      let luca = await kok.split("/")[4]
 
-  await friz.results.forEach(async kok => {
-    let luca = await kok.split("/")[4]
-    let susa = await fetch(
-      `https://sheltered-meadow-66603.herokuapp.com/noti/${luca}`
-    )
-    
+      let susa = await fetch(
+        `https://sheltered-meadow-66603.herokuapp.com/noti/${luca}`
+      )
+      let loro = await susa.json()
 
-    await createPage({
-      path: `/${luca}/`,
-      component: abruNews,
-      context: {
-        data: susa,
-      },
+      await createPage({
+        path: `/${luca}/`,
+        component: abruNews,
+        context: {
+          data: loro,
+        },
+      })
     })
   })
 }

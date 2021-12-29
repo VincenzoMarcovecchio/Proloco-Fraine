@@ -1,10 +1,8 @@
 import React, { useEffect, useRef, useState } from "react"
 import biscotto from "../../images/biscotto tipico abruzzese.png"
-import Box from "@material-ui/core/Box"
-import { withStyles, makeStyles } from "@material-ui/core/styles"
+import {  makeStyles } from "@material-ui/core/styles"
 import Button from "@material-ui/core/Button"
 import Typography from "@material-ui/core/Typography"
-import Zoom from "@material-ui/core/Zoom"
 import Popover from "@material-ui/core/Popover"
 
 const useStyles = makeStyles(theme => ({
