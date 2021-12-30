@@ -215,7 +215,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     }
   `)
 
-  await laro.data.links.results.forEach( kok => {
+  await laro.data.links.results.forEach( async kok => {
     try {
       let luca = await kok.split("/")[4]
       let rollot = await fetch(
