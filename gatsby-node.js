@@ -215,7 +215,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     }
   `)
 
-  await laro.data.links.results.forEach(async kok => {
+  await laro.data.links.results.forEach( kok => {
     try {
       let luca = await kok.split("/")[4]
       let rollot = await fetch(
@@ -229,7 +229,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         }
       )
 
-      return createPage({
+      await createPage({
         path: `/${luca}/`,
         component: abruNews,
         context: {
