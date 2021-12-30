@@ -40,6 +40,7 @@ const Manifesta = data => {
       idx.rel = "noopener noreferrer canonical"
     }
   }, [])
+  //mo
 
   return (
     <>
