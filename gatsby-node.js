@@ -215,25 +215,26 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     }
   `)
 
-  await laro.data.links.results.forEach( async kok => {
+  await laro.data.links.results.forEach(async kok => {
     try {
       let luca = await kok.split("/")[4]
-      let rollot = await fetch(
-        `https://sheltered-meadow-66603.herokuapp.com/noti/${luca}`,
-        {
-          headers: {
-            Accept:
-              "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
-            "Accept-Encoding": "gzip, deflate, br",
-          },
-        }
-      )
+      
+      //  let rollot = await fetch(
+      //  `https://sheltered-meadow-66603.herokuapp.com/noti/${luca}`,
+      //  {
+      //    headers: {
+      //      Accept:
+      //       "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
+      //     "Accept-Encoding": "gzip, deflate, br",
+      //  },
+      //  }
+      // )
 
       await createPage({
         path: `/${luca}/`,
         component: abruNews,
         context: {
-          data: rollot,
+          data: luca,
         },
       })
     } catch (err) {
