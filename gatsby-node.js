@@ -214,6 +214,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       }
     }
   `)
+  //ciao
+  
   try {
     await laro.data.links.results.forEach(async kok => {
       try {
@@ -223,6 +225,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           `https://sheltered-meadow-66603.herokuapp.com/noti/${luca}`
         )
         let gigi = await rollot.json()
+
         await createPage({
           path: `/${luca}`,
           component: abruNews,
