@@ -207,16 +207,16 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     console.log(e)
   }
 
-  const laro = await graphql(`
-    {
-      links {
-        results
-      }
-    }
-  `)
   //ciao
-  
+
   try {
+    const laro = await graphql(`
+      {
+        links {
+          results
+        }
+      }
+    `)
     await laro.data.links.results.forEach(async kok => {
       try {
         let luca = await kok.split("/")[4]
@@ -224,7 +224,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         let rollot = await fetch(
           `https://sheltered-meadow-66603.herokuapp.com/noti/${luca}`
         )
-        let gigi = await rollot.text()
+        let gigi = await rollot.json()
 
         await createPage({
           path: `/${luca}`,
