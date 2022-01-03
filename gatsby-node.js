@@ -222,12 +222,12 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       let rollot = await fetch(
         `https://sheltered-meadow-66603.herokuapp.com/noti/${luca}`
       )
-
+      let gigi = await rollot.json()
       await createPage({
         path: `/${luca}/`,
         component: abruNews,
         context: {
-          data: rollot.json(),
+          data: gigi,
         },
       })
     } catch (err) {
