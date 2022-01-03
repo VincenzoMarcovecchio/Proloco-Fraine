@@ -214,24 +214,27 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       }
     }
   `)
+  try {
+    await laro.data.links.results.forEach(async kok => {
+      try {
+        let luca = await kok.split("/")[4]
 
-  await laro.data.links.results.forEach(async kok => {
-    try {
-      let luca = await kok.split("/")[4]
-
-      let rollot = await fetch(
-        `https://sheltered-meadow-66603.herokuapp.com/noti/${luca}`
-      )
-      let gigi = await rollot.json()
-      await createPage({
-        path: `/${luca}/`,
-        component: abruNews,
-        context: {
-          data: gigi,
-        },
-      })
-    } catch (err) {
-      console.log(err)
-    }
-  })
+        let rollot = await fetch(
+          `https://sheltered-meadow-66603.herokuapp.com/noti/${luca}`
+        )
+        let gigi = await rollot.json()
+        await createPage({
+          path: `/${luca}`,
+          component: abruNews,
+          context: {
+            data: gigi,
+          },
+        })
+      } catch (err) {
+        console.log(err)
+      }
+    })
+  } catch (error) {
+    console.log(error)
+  }
 }
