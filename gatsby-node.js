@@ -224,7 +224,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         let rollot = await fetch(
           `https://sheltered-meadow-66603.herokuapp.com/noti/${luca}`
         )
-        let gigi = await JSON.stringify(rollot)
+        let gigi = await JSON.stringify(rollot.json())
 
         await createPage({
           path: `/${luca}`,
