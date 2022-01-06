@@ -3,17 +3,15 @@ import Container from "@material-ui/core/Container"
 import { GatsbySeo, ArticleJsonLd } from "gatsby-plugin-next-seo"
 import { graphql } from "gatsby"
 
-const Noti = ({ pageContext, data,duto }) => {
+const Noti = ({ pageContext }) => {
+  
   console.log(pageContext.duto.title)
+
   return (
     <>
       <GatsbySeo
-        title={
-          pageContext.duto.title
-        }
-        description={
-          pageContext.duto.description
-        }
+        title={pageContext.duto.title}
+        description={pageContext.duto.description}
         canonical={`https://www.prolocofraine.org/${pageContext.rela}`}
         openGraph={{
           url: `https://www.prolocofraine.org/${pageContext.rela}`,
@@ -23,22 +21,14 @@ const Noti = ({ pageContext, data,duto }) => {
             modifiedTime: pageContext.duto.publishedAt,
             expirationTime: pageContext.duto.publishedAt,
             section: "Section II",
-            authors: [
-              pageContext.duto.author,
-            ],
+            authors: [pageContext.duto.author],
             tags: ["News", "Abruzzo", "Cronaca"],
           },
-          title: `${
-            pageContext.duto.title
-          }`,
-          description: `${
-            pageContext.duto.description 
-          }`,
+          title: `${pageContext.duto.title}`,
+          description: `${pageContext.duto.description}`,
           images: [
             {
-              url: `${
-                pageContext.duto.urlToImage
-              }`,
+              url: `${pageContext.duto.urlToImage}`,
               width: 800,
               height: 600,
               alt: "proloco fraine",
@@ -55,53 +45,26 @@ const Noti = ({ pageContext, data,duto }) => {
 
       <Container style={{ marginTop: "3rem" }} maxWidth="sm">
         <article className="blog-post">
-          {data.articles.articles.filter(
-            lio => lio.description == pageContext.data
-          )[0].urlToImage && (
+          {pageContext.duto.title && (
             <img
               style={{ width: "100%", height: "65vh", objectFit: "cover" }}
-              alt={
-                data.articles.articles.filter(
-                  lio => lio.description == pageContext.data
-                )[0].title
-              }
-              src={
-                data.articles.articles.filter(
-                  lio => lio.description == pageContext.data
-                )[0].urlToImage
-              }
+              alt={pageContext.duto.title}
+              src={pageContext.duto.urlToImage}
             />
           )}
           <h1 style={{ margin: "2rem auto 2rem 0" }}>
-            {
-              data.articles.articles.filter(
-                lio => lio.description == pageContext.data
-              )[0].title
-            }
+            {pageContext.duto.title}
           </h1>
           <div style={{ marginBottom: "2rem" }}>
             <span>
-              <b>Autore:</b>&nbsp;{" "}
-              {
-                data.articles.articles.filter(
-                  lio => lio.description == pageContext.data
-                )[0].author
-              }
+              <b>Autore:</b>&nbsp; {pageContext.duto.author}
             </span>
           </div>
-          <time
-            dateTime={
-              data.articles.articles.filter(
-                lio => lio.description == pageContext.data
-              )[0].publishedAt
-            }
-          ></time>
+          <time dateTime={pageContext.duto.publishedAt}></time>
           <div
             className="blog-post-content"
             dangerouslySetInnerHTML={{
-              __html: data.articles.articles.filter(
-                lio => lio.description == pageContext.data
-              )[0].content,
+              __html: pageContext.duto.content,
             }}
           />
         </article>
@@ -113,18 +76,3 @@ const Noti = ({ pageContext, data,duto }) => {
 }
 
 export default Noti
-export const pageQuery = graphql`
-  query ciao {
-    articles {
-      articles {
-        author
-        title
-        description
-        url
-        urlToImage
-        publishedAt
-        content
-      }
-    }
-  }
-`
