@@ -9,7 +9,12 @@ const Abruzzio = ({ pageContext }) => {
   return (
     <>
       <Container style={{ marginTop: "3rem" }} maxWidth="sm">
-        <article className="blog-post">ciao</article>
+        <article className="blog-post">
+        <div
+            className="blog-post-content"
+            dangerouslySetInnerHTML={{ __html: pageContext.data.results.title }}
+          />
+        </article>
       </Container>
     </>
   )
