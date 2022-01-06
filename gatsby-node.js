@@ -217,31 +217,27 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     }
   `)
 
-  let collo = []
-  await laro.data.links.results.forEach(async kok => {
+  for (let i = 0; i < laro.data.links.results.length; i++) {
     try {
-      let luca = await kok.split("/")[4]
+      let luca = await laro.data.links.results[i].split("/")[4]
 
       let rollot = await fetch(
         `https://sheltered-meadow-66603.herokuapp.com/noti/${luca}`
       )
+
       let gigi = await rollot.text()
-      const data = JSON.parse(gigi);
-      collo.push(data)
+
+      const son = await JSON.parse(gigi)
+
+      await createPage({
+        path: `/${luca}`,
+        component: abruNews,
+        context: {
+          data: son,
+        },
+      })
     } catch (err) {
       console.log(err)
     }
-  })
-
-  collo.forEach(da => {
-    console.log(da)
-  })
-
-  // await createPage({
-  //   path: `/${luca}`,
-  //   component: abruNews,
-  //   context: {
-  //     data: gori,
-  //   },
-  // })
+  }
 }
