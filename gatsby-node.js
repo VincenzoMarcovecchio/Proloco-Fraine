@@ -212,37 +212,37 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     console.log(e)
   }
 
-  const larot = await graphql(`
-    {
-      secondo {
-        results
-      }
-    }
-  `)
+  // const larot = await graphql(`
+  //   {
+  //     secondo {
+  //       results
+  //     }
+  //   }
+  // `)
 
-  for (let i = 0; i < larot.data.secondo.results.length; i++) {
-    try {
-      let figa = await larot.data.secondo.results[i].split("/")[4]
+  // for (let i = 0; i < larot.data.secondo.results.length; i++) {
+  //   try {
+  //     let figa = await larot.data.secondo.results[i].split("/")[4]
 
-      let cazzo = await fetch(
-        `https://sheltered-meadow-66603.herokuapp.com/noti/${figa}`
-      )
+  //     let cazzo = await fetch(
+  //       `https://sheltered-meadow-66603.herokuapp.com/noti/${figa}`
+  //     )
 
-      let culo = await cazzo.text()
+  //     let culo = await cazzo.text()
 
-      const pino = await JSON.parse(culo)
+  //     const pino = await JSON.parse(culo)
 
-      await createPage({
-        path: `/${figa}`,
-        component: abruNews,
-        context: {
-          data: pino,
-        },
-      })
-    } catch (err) {
-      console.log(err)
-    }
-  }
+  //     await createPage({
+  //       path: `/${figa}`,
+  //       component: abruNews,
+  //       context: {
+  //         data: pino,
+  //       },
+  //     })
+  //   } catch (err) {
+  //     console.log(err)
+  //   }
+  // }
 
   const laro = await graphql(`
     {
