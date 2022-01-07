@@ -212,49 +212,53 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     console.log(e)
   }
 
-  // const larot = await graphql(`
-  //   {
-  //     secondo {
-  //       results
-  //     }
-  //   }
-  // `)
-
-  // for (let i = 0; i < larot.data.secondo.results.length; i++) {
-  //   try {
-  //     let figa = await larot.data.secondo.results[i].split("/")[4]
-
-  //     let cazzo = await fetch(
-  //       `https://sheltered-meadow-66603.herokuapp.com/noti/${figa}`
-  //     )
-
-  //     let culo = await cazzo.text()
-
-  //     const pino = await JSON.parse(culo)
-
-  //     await createPage({
-  //       path: `/${figa}`,
-  //       component: abruNews,
-  //       context: {
-  //         data: pino,
-  //       },
-  //     })
-  //   } catch (err) {
-  //     console.log(err)
-  //   }
-  // }
-
-  const laro = await graphql(`
+  const larot = await graphql(`
     {
-      links {
-        results
+      secondo {
+        results {
+          links
+        }
       }
     }
   `)
 
-  for (let i = 0; i < laro.data.links.results.length; i++) {
+  for (let i = 0; i < larot.data.secondo.results.length; i++) {
     try {
-      let luca = await laro.data.links.results[i].split("/")[4]
+      let figa = await larot.data.secondo.results.links[i].split("/")[4]
+
+      let cazzo = await fetch(
+        `https://sheltered-meadow-66603.herokuapp.com/noti/${figa}`
+      )
+
+      let culo = await cazzo.text()
+
+      const pino = await JSON.parse(culo)
+
+      await createPage({
+        path: `/${figa}`,
+        component: abruNews,
+        context: {
+          data: pino,
+        },
+      })
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+  const laro = await graphql(`
+    {
+      links {
+        results {
+          links
+        }
+      }
+    }
+  `)
+
+  for (let i = 0; i < laro.data.links.results.links.length; i++) {
+    try {
+      let luca = await laro.data.links.results.links[i].split("/")[4]
 
       let rollot = await fetch(
         `https://sheltered-meadow-66603.herokuapp.com/noti/${luca}`
