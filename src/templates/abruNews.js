@@ -10,7 +10,7 @@ const Abruzzio = ({ pageContext }) => {
   ).innerText
   console.log(title)
   }
-  useEffect(() => {
+  React.useEffect(() => {
     var divs = document.querySelectorAll("img")
 
     document.querySelectorAll(".group-right").style.css = "display: none"
