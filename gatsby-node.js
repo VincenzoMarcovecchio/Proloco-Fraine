@@ -216,7 +216,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   for (let i = 0; i < larot.data.linksSecondo.results.length; i++) {
     try {
-      let luca = await larot.data.links.results[i].split("/")[4]
+      let luca = await larot.data.linksSecondo.results[i].split("/")[4]
 
       let rollot = await fetch(
         `https://sheltered-meadow-66603.herokuapp.com/noti/${luca}`
