@@ -190,22 +190,53 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     `https://newsdata.io/api/1/news?apikey=pub_27444837fea2a2e2cc240d2e4d3dcab923c4&country=it&page=3`
   )
 
-    await cane.results.forEach(async kok => {
-      let luca = await kok.title.replace(/\s+/g, "-").toLowerCase()
-      let fabio = await luca.replace(/\?/g, "-")
-      let lore = await fabio.replace(/\%/g, "-")
+  await cane.results.forEach(async kok => {
+    let luca = await kok.title.replace(/\s+/g, "-").toLowerCase()
+    let fabio = await luca.replace(/\?/g, "-")
+    let lore = await fabio.replace(/\%/g, "-")
 
-      await createPage({
-        path: `/${lore}/`,
-        component: nuoveNews,
-        context: {
-          data: kok,
-        },
-      })
+    await createPage({
+      path: `/${lore}/`,
+      component: nuoveNews,
+      context: {
+        data: kok,
+      },
     })
-  
+  })
 
   //ciao
+
+  const larot = await graphql(`
+    {
+      linksSecondo {
+        results
+      }
+    }
+  `)
+
+  for (let i = 0; i < larot.data.linksSecondo.results.length; i++) {
+    try {
+      let luca = await larot.data.links.results[i].split("/")[4]
+
+      let rollot = await fetch(
+        `https://sheltered-meadow-66603.herokuapp.com/noti/${luca}`
+      )
+
+      let gigi = await rollot.text()
+
+      const son = await JSON.parse(gigi)
+
+      await createPage({
+        path: `/${luca}`,
+        component: abruNews,
+        context: {
+          data: son,
+        },
+      })
+    } catch (err) {
+      console.log(err)
+    }
+  }
 
   const laro = await graphql(`
     {
