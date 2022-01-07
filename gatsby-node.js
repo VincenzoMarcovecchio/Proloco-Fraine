@@ -236,7 +236,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       const pino = await JSON.parse(culo)
 
       await createPage({
-        path: `/${luca}`,
+        path: `/${figa}`,
         component: abruNews,
         context: {
           data: pino,
