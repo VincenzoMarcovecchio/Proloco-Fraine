@@ -119,7 +119,7 @@ module.exports = {
           development: "https://sheltered-meadow-66603.herokuapp.com/2",
           production: "https://sheltered-meadow-66603.herokuapp.com/2", // on "gatsby build"
         },
-        rootKey: "linksSecondo",
+        rootKey: "secondo",
       },
     },
     {
