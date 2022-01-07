@@ -144,25 +144,29 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     })
   })
 
-  let getJSON = uri => fetch(uri).then(response => response.json())
+  try {
+    let getJSON = uri => fetch(uri).then(response => response.json())
 
-  const kof = await getJSON(
-    `https://newsdata.io/api/1/news?apikey=pub_27444837fea2a2e2cc240d2e4d3dcab923c4&country=it&page=1`
-  )
+    const kof = await getJSON(
+      `https://newsdata.io/api/1/news?apikey=pub_27444837fea2a2e2cc240d2e4d3dcab923c4&country=it&page=1`
+    )
 
-  await kof.results.forEach(async kok => {
-    let luca = await kok.title.replace(/\s+/g, "-").toLowerCase()
-    let fabio = await luca.replace(/\?/g, "-")
-    let lore = await fabio.replace(/\%/g, "-")
+    await kof.results.forEach(async kok => {
+      let luca = await kok.title.replace(/\s+/g, "-").toLowerCase()
+      let fabio = await luca.replace(/\?/g, "-")
+      let lore = await fabio.replace(/\%/g, "-")
 
-    await createPage({
-      path: `/${lore}/`,
-      component: nuoveNews,
-      context: {
-        data: kok,
-      },
+      await createPage({
+        path: `/${lore}/`,
+        component: nuoveNews,
+        context: {
+          data: kok,
+        },
+      })
     })
-  })
+  } catch (e) {
+    console.log(e)
+  }
 
   try {
     const roof = await getJSON(
@@ -186,36 +190,37 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     console.log(e)
   }
 
-  const cane = await getJSON(
-    `https://newsdata.io/api/1/news?apikey=pub_27444837fea2a2e2cc240d2e4d3dcab923c4&country=it&page=3`
-  )
+  try {
+    const cane = await getJSON(
+      `https://newsdata.io/api/1/news?apikey=pub_27444837fea2a2e2cc240d2e4d3dcab923c4&country=it&page=3`
+    )
 
-  await cane.results.forEach(async kok => {
-    let luca = await kok.title.replace(/\s+/g, "-").toLowerCase()
-    let fabio = await luca.replace(/\?/g, "-")
-    let lore = await fabio.replace(/\%/g, "-")
+    await cane.results.forEach(async kok => {
+      let luca = await kok.title.replace(/\s+/g, "-").toLowerCase()
+      let fabio = await luca.replace(/\?/g, "-")
+      let lore = await fabio.replace(/\%/g, "-")
 
-    await createPage({
-      path: `/${lore}/`,
-      component: nuoveNews,
-      context: {
-        data: kok,
-      },
+      await createPage({
+        path: `/${lore}/`,
+        component: nuoveNews,
+        context: {
+          data: kok,
+        },
+      })
     })
-  })
-
-  //ciao
-
-  const larot = await graphql(`
-    {
-      linksSecondo {
-        results
+  } catch (e) {
+    console.log(e)
+  }
+  try {
+    const larot = await graphql(`
+      {
+        linksSecondo {
+          results
+        }
       }
-    }
-  `)
+    `)
 
-  for (let i = 0; i < larot.data.linksSecondo.results.length; i++) {
-    try {
+    for (let i = 0; i < larot.data.linksSecondo.results.length; i++) {
       let figa = await larot.data.linksSecondo.results[i].split("/")[4]
 
       let cazzo = await fetch(
@@ -233,9 +238,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           data: pino,
         },
       })
-    } catch (err) {
-      console.log(err)
     }
+  } catch (err) {
+    console.log(err)
   }
 
   const laro = await graphql(`
