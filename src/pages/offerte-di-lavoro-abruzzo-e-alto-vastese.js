@@ -3,7 +3,6 @@ import { graphql } from "gatsby"
 import Container from "@material-ui/core/Container"
 import { GatsbySeo } from "gatsby-plugin-next-seo"
 const Lavoro = () => {
-
   useEffect(() => {
     var divs = document.querySelectorAll(".tapItem")
 
@@ -20,21 +19,18 @@ const Lavoro = () => {
         description="Agenzia locale per il locale"
         canonical="https://www.prolocofraine.org/offerte-di-lavoro-abruzzo-e-alto-vastese"
         openGraph={{
-          url:
-            "https://www.prolocofraine.org/offerte-di-lavoro-abruzzo-e-alto-vastese",
+          url: "https://www.prolocofraine.org/offerte-di-lavoro-abruzzo-e-alto-vastese",
           title: "Offerte Di Lavoro",
           description: "Agenzia locale per il locale",
           images: [
             {
-              url:
-                "https://images.unsplash.com/photo-1577401159468-3bbc7ee440b5?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8am9iJTIwc2VhcmNofGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60",
+              url: "https://images.unsplash.com/photo-1577401159468-3bbc7ee440b5?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8am9iJTIwc2VhcmNofGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60",
               width: 800,
               height: 600,
               alt: "proloco fraine",
             },
             {
-              url:
-                "https://images.unsplash.com/photo-1577401159468-3bbc7ee440b5?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8am9iJTIwc2VhcmNofGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60",
+              url: "https://images.unsplash.com/photo-1577401159468-3bbc7ee440b5?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8am9iJTIwc2VhcmNofGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60",
               width: 900,
               height: 800,
               alt: "proloco fraine",
@@ -65,7 +61,7 @@ const Lavoro = () => {
           ></div>
         ) : (
           "caricamento in corso"
-        )} 
+        )}
       </Container>
     </>
   )

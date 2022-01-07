@@ -9,7 +9,6 @@ const strutto = require("./src/components/strutture.json")
 const path = require("path")
 const fetch = require("node-fetch")
 const { createFilePath } = require(`gatsby-source-filesystem`)
-const axios = require("axios").default
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
   if (node.internal.type === `MarkdownRemark`) {
@@ -25,12 +24,9 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
   const blogPostTemplate = require.resolve(`./src/templates/blogTemplate.js`)
-  const categoryPage = path.resolve("src/templates/category.js")
-  const leggiPage = path.resolve("src/templates/decreti-legge.js")
   const notiPage = path.resolve("src/templates/noti-page.js")
   const lastTemplate = path.resolve("src/templates/lastTemplate.js")
   const struttoTemplate = path.resolve("src/templates/struttoTemplate.js")
-  const squoTemplate = path.resolve("src/templates/squoTemplate.js")
   const abruNews = path.resolve("src/templates/abruNews.js")
   const nuoveNews = path.resolve("src/templates/nuoveNews.js")
 
@@ -169,7 +165,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   }
 
   try {
-        let getJSON = uri => fetch(uri).then(response => response.json())
+    let getJSON = uri => fetch(uri).then(response => response.json())
 
     const roof = await getJSON(
       `https://newsdata.io/api/1/news?apikey=pub_27444837fea2a2e2cc240d2e4d3dcab923c4&country=it&page=2`
@@ -215,16 +211,17 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   } catch (e) {
     console.log(e)
   }
-  try {
-    const larot = await graphql(`
-      {
-        linksSecondo {
-          results
-        }
-      }
-    `)
 
-    for (let i = 0; i < larot.data.linksSecondo.results.length; i++) {
+  const larot = await graphql(`
+    {
+      linksSecondo {
+        results
+      }
+    }
+  `)
+
+  for (let i = 0; i < larot.data.linksSecondo.results.length; i++) {
+    try {
       let figa = await larot.data.linksSecondo.results[i].split("/")[4]
 
       let cazzo = await fetch(
@@ -242,9 +239,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           data: pino,
         },
       })
+    } catch (err) {
+      console.log(err)
     }
-  } catch (err) {
-    console.log(err)
   }
 
   const laro = await graphql(`

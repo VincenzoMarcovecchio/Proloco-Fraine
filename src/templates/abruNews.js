@@ -1,7 +1,6 @@
 import React from "react"
 import { GatsbySeo } from "gatsby-plugin-next-seo"
 import Container from "@material-ui/core/Container"
-import Typography from "@material-ui/core/Typography"
 
 const Abruzzio = ({ pageContext }) => {
   console.log(pageContext)
@@ -20,7 +19,6 @@ const Abruzzio = ({ pageContext }) => {
       let sorca = element.src
       let gigi = sorca.replace(window.location.origin, "")
       element.src = `https://abruzzoturismo.it${gigi}`
-      idx.href = `https://abruzzoturismo`
     }
   })
   return (
