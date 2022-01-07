@@ -5,14 +5,14 @@ import { GatsbySeo } from "gatsby-plugin-next-seo"
 //ciao
 const Lavoro = () => {
 
-  useEffect(() => {
-    var divs = document.querySelectorAll(".tapItem")
+//   useEffect(() => {
+//     var divs = document.querySelectorAll(".tapItem")
 
-    for (let idx of divs) {
-      idx.href =
-        "https://it.indeed.com/jobs?q=&l=Fraine%2C+Abruzzo&radius=50&from=serpso&from=mobRdr&utm_source=%2Fm%2F&utm_medium=redir&utm_campaign=dt"
-    }
-  }, [])
+//     for (let idx of divs) {
+//       idx.href =
+//         "https://it.indeed.com/jobs?q=&l=Fraine%2C+Abruzzo&radius=50&from=serpso&from=mobRdr&utm_source=%2Fm%2F&utm_medium=redir&utm_campaign=dt"
+//     }
+//   }, [])
 
   return (
     <>
@@ -60,13 +60,13 @@ const Lavoro = () => {
       <Container style={{ marginTop: "3rem" }} maxWidth="sm">
         <h1>Offerte di lavoro ricerca avanzata ;) </h1>
         <br />
-         {data.jobs.results.title !== null ? (
+        {/* {data.jobs.results.title !== null ? (
           <div
             dangerouslySetInnerHTML={{ __html: data.jobs.results.title }}
           ></div>
         ) : (
           "caricamento in corso"
-        )} 
+        )} */}
       </Container>
     </>
   )
