@@ -189,7 +189,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const cane = await getJSON(
     `https://newsdata.io/api/1/news?apikey=pub_27444837fea2a2e2cc240d2e4d3dcab923c4&country=it&page=3`
   )
-  try {
+
     await cane.results.forEach(async kok => {
       let luca = await kok.title.replace(/\s+/g, "-").toLowerCase()
       let fabio = await luca.replace(/\?/g, "-")
@@ -203,9 +203,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         },
       })
     })
-  } catch (e) {
-    console.log(e)
-  }
+  
 
   //ciao
 
