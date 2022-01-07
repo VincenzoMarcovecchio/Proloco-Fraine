@@ -2,10 +2,11 @@ import React from "react"
 import { GatsbySeo } from "gatsby-plugin-next-seo"
 import Container from "@material-ui/core/Container"
 import Typography from "@material-ui/core/Typography"
+import { ClickAwayListener } from "@material-ui/core"
 
-const Bolla =  ({ pageContext }) => {
-  let luca =  pageContext.data.title.replace(/\s+/g, "-").toLowerCase()
-  let vgv =  luca.replace(/\?/g, "-")
+const Bolla = async ({ pageContext }) => {
+  let luca =  await pageContext.data.title.replace(/\s+/g, "-").toLowerCase()
+  let vgv = await luca.replace(/\?/g, "-")
 
   return (
     <>
