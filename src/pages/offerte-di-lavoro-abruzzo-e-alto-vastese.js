@@ -71,7 +71,7 @@ export default Lavoro
 
 export const pageQuery = graphql`
   {
-    jobs {
+    nora {
       results {
         title
       }

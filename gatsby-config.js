@@ -88,7 +88,7 @@ module.exports = {
           development: "https://jobbio99.herokuapp.com/",
           production: "https://jobbio99.herokuapp.com/",
         },
-        rootKey: "jobs",
+        rootKey: "nora",
       },
     },
 
