@@ -4,11 +4,12 @@ import Container from "@material-ui/core/Container"
 
 const Abruzzio = ({ pageContext }) => {
   console.log(pageContext)
-
+  if (typeof window !== `undefined`) {
   var title = document.querySelectorAll(
     ".field--name-node-title > h2"
   ).innerText
   console.log(title)
+  }
   useEffect(() => {
     var divs = document.querySelectorAll("img")
 
