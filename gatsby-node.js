@@ -216,21 +216,21 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   for (let i = 0; i < larot.data.linksSecondo.results.length; i++) {
     try {
-      let luca = await larot.data.linksSecondo.results[i].split("/")[4]
+      let figa = await larot.data.linksSecondo.results[i].split("/")[4]
 
-      let rollot = await fetch(
-        `https://sheltered-meadow-66603.herokuapp.com/noti/${luca}`
+      let cazzo = await fetch(
+        `https://sheltered-meadow-66603.herokuapp.com/noti/${figa}`
       )
 
-      let gigi = await rollot.text()
+      let culo = await cazzo.text()
 
-      const son = await JSON.parse(gigi)
+      const pino = await JSON.parse(culo)
 
       await createPage({
         path: `/${luca}`,
         component: abruNews,
         context: {
-          data: son,
+          data: pino,
         },
       })
     } catch (err) {
