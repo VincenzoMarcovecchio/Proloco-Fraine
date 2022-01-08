@@ -81,16 +81,16 @@ module.exports = {
       },
     },
 
-    // {
-    //   resolve: "gatsby-source-custom-api",
-    //   options: {
-    //     url: {
-    //       development: "https://jobbio99.herokuapp.com/",
-    //       production: "https://jobbio99.herokuapp.com/",
-    //     },
-    //     rootKey: "nora",
-    //   },
-    // },
+    {
+      resolve: "gatsby-source-custom-api",
+      options: {
+        url: {
+          development: "https://jobbio99.herokuapp.com/",
+          production: "https://jobbio99.herokuapp.com/",
+        },
+        rootKey: "nora",
+      },
+    },
 
     {
       resolve: "gatsby-source-custom-api",
@@ -100,6 +100,19 @@ module.exports = {
           production: "https://leggi98.herokuapp.com/", // on "gatsby build"
         },
         rootKey: "leggi",
+      },
+    },
+
+    {
+      resolve: "gatsby-source-custom-api",
+      options: {
+        url: {
+          development:
+            "https://newsdata.io/api/1/news?apikey=pub_27444837fea2a2e2cc240d2e4d3dcab923c4&q=abruzzo",
+          production:
+            "https://newsdata.io/api/1/news?apikey=pub_27444837fea2a2e2cc240d2e4d3dcab923c4&q=abruzzo", // on "gatsby build"
+        },
+        rootKey: "news",
       },
     },
     {

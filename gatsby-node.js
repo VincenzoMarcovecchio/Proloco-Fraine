@@ -83,7 +83,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   resulto.data.articles.articles.forEach(dato => {
     const urla = new URL(dato.url)
-    const cazzo = urla.toString().substring(urla.origin.length)
+    const cazzo = urla.toString().substring(29)
     const rel = cazzo.replace("#", "").replace("?", "")
 
     createPage({
@@ -127,9 +127,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   await strutto.forEach(async dis => {
     let luca = await dis[Object.keys(dis)[2]]
+    let franco = luca.toLowerCase()
+    let giggio = franco.replace(/\s+/g, "-")
 
     createPage({
-      path: `/${luca}/`,
+      path: `/${giggio}/`,
       component: struttoTemplate,
       context: {
         data: dis,
@@ -137,36 +139,38 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     })
   })
 
-  // try {
-  //   let getJSON = uri => fetch(uri).then(response => response.json())
+  try {
+    const nova = await graphql(`
+      {
+        news {
+          results
+        }
+      }
+    `)
 
-  //   const kof = await getJSON(
-  //     `https://newsdata.io/api/1/news?apikey=pub_27444837fea2a2e2cc240d2e4d3dcab923c4&q=abruzzo`
-  //   )
+    await nova.results.forEach(async kok => {
+      let luca = await kok.title.replace(/\s+/g, "-")
+      let fabio = await luca.replace(/\?/g, "-")
+      let lore = await fabio.replace(/\%/g, "-")
+      let fern = await lore.replace(/\“/g, "-")
+      let koka = await fern.replace(/\”/g, "-")
+      let popo = await koka.replace(/\'/g, "-")
+      let holo = await popo.replace(/\,/g, "-")
+      let fuffo = await holo.replace(/\:/g, "-")
+      let fuffa = await fuffo.replace(/\’/g, "-")
+      let fuffat = await fuffa.replace(/\./g, "-")
 
-  //   await kof.results.forEach(async kok => {
-  //     let luca = await kok.title.replace(/\s+/g, "-").toLowerCase()
-  //     let fabio = await luca.replace(/\?/g, "-")
-  //     let lore = await fabio.replace(/\%/g, "-")
-  //     let fern = await lore.replace(/\“/g, "-")
-  //     let koka = await fern.replace(/\”/g, "-")
-  //     let popo = await koka.replace(/\'/g, "-")
-  //     let holo = await popo.replace(/\,/g, "-")
-  //     let fuffo = await holo.replace(/\:/g, "-")
-  //     let fuffa = await fuffo.replace(/\’/g, "-")
-  //     let fuffat = await fuffa.replace(/\./g, "-")
-
-  //     await createPage({
-  //       path: `/${fuffat}/`,
-  //       component: nuoveNews,
-  //       context: {
-  //         data: kok,
-  //       },
-  //     })
-  //   })
-  // } catch (e) {
-  //   console.log(e)
-  // }
+      await createPage({
+        path: `/${fuffat}/`,
+        component: nuoveNews,
+        context: {
+          data: kok,
+        },
+      })
+    })
+  } catch (e) {
+    console.log(e)
+  }
 
   // try {
   //   let getJSON = uri => fetch(uri).then(response => response.json())

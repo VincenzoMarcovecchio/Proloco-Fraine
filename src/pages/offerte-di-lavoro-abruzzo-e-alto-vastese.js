@@ -56,13 +56,13 @@ const Lavoro = () => {
       <Container style={{ marginTop: "3rem" }} maxWidth="sm">
         <h1>Offerte di lavoro ricerca avanzata ;) </h1>
         <br />
-        {/* {data.jobs.results.title !== null ? (
+        {data.jobs.results.title !== null ? (
           <div
             dangerouslySetInnerHTML={{ __html: data.jobs.results.title }}
           ></div>
         ) : (
           "caricamento in corso"
-        )} */}
+        )}
       </Container>
     </>
   )
@@ -70,12 +70,12 @@ const Lavoro = () => {
 
 export default Lavoro
 
-// export const pageQuery = graphql`
-//   {
-//     nora {
-//       results {
-//         title
-//       }
-//     }
-//   }
-// `
+export const pageQuery = graphql`
+  {
+    nora {
+      results {
+        title
+      }
+    }
+  }
+`
