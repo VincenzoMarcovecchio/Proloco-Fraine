@@ -143,7 +143,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     const nova = await graphql(`
       {
         news {
-          results
+          results {
+            ...
+          }
         }
       }
     `)
