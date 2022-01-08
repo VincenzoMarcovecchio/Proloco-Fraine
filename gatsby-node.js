@@ -81,8 +81,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     })
   })
 
-  resulto.data.articles.articles.forEach(({ description, url }, dato) => {
-    const urla = new URL(url)
+  resulto.data.articles.articles.forEach(dato => {
+    const urla = new URL(dato.url)
     const rel = urla
       .toString()
       .substring(urla.origin.length)
@@ -94,7 +94,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       component: notiPage,
       context: {
         rela: rel,
-        data: description,
+        data: dato.description,
         duto: dato,
       },
     })
@@ -202,7 +202,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   //   console.log(e)
   // }
 
-  
   // try {
   //   let getJSON = uri => fetch(uri).then(response => response.json())
 
