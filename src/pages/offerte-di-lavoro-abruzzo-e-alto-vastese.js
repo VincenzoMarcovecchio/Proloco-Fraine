@@ -1,5 +1,5 @@
 import React, { useEffect } from "react"
-import { graphql } from "gatsby"
+import { graphql, StaticQuery } from "gatsby"
 import Container from "@material-ui/core/Container"
 import { GatsbySeo } from "gatsby-plugin-next-seo"
 
@@ -56,7 +56,7 @@ const Lavoro = ({ data }) => {
       <Container style={{ marginTop: "3rem" }} maxWidth="sm">
         <h1>Offerte di lavoro </h1>
         <br />
-        {data.nora.results.title !== null ? (
+        {data.nora.results.title !== undefined ? (
           <div
             dangerouslySetInnerHTML={{ __html: data.nora.results.title }}
           ></div>
@@ -70,7 +70,7 @@ const Lavoro = ({ data }) => {
 
 export default Lavoro
 
-export const pageQuery = graphql`
+export const pageQuery = StaticQuery`
   {
     nora {
       results {
