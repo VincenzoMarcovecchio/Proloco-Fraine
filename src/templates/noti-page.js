@@ -9,7 +9,7 @@ const Noti = ({ pageContext }) => {
 
   return (
     <>
-      {/* <GatsbySeo
+       <GatsbySeo
         title={pageContext.duto.title}
         description={pageContext.duto.description}
         canonical={`https://www.prolocofraine.org/${pageContext.rela}`}
@@ -41,7 +41,7 @@ const Noti = ({ pageContext }) => {
           site: "Proloco Fraine",
           cardType: "summary_large_image",
         }}
-      /> */}
+      /> 
 
       <Container style={{ marginTop: "3rem" }} maxWidth="sm">
         <article className="blog-post">

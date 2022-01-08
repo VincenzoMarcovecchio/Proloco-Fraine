@@ -83,11 +83,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   resulto.data.articles.articles.forEach(dato => {
     const urla = new URL(dato.url)
-    const rel = urla
-      .toString()
-      .substring(urla.origin.length)
-      .replace("#", "")
-      .replace("?", "")
+    const cazzo = urla.toString().substring(urla.origin.length)
+    const rel = cazzo.replace("#", "").replace("?", "")
 
     createPage({
       path: `/${rel}/`,
