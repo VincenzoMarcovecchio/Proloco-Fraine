@@ -2,7 +2,6 @@ import React from "react"
 import { GatsbySeo } from "gatsby-plugin-next-seo"
 import Container from "@material-ui/core/Container"
 import Typography from "@material-ui/core/Typography"
-import { ClickAwayListener } from "@material-ui/core"
 
 const Bolla = async ({ pageContext }) => {
   let luca =  await pageContext.data.title.replace(/\s+/g, "-").toLowerCase()
@@ -24,7 +23,7 @@ const Bolla = async ({ pageContext }) => {
           }`,
           images: [
             {
-              url: `${pageContext.data.image_url}`,
+              url: `${pageContext.data.image_url || null}`,
               width: 800,
               height: 600,
               alt: "proloco fraine",
@@ -40,13 +39,13 @@ const Bolla = async ({ pageContext }) => {
       />
       <Container style={{ marginTop: "3rem" }} maxWidth="sm">
         <article className="blog-post">
-          {pageContext.data.image_url && (
+          {pageContext.data.image_url ? (
             <img
               style={{ width: "100%", height: "65vh", objectFit: "cover" }}
               alt={pageContext.data.title}
               src={pageContext.data.image_url}
             />
-          )}
+          ) : null}
 
           <Typography variant="h2" component="div" gutterBottom>
             {pageContext.data.title}
