@@ -3,7 +3,7 @@ import { graphql, StaticQuery } from "gatsby"
 import Container from "@material-ui/core/Container"
 import { GatsbySeo } from "gatsby-plugin-next-seo"
 
-const Lavoro = ({ data }) => {
+const Lavoro = () => {
   useEffect(() => {
     var divs = document.querySelectorAll(".tapItem")
 
@@ -56,13 +56,13 @@ const Lavoro = ({ data }) => {
       <Container style={{ marginTop: "3rem" }} maxWidth="sm">
         <h1>Offerte di lavoro </h1>
         <br />
-        {data.nora.results.title !== undefined ? (
+        {/* {data.nora.results.title !== undefined ? (
           <div
             dangerouslySetInnerHTML={{ __html: data.nora.results.title }}
           ></div>
         ) : (
           "caricamento in corso"
-        )}
+        )} */}
       </Container>
     </>
   )
@@ -70,12 +70,12 @@ const Lavoro = ({ data }) => {
 
 export default Lavoro
 
-export const pageQuery = StaticQuery`
-  {
-    nora {
-      results {
-        title
-      }
-    }
-  }
-`
+// export const pageQuery = StaticQuery`
+//   {
+//     nora {
+//       results {
+//         title
+//       }
+//     }
+//   }
+// `
