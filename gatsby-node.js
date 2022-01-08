@@ -127,7 +127,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   await strutto.forEach(async dis => {
     let luca = await dis[Object.keys(dis)[2]]
-    let franco = luca.toLowerCase()
+    console.log(luca)
+    let franco = luca.toString().toLowerCase()
     let giggio = franco.replace(/\s+/g, "-")
 
     createPage({
