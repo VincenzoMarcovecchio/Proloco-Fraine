@@ -151,6 +151,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       let luca = await kok.title.replace(/\s+/g, "-").toLowerCase()
       let fabio = await luca.replace(/\?/g, "-")
       let lore = await fabio.replace(/\%/g, "-")
+      lore = await fabio.replace(/\“/g, "-")
 
       await createPage({
         path: `/${lore}/`,
@@ -175,6 +176,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       let luca = await kok.title.replace(/\s+/g, "-").toLowerCase()
       let fabio = await luca.replace(/\?/g, "-")
       let lore = await fabio.replace(/\%/g, "-")
+      lore = await fabio.replace(/\“/g, "-")
+
 
       await createPage({
         path: `/${lore}/`,
@@ -199,6 +202,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       let luca = await kok.title.replace(/\s+/g, "-").toLowerCase()
       let fabio = await luca.replace(/\?/g, "-")
       let lore = await fabio.replace(/\%/g, "-")
+       lore = await fabio.replace(/\“/g, "-")
 
       await createPage({
         path: `/${lore}/`,
