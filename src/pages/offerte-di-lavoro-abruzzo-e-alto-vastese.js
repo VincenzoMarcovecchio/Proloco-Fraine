@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import Container from "@material-ui/core/Container"
 import { GatsbySeo } from "gatsby-plugin-next-seo"
 
-const Lavoro = (data) => {
+const Lavoro = ({ data }) => {
   useEffect(() => {
     var divs = document.querySelectorAll(".tapItem")
 
