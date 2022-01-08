@@ -144,7 +144,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     let getJSON = uri => fetch(uri).then(response => response.json())
 
     const kof = await getJSON(
-      `https://newsdata.io/api/1/news?apikey=pub_27444837fea2a2e2cc240d2e4d3dcab923c4&country=it&page=1`
+      `https://newsdata.io/api/1/news?apikey=pub_27444837fea2a2e2cc240d2e4d3dcab923c4&q=abruzzo`
     )
 
     await kof.results.forEach(async kok => {
@@ -171,68 +171,68 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     console.log(e)
   }
 
-  // try {
-  //   let getJSON = uri => fetch(uri).then(response => response.json())
+  try {
+    let getJSON = uri => fetch(uri).then(response => response.json())
 
-  //   const roof = await getJSON(
-  //     `https://newsdata.io/api/1/news?apikey=pub_27444837fea2a2e2cc240d2e4d3dcab923c4&country=it&page=2`
-  //   )
+    const roof = await getJSON(
+      `https://newsdata.io/api/1/news?apikey=pub_27444837fea2a2e2cc240d2e4d3dcab923c4&q=covid&page=2`
+    )
 
-  //   await roof.results.forEach(async kok => {
-  //     let luca = await kok.title.replace(/\s+/g, "-").toLowerCase()
-  //     let fabio = await luca.replace(/\?/g, "-")
-  //     let lore = await fabio.replace(/\%/g, "-")
-  //     let fern = await lore.replace(/\“/g, "-")
-  //     let koka = await fern.replace(/\”/g, "-")
-  //     let popo = await koka.replace(/\'/g, "-")
-  //     let holo = await popo.replace(/\,/g, "-")
-  //     let fuffo = await holo.replace(/\:/g, "-")
-  //     let fuffa = await fuffo.replace(/\’/g, "-")
-  //     let fuffat = await fuffa.replace(/\./g, "-")
+    await roof.results.forEach(async kok => {
+      let luca = await kok.title.replace(/\s+/g, "-").toLowerCase()
+      let fabio = await luca.replace(/\?/g, "-")
+      let lore = await fabio.replace(/\%/g, "-")
+      let fern = await lore.replace(/\“/g, "-")
+      let koka = await fern.replace(/\”/g, "-")
+      let popo = await koka.replace(/\'/g, "-")
+      let holo = await popo.replace(/\,/g, "-")
+      let fuffo = await holo.replace(/\:/g, "-")
+      let fuffa = await fuffo.replace(/\’/g, "-")
+      let fuffat = await fuffa.replace(/\./g, "-")
 
-  //     await createPage({
-  //       path: `/${fuffat}/`,
-  //       component: nuoveNews,
-  //       context: {
-  //         data: kok,
-  //       },
-  //     })
-  //   })
-  // } catch (e) {
-  //   console.log(e)
-  // }
+      await createPage({
+        path: `/${fuffat}/`,
+        component: nuoveNews,
+        context: {
+          data: kok,
+        },
+      })
+    })
+  } catch (e) {
+    console.log(e)
+  }
 
   
-  // try {
-  //   let getJSON = uri => fetch(uri).then(response => response.json())
+  try {
+    let getJSON = uri => fetch(uri).then(response => response.json())
 
-  //   const cane = await getJSON(
-  //     `https://newsdata.io/api/1/news?apikey=pub_27444837fea2a2e2cc240d2e4d3dcab923c4&country=it&page=3`
-  //   )
+    const cane = await getJSON(
+      `https://newsdata.io/api/1/news?apikey=pub_27444837fea2a2e2cc240d2e4d3dcab923c4&q=cucina`
+    )
 
-  //   await cane.results.forEach(async kok => {
-  //     let luca = await kok.title.replace(/\s+/g, "-").toLowerCase()
-  //     let fabio = await luca.replace(/\?/g, "-")
-  //     let lore = await fabio.replace(/\%/g, "-")
-  //     let fern = await lore.replace(/\“/g, "-")
-  //     let koka = await fern.replace(/\”/g, "-")
-  //     let popo = await koka.replace(/\'/g, "-")
-  //     let holo = await popo.replace(/\,/g, "-")
-  //     let fuffo = await holo.replace(/\:/g, "-")
-  //     let fuffa = await fuffo.replace(/\’/g, "-")
-  //     let fuffat = await fuffa.replace(/\./g, "-")
+    await cane.results.forEach(async kok => {
+      let luca = await kok.title.replace(/\s+/g, "-").toLowerCase()
+      let fabio = await luca.replace(/\?/g, "-")
+      let lore = await fabio.replace(/\%/g, "-")
+      let fern = await lore.replace(/\“/g, "-")
+      let koka = await fern.replace(/\”/g, "-")
+      let popo = await koka.replace(/\'/g, "-")
+      let holo = await popo.replace(/\,/g, "-")
+      let fuffo = await holo.replace(/\:/g, "-")
+      let fuffa = await fuffo.replace(/\’/g, "-")
+      let fuffat = await fuffa.replace(/\./g, "-")
 
-  //     await createPage({
-  //       path: `/${fuffat}/`,
-  //       component: nuoveNews,
-  //       context: {
-  //         data: kok,
-  //       },
-  //     })
-  //   })
-  // } catch (e) {
-  //   console.log(e)
-  // }
+      await createPage({
+        path: `/${fuffat}/`,
+        component: nuoveNews,
+        context: {
+          data: kok,
+        },
+      })
+    })
+  } catch (e) {
+    console.log(e)
+  }
 
   const larot = await graphql(`
     {
