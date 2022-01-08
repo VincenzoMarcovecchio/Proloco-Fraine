@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, StaticQuery } from "gatsby"
 import Container from "@material-ui/core/Container"
 
 const NewComponent = data => {
@@ -18,7 +18,7 @@ const NewComponent = data => {
   )
 }
 
-export const cazzoDio = graphql`
+export const cazzoDio = StaticQuery`
   query gallo {
     pollodocs {
       results {

@@ -6,7 +6,7 @@ const Abruzzio = ({ pageContext }) => {
   console.log(pageContext)
 
   React.useEffect(() => {
-    // var divs = document.querySelectorAll("img")
+     var divs = document.querySelectorAll("img")
 
     // console.log(title)
    // document.querySelectorAll(".group-right").style.css = "display: none"
