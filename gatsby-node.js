@@ -151,13 +151,15 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       let luca = await kok.title.replace(/\s+/g, "-").toLowerCase()
       let fabio = await luca.replace(/\?/g, "-")
       let lore = await fabio.replace(/\%/g, "-")
-      let fern = await lore.replace(/\“\”/g, "-")
-      let popo = await fern.replace(/\'/g, "-")
+      let fern = await lore.replace(/\“/g, "-")
+      let koka = await fern.replace(/\”/g, "-")
+      let popo = await koka.replace(/\'/g, "-")
       let holo = await popo.replace(/\,/g, "-")
       let fuffo = await holo.replace(/\:/g, "-")
+      let fuffa = await fuffo.replace(/\’/g, "-")
 
       await createPage({
-        path: `/${fuffo}/`,
+        path: `/${fuffa}/`,
         component: nuoveNews,
         context: {
           data: kok,
@@ -179,13 +181,15 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       let luca = await kok.title.replace(/\s+/g, "-").toLowerCase()
       let fabio = await luca.replace(/\?/g, "-")
       let lore = await fabio.replace(/\%/g, "-")
-      let fern = await lore.replace(/\“\”/g, "-")
-      let popo = await fern.replace(/\'/g, "-")
+      let fern = await lore.replace(/\“/g, "-")
+      let koka = await fern.replace(/\”/g, "-")
+      let popo = await koka.replace(/\'/g, "-")
       let holo = await popo.replace(/\,/g, "-")
       let fuffo = await holo.replace(/\:/g, "-")
+      let fuffa = await fuffo.replace(/\’/g, "-")
 
       await createPage({
-        path: `/${fuffo}/`,
+        path: `/${fuffa}/`,
         component: nuoveNews,
         context: {
           data: kok,
@@ -207,13 +211,15 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       let luca = await kok.title.replace(/\s+/g, "-").toLowerCase()
       let fabio = await luca.replace(/\?/g, "-")
       let lore = await fabio.replace(/\%/g, "-")
-      let fern = await lore.replace(/\“\”/g, "-")
-      let popo = await fern.replace(/\'/g, "-")
+      let fern = await lore.replace(/\“/g, "-")
+      let koka = await fern.replace(/\”/g, "-")
+      let popo = await koka.replace(/\'/g, "-")
       let holo = await popo.replace(/\,/g, "-")
       let fuffo = await holo.replace(/\:/g, "-")
+      let fuffa = await fuffo.replace(/\’/g, "-")
 
       await createPage({
-        path: `/${fuffo}/`,
+        path: `/${fuffa}/`,
         component: nuoveNews,
         context: {
           data: kok,
