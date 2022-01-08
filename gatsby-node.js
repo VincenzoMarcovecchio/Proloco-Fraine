@@ -154,9 +154,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       let fern = await lore.replace(/\“/g, "-")
       let popo = await fern.replace(/\'/g, "-")
       let holo = await popo.replace(/\,/g, "-")
+      let fuffo = await holo.replace(/\:/g, "-")
 
       await createPage({
-        path: `/${holo}/`,
+        path: `/${fuffo}/`,
         component: nuoveNews,
         context: {
           data: kok,
@@ -181,9 +182,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       let fern = await lore.replace(/\“/g, "-")
       let popo = await fern.replace(/\'/g, "-")
       let holo = await popo.replace(/\,/g, "-")
+      let fuffo = await holo.replace(/\:/g, "-")
 
       await createPage({
-        path: `/${holo}/`,
+        path: `/${fuffo}/`,
         component: nuoveNews,
         context: {
           data: kok,
@@ -208,9 +210,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       let fern = await lore.replace(/\“/g, "-")
       let popo = await fern.replace(/\'/g, "-")
       let holo = await popo.replace(/\,/g, "-")
+      let fuffo = await holo.replace(/\:/g, "-")
 
       await createPage({
-        path: `/${holo}/`,
+        path: `/${fuffo}/`,
         component: nuoveNews,
         context: {
           data: kok,
