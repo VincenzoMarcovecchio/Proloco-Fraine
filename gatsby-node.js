@@ -6,6 +6,7 @@
 
 // You can delete this file if you're not using it
 const strutto = require("./src/components/strutture.json")
+const sample = require("./src/data/sample.json")
 const path = require("path")
 const fetch = require("node-fetch")
 const { createFilePath } = require(`gatsby-source-filesystem`)
@@ -139,6 +140,17 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     })
   })
 
+  await sample.forEach(async dis => {
+    let luca = await dis.title.substring(30)
+    createPage({
+      path: `/${luca}/`,
+      component: nuoveNews ,
+      context: {
+        data: dis,
+      },
+    })
+  })
+
   try {
     const nova = await graphql(`
       {
@@ -151,19 +163,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     `)
 
     await nova.results.forEach(async kok => {
-      let luca = await kok.title.replace(/\s+/g, "-")
-      let fabio = await luca.replace(/\?/g, "-")
-      let lore = await fabio.replace(/\%/g, "-")
-      let fern = await lore.replace(/\“/g, "-")
-      let koka = await fern.replace(/\”/g, "-")
-      let popo = await koka.replace(/\'/g, "-")
-      let holo = await popo.replace(/\,/g, "-")
-      let fuffo = await holo.replace(/\:/g, "-")
-      let fuffa = await fuffo.replace(/\’/g, "-")
-      let fuffat = await fuffa.replace(/\./g, "-")
+      let luca = await kok.title.substring(30)
+     
 
       await createPage({
-        path: `/${fuffat}/`,
+        path: `/${luca}/`,
         component: nuoveNews,
         context: {
           data: kok,
@@ -174,67 +178,75 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     console.log(e)
   }
 
-  // try {
-  //   let getJSON = uri => fetch(uri).then(response => response.json())
+  try {
+    let getJSON = uri => fetch(uri).then(response => response.json())
 
-  //   const roof = await getJSON(
-  //     `https://newsdata.io/api/1/news?apikey=pub_27444837fea2a2e2cc240d2e4d3dcab923c4&q=covid&page=1`
-  //   )
+    const roof = await getJSON(
+      `https://newsdata.io/api/1/news?apikey=pub_27444837fea2a2e2cc240d2e4d3dcab923c4&q=covid&page=1`
+    )
 
-  //   await roof.results.forEach(async kok => {
-  //     let luca = await kok.title.replace(/\s+/g, "-").toLowerCase()
-  //     let fabio = await luca.replace(/\?/g, "-")
-  //     let lore = await fabio.replace(/\%/g, "-")
-  //     let fern = await lore.replace(/\“/g, "-")
-  //     let koka = await fern.replace(/\”/g, "-")
-  //     let popo = await koka.replace(/\'/g, "-")
-  //     let holo = await popo.replace(/\,/g, "-")
-  //     let fuffo = await holo.replace(/\:/g, "-")
-  //     let fuffa = await fuffo.replace(/\’/g, "-")
-  //     let fuffat = await fuffa.replace(/\./g, "-")
+    await roof.results.forEach(async kok => {
+      let luca = await kok.link.substring(30)
+     
 
-  //     await createPage({
-  //       path: `/${fuffat}/`,
-  //       component: nuoveNews,
-  //       context: {
-  //         data: kok,
-  //       },
-  //     })
-  //   })
-  // } catch (e) {
-  //   console.log(e)
-  // }
+      await createPage({
+        path: `/${luca}/`,
+        component: nuoveNews,
+        context: {
+          data: kok,
+        },
+      })
+    })
+  } catch (e) {
+    console.log(e)
+  }
 
-  // try {
-  //   let getJSON = uri => fetch(uri).then(response => response.json())
+  
+  try {
+    let getJSON = uri => fetch(uri).then(response => response.json())
 
-  //   const cane = await getJSON(
-  //     `https://newsdata.io/api/1/news?apikey=pub_27444837fea2a2e2cc240d2e4d3dcab923c4&q=cucina`
-  //   )
+    const roof = await getJSON(
+      `https://newsdata.io/api/1/news?apikey=pub_34650b5bc097af8addc0ee5589e2d8fe711f&q=natura`
+    )
 
-  //   await cane.results.forEach(async kok => {
-  //     let luca = await kok.title.replace(/\s+/g, "-").toLowerCase()
-  //     let fabio = await luca.replace(/\?/g, "-")
-  //     let lore = await fabio.replace(/\%/g, "-")
-  //     let fern = await lore.replace(/\“/g, "-")
-  //     let koka = await fern.replace(/\”/g, "-")
-  //     let popo = await koka.replace(/\'/g, "-")
-  //     let holo = await popo.replace(/\,/g, "-")
-  //     let fuffo = await holo.replace(/\:/g, "-")
-  //     let fuffa = await fuffo.replace(/\’/g, "-")
-  //     let fuffat = await fuffa.replace(/\./g, "-")
+    await roof.results.forEach(async kok => {
+      let luca = await kok.link.substring(30)
+     
 
-  //     await createPage({
-  //       path: `/${fuffat}/`,
-  //       component: nuoveNews,
-  //       context: {
-  //         data: kok,
-  //       },
-  //     })
-  //   })
-  // } catch (e) {
-  //   console.log(e)
-  // }
+      await createPage({
+        path: `/${luca}/`,
+        component: nuoveNews,
+        context: {
+          data: kok,
+        },
+      })
+    })
+  } catch (e) {
+    console.log(e)
+  }
+
+  try {
+    let getJSON = uri => fetch(uri).then(response => response.json())
+
+    const cane = await getJSON(
+      `https://newsdata.io/api/1/news?apikey=pub_27444837fea2a2e2cc240d2e4d3dcab923c4&q=cucina`
+    )
+
+    await cane.results.forEach(async kok => {
+      let luca = await kok.title.replace(30)
+    
+
+      await createPage({
+        path: `/${luca}/`,
+        component: nuoveNews,
+        context: {
+          data: kok,
+        },
+      })
+    })
+  } catch (e) {
+    console.log(e)
+  }
 
   const larot = await graphql(`
     {

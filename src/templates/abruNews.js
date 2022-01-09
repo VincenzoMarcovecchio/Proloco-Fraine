@@ -12,10 +12,7 @@ const Abruzzio = ({ pageContext }) => {
    // document.querySelectorAll(".group-right").style.css = "display: none"
     document.querySelectorAll(".leaflet-layer").style.css = "display: none"
 
-    for (let element of divs) {
-      let sorca = element.src
-      element.src = `https://abruzzoturismo.it/${sorca}`
-    }
+
   },[])
   return (
     <>
