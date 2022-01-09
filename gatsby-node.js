@@ -110,12 +110,14 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       if (lastDotPosition === -1) return filename
       else return filename.substr(0, lastDotPosition)
     }
+    
     await jsona.results.bindings.forEach(async dis => {
       let friendlySlug = await removeExtension(dis.inDiscussione.value)
       let friendlySluga = await friendlySlug.replace(/\W+/g, "-")
+      let ciao = await  friendlySluga.substring(1, 150)
 
       createPage({
-        path: friendlySluga.substring(1, 150),
+        path: ciao,
         component: lastTemplate,
         context: {
           data: dis,
