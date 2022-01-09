@@ -155,16 +155,16 @@ module.exports = {
         rootKey: "pollo1",
       },
     },
-    {
-      resolve: "gatsby-source-custom-api",
-      options: {
-        url: {
-          development: "https://pollolo.herokuapp.com/docs",
-          production: "https://pollolo.herokuapp.com/docs", // on "gatsby build"
-        },
-        rootKey: "pollodocs",
-      },
-    },
+    // {
+    //   resolve: "gatsby-source-custom-api",
+    //   options: {
+    //     url: {
+    //       development: "https://pollolo.herokuapp.com/docs",
+    //       production: "https://pollolo.herokuapp.com/docs", // on "gatsby build"
+    //     },
+    //     rootKey: "pollodocs",
+    //   },
+    // },
     {
       resolve: "gatsby-source-custom-api",
       options: {
