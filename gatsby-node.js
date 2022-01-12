@@ -167,10 +167,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     `)
 
     await nova.results.forEach(async kok => {
-      let luca = await kok.title.substring(30)
+      let luca = await kok.link.substring(30)
 
       await createPage({
-        path: `/${luca}/`,
+        path: `/${luca}`,
         component: nuoveNews,
         context: {
           data: kok,
@@ -215,7 +215,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       let luca = await kok.link.substring(30)
 
       await createPage({
-        path: `/${luca}/`,
+        path: `/${luca}`,
         component: nuoveNews,
         context: {
           data: kok,
