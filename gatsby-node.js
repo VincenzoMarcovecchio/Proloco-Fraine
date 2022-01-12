@@ -110,13 +110,13 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       if (lastDotPosition === -1) return filename
       else return filename.substr(0, lastDotPosition)
     }
-    
+
     await jsona.results.bindings.forEach(async dis => {
       let friendlySlug = await removeExtension(dis.inDiscussione.value)
       let friendlySluga = await friendlySlug.replace(/\W+/g, "-")
-      let ciao = await  friendlySluga.substring(1, 150)
+      let ciao = await friendlySluga.substring(1, 150)
 
-     await createPage({
+      await createPage({
         path: ciao,
         component: lastTemplate,
         context: {
@@ -144,9 +144,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   await sample.forEach(async dis => {
     let luca = await dis.title.substring(30)
+    let franco = await luca.toString().toLowerCase()
+    let giggio = await franco.replace(/\s+/g, "-")
     createPage({
-      path: `/${luca}/`,
-      component: nuoveNews ,
+      path: `/${giggio}/`,
+      component: nuoveNews,
       context: {
         data: dis,
       },
@@ -166,7 +168,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
     await nova.results.forEach(async kok => {
       let luca = await kok.title.substring(30)
-     
 
       await createPage({
         path: `/${luca}/`,
@@ -189,7 +190,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
     await roof.results.forEach(async kok => {
       let luca = await kok.link.substring(30)
-     
 
       await createPage({
         path: `/${luca}/`,
@@ -213,7 +213,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   //   await roof.results.forEach(async kok => {
   //     let luca = await kok.link.substring(30)
-     
 
   //     await createPage({
   //       path: `/${luca}/`,
@@ -236,7 +235,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
     await cane.results.forEach(async kok => {
       let luca = await kok.title.replace(30)
-    
 
       await createPage({
         path: `/${luca}/`,
