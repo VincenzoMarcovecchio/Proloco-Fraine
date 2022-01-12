@@ -142,18 +142,18 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     })
   })
 
-  await sample.forEach(async dis => {
-    let luca = await dis.title
-    let franco = await luca.toString().toLowerCase()
-    let giggio = await franco.replace(/\s+/g, "-")
-    createPage({
-      path: `/${giggio}/`,
-      component: nuoveNews,
-      context: {
-        data: dis,
-      },
-    })
-  })
+  // await sample.forEach(async dis => {
+  //   let luca = await dis.title
+  //   let franco = await luca.toString().toLowerCase()
+  //   let giggio = await franco.replace(/\s+/g, "-")
+  //   createPage({
+  //     path: `/${giggio}/`,
+  //     component: nuoveNews,
+  //     context: {
+  //       data: dis,
+  //     },
+  //   })
+  // })
 
   try {
     const nova = await graphql(`
