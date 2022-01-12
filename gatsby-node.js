@@ -116,7 +116,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       let friendlySluga = await friendlySlug.replace(/\W+/g, "-")
       let ciao = await  friendlySluga.substring(1, 150)
 
-      createPage({
+     await createPage({
         path: ciao,
         component: lastTemplate,
         context: {
@@ -130,10 +130,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   await strutto.forEach(async dis => {
     let luca = await dis[Object.keys(dis)[2]]
-    let franco = luca.toString().toLowerCase()
-    let giggio = franco.replace(/\s+/g, "-")
+    let franco = await luca.toString().toLowerCase()
+    let giggio = await franco.replace(/\s+/g, "-")
 
-    createPage({
+    await createPage({
       path: `/${giggio}/`,
       component: struttoTemplate,
       context: {
