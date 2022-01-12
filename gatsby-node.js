@@ -204,28 +204,28 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   }
 
   
-  try {
-    let getJSON = uri => fetch(uri).then(response => response.json())
+  // try {
+  //   let getJSON = uri => fetch(uri).then(response => response.json())
 
-    const roof = await getJSON(
-      `https://newsdata.io/api/1/news?apikey=pub_34650b5bc097af8addc0ee5589e2d8fe711f&q=natura&page=1`
-    )
+  //   const roof = await getJSON(
+  //     `https://newsdata.io/api/1/news?apikey=pub_34650b5bc097af8addc0ee5589e2d8fe711f&q=natura&page=1`
+  //   )
 
-    await roof.results.forEach(async kok => {
-      let luca = await kok.link.substring(30)
+  //   await roof.results.forEach(async kok => {
+  //     let luca = await kok.link.substring(30)
      
 
-      await createPage({
-        path: `/${luca}/`,
-        component: nuoveNews,
-        context: {
-          data: kok,
-        },
-      })
-    })
-  } catch (e) {
-    console.log(e)
-  }
+  //     await createPage({
+  //       path: `/${luca}/`,
+  //       component: nuoveNews,
+  //       context: {
+  //         data: kok,
+  //       },
+  //     })
+  //   })
+  // } catch (e) {
+  //   console.log(e)
+  // }
 
   try {
     let getJSON = uri => fetch(uri).then(response => response.json())
