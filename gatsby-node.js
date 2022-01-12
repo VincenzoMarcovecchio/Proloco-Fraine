@@ -143,7 +143,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   })
 
   await sample.forEach(async dis => {
-    let luca = await dis.title.substring(30)
+    let luca = await dis.title
     let franco = await luca.toString().toLowerCase()
     let giggio = await franco.replace(/\s+/g, "-")
     createPage({
