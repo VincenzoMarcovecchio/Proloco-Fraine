@@ -4,8 +4,9 @@ import Container from "@material-ui/core/Container"
 import Typography from "@material-ui/core/Typography"
 
 const Bolla = async ({ pageContext }) => {
-  let luca =  await pageContext.data.title.replace(/\s+/g, "-").toLowerCase()
-  let vgv = await luca.replace(/\?/g, "-")
+  
+  let luca = await pageContext.data.title.replace(/\s+/g, "-").toLowerCase()
+  let vgv = await pageContext.data.link.substring(30)
 
   return (
     <>
