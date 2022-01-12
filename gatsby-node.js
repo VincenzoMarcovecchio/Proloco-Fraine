@@ -155,31 +155,31 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   //   })
   // })
 
-  try {
-    const nova = await graphql(`
-      {
-        news {
-          results {
-            ...
-          }
-        }
-      }
-    `)
+  // try {
+  //   const nova = await graphql(`
+  //     {
+  //       news {
+  //         results {
+  //           ...
+  //         }
+  //       }
+  //     }
+  //   `)
 
-    await nova.results.forEach(async kok => {
-      let luca = await kok.link.substring(30)
+  //   await nova.results.forEach(async kok => {
+  //     let luca = await kok.link.substring(30)
 
-      await createPage({
-        path: `/${luca}`,
-        component: nuoveNews,
-        context: {
-          data: kok,
-        },
-      })
-    })
-  } catch (e) {
-    console.log(e)
-  }
+  //     await createPage({
+  //       path: `/${luca}`,
+  //       component: nuoveNews,
+  //       context: {
+  //         data: kok,
+  //       },
+  //     })
+  //   })
+  // } catch (e) {
+  //   console.log(e)
+  // }
 
   // try {
   //   let getJSON = uri => fetch(uri).then(response => response.json())
