@@ -203,7 +203,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     console.log(e)
   }
 
-  
+  //ll
   // try {
   //   let getJSON = uri => fetch(uri).then(response => response.json())
 
