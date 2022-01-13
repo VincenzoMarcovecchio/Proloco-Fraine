@@ -291,9 +291,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     }
   `)
 
-  for (let i = 0; i < itiuno.data.secondo.results.length; i++) {
+  for (let i = 0; i < itiuno.data.itiuno.results.length; i++) {
     try {
-      let figa = await itiuno.data.secondo.results.links[i].split("/")[4]
+      let figa = await itiuno.data.itiuno.results.links[i].split("/")[4]
 
       let cazzo = await fetch(
         `https://pacific-fjord-73395.herokuapp.com/iti/${figa}`
@@ -326,9 +326,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     }
   `)
 
-  for (let i = 0; i < itidue.data.secondo.results.length; i++) {
+  for (let i = 0; i < itidue.data.itidue.results.length; i++) {
     try {
-      let figa = await itidue.data.secondo.results.links[i].split("/")[4]
+      let figa = await itidue.data.itidue.results.links[i].split("/")[4]
 
       let cazzo = await fetch(
         `https://pacific-fjord-73395.herokuapp.com/iti/${figa}`
