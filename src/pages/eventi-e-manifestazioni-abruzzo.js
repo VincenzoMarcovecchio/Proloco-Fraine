@@ -5,14 +5,16 @@ import Container from "@material-ui/core/Container"
 import loga from "../images/abruzzo-logo.jpg"
 
 const Manifesta = data => {
-
   useEffect(() => {
     var divs = document.querySelectorAll(".divvo a")
+    var divsa = document.querySelectorAll("a")
 
     for (let idx of divs) {
       idx.href = "https://www.giraitalia.it/abruzzo/eventi.htm"
-      idx.target = "_blank"
       idx.rel = "noopener noreferrer canonical"
+    }
+    for (let idxa of divsa) {
+      idxa.target = "_blank"
     }
   }, [])
 
@@ -25,10 +27,9 @@ const Manifesta = data => {
       let sorca = await element.src
       let gigi = await sorca.replace(window.location.origin, "")
       element.src = `https://abruzzoturismo.it${gigi}`
-     
     })
 
-    an.forEach(async element => {  
+    an.forEach(async element => {
       let sorca = await element.href
       let gigi = await sorca.replace(window.location.origin, "")
       let srca = `https://abruzzoturismo.it${gigi}`

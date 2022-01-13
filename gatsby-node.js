@@ -235,7 +235,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   //   await cane.results.forEach(async kok => {
   //     let luca = await kok.link.substring(30)
- 
 
   //     await createPage({
   //       path: `/${luca}/`,
@@ -276,6 +275,75 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         component: abruNews,
         context: {
           data: pino,
+        },
+      })
+    } catch (err) {
+      console.log(err)
+    }
+  }
+  const itiuno = await graphql(`
+    {
+      itiuno {
+        results {
+          links
+        }
+      }
+    }
+  `)
+
+  for (let i = 0; i < itiuno.data.secondo.results.length; i++) {
+    try {
+      let figa = await itiuno.data.secondo.results.links[i].split("/")[4]
+
+      let cazzo = await fetch(
+        `https://pacific-fjord-73395.herokuapp.com/iti/${figa}`
+      )
+
+      let culo = await cazzo.text()
+
+      const pino = await JSON.parse(culo)
+
+      await createPage({
+        path: `/${figa}`,
+        component: abruNews,
+        context: {
+          data: pino,
+          figa:  figa ,
+        },
+      })
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+  const itidue = await graphql(`
+    {
+      itidue {
+        results {
+          links
+        }
+      }
+    }
+  `)
+
+  for (let i = 0; i < itidue.data.secondo.results.length; i++) {
+    try {
+      let figa = await itidue.data.secondo.results.links[i].split("/")[4]
+
+      let cazzo = await fetch(
+        `https://pacific-fjord-73395.herokuapp.com/iti/${figa}`
+      )
+
+      let culo = await cazzo.text()
+
+      const pino = await JSON.parse(culo)
+
+      await createPage({
+        path: `/${figa}`,
+        component: abruNews,
+        context: {
+          data: pino ,
+          figa: figa ,
         },
       })
     } catch (err) {

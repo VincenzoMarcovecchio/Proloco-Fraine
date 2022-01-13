@@ -20,8 +20,7 @@ const Strutto = ({ pageContext }) => {
     window.addEventListener("load", function () {
       let iDiv = document.getElementById("iframe1")
 
-      iDiv.src = `https://www.google.com/maps/embed/v1/search
-    ?key=AIzaSyDrK_Ro5O8dkIdQP1zVaCOJh15QUmm10wQ&q=${title}${where}`
+      iDiv.src = `https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=it&amp;q=${title}%20${where}%20${stelle}&amp;t=&amp;z=14&amp;it=UTF8&amp;iwloc=B&amp;output=embed`
     })
   return (
     <>
@@ -97,16 +96,14 @@ const Strutto = ({ pageContext }) => {
         <small style={{ marginTop: "3rem", marginBottom: "2rem" }}>
           OPEN DATA REGIONE ABRUZZO GENNAIO 2021
         </small>
-
-        <iframe
-          width="450"
-          height="250"
-          frameBorder="0"
-          title={title}
+ 
+          <iframe width="100%" 
+          height="600" 
           id="iframe1"
-          style={{ border: "0" }}
-          allowfullscreen
-        ></iframe>
+          frameBorder="0"
+           scrolling="no" marginHeight="0" marginWidth="0" 
+          />
+         
       </Container>
     </>
   )

@@ -119,6 +119,30 @@ module.exports = {
       resolve: "gatsby-source-custom-api",
       options: {
         url: {
+          development:
+            "https://pacific-fjord-73395.herokuapp.com/1",
+          production:
+            "https://pacific-fjord-73395.herokuapp.com/1", // on "gatsby build"
+        },
+        rootKey: "itiuno",
+      },
+    },
+    {
+      resolve: "gatsby-source-custom-api",
+      options: {
+        url: {
+          development:
+            "https://pacific-fjord-73395.herokuapp.com/2",
+          production:
+            "https://pacific-fjord-73395.herokuapp.com/2", // on "gatsby build"
+        },
+        rootKey: "itidue",
+      },
+    },
+    {
+      resolve: "gatsby-source-custom-api",
+      options: {
+        url: {
           development: "https://sheltered-meadow-66603.herokuapp.com/1",
           production: "https://sheltered-meadow-66603.herokuapp.com/1", // on "gatsby build"
         },
