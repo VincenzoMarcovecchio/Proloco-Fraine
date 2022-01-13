@@ -15,7 +15,6 @@ const Abruzzio = ({ pageContext }) => {
 
   },[])
   let image = pageContext.data.results.ima ?  pageContext.data.results.ima : ""
-  let slug = pageContext.data.results.ima.split("/")[4] 
 
   return (
     <>
