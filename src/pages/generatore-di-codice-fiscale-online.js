@@ -99,7 +99,7 @@ export default function Generatoredicodicefiscaleonline() {
   return (
     <>
       <GatsbySeo
-        title="Proloco Fraine | Codice Fiscale Online"
+        title="Codice Fiscale Online | Proloco Fraine"
         description="Generatore di codice fiscale online gratuito"
         canonical="https://www.prolocofraine.org/generatore-di-codice-fiscale-online"
         openGraph={{

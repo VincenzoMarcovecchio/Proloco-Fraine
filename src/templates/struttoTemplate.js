@@ -16,12 +16,6 @@ const Strutto = ({ pageContext }) => {
   let posco = strutte[Object.keys(strutte)[7]]
   let tipostrutta = strutte[Object.keys(strutte)[1]]
 
-  typeof window !== "undefined" &&
-    window.addEventListener("load", function () {
-      let iDiv = document.getElementById("iframe1")
-
-      iDiv.src = `https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=it&amp;q=${title}%20${where}%20${stelle}&amp;t=&amp;z=14&amp;it=UTF8&amp;iwloc=B&amp;output=embed`
-    })
   return (
     <>
       <LocalBusinessJsonLd
@@ -96,14 +90,17 @@ const Strutto = ({ pageContext }) => {
         <small style={{ marginTop: "3rem", marginBottom: "2rem" }}>
           OPEN DATA REGIONE ABRUZZO GENNAIO 2021
         </small>
- 
-          <iframe width="100%" 
-          height="600" 
+
+        <iframe
+          width="100%"
+          height="600"
           id="iframe1"
           frameBorder="0"
-           scrolling="no" marginHeight="0" marginWidth="0" 
-          />
-         
+          src={`https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=it&amp;q=${title}%20${where}%20${stelle}&amp;t=&amp;z=14&amp;it=UTF8&amp;iwloc=B&amp;output=embed`}
+          scrolling="no"
+          marginHeight="0"
+          marginWidth="0"
+        />
       </Container>
     </>
   )
