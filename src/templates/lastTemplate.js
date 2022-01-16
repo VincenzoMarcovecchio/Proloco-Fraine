@@ -34,7 +34,7 @@ export default function Ciccccc({
               height: 800,
               alt: `parlamento Italiano`,
             },
-            { url: `${image}` },
+   
           ],
           site_name: "Proloco Fraine",
         }}
