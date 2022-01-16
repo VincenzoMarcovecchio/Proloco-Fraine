@@ -3,7 +3,7 @@ import Container from "@material-ui/core/Container"
 import { GatsbySeo } from "gatsby-plugin-next-seo"
 import { graphql } from "gatsby"
 
-const Decreti = ({ data }) => {
+const Decreti = () => {
   return (
     <>
       <GatsbySeo
@@ -40,9 +40,9 @@ const Decreti = ({ data }) => {
           cardType: "summary_large_image",
         }}
       />
-      {data.leggi.results.quotes? data.leggi.results.quotes.map(lol => {
+      {/* {data.leggi.results.quotes? data.leggi.results.quotes.map(lol => {
         return <link rel="canonical" href={lol.href} />
-      }): null}
+      }): null} */}
       <style>
         {`caption {
                  margin-top: 3rem;
@@ -63,13 +63,13 @@ const Decreti = ({ data }) => {
       <Container style={{ marginTop: "3rem" }} maxWidth="sm">
         <h1>Decreti-Legge in corso di conversione ⚖️ 👨‍💻 </h1>
         <br />
-        {data.leggi.results.title ? (
+        {/* {data.leggi.results.title ? (
           <div
             dangerouslySetInnerHTML={{ __html: data.leggi.results.title }}
           ></div>
         ) : (
           "caricamento in corso"
-        )}
+        )} */}
       </Container>
     </>
   )
@@ -77,12 +77,12 @@ const Decreti = ({ data }) => {
 
 export default Decreti
 
-export const pageQuery = graphql`
-  query MyQuery {
-    leggi {
-      results {
-        title
-      }
-    }
-  }
-`
+// export const pageQuery = graphql`
+//   query MyQuery {
+//     leggi {
+//       results {
+//         title
+//       }
+//     }
+//   }
+// `

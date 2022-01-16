@@ -81,27 +81,27 @@ module.exports = {
       },
     },
 
-    // {
-    //   resolve: "gatsby-source-custom-api",
-    //   options: {
-    //     url: {
-    //       development: "https://jobbio99.herokuapp.com/",
-    //       production: "https://jobbio99.herokuapp.com/",
-    //     },
-    //     rootKey: "nora",
-    //   },
-    // },
-
     {
       resolve: "gatsby-source-custom-api",
       options: {
         url: {
-          development: "https://leggi98.herokuapp.com/",
-          production: "https://leggi98.herokuapp.com/", // on "gatsby build"
+          development: "https://jobbio99.herokuapp.com/",
+          production: "https://jobbio99.herokuapp.com/",
         },
-        rootKey: "leggi",
+        rootKey: "nora",
       },
     },
+
+    // {
+    //   resolve: "gatsby-source-custom-api",
+    //   options: {
+    //     url: {
+    //       development: "https://leggi98.herokuapp.com/",
+    //       production: "https://leggi98.herokuapp.com/", // on "gatsby build"
+    //     },
+    //     rootKey: "leggi",
+    //   },
+    // },
 
     {
       resolve: "gatsby-source-custom-api",
