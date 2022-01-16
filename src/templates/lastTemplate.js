@@ -19,8 +19,8 @@ export default function Ciccccc({
         canonical={`https://www.prolocofraine.org/${pageContext.ciaos}`}
         openGraph={{
           url: `https://www.prolocofraine.org/${pageContext.ciaos}`,
-          title: `${pageContext.data.results.title.substring(3)}`,
-          description: `${pageContext.data.results.title.substring(3)}`,
+          title: `${ pageContext.data.inDiscussione.value || pageContext.data.seduta.value}`,
+          description: `${ pageContext.data.inDiscussione.value || pageContext.data.seduta.value}`,
           images: [
             {
               url: `https://quifinanza.it/wp-content/uploads/sites/5/2020/04/decreto-legge-e-decreto-legislativo.jpg`,
