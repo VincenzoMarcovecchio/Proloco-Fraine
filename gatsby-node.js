@@ -121,6 +121,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         component: lastTemplate,
         context: {
           data: dis,
+          ciaos: ciao,
         },
       })
     })
@@ -308,7 +309,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         component: abruNews,
         context: {
           data: pino,
-          figa:  figa ,
+          figa: figa,
         },
       })
     } catch (err) {
@@ -342,8 +343,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         path: `/${figa}`,
         component: abruNews,
         context: {
-          data: pino ,
-          figa: figa ,
+          data: pino,
+          figa: figa,
         },
       })
     } catch (err) {
