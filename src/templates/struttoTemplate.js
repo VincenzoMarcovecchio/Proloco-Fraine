@@ -96,10 +96,11 @@ const Strutto = ({ pageContext }) => {
           height="600"
           id="iframe1"
           frameBorder="0"
-          src={`https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=it&amp;q=${title}%20${where}%20${stelle}&amp;t=&amp;z=14&amp;it=UTF8&amp;iwloc=B&amp;output=embed`}
+          src={`https://maps.google.com/maps/embed/v1/place?key=AIzaSyDrK_Ro5O8dkIdQP1zVaCOJh15QUmm10wQ&q=${title} ${where} ${stelle} `}
           scrolling="no"
           marginHeight="0"
           marginWidth="0"
+          title="posizione geografica"
         />
       </Container>
     </>

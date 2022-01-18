@@ -70,6 +70,43 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     return
   }
 
+  const resultoAbruzzo = await graphql(`
+    {
+      abruzzonews {
+        articles {
+          author
+          title
+          description
+          url
+          urlToImage
+          publishedAt
+          content
+        }
+      }
+    }
+  `)
+  resultoAbruzzo.data.abruzzonews.articles.forEach(dato => {
+    const urla = new URL(dato.url)
+    const cazzo = urla.toString().substring(29)
+    const rel = cazzo.replace("#", "").replace("?", "")
+
+    createPage({
+      path: `/${rel}/`,
+      component: notiPage,
+      context: {
+        rela: rel,
+        data: dato.description,
+        duto: dato,
+      },
+    })
+  })
+
+  // Handle errors
+  if (result.errors) {
+    reporter.panicOnBuild(`Error while running GraphQL query.`)
+    return
+  }
+
   result.data.allMarkdownRemark.edges.forEach(({ node }) => {
     // Create category pages
     createPage({

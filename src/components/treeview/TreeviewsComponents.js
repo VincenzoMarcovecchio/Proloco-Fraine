@@ -586,4 +586,4 @@ const TreeviewsComponents = () => {
   )
 }
 
-export default React.memo(TreeviewsComponents)
+export default TreeviewsComponents

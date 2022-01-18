@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useMemo } from "react"
+import React, { useEffect, useState, useCallback, useMemo } from "react"
 import TreeView from "@material-ui/lab/TreeView"
 import Button from "@material-ui/core/Button"
 import { makeStyles } from "@material-ui/core/styles"
@@ -43,13 +43,14 @@ const TreeviewsComponentsEntrate = () => {
     setOpen(true)
   }
 
-  const entrateprimo = useMemo(() =>
+  const entrateprimo = useCallback(() =>
     entrate.filter(
       label =>
         label.label ===
         "Entrate correnti di natura tributaria, contributiva e perequativa"
     )
   )
+
   const transferimenticorrrenti = useMemo(() =>
     entrate.filter(label => label.label === "Trasferimenti correnti")
   )

@@ -41,7 +41,7 @@ const useStyles = makeStyles({
     justifyContent: "space-between",
     alignItems: "center",
     fontSize: "inherit",
-    width: "93%",
+    width: "98.6%",
   },
 
   title: {

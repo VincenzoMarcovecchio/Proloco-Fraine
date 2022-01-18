@@ -80,17 +80,41 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: "gatsby-source-custom-api",
+      options: {
+        url: {
+          development:
+            "https://newsapi.org/v2/everything?q=Abruzzo&sortBy=popularity&apiKey=7572db1197694484a7f7dafd2e6d3885", // on "gatsby develop"
+          production:
+            "https://newsapi.org/v2/everything?q=Abruzzo&sortBy=popularity&apiKey=7572db1197694484a7f7dafd2e6d3885", // on "gatsby build"
+        },
+        rootKey: "abruzzonews",
+        schemas: {
+          articles: `
+                     author: String
+                     title: String
+                     description: String
+                     url: String
+                     urlToImage: String
+                     publishedAt: String
+                     content: String
+                   
+                    `,
+        },
+      },
+    },
 
-    // {
-    //   resolve: "gatsby-source-custom-api",
-    //   options: {
-    //     url: {
-    //       development: "https://jobbio99.herokuapp.com/",
-    //       production: "https://jobbio99.herokuapp.com/",
-    //     },
-    //     rootKey: "nora",
-    //   },
-    // },
+    {
+      resolve: "gatsby-source-custom-api",
+      options: {
+        url: {
+          development: "https://jobbio99.herokuapp.com/",
+          production: "https://jobbio99.herokuapp.com/",
+        },
+        rootKey: "nora",
+      },
+    },
 
     // {
     //   resolve: "gatsby-source-custom-api",
@@ -119,10 +143,8 @@ module.exports = {
       resolve: "gatsby-source-custom-api",
       options: {
         url: {
-          development:
-            "https://pacific-fjord-73395.herokuapp.com/1",
-          production:
-            "https://pacific-fjord-73395.herokuapp.com/1", // on "gatsby build"
+          development: "https://pacific-fjord-73395.herokuapp.com/1",
+          production: "https://pacific-fjord-73395.herokuapp.com/1", // on "gatsby build"
         },
         rootKey: "itiuno",
       },
@@ -131,10 +153,8 @@ module.exports = {
       resolve: "gatsby-source-custom-api",
       options: {
         url: {
-          development:
-            "https://pacific-fjord-73395.herokuapp.com/2",
-          production:
-            "https://pacific-fjord-73395.herokuapp.com/2", // on "gatsby build"
+          development: "https://pacific-fjord-73395.herokuapp.com/2",
+          production: "https://pacific-fjord-73395.herokuapp.com/2", // on "gatsby build"
         },
         rootKey: "itidue",
       },

@@ -21,7 +21,7 @@ const NotFoundPage = () => {
   return (
     <>
       <h1>test</h1>
-      {res.nft && <img src={res.nft.cached_file_url} />}
+      {res.nft && <img src={res.nft.cached_file_url} alt="nft example homemade" />}
       <pre>{res.nft && JSON.stringify(res.nft)}</pre>
     </>
   )

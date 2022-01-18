@@ -84,7 +84,7 @@ export default function Footer() {
                   replace
                   rel="canonical noopener noreferrer"
                   className={classes.marginTop}
-                  replace
+                  
                   to="/beni-e-servizi-acquistati-tramite-rdotd-sul-mepa/"
                 >
                   Acquisti Mepa
