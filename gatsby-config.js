@@ -105,18 +105,18 @@ module.exports = {
       },
     },
 
-    {
-      resolve: "gatsby-source-custom-api",
-      options: {
-        url: {
-          development:
-            "https://mimmofranco.herokuapp.com/https://jobbio99.herokuapp.com/",
-          production:
-            "https://mimmofranco.herokuapp.com/https://jobbio99.herokuapp.com/",
-        },
-        rootKey: "nora",
-      },
-    },
+    // {
+    //   resolve: "gatsby-source-custom-api",
+    //   options: {
+    //     url: {
+    //       development:
+    //         "https://mimmofranco.herokuapp.com/https://jobbio99.herokuapp.com/",
+    //       production:
+    //         "https://mimmofranco.herokuapp.com/https://jobbio99.herokuapp.com/",
+    //     },
+    //     rootKey: "nora",
+    //   },
+    // },
 
     // {
     //   resolve: "gatsby-source-custom-api",
