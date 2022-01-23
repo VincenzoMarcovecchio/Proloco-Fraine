@@ -6,24 +6,21 @@ const Abruzzio = ({ pageContext }) => {
   console.log(pageContext)
 
   React.useEffect(() => {
-   //  var divs = document.querySelectorAll("img")
-
+    //  var divs = document.querySelectorAll("img")
     // console.log(title)
-   // document.querySelectorAll(".group-right").style.css = "display: none"
-   // document.querySelectorAll(".leaflet-layer").style.css = "display: none"
-
-
-  },[])
-  let image = pageContext.data.results.ima ?  pageContext.data.results.ima : ""
+    // document.querySelectorAll(".group-right").style.css = "display: none"
+    // document.querySelectorAll(".leaflet-layer").style.css = "display: none"
+  }, [])
+  let image = pageContext.data.results.ima ? pageContext.data.results.ima : ""
 
   return (
     <>
-          <GatsbySeo
+      <GatsbySeo
         title={`${pageContext.data.results.title.substring(3)}`}
         description={`${pageContext.data.results.title.substring(3)}`}
         canonical={`https://www.prolocofraine.org/${pageContext.figa}`}
         openGraph={{
-          url:`https://www.prolocofraine.org/${pageContext.figa}`,
+          url: `https://www.prolocofraine.org/${pageContext.figa}`,
           title: `${pageContext.data.results.title.substring(3)}`,
           description: `${pageContext.data.results.title.substring(3)}`,
           images: [
