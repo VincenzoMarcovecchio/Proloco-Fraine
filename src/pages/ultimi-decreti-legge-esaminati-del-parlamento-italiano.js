@@ -61,7 +61,7 @@ const Decreti = () => {
       </style>
 
       <Container style={{ marginTop: "3rem" }} maxWidth="sm">
-        <h1>Decreti-Legge in corso di conversione ⚖️ 👨‍💻 </h1>
+        <h1>Decreti legge in corso di conversione ⚖️ 👨‍💻 </h1>
         <br />
         {/* {data.leggi.results.title ? (
           <div
