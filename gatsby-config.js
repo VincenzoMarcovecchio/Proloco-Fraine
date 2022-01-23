@@ -85,6 +85,30 @@ module.exports = {
       options: {
         url: {
           development:
+            "https://newsapi.org/v2/everything?q=agricoltura&apiKey=ff2ef352b8e949b6aba7fab69ebbdfd0", // on "gatsby develop"
+          production:
+            "https://newsapi.org/v2/everything?q=agricoltura&apiKey=ff2ef352b8e949b6aba7fab69ebbdfd0", // on "gatsby build"
+        },
+        rootKey: "agri",
+        schemas: {
+          articles: `
+                     author: String
+                     title: String
+                     description: String
+                     url: String
+                     urlToImage: String
+                     publishedAt: String
+                     content: String
+                   
+                    `,
+        },
+      },
+    },
+    {
+      resolve: "gatsby-source-custom-api",
+      options: {
+        url: {
+          development:
             "https://newsapi.org/v2/everything?q=Abruzzo&sortBy=popularity&apiKey=7572db1197694484a7f7dafd2e6d3885", // on "gatsby develop"
           production:
             "https://newsapi.org/v2/everything?q=Abruzzo&sortBy=popularity&apiKey=7572db1197694484a7f7dafd2e6d3885", // on "gatsby build"

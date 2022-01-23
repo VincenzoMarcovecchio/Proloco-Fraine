@@ -100,6 +100,36 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       },
     })
   })
+  const resultoAgri = await graphql(`
+    {
+      agri {
+        articles {
+          author
+          title
+          description
+          url
+          urlToImage
+          publishedAt
+          content
+        }
+      }
+    }
+  `)
+  resultoAgri.data.agri.articles.forEach(dato => {
+    const urla = new URL(dato.url)
+    const cazzo = urla.toString().substring(29)
+    const rel = cazzo.replace("#", "").replace("?", "")
+
+    createPage({
+      path: `/${rel}/`,
+      component: notiPage,
+      context: {
+        rela: rel,
+        data: dato.description,
+        duto: dato,
+      },
+    })
+  })
 
   // Handle errors
   if (result.errors) {
