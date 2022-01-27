@@ -40,11 +40,13 @@ const TreeviewsComponents = () => {
   const handleTooltipOpen = () => {
     setOpen(true)
   }
-  const serviziistituzionaligeneralidigestione = useMemo(() =>
+
+  
+  const serviziistituzionaligeneralidigestione = 
     entrate.filter(
       label => label.label === "Servizi istituzionali, generali e di gestione"
     )
-  )
+  
 
   const ordinepubblicoesicurezza = entrate.filter(
     label => label.label === "Ordine Pubblico e Sicurezza"
