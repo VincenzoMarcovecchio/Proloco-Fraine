@@ -207,7 +207,9 @@ export const pageQuery = graphql`
       }
     }
     pollo2 {
-     
+      results {
+        title
+      }
     }
   }
 `
