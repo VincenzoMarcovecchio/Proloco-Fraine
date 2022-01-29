@@ -154,8 +154,7 @@ html > body > div > div > main > div > div > span {
       </Container>
       <hr />
       <Container style={{ marginTop: "3rem" }} maxWidth="lg">
-        {data.data.hello.results.rollo ? (
-          <>
+      
             <div
               className="pollo"
               dangerouslySetInnerHTML={{
@@ -168,10 +167,7 @@ html > body > div > div > main > div > div > span {
                 __html: data.data.pollo2.results.title,
               }}
             ></div>
-          </>
-        ) : (
-          "caricamento in corso"
-        )}
+       
       </Container>
       <hr />
       <center style={{ marginTop: "2rem" }}>
