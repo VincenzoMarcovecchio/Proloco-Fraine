@@ -43,7 +43,7 @@ const TreeviewsComponentsEntrate = () => {
     setOpen(true)
   }
 
-  const entrateprimo = useCallback(() =>
+  const entrateprimo = useMemo(() =>
     entrate.filter(
       label =>
         label.label ===

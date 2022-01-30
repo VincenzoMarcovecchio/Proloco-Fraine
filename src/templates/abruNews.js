@@ -6,10 +6,10 @@ const Abruzzio = ({ pageContext }) => {
   console.log(pageContext)
 
   React.useEffect(() => {
-    //  var divs = document.querySelectorAll("img")
-    // console.log(title)
-    // document.querySelectorAll(".group-right").style.css = "display: none"
-    // document.querySelectorAll(".leaflet-layer").style.css = "display: none"
+    let ciao = document.querySelectorAll("img")
+    ciao.forEach((io, i) => {
+      io.src = `https://abruzzoturismo.it${ciao[i].src}`
+    })
   }, [])
   let image = pageContext.data.results.ima ? pageContext.data.results.ima : ""
 

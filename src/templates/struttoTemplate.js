@@ -3,7 +3,8 @@ import Container from "@material-ui/core/Container"
 import { GatsbySeo, LocalBusinessJsonLd } from "gatsby-plugin-next-seo"
 
 const Strutto = ({ pageContext }) => {
-  let strutte = pageContext.data
+  let strutte = pageContext.data.dis
+  let path = pageContext.data.giggio
   let title = strutte[Object.keys(strutte)[2]]
   let email = strutte[Object.keys(strutte)[11]]
   let sito = strutte[Object.keys(strutte)[13]]
@@ -20,11 +21,11 @@ const Strutto = ({ pageContext }) => {
     <>
       <LocalBusinessJsonLd
         type={`${tipostrutta}`}
-        id={`https://www.prolocofraine.org/${title}`}
-        name={`${title}`}
+        id={`https://www.prolocofraine.org/${path}`}
+        name={`${title}  ${where} `}
         description={`${title} - ${where} - ${stelle} 
   `}
-        url={`https://www.prolocofraine.org/${title}`}
+        url={`https://www.prolocofraine.org/${path}`}
         telephone={`${tel}`}
         address={{
           streetAddress: `${indi}`,
@@ -43,14 +44,14 @@ const Strutto = ({ pageContext }) => {
         title={title}
         description={`${title} - ${where} - ${stelle} 
   `}
-        canonical={`https://www.prolocofraine.org/${title}`}
+        canonical={`https://www.prolocofraine.org/${path}`}
         openGraph={{
-          url: `https://www.prolocofraine.org/${title}`,
+          url: `https://www.prolocofraine.org/${path}`,
           title: `${title}`,
           description: `${title} - ${where} - ${stelle} `,
           images: [
             {
-              url: ``,
+              url: `https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIAmJeiVbpL8Xd6WT_UZ8afZa0783vgzV8Jg&usqp=CAU`,
               width: 800,
               height: 600,
               alt: "proloco fraine",
