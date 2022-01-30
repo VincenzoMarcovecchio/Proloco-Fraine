@@ -205,7 +205,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       path: `/${giggio}/`,
       component: struttoTemplate,
       context: {
-        data: { dis, giggio },
+        data: dis,
+        giggi: giggio,
       },
     })
   })

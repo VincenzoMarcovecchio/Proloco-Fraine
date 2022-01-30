@@ -4,7 +4,7 @@ import { GatsbySeo, LocalBusinessJsonLd } from "gatsby-plugin-next-seo"
 
 const Strutto = ({ pageContext }) => {
   let strutte = pageContext.data.dis
-  let path = pageContext.data.giggio
+  let path = pageContext.giggi
   let title = strutte[Object.keys(strutte)[2]]
   let email = strutte[Object.keys(strutte)[11]]
   let sito = strutte[Object.keys(strutte)[13]]
@@ -19,27 +19,7 @@ const Strutto = ({ pageContext }) => {
 
   return (
     <>
-      <LocalBusinessJsonLd
-        type={`${tipostrutta}`}
-        id={`https://www.prolocofraine.org/${path}`}
-        name={`${title}  ${where} `}
-        description={`${title} - ${where} - ${stelle} 
-  `}
-        url={`https://www.prolocofraine.org/${path}`}
-        telephone={`${tel}`}
-        address={{
-          streetAddress: `${indi}`,
-          addressLocality: `${where}`,
-          addressRegion: `${provi}`,
-          postalCode: `${posco}`,
-          addressCountry: "IT",
-        }}
-        geo={{
-          latitude: "",
-          longitude: "",
-        }}
-        images={["https://prolocofraine.org/images/nocche-fritte"]}
-      />
+ 
       <GatsbySeo
         title={title}
         description={`${title} - ${where} - ${stelle} 
@@ -65,7 +45,27 @@ const Strutto = ({ pageContext }) => {
           cardType: "summary_large_image",
         }}
       />
-
+     <LocalBusinessJsonLd
+        type={`${tipostrutta}`}
+        id={`https://www.prolocofraine.org/${path}`}
+        name={`${title}  ${where} `}
+        description={`${title} - ${where} - ${stelle} 
+  `}
+        url={`https://www.prolocofraine.org/${path}`}
+        telephone={`${tel}`}
+        address={{
+          streetAddress: `${indi}`,
+          addressLocality: `${where}`,
+          addressRegion: `${provi}`,
+          postalCode: `${posco}`,
+          addressCountry: "IT",
+        }}
+        geo={{
+          latitude: "",
+          longitude: "",
+        }}
+        images={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIAmJeiVbpL8Xd6WT_UZ8afZa0783vgzV8Jg&usqp=CAU"}
+      />
       <Container style={{ marginTop: "3rem" }} maxWidth="sm">
         <h1>{title}</h1>
         <p style={{ textTransform: "capitalize" }}>{tipostrutta}</p>
