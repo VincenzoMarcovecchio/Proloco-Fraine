@@ -88,13 +88,13 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   resultoAbruzzo.data.abruzzonews.articles.forEach(dato => {
     const urla = new URL(dato.url)
     const cazzo = urla.toString().substring(29)
-    const rel = cazzo.replace("#", "").replace("?", "")
+   
 
     createPage({
-      path: `/${rel}/`,
+      path: `/${cazzo}/`,
       component: notiPage,
       context: {
-        rela: rel,
+        rela: cazzo,
         data: dato.description,
         duto: dato,
       },

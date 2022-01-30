@@ -45,7 +45,7 @@ const Noti = ({ pageContext }) => {
 
       <Container style={{ marginTop: "3rem" }} maxWidth="sm">
         <article className="blog-post">
-          {pageContext.duto.title && (
+          {pageContext.duto.urlToImage && (
             <img
               style={{ width: "100%", height: "65vh", objectFit: "cover" }}
               alt={pageContext.duto.title}
