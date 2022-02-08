@@ -4,7 +4,7 @@ import Container from "@material-ui/core/Container"
 import { GatsbySeo } from "gatsby-plugin-next-seo"
 import { ArticleJsonLd } from "gatsby-plugin-next-seo"
 import proloco from "../images/proloco.jpg"
-import { FacebookProvider, Comments } from "react-facebook"
+import {  Comments } from "react-facebook"
 
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.
@@ -81,9 +81,8 @@ export default function Template({
           />
         </article>
 
-        <FacebookProvider appId="407785027087673">
           <Comments href={`https://prolocofraine.org/${frontmatter.slug} `} />
-        </FacebookProvider>
+      
       </Container>
     </React.Fragment>
   )
