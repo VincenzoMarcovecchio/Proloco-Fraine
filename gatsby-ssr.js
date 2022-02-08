@@ -1,5 +1,6 @@
 const React = require("react")
 const { Helmet } = require("react-helmet")
+const { FacebookProvider } = require("react-facebook")
 
 
 exports.onRenderBody = (
@@ -30,4 +31,14 @@ exports.onPreRenderHTML = ({ getHeadComponents, replaceHeadComponents }) => {
     return 0
   })
   replaceHeadComponents(headComponents)
+}
+
+exports.wrapPageElement = ({ element, props }) => {
+  // props provide same data to Layout as Page element will get
+  // including location, data, etc - you don't need to pass it
+  return    (
+  <FacebookProvider appId="407785027087673">
+  {element}
+  
+  </FacebookProvider>)
 }
