@@ -13,7 +13,7 @@ const Strutto = ({ pageContext }) => {
   let where = strutte[Object.keys(strutte)[5]]
 
   let tel = strutte[Object.keys(strutte)[9]]
-  let indi = strutte[Object.keys(strutte)[7]]
+  let indi = strutte[Object.keys(strutte)[6]]
   let provi = strutte[Object.keys(strutte)[4]]
   let posco = strutte[Object.keys(strutte)[7]]
   let tipostrutta = strutte[Object.keys(strutte)[1]]

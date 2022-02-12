@@ -386,6 +386,8 @@ module.exports = {
         policy: [{ userAgent: "*", allow: "/" }],
       },
     },
+`gatsby-source-exchange-rates-api`,
+    
     `gatsby-plugin-offline`
   ],
 }
