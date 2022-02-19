@@ -209,6 +209,16 @@ module.exports = {
       resolve: "gatsby-source-custom-api",
       options: {
         url: {
+          development: "https://lokkalle.herokuapp.com/tutto",
+          production: "https://lokkalle.herokuapp.com/tutto", // on "gatsby build"
+        },
+        rootKey: "kale",
+      },
+    },
+    {
+      resolve: "gatsby-source-custom-api",
+      options: {
+        url: {
           development: "https://pollolo.herokuapp.com/2",
           production: "https://pollolo.herokuapp.com/2", // on "gatsby build"
         },

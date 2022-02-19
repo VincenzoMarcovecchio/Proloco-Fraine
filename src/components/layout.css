@@ -770,7 +770,18 @@ a {
 
   
 }
+.jss14 {
+  background-color: inherit !important;
+  
+}
+.jss14 {
+  background-color: inherit !important;
 
+}
+.jss13 {
+ transform: rotate(0deg) !important;
+
+}
 @keyframes rotation {
   from {
     transform: rotate(0deg);

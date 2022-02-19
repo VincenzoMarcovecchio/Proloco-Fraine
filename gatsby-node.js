@@ -30,6 +30,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const struttoTemplate = path.resolve("src/templates/struttoTemplate.js")
   const abruNews = path.resolve("src/templates/abruNews.js")
   const nuoveNews = path.resolve("src/templates/nuoveNews.js")
+  const locaNews = path.resolve("src/templates/locaNews.js")
 
   const result = await graphql(`
     {
@@ -447,6 +448,39 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         component: abruNews,
         context: {
           data: son,
+        },
+      })
+    } catch (err) {
+      console.log(err)
+    }
+  }
+  const lokka = await graphql(`
+    {
+      kale {
+        results {
+          links
+        }
+      }
+    }
+  `)
+
+  for (let i = 0; i < lokka.data.kale.results.links.length; i++) {
+    try {
+      let luca = await laro.data.links.results.links[i]
+
+      let rollot = await fetch(
+        `https://lokkalle.herokuapp.com//?q=${luca}`
+      )
+
+      let gigi = await rollot.text()
+
+      const son = await JSON.parse(gigi)
+
+      await createPage({
+        path: `/${luca}`,
+        component: locaNews,
+        context: {
+          data: duto,
         },
       })
     } catch (err) {
