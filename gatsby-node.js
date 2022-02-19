@@ -466,15 +466,15 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   for (let i = 0; i < lokka.data.kale.results.links.length; i++) {
     try {
-      let luca = await laro.data.links.results.links[i]
+      let luca = await lokka.data.kale.results.links[i]
 
       let rollot = await fetch(
-        `https://lokkalle.herokuapp.com//?q=${luca}`
+        `https://lokkalle.herokuapp.com/?q=${luca}`
       )
 
       let gigi = await rollot.text()
 
-      const son = await JSON.parse(gigi)
+      const duto = await JSON.parse(gigi)
 
       await createPage({
         path: `/${luca}`,
