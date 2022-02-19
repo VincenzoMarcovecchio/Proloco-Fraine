@@ -22,7 +22,7 @@ let tempo = new Date()
             expirationTime: tempo.today(),
             section: "",
             authors: ["zonalocale"],
-            tags: ["News", "Abruzzo", "Cronaca","zona locale","Pescara","Lanciano""Fraine"Carabinieri"],
+            tags: ["News", "Abruzzo", "Cronaca","Zona Locale","Pescara","Lanciano","Fraine","Carabinieri"],
           },
           title: `${pageContext.duto.title}`,
           description: `${pageContext.duto.description}`,
