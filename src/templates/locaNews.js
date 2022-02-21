@@ -5,13 +5,13 @@ import { GatsbySeo, ArticleJsonLd } from "gatsby-plugin-next-seo"
 const Notia = ({ pageContext }) => {
   
   console.log(pageContext)
-let url = pageContext.duto.url.split("/")[3]
+let url = pageContext.data.url.split("/")[3]
 let tempo = new Date()
   return (
     <>
        <GatsbySeo
-        title={pageContext.duto.title}
-        description={pageContext.duto.description}
+        title={pageContext.data.title}
+        description={pageContext.data.description}
         canonical={`https://www.prolocofraine.org/${url}`}
         openGraph={{
           url: `https://www.prolocofraine.org/${url}`,
@@ -24,11 +24,11 @@ let tempo = new Date()
             authors: ["zonalocale"],
             tags: ["News", "Abruzzo", "Cronaca","Zona Locale","Pescara","Lanciano","Fraine","Carabinieri"],
           },
-          title: `${pageContext.duto.title}`,
-          description: `${pageContext.duto.description}`,
+          title: `${pageContext.data.title}`,
+          description: `${pageContext.data.description}`,
           images: [
             {
-              url: `${pageContext.duto.ima}`,
+              url: `${pageContext.data.ima}`,
               width: 800,
               height: 600,
               alt: "proloco fraine",
@@ -45,15 +45,15 @@ let tempo = new Date()
 
       <Container style={{ marginTop: "3rem" }} maxWidth="sm">
         <article className="blog-post">
-          {pageContext.duto.ima && (
+          {pageContext.data.ima && (
             <img
               style={{ width: "100%", height: "65vh", objectFit: "cover" }}
-              alt={pageContext.duto.title}
-              src={pageContext.duto.ima}
+              alt={pageContext.data.title}
+              src={pageContext.data.ima}
             />
           )}
           <h1 style={{ margin: "2rem auto 2rem 0" }}>
-            {pageContext.duto.title}
+            {pageContext.data.title}
           </h1>
           <div style={{ marginBottom: "2rem" }}>
             <span>
@@ -64,7 +64,7 @@ let tempo = new Date()
           <div
             className="blog-post-content"
             dangerouslySetInnerHTML={{
-              __html: pageContext.duto.description + "...",
+              __html: pageContext.data.description + "...",
             }}
           />
         </article>
