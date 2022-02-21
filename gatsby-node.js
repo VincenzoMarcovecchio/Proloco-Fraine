@@ -6,10 +6,10 @@
 
 // You can delete this file if you're not using it
 const strutto = require("./src/components/strutture.json")
-const sample = require("./src/data/sample.json")
 const path = require("path")
 const fetch = require("node-fetch")
 const { createFilePath } = require(`gatsby-source-filesystem`)
+
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
   if (node.internal.type === `MarkdownRemark`) {
@@ -29,7 +29,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const lastTemplate = path.resolve("src/templates/lastTemplate.js")
   const struttoTemplate = path.resolve("src/templates/struttoTemplate.js")
   const abruNews = path.resolve("src/templates/abruNews.js")
-  const nuoveNews = path.resolve("src/templates/nuoveNews.js")
   const locaNews = path.resolve("src/templates/locaNews.js")
 
   const result = await graphql(`

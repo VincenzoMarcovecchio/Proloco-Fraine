@@ -19,8 +19,6 @@ module.exports = {
   },
 
   plugins: [
-  
-
     `gatsby-plugin-material-ui`,
     `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-react-helmet`,
@@ -392,7 +390,6 @@ module.exports = {
       },
     },
 
-    
-    `gatsby-plugin-offline`
+    `gatsby-plugin-offline`,
   ],
 }
