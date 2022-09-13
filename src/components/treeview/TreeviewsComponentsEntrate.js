@@ -91,7 +91,7 @@ const TreeviewsComponentsEntrate = () => {
     let isCancelled = false
     setLoading(true)
     fetch(
-      `https://prolocofraine.netlify.app/.netlify/functions/entrate?age=${age}`
+      `https://openbilanci.it/armonizzati/bilanci/fraine-comune-ch/entrate/dettaglio.json?year=${age}&type=preventivo`
     )
       .then(response => response.json())
       .then(data => {
